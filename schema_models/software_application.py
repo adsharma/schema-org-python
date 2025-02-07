@@ -1,8 +1,6 @@
 from typing import List, Optional, Union
 
 from schema_models.creative_work import CreativeWork
-from schema_models.data_feed import DataFeed
-from schema_models.image_object import ImageObject
 from schema_models.text import Text
 from schema_models.url import URL
 
@@ -29,7 +27,7 @@ class SoftwareApplication(CreativeWork):
     softwareAddOn: Optional[
         Union["SoftwareApplication", List["SoftwareApplication"]]
     ] = None
-    supportingData: Optional[Union[DataFeed, List[DataFeed]]] = None
+    supportingData: Optional[Union["DataFeed", List["DataFeed"]]] = None
     availableOnDevice: Optional[Union[Text, List[Text]]] = None
     softwareRequirements: Optional[Union[Text, List[Text]]] = None
     softwareRequirements: Optional[Union[URL, List[URL]]] = None
@@ -38,7 +36,7 @@ class SoftwareApplication(CreativeWork):
     memoryRequirements: Optional[Union[Text, List[Text]]] = None
     memoryRequirements: Optional[Union[URL, List[URL]]] = None
     screenshot: Optional[Union[URL, List[URL]]] = None
-    screenshot: Optional[Union[ImageObject, List[ImageObject]]] = None
+    screenshot: Optional[Union["ImageObject", List["ImageObject"]]] = None
     fileSize: Optional[Union[Text, List[Text]]] = None
     featureList: Optional[Union[Text, List[Text]]] = None
     featureList: Optional[Union[URL, List[URL]]] = None

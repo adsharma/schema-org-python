@@ -1,5 +1,6 @@
 import os
 import re
+from graphlib import TopologicalSorter
 from keyword import kwlist
 from typing import Dict
 
@@ -16,7 +17,7 @@ BASE_TYPES = {
     SCHEMA.Date: "date",
     SCHEMA.DateTime: "datetime",
     SCHEMA.Time: "time",
-    SCHEMA.URL: "URL",
+    SCHEMA.URL: "HttpUrl",
 }
 
 
@@ -77,7 +78,7 @@ def generate_models(graph: Graph):
 
     # Write init file
     with open("schema_models/__init__.py", "w") as f:
-        f.write("from typing import Union, List, Optional, URL\n")
+        f.write("from typing import Union, List, Optional\n")
         f.write("from datetime import date, datetime, time\n")
         f.write("from pydantic import field_validator, ConfigDict, Field, HttpUrl\n\n")
 
@@ -99,6 +100,14 @@ def generate_models(graph: Graph):
     for class_name in deleted_keys:
         classes[f"_{class_name}"] = classes[class_name]
         del classes[class_name]
+
+    ts = TopologicalSorter()
+    for class_name, class_info in classes.items():
+        parent = class_info["parent"]
+        ts.add(class_name, parent)
+    for order, class_name in enumerate(ts.static_order()):
+        if class_name is not None:
+            classes[class_name]["order"] = order
 
     # Second pass: collect properties
     for class_name, class_info in classes.items():
@@ -141,14 +150,16 @@ def generate_models(graph: Graph):
                 f.write("\n")
 
             # Import other classes
-            other_set = set()
+            other_classes = {}
             for prop_name, prop_type in class_info["properties"]:
                 if prop_type != class_name:
-                    other_set.add(prop_type)
+                    forward_def = classes[prop_type]["order"] > class_info["order"]
+                    other_classes[prop_type] = forward_def
 
-            for prop_type in other_set:
+            for prop_type, forward_def in other_classes.items():
                 other_snake = camel_to_snake(prop_type)
-                f.write(f"from schema_models.{other_snake} import {prop_type}\n")
+                if not forward_def:
+                    f.write(f"from schema_models.{other_snake} import {prop_type}\n")
             f.write("\n")
 
             # Class definition
@@ -165,7 +176,8 @@ def generate_models(graph: Graph):
 
             for prop_name, prop_type in class_info["properties"]:
                 # if prop_type is self, it should be in double quotes
-                if prop_type == class_name:
+                forward_def = other_classes.get(prop_type, False)
+                if prop_type == class_name or forward_def:
                     prop_type = f'"{prop_type}"'
                 f.write(
                     f"    {prop_name}: Optional[Union[{prop_type}, List[{prop_type}]]] = None\n"

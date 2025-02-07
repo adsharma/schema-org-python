@@ -1,8 +1,6 @@
 from typing import List, Optional, Union
 
 from schema_models.duration import Duration
-from schema_models.how_to_supply import HowToSupply
-from schema_models.how_to_tool import HowToTool
 from schema_models.list_item import ListItem
 from schema_models.media_object import MediaObject
 from schema_models.text import Text
@@ -11,8 +9,8 @@ from schema_models.url import URL
 
 class HowToDirection(ListItem):
     supply: Optional[Union[Text, List[Text]]] = None
-    supply: Optional[Union[HowToSupply, List[HowToSupply]]] = None
-    tool: Optional[Union[HowToTool, List[HowToTool]]] = None
+    supply: Optional[Union["HowToSupply", List["HowToSupply"]]] = None
+    tool: Optional[Union["HowToTool", List["HowToTool"]]] = None
     tool: Optional[Union[Text, List[Text]]] = None
     prepTime: Optional[Union[Duration, List[Duration]]] = None
     totalTime: Optional[Union[Duration, List[Duration]]] = None

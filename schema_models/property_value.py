@@ -7,7 +7,6 @@ from schema_models.measurement_method_enum import MeasurementMethodEnum
 from schema_models.measurement_type_enumeration import MeasurementTypeEnumeration
 from schema_models.number import Number
 from schema_models.qualitative_value import QualitativeValue
-from schema_models.quantitative_value import QuantitativeValue
 from schema_models.structured_value import StructuredValue
 from schema_models.text import Text
 from schema_models.url import URL
@@ -45,5 +44,7 @@ class PropertyValue(StructuredValue):
     valueReference: Optional[Union[StructuredValue, List[StructuredValue]]] = None
     valueReference: Optional[Union[Enumeration, List[Enumeration]]] = None
     valueReference: Optional[Union[QualitativeValue, List[QualitativeValue]]] = None
-    valueReference: Optional[Union[QuantitativeValue, List[QuantitativeValue]]] = None
+    valueReference: Optional[Union["QuantitativeValue", List["QuantitativeValue"]]] = (
+        None
+    )
     maxValue: Optional[Union[Number, List[Number]]] = None

@@ -5,7 +5,6 @@ from schema_models.boolean import Boolean
 from schema_models.date_time import DateTime
 from schema_models.language import Language
 from schema_models.local_business import LocalBusiness
-from schema_models.location_feature_specification import LocationFeatureSpecification
 from schema_models.number import Number
 from schema_models.quantitative_value import QuantitativeValue
 from schema_models.rating import Rating
@@ -19,7 +18,7 @@ class LodgingBusiness(LocalBusiness):
     audience: Optional[Union[Audience, List[Audience]]] = None
     starRating: Optional[Union[Rating, List[Rating]]] = None
     amenityFeature: Optional[
-        Union[LocationFeatureSpecification, List[LocationFeatureSpecification]]
+        Union["LocationFeatureSpecification", List["LocationFeatureSpecification"]]
     ] = None
     checkoutTime: Optional[Union[Time, List[Time]]] = None
     checkoutTime: Optional[Union[DateTime, List[DateTime]]] = None

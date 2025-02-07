@@ -11,7 +11,6 @@ from schema_models.organization import Organization
 from schema_models.performing_group import PerformingGroup
 from schema_models.person import Person
 from schema_models.place import Place
-from schema_models.postal_address import PostalAddress
 from schema_models.quantitative_value import QuantitativeValue
 from schema_models.text import Text
 from schema_models.thing import Thing
@@ -22,7 +21,7 @@ from schema_models.video_object import VideoObject
 class VideoGameSeries(CreativeWorkSeries):
     numberOfSeasons: Optional[Union[Integer, List[Integer]]] = None
     gameLocation: Optional[Union[URL, List[URL]]] = None
-    gameLocation: Optional[Union[PostalAddress, List[PostalAddress]]] = None
+    gameLocation: Optional[Union["PostalAddress", List["PostalAddress"]]] = None
     gameLocation: Optional[Union[Place, List[Place]]] = None
     trailer: Optional[Union[VideoObject, List[VideoObject]]] = None
     numberOfPlayers: Optional[Union[QuantitativeValue, List[QuantitativeValue]]] = None

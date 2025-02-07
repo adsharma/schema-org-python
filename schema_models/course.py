@@ -10,7 +10,6 @@ from schema_models.educational_occupational_credential import (
 from schema_models.integer import Integer
 from schema_models.language import Language
 from schema_models.structured_value import StructuredValue
-from schema_models.syllabus import Syllabus
 from schema_models.text import Text
 from schema_models.url import URL
 
@@ -38,7 +37,7 @@ class Course(CreativeWork):
         ]
     ] = None
     educationalCredentialAwarded: Optional[Union[URL, List[URL]]] = None
-    syllabusSections: Optional[Union[Syllabus, List[Syllabus]]] = None
+    syllabusSections: Optional[Union["Syllabus", List["Syllabus"]]] = None
     totalHistoricalEnrollment: Optional[Union[Integer, List[Integer]]] = None
     coursePrerequisites: Optional[Union[AlignmentObject, List[AlignmentObject]]] = None
     coursePrerequisites: Optional[Union["Course", List["Course"]]] = None
