@@ -1,7 +1,4 @@
-from datetime import date, datetime, time
 from typing import List, Optional, Union
-
-from pydantic import ConfigDict, Field, HttpUrl, field_validator
 
 from schema_models.brand import Brand
 from schema_models.certification import Certification
@@ -28,7 +25,6 @@ from schema_models.offer import Offer
 from schema_models.offer_catalog import OfferCatalog
 from schema_models.organization import Organization
 from schema_models.ownership_info import OwnershipInfo
-from schema_models.person import Person
 from schema_models.place import Place
 from schema_models.postal_address import PostalAddress
 from schema_models.price_specification import PriceSpecification

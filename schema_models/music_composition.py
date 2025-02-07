@@ -1,11 +1,7 @@
-from datetime import date, datetime, time
 from typing import List, Optional, Union
-
-from pydantic import ConfigDict, Field, HttpUrl, field_validator
 
 from schema_models.creative_work import CreativeWork
 from schema_models.event import Event
-from schema_models.music_composition import MusicComposition
 from schema_models.music_recording import MusicRecording
 from schema_models.organization import Organization
 from schema_models.person import Person

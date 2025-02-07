@@ -1,13 +1,9 @@
-from datetime import date, datetime, time
 from typing import List, Optional, Union
-
-from pydantic import ConfigDict, Field, HttpUrl, field_validator
 
 from schema_models.broadcast_channel import BroadcastChannel
 from schema_models.broadcast_frequency_specification import (
     BroadcastFrequencySpecification,
 )
-from schema_models.broadcast_service import BroadcastService
 from schema_models.language import Language
 from schema_models.organization import Organization
 from schema_models.place import Place

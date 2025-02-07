@@ -1,11 +1,7 @@
-from datetime import date, datetime, time
 from typing import List, Optional, Union
-
-from pydantic import ConfigDict, Field, HttpUrl, field_validator
 
 from schema_models.demand import Demand
 from schema_models.intangible import Intangible
-from schema_models.menu_item import MenuItem
 from schema_models.menu_section import MenuSection
 from schema_models.nutrition_information import NutritionInformation
 from schema_models.offer import Offer

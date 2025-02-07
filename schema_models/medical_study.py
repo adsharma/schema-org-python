@@ -1,7 +1,4 @@
-from datetime import date, datetime, time
 from typing import List, Optional, Union
-
-from pydantic import ConfigDict, Field, HttpUrl, field_validator
 
 from schema_models.administrative_area import AdministrativeArea
 from schema_models.event_status_type import EventStatusType

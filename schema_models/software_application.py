@@ -1,12 +1,8 @@
-from datetime import date, datetime, time
 from typing import List, Optional, Union
-
-from pydantic import ConfigDict, Field, HttpUrl, field_validator
 
 from schema_models.creative_work import CreativeWork
 from schema_models.data_feed import DataFeed
 from schema_models.image_object import ImageObject
-from schema_models.software_application import SoftwareApplication
 from schema_models.text import Text
 from schema_models.url import URL
 

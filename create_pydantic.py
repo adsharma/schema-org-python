@@ -1,8 +1,7 @@
 import os
 import re
 from keyword import kwlist
-from pathlib import Path
-from typing import Dict, List, Set
+from typing import Dict
 
 import requests
 from rdflib import RDF, RDFS, Graph, Namespace
@@ -144,7 +143,8 @@ def generate_models(graph: Graph):
             # Import other classes
             other_set = set()
             for prop_name, prop_type in class_info["properties"]:
-                other_set.add(prop_type)
+                if prop_type != class_name:
+                    other_set.add(prop_type)
 
             for prop_type in other_set:
                 other_snake = camel_to_snake(prop_type)

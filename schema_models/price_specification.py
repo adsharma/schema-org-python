@@ -1,14 +1,10 @@
-from datetime import date, datetime, time
 from typing import List, Optional, Union
-
-from pydantic import ConfigDict, Field, HttpUrl, field_validator
 
 from schema_models.boolean import Boolean
 from schema_models.date import Date
 from schema_models.date_time import DateTime
 from schema_models.member_program_tier import MemberProgramTier
 from schema_models.number import Number
-from schema_models.price_specification import PriceSpecification
 from schema_models.quantitative_value import QuantitativeValue
 from schema_models.structured_value import StructuredValue
 from schema_models.text import Text

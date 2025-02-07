@@ -1,7 +1,4 @@
-from datetime import date, datetime, time
 from typing import List, Optional, Union
-
-from pydantic import ConfigDict, Field, HttpUrl, field_validator
 
 from schema_models.administrative_area import AdministrativeArea
 from schema_models.adult_oriented_enumeration import AdultOrientedEnumeration
@@ -25,7 +22,6 @@ from schema_models.member_program_tier import MemberProgramTier
 from schema_models.menu_item import MenuItem
 from schema_models.merchant_return_policy import MerchantReturnPolicy
 from schema_models.number import Number
-from schema_models.offer import Offer
 from schema_models.offer_item_condition import OfferItemCondition
 from schema_models.offer_shipping_details import OfferShippingDetails
 from schema_models.organization import Organization

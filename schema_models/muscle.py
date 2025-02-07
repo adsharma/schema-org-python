@@ -1,10 +1,6 @@
-from datetime import date, datetime, time
 from typing import List, Optional, Union
 
-from pydantic import ConfigDict, Field, HttpUrl, field_validator
-
 from schema_models.anatomical_structure import AnatomicalStructure
-from schema_models.muscle import Muscle
 from schema_models.nerve import Nerve
 from schema_models.text import Text
 from schema_models.vessel import Vessel

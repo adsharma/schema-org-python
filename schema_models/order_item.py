@@ -1,11 +1,7 @@
-from datetime import date, datetime, time
 from typing import List, Optional, Union
-
-from pydantic import ConfigDict, Field, HttpUrl, field_validator
 
 from schema_models.intangible import Intangible
 from schema_models.number import Number
-from schema_models.order_item import OrderItem
 from schema_models.order_status import OrderStatus
 from schema_models.parcel_delivery import ParcelDelivery
 from schema_models.product import Product

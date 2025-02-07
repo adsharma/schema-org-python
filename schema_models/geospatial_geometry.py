@@ -1,9 +1,5 @@
-from datetime import date, datetime, time
 from typing import List, Optional, Union
 
-from pydantic import ConfigDict, Field, HttpUrl, field_validator
-
-from schema_models.geospatial_geometry import GeospatialGeometry
 from schema_models.intangible import Intangible
 from schema_models.place import Place
 

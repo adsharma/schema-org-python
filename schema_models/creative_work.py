@@ -1,7 +1,4 @@
-from datetime import date, datetime, time
 from typing import List, Optional, Union
-
-from pydantic import ConfigDict, Field, HttpUrl, field_validator
 
 from schema_models.aggregate_rating import AggregateRating
 from schema_models.alignment_object import AlignmentObject
@@ -13,7 +10,6 @@ from schema_models.clip import Clip
 from schema_models.comment import Comment
 from schema_models.correction_comment import CorrectionComment
 from schema_models.country import Country
-from schema_models.creative_work import CreativeWork
 from schema_models.date import Date
 from schema_models.date_time import DateTime
 from schema_models.defined_term import DefinedTerm

@@ -1,7 +1,4 @@
-from datetime import date, datetime, time
 from typing import List, Optional, Union
-
-from pydantic import ConfigDict, Field, HttpUrl, field_validator
 
 from schema_models.adult_oriented_enumeration import AdultOrientedEnumeration
 from schema_models.aggregate_rating import AggregateRating
@@ -25,7 +22,6 @@ from schema_models.offer import Offer
 from schema_models.offer_item_condition import OfferItemCondition
 from schema_models.organization import Organization
 from schema_models.physical_activity_category import PhysicalActivityCategory
-from schema_models.product import Product
 from schema_models.product_group import ProductGroup
 from schema_models.product_model import ProductModel
 from schema_models.product_return_policy import ProductReturnPolicy

@@ -1,7 +1,4 @@
-from datetime import date, datetime, time
 from typing import List, Optional, Union
-
-from pydantic import ConfigDict, Field, HttpUrl, field_validator
 
 from schema_models.date_time import DateTime
 from schema_models.demand import Demand
@@ -12,7 +9,6 @@ from schema_models.organization import Organization
 from schema_models.person import Person
 from schema_models.place import Place
 from schema_models.time import Time
-from schema_models.trip import Trip
 
 
 class Trip(Intangible):

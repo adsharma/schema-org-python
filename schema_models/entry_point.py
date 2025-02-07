@@ -1,7 +1,4 @@
-from datetime import date, datetime, time
 from typing import List, Optional, Union
-
-from pydantic import ConfigDict, Field, HttpUrl, field_validator
 
 from schema_models.digital_platform_enumeration import DigitalPlatformEnumeration
 from schema_models.intangible import Intangible

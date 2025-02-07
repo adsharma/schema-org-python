@@ -1,7 +1,4 @@
-from datetime import date, datetime, time
 from typing import List, Optional, Union
-
-from pydantic import ConfigDict, Field, HttpUrl, field_validator
 
 from schema_models.about_page import AboutPage
 from schema_models.administrative_area import AdministrativeArea
@@ -30,7 +27,6 @@ from schema_models.merchant_return_policy import MerchantReturnPolicy
 from schema_models.nonprofit_type import NonprofitType
 from schema_models.offer import Offer
 from schema_models.offer_catalog import OfferCatalog
-from schema_models.organization import Organization
 from schema_models.ownership_info import OwnershipInfo
 from schema_models.payment_method import PaymentMethod
 from schema_models.person import Person

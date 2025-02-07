@@ -1,7 +1,4 @@
-from datetime import date, datetime, time
 from typing import List, Optional, Union
-
-from pydantic import ConfigDict, Field, HttpUrl, field_validator
 
 from schema_models.aggregate_rating import AggregateRating
 from schema_models.audience import Audience
@@ -12,7 +9,6 @@ from schema_models.date_time import DateTime
 from schema_models.defined_term import DefinedTerm
 from schema_models.demand import Demand
 from schema_models.duration import Duration
-from schema_models.event import Event
 from schema_models.event_attendance_mode_enumeration import (
     EventAttendanceModeEnumeration,
 )

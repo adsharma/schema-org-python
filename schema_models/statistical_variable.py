@@ -1,7 +1,4 @@
-from datetime import date, datetime, time
 from typing import List, Optional, Union
-
-from pydantic import ConfigDict, Field, HttpUrl, field_validator
 
 from schema_models.__class import _Class
 from schema_models.constraint_node import ConstraintNode
@@ -9,7 +6,6 @@ from schema_models.defined_term import DefinedTerm
 from schema_models.enumeration import Enumeration
 from schema_models.measurement_method_enum import MeasurementMethodEnum
 from schema_models.property import Property
-from schema_models.statistical_variable import StatisticalVariable
 from schema_models.text import Text
 from schema_models.url import URL
 

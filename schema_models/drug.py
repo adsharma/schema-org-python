@@ -1,11 +1,7 @@
-from datetime import date, datetime, time
 from typing import List, Optional, Union
-
-from pydantic import ConfigDict, Field, HttpUrl, field_validator
 
 from schema_models.boolean import Boolean
 from schema_models.dose_schedule import DoseSchedule
-from schema_models.drug import Drug
 from schema_models.drug_class import DrugClass
 from schema_models.drug_legal_status import DrugLegalStatus
 from schema_models.drug_pregnancy_category import DrugPregnancyCategory

@@ -1,7 +1,4 @@
-from datetime import date, datetime, time
 from typing import List, Optional, Union
-
-from pydantic import ConfigDict, Field, HttpUrl, field_validator
 
 from schema_models.aggregate_rating import AggregateRating
 from schema_models.boolean import Boolean
@@ -18,7 +15,6 @@ from schema_models.map import Map
 from schema_models.number import Number
 from schema_models.opening_hours_specification import OpeningHoursSpecification
 from schema_models.photograph import Photograph
-from schema_models.place import Place
 from schema_models.postal_address import PostalAddress
 from schema_models.property_value import PropertyValue
 from schema_models.review import Review

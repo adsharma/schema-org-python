@@ -1,7 +1,4 @@
-from datetime import date, datetime, time
 from typing import List, Optional, Union
-
-from pydantic import ConfigDict, Field, HttpUrl, field_validator
 
 from schema_models.boolean import Boolean
 from schema_models.defined_term import DefinedTerm
@@ -10,7 +7,6 @@ from schema_models.measurement_type_enumeration import MeasurementTypeEnumeratio
 from schema_models.number import Number
 from schema_models.property_value import PropertyValue
 from schema_models.qualitative_value import QualitativeValue
-from schema_models.quantitative_value import QuantitativeValue
 from schema_models.structured_value import StructuredValue
 from schema_models.text import Text
 from schema_models.url import URL

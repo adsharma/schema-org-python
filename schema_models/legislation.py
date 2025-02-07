@@ -1,14 +1,10 @@
-from datetime import date, datetime, time
 from typing import List, Optional, Union
-
-from pydantic import ConfigDict, Field, HttpUrl, field_validator
 
 from schema_models.administrative_area import AdministrativeArea
 from schema_models.category_code import CategoryCode
 from schema_models.creative_work import CreativeWork
 from schema_models.date import Date
 from schema_models.legal_force_status import LegalForceStatus
-from schema_models.legislation import Legislation
 from schema_models.organization import Organization
 from schema_models.person import Person
 from schema_models.text import Text

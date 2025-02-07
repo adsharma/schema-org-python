@@ -1,11 +1,7 @@
-from datetime import date, datetime, time
 from typing import List, Optional, Union
-
-from pydantic import ConfigDict, Field, HttpUrl, field_validator
 
 from schema_models.defined_term import DefinedTerm
 from schema_models.property_value import PropertyValue
-from schema_models.taxon import Taxon
 from schema_models.text import Text
 from schema_models.thing import Thing
 from schema_models.url import URL

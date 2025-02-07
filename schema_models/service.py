@@ -1,7 +1,4 @@
-from datetime import date, datetime, time
 from typing import List, Optional, Union
-
-from pydantic import ConfigDict, Field, HttpUrl, field_validator
 
 from schema_models.administrative_area import AdministrativeArea
 from schema_models.aggregate_rating import AggregateRating
@@ -23,7 +20,6 @@ from schema_models.physical_activity_category import PhysicalActivityCategory
 from schema_models.place import Place
 from schema_models.product import Product
 from schema_models.review import Review
-from schema_models.service import Service
 from schema_models.service_channel import ServiceChannel
 from schema_models.text import Text
 from schema_models.thing import Thing

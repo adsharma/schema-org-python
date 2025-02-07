@@ -1,10 +1,6 @@
-from datetime import date, datetime, time
 from typing import List, Optional, Union
 
-from pydantic import ConfigDict, Field, HttpUrl, field_validator
-
 from schema_models.anatomical_structure import AnatomicalStructure
-from schema_models.anatomical_system import AnatomicalSystem
 from schema_models.medical_condition import MedicalCondition
 from schema_models.medical_entity import MedicalEntity
 from schema_models.medical_therapy import MedicalTherapy

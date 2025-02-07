@@ -1,7 +1,4 @@
-from datetime import date, datetime, time
 from typing import List, Optional, Union
-
-from pydantic import ConfigDict, Field, HttpUrl, field_validator
 
 from schema_models.c_d_c_p_m_d_record import CDCPMDRecord
 from schema_models.civic_structure import CivicStructure
