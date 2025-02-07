@@ -1,0 +1,35 @@
+from datetime import date, datetime, time
+from typing import List, Optional, Union
+
+from pydantic import ConfigDict, Field, HttpUrl, field_validator
+
+from schema_models.action import Action
+from schema_models.creative_work import CreativeWork
+from schema_models.event import Event
+from schema_models.image_object import ImageObject
+from schema_models.property_value import PropertyValue
+from schema_models.text import Text
+from schema_models.text_object import TextObject
+from schema_models.url import URL
+
+
+class Thing:
+    subjectOf: Optional[Union[CreativeWork, List[CreativeWork]]] = None
+    subjectOf: Optional[Union[Event, List[Event]]] = None
+    alternateName: Optional[Union[Text, List[Text]]] = None
+    additionalType: Optional[Union[Text, List[Text]]] = None
+    additionalType: Optional[Union[URL, List[URL]]] = None
+    sameAs: Optional[Union[URL, List[URL]]] = None
+    identifier: Optional[Union[Text, List[Text]]] = None
+    identifier: Optional[Union[URL, List[URL]]] = None
+    identifier: Optional[Union[PropertyValue, List[PropertyValue]]] = None
+    name: Optional[Union[Text, List[Text]]] = None
+    url: Optional[Union[URL, List[URL]]] = None
+    description: Optional[Union[Text, List[Text]]] = None
+    description: Optional[Union[TextObject, List[TextObject]]] = None
+    potentialAction: Optional[Union[Action, List[Action]]] = None
+    image: Optional[Union[ImageObject, List[ImageObject]]] = None
+    image: Optional[Union[URL, List[URL]]] = None
+    disambiguatingDescription: Optional[Union[Text, List[Text]]] = None
+    mainEntityOfPage: Optional[Union[CreativeWork, List[CreativeWork]]] = None
+    mainEntityOfPage: Optional[Union[URL, List[URL]]] = None
