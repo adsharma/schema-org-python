@@ -1,8 +1,11 @@
 from typing import List, Optional, Union
 
+from fquery.pydantic import pydantic
+
 from schema_models.text import Text
 
 
+@pydantic
 class Thing:
     subjectOf: Optional[Union["CreativeWork", List["CreativeWork"]]] = None
     subjectOf: Optional[Union["Event", List["Event"]]] = None
