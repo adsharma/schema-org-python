@@ -3,7 +3,7 @@ requires = ["poetry>=0.12"]
 build-backend = "poetry.masonry.api"
 
 [tool.poetry]
-name = "schema-org"
+name = "schema_models"
 version = "0.1.0"
 description = "Schema.org schemas as pydantic models"
 
