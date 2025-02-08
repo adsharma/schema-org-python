@@ -1,0 +1,1855 @@
+from datetime import date, datetime, time
+from typing import List, Optional, Union
+
+from pydantic import ConfigDict, Field, HttpUrl, field_validator
+
+from schema_models._3_d_model import _3DModel
+from schema_models.__class import _Class
+from schema_models.a_m_radio_channel import AMRadioChannel
+from schema_models.a_p_i_reference import APIReference
+from schema_models.about_page import AboutPage
+from schema_models.accept_action import AcceptAction
+from schema_models.accommodation import Accommodation
+from schema_models.accounting_service import AccountingService
+from schema_models.achieve_action import AchieveAction
+from schema_models.action import Action
+from schema_models.action_access_specification import ActionAccessSpecification
+from schema_models.action_status_type import ActionStatusType
+from schema_models.activate_action import ActivateAction
+from schema_models.add_action import AddAction
+from schema_models.administrative_area import AdministrativeArea
+from schema_models.adult_entertainment import AdultEntertainment
+from schema_models.adult_oriented_enumeration import AdultOrientedEnumeration
+from schema_models.advertiser_content_article import AdvertiserContentArticle
+from schema_models.aggregate_offer import AggregateOffer
+from schema_models.aggregate_rating import AggregateRating
+from schema_models.agree_action import AgreeAction
+from schema_models.airline import Airline
+from schema_models.airport import Airport
+from schema_models.alignment_object import AlignmentObject
+from schema_models.allocate_action import AllocateAction
+from schema_models.amp_story import AmpStory
+from schema_models.amusement_park import AmusementPark
+from schema_models.analysis_news_article import AnalysisNewsArticle
+from schema_models.anatomical_structure import AnatomicalStructure
+from schema_models.anatomical_system import AnatomicalSystem
+from schema_models.animal_shelter import AnimalShelter
+from schema_models.answer import Answer
+from schema_models.apartment import Apartment
+from schema_models.apartment_complex import ApartmentComplex
+from schema_models.append_action import AppendAction
+from schema_models.apply_action import ApplyAction
+from schema_models.approved_indication import ApprovedIndication
+from schema_models.aquarium import Aquarium
+from schema_models.archive_component import ArchiveComponent
+from schema_models.archive_organization import ArchiveOrganization
+from schema_models.arrive_action import ArriveAction
+from schema_models.art_gallery import ArtGallery
+from schema_models.artery import Artery
+from schema_models.article import Article
+from schema_models.ask_action import AskAction
+from schema_models.ask_public_news_article import AskPublicNewsArticle
+from schema_models.assess_action import AssessAction
+from schema_models.assign_action import AssignAction
+from schema_models.atlas import Atlas
+from schema_models.attorney import Attorney
+from schema_models.audience import Audience
+from schema_models.audio_object import AudioObject
+from schema_models.audio_object_snapshot import AudioObjectSnapshot
+from schema_models.audiobook import Audiobook
+from schema_models.authorize_action import AuthorizeAction
+from schema_models.auto_body_shop import AutoBodyShop
+from schema_models.auto_dealer import AutoDealer
+from schema_models.auto_parts_store import AutoPartsStore
+from schema_models.auto_rental import AutoRental
+from schema_models.auto_repair import AutoRepair
+from schema_models.auto_wash import AutoWash
+from schema_models.automated_teller import AutomatedTeller
+from schema_models.automotive_business import AutomotiveBusiness
+from schema_models.background_news_article import BackgroundNewsArticle
+from schema_models.bakery import Bakery
+from schema_models.bank_account import BankAccount
+from schema_models.bank_or_credit_union import BankOrCreditUnion
+from schema_models.bar_or_pub import BarOrPub
+from schema_models.barcode import Barcode
+from schema_models.beach import Beach
+from schema_models.beauty_salon import BeautySalon
+from schema_models.bed_and_breakfast import BedAndBreakfast
+from schema_models.bed_details import BedDetails
+from schema_models.bed_type import BedType
+from schema_models.befriend_action import BefriendAction
+from schema_models.bike_store import BikeStore
+from schema_models.bio_chem_entity import BioChemEntity
+from schema_models.blog import Blog
+from schema_models.blog_posting import BlogPosting
+from schema_models.blood_test import BloodTest
+from schema_models.boarding_policy_type import BoardingPolicyType
+from schema_models.boat_reservation import BoatReservation
+from schema_models.boat_terminal import BoatTerminal
+from schema_models.boat_trip import BoatTrip
+from schema_models.body_measurement_type_enumeration import (
+    BodyMeasurementTypeEnumeration,
+)
+from schema_models.body_of_water import BodyOfWater
+from schema_models.bone import Bone
+from schema_models.book import Book
+from schema_models.book_format_type import BookFormatType
+from schema_models.book_series import BookSeries
+from schema_models.book_store import BookStore
+from schema_models.bookmark_action import BookmarkAction
+from schema_models.boolean import Boolean
+from schema_models.borrow_action import BorrowAction
+from schema_models.bowling_alley import BowlingAlley
+from schema_models.brain_structure import BrainStructure
+from schema_models.brand import Brand
+from schema_models.breadcrumb_list import BreadcrumbList
+from schema_models.brewery import Brewery
+from schema_models.bridge import Bridge
+from schema_models.broadcast_channel import BroadcastChannel
+from schema_models.broadcast_event import BroadcastEvent
+from schema_models.broadcast_frequency_specification import (
+    BroadcastFrequencySpecification,
+)
+from schema_models.broadcast_service import BroadcastService
+from schema_models.brokerage_account import BrokerageAccount
+from schema_models.buddhist_temple import BuddhistTemple
+from schema_models.bus_or_coach import BusOrCoach
+from schema_models.bus_reservation import BusReservation
+from schema_models.bus_station import BusStation
+from schema_models.bus_stop import BusStop
+from schema_models.bus_trip import BusTrip
+from schema_models.business_audience import BusinessAudience
+from schema_models.business_entity_type import BusinessEntityType
+from schema_models.business_event import BusinessEvent
+from schema_models.business_function import BusinessFunction
+from schema_models.buy_action import BuyAction
+from schema_models.c_d_c_p_m_d_record import CDCPMDRecord
+from schema_models.cable_or_satellite_service import CableOrSatelliteService
+from schema_models.cafe_or_coffee_shop import CafeOrCoffeeShop
+from schema_models.campground import Campground
+from schema_models.camping_pitch import CampingPitch
+from schema_models.canal import Canal
+from schema_models.cancel_action import CancelAction
+from schema_models.car import Car
+from schema_models.car_usage_type import CarUsageType
+from schema_models.casino import Casino
+from schema_models.category_code import CategoryCode
+from schema_models.category_code_set import CategoryCodeSet
+from schema_models.catholic_church import CatholicChurch
+from schema_models.cemetery import Cemetery
+from schema_models.certification import Certification
+from schema_models.certification_status_enumeration import (
+    CertificationStatusEnumeration,
+)
+from schema_models.chapter import Chapter
+from schema_models.check_action import CheckAction
+from schema_models.check_in_action import CheckInAction
+from schema_models.check_out_action import CheckOutAction
+from schema_models.checkout_page import CheckoutPage
+from schema_models.chemical_substance import ChemicalSubstance
+from schema_models.child_care import ChildCare
+from schema_models.childrens_event import ChildrensEvent
+from schema_models.choose_action import ChooseAction
+from schema_models.church import Church
+from schema_models.city import City
+from schema_models.city_hall import CityHall
+from schema_models.civic_structure import CivicStructure
+from schema_models.claim import Claim
+from schema_models.claim_review import ClaimReview
+from schema_models.clip import Clip
+from schema_models.clothing_store import ClothingStore
+from schema_models.code import Code
+from schema_models.collection import Collection
+from schema_models.collection_page import CollectionPage
+from schema_models.college_or_university import CollegeOrUniversity
+from schema_models.comedy_club import ComedyClub
+from schema_models.comedy_event import ComedyEvent
+from schema_models.comic_cover_art import ComicCoverArt
+from schema_models.comic_issue import ComicIssue
+from schema_models.comic_series import ComicSeries
+from schema_models.comic_story import ComicStory
+from schema_models.comment import Comment
+from schema_models.comment_action import CommentAction
+from schema_models.communicate_action import CommunicateAction
+from schema_models.complete_data_feed import CompleteDataFeed
+from schema_models.compound_price_specification import CompoundPriceSpecification
+from schema_models.computer_language import ComputerLanguage
+from schema_models.computer_store import ComputerStore
+from schema_models.confirm_action import ConfirmAction
+from schema_models.consortium import Consortium
+from schema_models.constraint_node import ConstraintNode
+from schema_models.consume_action import ConsumeAction
+from schema_models.contact_page import ContactPage
+from schema_models.contact_point import ContactPoint
+from schema_models.contact_point_option import ContactPointOption
+from schema_models.continent import Continent
+from schema_models.control_action import ControlAction
+from schema_models.convenience_store import ConvenienceStore
+from schema_models.conversation import Conversation
+from schema_models.cook_action import CookAction
+from schema_models.corporation import Corporation
+from schema_models.correction_comment import CorrectionComment
+from schema_models.country import Country
+from schema_models.course import Course
+from schema_models.course_instance import CourseInstance
+from schema_models.courthouse import Courthouse
+from schema_models.cover_art import CoverArt
+from schema_models.covid_testing_facility import CovidTestingFacility
+from schema_models.create_action import CreateAction
+from schema_models.creative_work import CreativeWork
+from schema_models.creative_work_season import CreativeWorkSeason
+from schema_models.creative_work_series import CreativeWorkSeries
+from schema_models.credit_card import CreditCard
+from schema_models.crematorium import Crematorium
+from schema_models.critic_review import CriticReview
+from schema_models.css_selector_type import CssSelectorType
+from schema_models.currency_conversion_service import CurrencyConversionService
+from schema_models.d_dx_element import DDxElement
+from schema_models.dance_event import DanceEvent
+from schema_models.dance_group import DanceGroup
+from schema_models.data_catalog import DataCatalog
+from schema_models.data_download import DataDownload
+from schema_models.data_feed import DataFeed
+from schema_models.data_feed_item import DataFeedItem
+from schema_models.data_type import DataType
+from schema_models.dataset import Dataset
+from schema_models.date import Date
+from schema_models.date_time import DateTime
+from schema_models.dated_money_specification import DatedMoneySpecification
+from schema_models.day_of_week import DayOfWeek
+from schema_models.day_spa import DaySpa
+from schema_models.deactivate_action import DeactivateAction
+from schema_models.defence_establishment import DefenceEstablishment
+from schema_models.defined_region import DefinedRegion
+from schema_models.defined_term import DefinedTerm
+from schema_models.defined_term_set import DefinedTermSet
+from schema_models.delete_action import DeleteAction
+from schema_models.delivery_charge_specification import DeliveryChargeSpecification
+from schema_models.delivery_event import DeliveryEvent
+from schema_models.delivery_method import DeliveryMethod
+from schema_models.delivery_time_settings import DeliveryTimeSettings
+from schema_models.demand import Demand
+from schema_models.dentist import Dentist
+from schema_models.depart_action import DepartAction
+from schema_models.department_store import DepartmentStore
+from schema_models.deposit_account import DepositAccount
+from schema_models.diagnostic_lab import DiagnosticLab
+from schema_models.diagnostic_procedure import DiagnosticProcedure
+from schema_models.diet import Diet
+from schema_models.dietary_supplement import DietarySupplement
+from schema_models.digital_document import DigitalDocument
+from schema_models.digital_document_permission import DigitalDocumentPermission
+from schema_models.digital_document_permission_type import DigitalDocumentPermissionType
+from schema_models.digital_platform_enumeration import DigitalPlatformEnumeration
+from schema_models.disagree_action import DisagreeAction
+from schema_models.discover_action import DiscoverAction
+from schema_models.discussion_forum_posting import DiscussionForumPosting
+from schema_models.dislike_action import DislikeAction
+from schema_models.distance import Distance
+from schema_models.distillery import Distillery
+from schema_models.donate_action import DonateAction
+from schema_models.dose_schedule import DoseSchedule
+from schema_models.download_action import DownloadAction
+from schema_models.draw_action import DrawAction
+from schema_models.drawing import Drawing
+from schema_models.drink_action import DrinkAction
+from schema_models.drive_wheel_configuration_value import DriveWheelConfigurationValue
+from schema_models.drug import Drug
+from schema_models.drug_class import DrugClass
+from schema_models.drug_cost import DrugCost
+from schema_models.drug_cost_category import DrugCostCategory
+from schema_models.drug_legal_status import DrugLegalStatus
+from schema_models.drug_pregnancy_category import DrugPregnancyCategory
+from schema_models.drug_prescription_status import DrugPrescriptionStatus
+from schema_models.drug_strength import DrugStrength
+from schema_models.dry_cleaning_or_laundry import DryCleaningOrLaundry
+from schema_models.duration import Duration
+from schema_models.e_u_energy_efficiency_enumeration import (
+    EUEnergyEfficiencyEnumeration,
+)
+from schema_models.eat_action import EatAction
+from schema_models.education_event import EducationEvent
+from schema_models.educational_audience import EducationalAudience
+from schema_models.educational_occupational_credential import (
+    EducationalOccupationalCredential,
+)
+from schema_models.educational_occupational_program import (
+    EducationalOccupationalProgram,
+)
+from schema_models.educational_organization import EducationalOrganization
+from schema_models.electrician import Electrician
+from schema_models.electronics_store import ElectronicsStore
+from schema_models.elementary_school import ElementarySchool
+from schema_models.email_message import EmailMessage
+from schema_models.embassy import Embassy
+from schema_models.emergency_service import EmergencyService
+from schema_models.employee_role import EmployeeRole
+from schema_models.employer_aggregate_rating import EmployerAggregateRating
+from schema_models.employer_review import EmployerReview
+from schema_models.employment_agency import EmploymentAgency
+from schema_models.endorse_action import EndorseAction
+from schema_models.endorsement_rating import EndorsementRating
+from schema_models.energy import Energy
+from schema_models.energy_consumption_details import EnergyConsumptionDetails
+from schema_models.energy_efficiency_enumeration import EnergyEfficiencyEnumeration
+from schema_models.energy_star_energy_efficiency_enumeration import (
+    EnergyStarEnergyEfficiencyEnumeration,
+)
+from schema_models.engine_specification import EngineSpecification
+from schema_models.entertainment_business import EntertainmentBusiness
+from schema_models.entry_point import EntryPoint
+from schema_models.enumeration import Enumeration
+from schema_models.episode import Episode
+from schema_models.event import Event
+from schema_models.event_attendance_mode_enumeration import (
+    EventAttendanceModeEnumeration,
+)
+from schema_models.event_reservation import EventReservation
+from schema_models.event_series import EventSeries
+from schema_models.event_status_type import EventStatusType
+from schema_models.event_venue import EventVenue
+from schema_models.exchange_rate_specification import ExchangeRateSpecification
+from schema_models.exercise_action import ExerciseAction
+from schema_models.exercise_gym import ExerciseGym
+from schema_models.exercise_plan import ExercisePlan
+from schema_models.exhibition_event import ExhibitionEvent
+from schema_models.f_a_q_page import FAQPage
+from schema_models.f_m_radio_channel import FMRadioChannel
+from schema_models.fast_food_restaurant import FastFoodRestaurant
+from schema_models.festival import Festival
+from schema_models.film_action import FilmAction
+from schema_models.financial_product import FinancialProduct
+from schema_models.financial_service import FinancialService
+from schema_models.find_action import FindAction
+from schema_models.fire_station import FireStation
+from schema_models.flight import Flight
+from schema_models.flight_reservation import FlightReservation
+from schema_models.float import Float
+from schema_models.floor_plan import FloorPlan
+from schema_models.florist import Florist
+from schema_models.follow_action import FollowAction
+from schema_models.food_establishment import FoodEstablishment
+from schema_models.food_establishment_reservation import FoodEstablishmentReservation
+from schema_models.food_event import FoodEvent
+from schema_models.food_service import FoodService
+from schema_models.funding_agency import FundingAgency
+from schema_models.funding_scheme import FundingScheme
+from schema_models.furniture_store import FurnitureStore
+from schema_models.game import Game
+from schema_models.game_availability_enumeration import GameAvailabilityEnumeration
+from schema_models.game_play_mode import GamePlayMode
+from schema_models.game_server import GameServer
+from schema_models.game_server_status import GameServerStatus
+from schema_models.garden_store import GardenStore
+from schema_models.gas_station import GasStation
+from schema_models.gated_residence_community import GatedResidenceCommunity
+from schema_models.gender_type import GenderType
+from schema_models.gene import Gene
+from schema_models.general_contractor import GeneralContractor
+from schema_models.geo_circle import GeoCircle
+from schema_models.geo_coordinates import GeoCoordinates
+from schema_models.geo_shape import GeoShape
+from schema_models.geospatial_geometry import GeospatialGeometry
+from schema_models.give_action import GiveAction
+from schema_models.golf_course import GolfCourse
+from schema_models.government_benefits_type import GovernmentBenefitsType
+from schema_models.government_building import GovernmentBuilding
+from schema_models.government_office import GovernmentOffice
+from schema_models.government_organization import GovernmentOrganization
+from schema_models.government_permit import GovernmentPermit
+from schema_models.government_service import GovernmentService
+from schema_models.grant import Grant
+from schema_models.grocery_store import GroceryStore
+from schema_models.guide import Guide
+from schema_models.h_v_a_c_business import HVACBusiness
+from schema_models.hackathon import Hackathon
+from schema_models.hair_salon import HairSalon
+from schema_models.hardware_store import HardwareStore
+from schema_models.health_and_beauty_business import HealthAndBeautyBusiness
+from schema_models.health_aspect_enumeration import HealthAspectEnumeration
+from schema_models.health_club import HealthClub
+from schema_models.health_insurance_plan import HealthInsurancePlan
+from schema_models.health_plan_cost_sharing_specification import (
+    HealthPlanCostSharingSpecification,
+)
+from schema_models.health_plan_formulary import HealthPlanFormulary
+from schema_models.health_plan_network import HealthPlanNetwork
+from schema_models.health_topic_content import HealthTopicContent
+from schema_models.high_school import HighSchool
+from schema_models.hindu_temple import HinduTemple
+from schema_models.hobby_shop import HobbyShop
+from schema_models.home_and_construction_business import HomeAndConstructionBusiness
+from schema_models.home_goods_store import HomeGoodsStore
+from schema_models.hospital import Hospital
+from schema_models.hostel import Hostel
+from schema_models.hotel import Hotel
+from schema_models.hotel_room import HotelRoom
+from schema_models.house import House
+from schema_models.house_painter import HousePainter
+from schema_models.how_to import HowTo
+from schema_models.how_to_direction import HowToDirection
+from schema_models.how_to_item import HowToItem
+from schema_models.how_to_section import HowToSection
+from schema_models.how_to_step import HowToStep
+from schema_models.how_to_supply import HowToSupply
+from schema_models.how_to_tip import HowToTip
+from schema_models.how_to_tool import HowToTool
+from schema_models.hyper_toc import HyperToc
+from schema_models.hyper_toc_entry import HyperTocEntry
+from schema_models.i_p_t_c_digital_source_enumeration import (
+    IPTCDigitalSourceEnumeration,
+)
+from schema_models.ice_cream_shop import IceCreamShop
+from schema_models.ignore_action import IgnoreAction
+from schema_models.image_gallery import ImageGallery
+from schema_models.image_object import ImageObject
+from schema_models.image_object_snapshot import ImageObjectSnapshot
+from schema_models.imaging_test import ImagingTest
+from schema_models.individual_physician import IndividualPhysician
+from schema_models.individual_product import IndividualProduct
+from schema_models.infectious_agent_class import InfectiousAgentClass
+from schema_models.infectious_disease import InfectiousDisease
+from schema_models.inform_action import InformAction
+from schema_models.insert_action import InsertAction
+from schema_models.install_action import InstallAction
+from schema_models.insurance_agency import InsuranceAgency
+from schema_models.intangible import Intangible
+from schema_models.integer import Integer
+from schema_models.interact_action import InteractAction
+from schema_models.interaction_counter import InteractionCounter
+from schema_models.internet_cafe import InternetCafe
+from schema_models.investment_fund import InvestmentFund
+from schema_models.investment_or_deposit import InvestmentOrDeposit
+from schema_models.invite_action import InviteAction
+from schema_models.invoice import Invoice
+from schema_models.item_availability import ItemAvailability
+from schema_models.item_list import ItemList
+from schema_models.item_list_order_type import ItemListOrderType
+from schema_models.item_page import ItemPage
+from schema_models.jewelry_store import JewelryStore
+from schema_models.job_posting import JobPosting
+from schema_models.join_action import JoinAction
+from schema_models.joint import Joint
+from schema_models.lake_body_of_water import LakeBodyOfWater
+from schema_models.landform import Landform
+from schema_models.landmarks_or_historical_buildings import (
+    LandmarksOrHistoricalBuildings,
+)
+from schema_models.language import Language
+from schema_models.learning_resource import LearningResource
+from schema_models.leave_action import LeaveAction
+from schema_models.legal_force_status import LegalForceStatus
+from schema_models.legal_service import LegalService
+from schema_models.legal_value_level import LegalValueLevel
+from schema_models.legislation import Legislation
+from schema_models.legislation_object import LegislationObject
+from schema_models.legislative_building import LegislativeBuilding
+from schema_models.lend_action import LendAction
+from schema_models.library import Library
+from schema_models.library_system import LibrarySystem
+from schema_models.lifestyle_modification import LifestyleModification
+from schema_models.ligament import Ligament
+from schema_models.like_action import LikeAction
+from schema_models.link_role import LinkRole
+from schema_models.liquor_store import LiquorStore
+from schema_models.list_item import ListItem
+from schema_models.listen_action import ListenAction
+from schema_models.literary_event import LiteraryEvent
+from schema_models.live_blog_posting import LiveBlogPosting
+from schema_models.loan_or_credit import LoanOrCredit
+from schema_models.local_business import LocalBusiness
+from schema_models.location_feature_specification import LocationFeatureSpecification
+from schema_models.locksmith import Locksmith
+from schema_models.lodging_business import LodgingBusiness
+from schema_models.lodging_reservation import LodgingReservation
+from schema_models.lose_action import LoseAction
+from schema_models.lymphatic_vessel import LymphaticVessel
+from schema_models.manuscript import Manuscript
+from schema_models.map import Map
+from schema_models.map_category_type import MapCategoryType
+from schema_models.marry_action import MarryAction
+from schema_models.mass import Mass
+from schema_models.math_solver import MathSolver
+from schema_models.maximum_dose_schedule import MaximumDoseSchedule
+from schema_models.measurement_method_enum import MeasurementMethodEnum
+from schema_models.measurement_type_enumeration import MeasurementTypeEnumeration
+from schema_models.media_enumeration import MediaEnumeration
+from schema_models.media_gallery import MediaGallery
+from schema_models.media_manipulation_rating_enumeration import (
+    MediaManipulationRatingEnumeration,
+)
+from schema_models.media_object import MediaObject
+from schema_models.media_review import MediaReview
+from schema_models.media_review_item import MediaReviewItem
+from schema_models.media_subscription import MediaSubscription
+from schema_models.medical_audience import MedicalAudience
+from schema_models.medical_audience_type import MedicalAudienceType
+from schema_models.medical_business import MedicalBusiness
+from schema_models.medical_cause import MedicalCause
+from schema_models.medical_clinic import MedicalClinic
+from schema_models.medical_code import MedicalCode
+from schema_models.medical_condition import MedicalCondition
+from schema_models.medical_condition_stage import MedicalConditionStage
+from schema_models.medical_contraindication import MedicalContraindication
+from schema_models.medical_device import MedicalDevice
+from schema_models.medical_device_purpose import MedicalDevicePurpose
+from schema_models.medical_entity import MedicalEntity
+from schema_models.medical_enumeration import MedicalEnumeration
+from schema_models.medical_evidence_level import MedicalEvidenceLevel
+from schema_models.medical_guideline import MedicalGuideline
+from schema_models.medical_guideline_contraindication import (
+    MedicalGuidelineContraindication,
+)
+from schema_models.medical_guideline_recommendation import (
+    MedicalGuidelineRecommendation,
+)
+from schema_models.medical_imaging_technique import MedicalImagingTechnique
+from schema_models.medical_indication import MedicalIndication
+from schema_models.medical_intangible import MedicalIntangible
+from schema_models.medical_observational_study import MedicalObservationalStudy
+from schema_models.medical_observational_study_design import (
+    MedicalObservationalStudyDesign,
+)
+from schema_models.medical_organization import MedicalOrganization
+from schema_models.medical_procedure import MedicalProcedure
+from schema_models.medical_procedure_type import MedicalProcedureType
+from schema_models.medical_risk_calculator import MedicalRiskCalculator
+from schema_models.medical_risk_estimator import MedicalRiskEstimator
+from schema_models.medical_risk_factor import MedicalRiskFactor
+from schema_models.medical_risk_score import MedicalRiskScore
+from schema_models.medical_scholarly_article import MedicalScholarlyArticle
+from schema_models.medical_sign import MedicalSign
+from schema_models.medical_sign_or_symptom import MedicalSignOrSymptom
+from schema_models.medical_specialty import MedicalSpecialty
+from schema_models.medical_study import MedicalStudy
+from schema_models.medical_study_status import MedicalStudyStatus
+from schema_models.medical_symptom import MedicalSymptom
+from schema_models.medical_test import MedicalTest
+from schema_models.medical_test_panel import MedicalTestPanel
+from schema_models.medical_therapy import MedicalTherapy
+from schema_models.medical_trial import MedicalTrial
+from schema_models.medical_trial_design import MedicalTrialDesign
+from schema_models.medical_web_page import MedicalWebPage
+from schema_models.medicine_system import MedicineSystem
+from schema_models.meeting_room import MeetingRoom
+from schema_models.member_program import MemberProgram
+from schema_models.member_program_tier import MemberProgramTier
+from schema_models.mens_clothing_store import MensClothingStore
+from schema_models.menu import Menu
+from schema_models.menu_item import MenuItem
+from schema_models.menu_section import MenuSection
+from schema_models.merchant_return_enumeration import MerchantReturnEnumeration
+from schema_models.merchant_return_policy import MerchantReturnPolicy
+from schema_models.merchant_return_policy_seasonal_override import (
+    MerchantReturnPolicySeasonalOverride,
+)
+from schema_models.message import Message
+from schema_models.middle_school import MiddleSchool
+from schema_models.mobile_application import MobileApplication
+from schema_models.mobile_phone_store import MobilePhoneStore
+from schema_models.molecular_entity import MolecularEntity
+from schema_models.monetary_amount import MonetaryAmount
+from schema_models.monetary_amount_distribution import MonetaryAmountDistribution
+from schema_models.monetary_grant import MonetaryGrant
+from schema_models.money_transfer import MoneyTransfer
+from schema_models.mortgage_loan import MortgageLoan
+from schema_models.mosque import Mosque
+from schema_models.motel import Motel
+from schema_models.motorcycle import Motorcycle
+from schema_models.motorcycle_dealer import MotorcycleDealer
+from schema_models.motorcycle_repair import MotorcycleRepair
+from schema_models.motorized_bicycle import MotorizedBicycle
+from schema_models.mountain import Mountain
+from schema_models.move_action import MoveAction
+from schema_models.movie import Movie
+from schema_models.movie_clip import MovieClip
+from schema_models.movie_rental_store import MovieRentalStore
+from schema_models.movie_series import MovieSeries
+from schema_models.movie_theater import MovieTheater
+from schema_models.moving_company import MovingCompany
+from schema_models.muscle import Muscle
+from schema_models.museum import Museum
+from schema_models.music_album import MusicAlbum
+from schema_models.music_album_production_type import MusicAlbumProductionType
+from schema_models.music_album_release_type import MusicAlbumReleaseType
+from schema_models.music_composition import MusicComposition
+from schema_models.music_event import MusicEvent
+from schema_models.music_group import MusicGroup
+from schema_models.music_playlist import MusicPlaylist
+from schema_models.music_recording import MusicRecording
+from schema_models.music_release import MusicRelease
+from schema_models.music_release_format_type import MusicReleaseFormatType
+from schema_models.music_store import MusicStore
+from schema_models.music_venue import MusicVenue
+from schema_models.music_video_object import MusicVideoObject
+from schema_models.n_l_nonprofit_type import NLNonprofitType
+from schema_models.nail_salon import NailSalon
+from schema_models.nerve import Nerve
+from schema_models.news_article import NewsArticle
+from schema_models.news_media_organization import NewsMediaOrganization
+from schema_models.newspaper import Newspaper
+from schema_models.ngo import NGO
+from schema_models.night_club import NightClub
+from schema_models.nonprofit_type import NonprofitType
+from schema_models.notary import Notary
+from schema_models.note_digital_document import NoteDigitalDocument
+from schema_models.number import Number
+from schema_models.nutrition_information import NutritionInformation
+from schema_models.observation import Observation
+from schema_models.occupation import Occupation
+from schema_models.occupational_experience_requirements import (
+    OccupationalExperienceRequirements,
+)
+from schema_models.occupational_therapy import OccupationalTherapy
+from schema_models.ocean_body_of_water import OceanBodyOfWater
+from schema_models.offer import Offer
+from schema_models.offer_catalog import OfferCatalog
+from schema_models.offer_for_lease import OfferForLease
+from schema_models.offer_for_purchase import OfferForPurchase
+from schema_models.offer_item_condition import OfferItemCondition
+from schema_models.offer_shipping_details import OfferShippingDetails
+from schema_models.office_equipment_store import OfficeEquipmentStore
+from schema_models.on_demand_event import OnDemandEvent
+from schema_models.online_business import OnlineBusiness
+from schema_models.online_store import OnlineStore
+from schema_models.opening_hours_specification import OpeningHoursSpecification
+from schema_models.opinion_news_article import OpinionNewsArticle
+from schema_models.optician import Optician
+from schema_models.order import Order
+from schema_models.order_action import OrderAction
+from schema_models.order_item import OrderItem
+from schema_models.order_status import OrderStatus
+from schema_models.organization import Organization
+from schema_models.organization_role import OrganizationRole
+from schema_models.organize_action import OrganizeAction
+from schema_models.outlet_store import OutletStore
+from schema_models.ownership_info import OwnershipInfo
+from schema_models.paint_action import PaintAction
+from schema_models.painting import Painting
+from schema_models.palliative_procedure import PalliativeProcedure
+from schema_models.parcel_delivery import ParcelDelivery
+from schema_models.parent_audience import ParentAudience
+from schema_models.park import Park
+from schema_models.parking_facility import ParkingFacility
+from schema_models.pathology_test import PathologyTest
+from schema_models.patient import Patient
+from schema_models.pawn_shop import PawnShop
+from schema_models.pay_action import PayAction
+from schema_models.payment_card import PaymentCard
+from schema_models.payment_charge_specification import PaymentChargeSpecification
+from schema_models.payment_method import PaymentMethod
+from schema_models.payment_method_type import PaymentMethodType
+from schema_models.payment_service import PaymentService
+from schema_models.payment_status_type import PaymentStatusType
+from schema_models.people_audience import PeopleAudience
+from schema_models.perform_action import PerformAction
+from schema_models.performance_role import PerformanceRole
+from schema_models.performing_arts_theater import PerformingArtsTheater
+from schema_models.performing_group import PerformingGroup
+from schema_models.periodical import Periodical
+from schema_models.permit import Permit
+from schema_models.person import Person
+from schema_models.pet_store import PetStore
+from schema_models.pharmacy import Pharmacy
+from schema_models.photograph import Photograph
+from schema_models.photograph_action import PhotographAction
+from schema_models.physical_activity import PhysicalActivity
+from schema_models.physical_activity_category import PhysicalActivityCategory
+from schema_models.physical_exam import PhysicalExam
+from schema_models.physical_therapy import PhysicalTherapy
+from schema_models.physician import Physician
+from schema_models.physicians_office import PhysiciansOffice
+from schema_models.place import Place
+from schema_models.place_of_worship import PlaceOfWorship
+from schema_models.plan_action import PlanAction
+from schema_models.play import Play
+from schema_models.play_action import PlayAction
+from schema_models.play_game_action import PlayGameAction
+from schema_models.playground import Playground
+from schema_models.plumber import Plumber
+from schema_models.podcast_episode import PodcastEpisode
+from schema_models.podcast_season import PodcastSeason
+from schema_models.podcast_series import PodcastSeries
+from schema_models.police_station import PoliceStation
+from schema_models.political_party import PoliticalParty
+from schema_models.pond import Pond
+from schema_models.post_office import PostOffice
+from schema_models.postal_address import PostalAddress
+from schema_models.postal_code_range_specification import PostalCodeRangeSpecification
+from schema_models.poster import Poster
+from schema_models.pre_order_action import PreOrderAction
+from schema_models.prepend_action import PrependAction
+from schema_models.preschool import Preschool
+from schema_models.presentation_digital_document import PresentationDigitalDocument
+from schema_models.prevention_indication import PreventionIndication
+from schema_models.price_component_type_enumeration import PriceComponentTypeEnumeration
+from schema_models.price_specification import PriceSpecification
+from schema_models.price_type_enumeration import PriceTypeEnumeration
+from schema_models.product import Product
+from schema_models.product_collection import ProductCollection
+from schema_models.product_group import ProductGroup
+from schema_models.product_model import ProductModel
+from schema_models.product_return_enumeration import ProductReturnEnumeration
+from schema_models.product_return_policy import ProductReturnPolicy
+from schema_models.professional_service import ProfessionalService
+from schema_models.profile_page import ProfilePage
+from schema_models.program_membership import ProgramMembership
+from schema_models.project import Project
+from schema_models.pronounceable_text import PronounceableText
+from schema_models.property import Property
+from schema_models.property_value import PropertyValue
+from schema_models.property_value_specification import PropertyValueSpecification
+from schema_models.protein import Protein
+from schema_models.psychological_treatment import PsychologicalTreatment
+from schema_models.public_swimming_pool import PublicSwimmingPool
+from schema_models.public_toilet import PublicToilet
+from schema_models.publication_event import PublicationEvent
+from schema_models.publication_issue import PublicationIssue
+from schema_models.publication_volume import PublicationVolume
+from schema_models.q_a_page import QAPage
+from schema_models.qualitative_value import QualitativeValue
+from schema_models.quantitative_value import QuantitativeValue
+from schema_models.quantitative_value_distribution import QuantitativeValueDistribution
+from schema_models.quantity import Quantity
+from schema_models.question import Question
+from schema_models.quiz import Quiz
+from schema_models.quotation import Quotation
+from schema_models.quote_action import QuoteAction
+from schema_models.r_v_park import RVPark
+from schema_models.radiation_therapy import RadiationTherapy
+from schema_models.radio_broadcast_service import RadioBroadcastService
+from schema_models.radio_channel import RadioChannel
+from schema_models.radio_clip import RadioClip
+from schema_models.radio_episode import RadioEpisode
+from schema_models.radio_season import RadioSeason
+from schema_models.radio_series import RadioSeries
+from schema_models.radio_station import RadioStation
+from schema_models.rating import Rating
+from schema_models.react_action import ReactAction
+from schema_models.read_action import ReadAction
+from schema_models.real_estate_agent import RealEstateAgent
+from schema_models.real_estate_listing import RealEstateListing
+from schema_models.receive_action import ReceiveAction
+from schema_models.recipe import Recipe
+from schema_models.recommendation import Recommendation
+from schema_models.recommended_dose_schedule import RecommendedDoseSchedule
+from schema_models.recycling_center import RecyclingCenter
+from schema_models.refund_type_enumeration import RefundTypeEnumeration
+from schema_models.register_action import RegisterAction
+from schema_models.reject_action import RejectAction
+from schema_models.rent_action import RentAction
+from schema_models.rental_car_reservation import RentalCarReservation
+from schema_models.repayment_specification import RepaymentSpecification
+from schema_models.replace_action import ReplaceAction
+from schema_models.reply_action import ReplyAction
+from schema_models.report import Report
+from schema_models.reportage_news_article import ReportageNewsArticle
+from schema_models.reported_dose_schedule import ReportedDoseSchedule
+from schema_models.research_organization import ResearchOrganization
+from schema_models.research_project import ResearchProject
+from schema_models.researcher import Researcher
+from schema_models.reservation import Reservation
+from schema_models.reservation_package import ReservationPackage
+from schema_models.reservation_status_type import ReservationStatusType
+from schema_models.reserve_action import ReserveAction
+from schema_models.reservoir import Reservoir
+from schema_models.residence import Residence
+from schema_models.resort import Resort
+from schema_models.restaurant import Restaurant
+from schema_models.restricted_diet import RestrictedDiet
+from schema_models.resume_action import ResumeAction
+from schema_models.return_action import ReturnAction
+from schema_models.return_fees_enumeration import ReturnFeesEnumeration
+from schema_models.return_label_source_enumeration import ReturnLabelSourceEnumeration
+from schema_models.return_method_enumeration import ReturnMethodEnumeration
+from schema_models.review import Review
+from schema_models.review_action import ReviewAction
+from schema_models.review_news_article import ReviewNewsArticle
+from schema_models.river_body_of_water import RiverBodyOfWater
+from schema_models.role import Role
+from schema_models.roofing_contractor import RoofingContractor
+from schema_models.room import Room
+from schema_models.rsvp_action import RsvpAction
+from schema_models.rsvp_response_type import RsvpResponseType
+from schema_models.sale_event import SaleEvent
+from schema_models.satirical_article import SatiricalArticle
+from schema_models.schedule import Schedule
+from schema_models.schedule_action import ScheduleAction
+from schema_models.scholarly_article import ScholarlyArticle
+from schema_models.school import School
+from schema_models.school_district import SchoolDistrict
+from schema_models.screening_event import ScreeningEvent
+from schema_models.sculpture import Sculpture
+from schema_models.sea_body_of_water import SeaBodyOfWater
+from schema_models.search_action import SearchAction
+from schema_models.search_rescue_organization import SearchRescueOrganization
+from schema_models.search_results_page import SearchResultsPage
+from schema_models.season import Season
+from schema_models.seat import Seat
+from schema_models.seek_to_action import SeekToAction
+from schema_models.self_storage import SelfStorage
+from schema_models.sell_action import SellAction
+from schema_models.send_action import SendAction
+from schema_models.series import Series
+from schema_models.service import Service
+from schema_models.service_channel import ServiceChannel
+from schema_models.share_action import ShareAction
+from schema_models.sheet_music import SheetMusic
+from schema_models.shipping_delivery_time import ShippingDeliveryTime
+from schema_models.shipping_rate_settings import ShippingRateSettings
+from schema_models.shoe_store import ShoeStore
+from schema_models.shopping_center import ShoppingCenter
+from schema_models.short_story import ShortStory
+from schema_models.single_family_residence import SingleFamilyResidence
+from schema_models.site_navigation_element import SiteNavigationElement
+from schema_models.size_group_enumeration import SizeGroupEnumeration
+from schema_models.size_specification import SizeSpecification
+from schema_models.size_system_enumeration import SizeSystemEnumeration
+from schema_models.ski_resort import SkiResort
+from schema_models.social_event import SocialEvent
+from schema_models.social_media_posting import SocialMediaPosting
+from schema_models.software_application import SoftwareApplication
+from schema_models.software_source_code import SoftwareSourceCode
+from schema_models.solve_math_action import SolveMathAction
+from schema_models.some_products import SomeProducts
+from schema_models.speakable_specification import SpeakableSpecification
+from schema_models.special_announcement import SpecialAnnouncement
+from schema_models.specialty import Specialty
+from schema_models.sporting_goods_store import SportingGoodsStore
+from schema_models.sports_activity_location import SportsActivityLocation
+from schema_models.sports_club import SportsClub
+from schema_models.sports_event import SportsEvent
+from schema_models.sports_organization import SportsOrganization
+from schema_models.sports_team import SportsTeam
+from schema_models.spreadsheet_digital_document import SpreadsheetDigitalDocument
+from schema_models.stadium_or_arena import StadiumOrArena
+from schema_models.state import State
+from schema_models.statement import Statement
+from schema_models.statistical_population import StatisticalPopulation
+from schema_models.statistical_variable import StatisticalVariable
+from schema_models.status_enumeration import StatusEnumeration
+from schema_models.steering_position_value import SteeringPositionValue
+from schema_models.store import Store
+from schema_models.structured_value import StructuredValue
+from schema_models.stupid_type import StupidType
+from schema_models.subscribe_action import SubscribeAction
+from schema_models.substance import Substance
+from schema_models.subway_station import SubwayStation
+from schema_models.suite import Suite
+from schema_models.superficial_anatomy import SuperficialAnatomy
+from schema_models.surgical_procedure import SurgicalProcedure
+from schema_models.suspend_action import SuspendAction
+from schema_models.syllabus import Syllabus
+from schema_models.synagogue import Synagogue
+from schema_models.t_v_clip import TVClip
+from schema_models.t_v_episode import TVEpisode
+from schema_models.t_v_season import TVSeason
+from schema_models.t_v_series import TVSeries
+from schema_models.table import Table
+from schema_models.take_action import TakeAction
+from schema_models.tattoo_parlor import TattooParlor
+from schema_models.taxi import Taxi
+from schema_models.taxi_reservation import TaxiReservation
+from schema_models.taxi_service import TaxiService
+from schema_models.taxi_stand import TaxiStand
+from schema_models.taxon import Taxon
+from schema_models.tech_article import TechArticle
+from schema_models.television_channel import TelevisionChannel
+from schema_models.television_station import TelevisionStation
+from schema_models.tennis_complex import TennisComplex
+from schema_models.text import Text
+from schema_models.text_digital_document import TextDigitalDocument
+from schema_models.text_object import TextObject
+from schema_models.theater_event import TheaterEvent
+from schema_models.theater_group import TheaterGroup
+from schema_models.therapeutic_procedure import TherapeuticProcedure
+from schema_models.thesis import Thesis
+from schema_models.thing import Thing
+from schema_models.ticket import Ticket
+from schema_models.tie_action import TieAction
+from schema_models.tier_benefit_enumeration import TierBenefitEnumeration
+from schema_models.time import Time
+from schema_models.tip_action import TipAction
+from schema_models.tire_shop import TireShop
+from schema_models.tourist_attraction import TouristAttraction
+from schema_models.tourist_destination import TouristDestination
+from schema_models.tourist_information_center import TouristInformationCenter
+from schema_models.tourist_trip import TouristTrip
+from schema_models.toy_store import ToyStore
+from schema_models.track_action import TrackAction
+from schema_models.trade_action import TradeAction
+from schema_models.train_reservation import TrainReservation
+from schema_models.train_station import TrainStation
+from schema_models.train_trip import TrainTrip
+from schema_models.transfer_action import TransferAction
+from schema_models.travel_action import TravelAction
+from schema_models.travel_agency import TravelAgency
+from schema_models.treatment_indication import TreatmentIndication
+from schema_models.trip import Trip
+from schema_models.type_and_quantity_node import TypeAndQuantityNode
+from schema_models.u_k_nonprofit_type import UKNonprofitType
+from schema_models.u_s_nonprofit_type import USNonprofitType
+from schema_models.un_register_action import UnRegisterAction
+from schema_models.unit_price_specification import UnitPriceSpecification
+from schema_models.update_action import UpdateAction
+from schema_models.url import URL
+from schema_models.use_action import UseAction
+from schema_models.user_blocks import UserBlocks
+from schema_models.user_checkins import UserCheckins
+from schema_models.user_comments import UserComments
+from schema_models.user_downloads import UserDownloads
+from schema_models.user_interaction import UserInteraction
+from schema_models.user_likes import UserLikes
+from schema_models.user_page_visits import UserPageVisits
+from schema_models.user_plays import UserPlays
+from schema_models.user_plus_ones import UserPlusOnes
+from schema_models.user_review import UserReview
+from schema_models.user_tweets import UserTweets
+from schema_models.vacation_rental import VacationRental
+from schema_models.vehicle import Vehicle
+from schema_models.vein import Vein
+from schema_models.vessel import Vessel
+from schema_models.veterinary_care import VeterinaryCare
+from schema_models.video_gallery import VideoGallery
+from schema_models.video_game import VideoGame
+from schema_models.video_game_clip import VideoGameClip
+from schema_models.video_game_series import VideoGameSeries
+from schema_models.video_object import VideoObject
+from schema_models.video_object_snapshot import VideoObjectSnapshot
+from schema_models.view_action import ViewAction
+from schema_models.virtual_location import VirtualLocation
+from schema_models.visual_arts_event import VisualArtsEvent
+from schema_models.visual_artwork import VisualArtwork
+from schema_models.vital_sign import VitalSign
+from schema_models.volcano import Volcano
+from schema_models.vote_action import VoteAction
+from schema_models.w_p_ad_block import WPAdBlock
+from schema_models.w_p_footer import WPFooter
+from schema_models.w_p_header import WPHeader
+from schema_models.w_p_side_bar import WPSideBar
+from schema_models.want_action import WantAction
+from schema_models.warranty_promise import WarrantyPromise
+from schema_models.warranty_scope import WarrantyScope
+from schema_models.watch_action import WatchAction
+from schema_models.waterfall import Waterfall
+from schema_models.wear_action import WearAction
+from schema_models.wearable_measurement_type_enumeration import (
+    WearableMeasurementTypeEnumeration,
+)
+from schema_models.wearable_size_group_enumeration import WearableSizeGroupEnumeration
+from schema_models.wearable_size_system_enumeration import WearableSizeSystemEnumeration
+from schema_models.web_a_p_i import WebAPI
+from schema_models.web_application import WebApplication
+from schema_models.web_content import WebContent
+from schema_models.web_page import WebPage
+from schema_models.web_page_element import WebPageElement
+from schema_models.web_site import WebSite
+from schema_models.wholesale_store import WholesaleStore
+from schema_models.win_action import WinAction
+from schema_models.winery import Winery
+from schema_models.work_based_program import WorkBasedProgram
+from schema_models.workers_union import WorkersUnion
+from schema_models.write_action import WriteAction
+from schema_models.x_path_type import XPathType
+from schema_models.zoo import Zoo
+
+Thing.__pydantic__.model_rebuild()
+Event.__pydantic__.model_rebuild()
+MedicalEntity.__pydantic__.model_rebuild()
+Product.__pydantic__.model_rebuild()
+Intangible.__pydantic__.model_rebuild()
+Organization.__pydantic__.model_rebuild()
+Taxon.__pydantic__.model_rebuild()
+Action.__pydantic__.model_rebuild()
+Place.__pydantic__.model_rebuild()
+StupidType.__pydantic__.model_rebuild()
+CreativeWork.__pydantic__.model_rebuild()
+BioChemEntity.__pydantic__.model_rebuild()
+Person.__pydantic__.model_rebuild()
+SaleEvent.__pydantic__.model_rebuild()
+MusicEvent.__pydantic__.model_rebuild()
+EventSeries.__pydantic__.model_rebuild()
+TheaterEvent.__pydantic__.model_rebuild()
+PublicationEvent.__pydantic__.model_rebuild()
+DanceEvent.__pydantic__.model_rebuild()
+FoodEvent.__pydantic__.model_rebuild()
+EducationEvent.__pydantic__.model_rebuild()
+Hackathon.__pydantic__.model_rebuild()
+DeliveryEvent.__pydantic__.model_rebuild()
+CourseInstance.__pydantic__.model_rebuild()
+BusinessEvent.__pydantic__.model_rebuild()
+ScreeningEvent.__pydantic__.model_rebuild()
+SportsEvent.__pydantic__.model_rebuild()
+ExhibitionEvent.__pydantic__.model_rebuild()
+LiteraryEvent.__pydantic__.model_rebuild()
+SocialEvent.__pydantic__.model_rebuild()
+VisualArtsEvent.__pydantic__.model_rebuild()
+UserInteraction.__pydantic__.model_rebuild()
+Festival.__pydantic__.model_rebuild()
+ChildrensEvent.__pydantic__.model_rebuild()
+ComedyEvent.__pydantic__.model_rebuild()
+AnatomicalSystem.__pydantic__.model_rebuild()
+Substance.__pydantic__.model_rebuild()
+MedicalCondition.__pydantic__.model_rebuild()
+DrugClass.__pydantic__.model_rebuild()
+MedicalRiskEstimator.__pydantic__.model_rebuild()
+MedicalRiskFactor.__pydantic__.model_rebuild()
+MedicalIndication.__pydantic__.model_rebuild()
+MedicalCause.__pydantic__.model_rebuild()
+SuperficialAnatomy.__pydantic__.model_rebuild()
+MedicalContraindication.__pydantic__.model_rebuild()
+MedicalTest.__pydantic__.model_rebuild()
+MedicalDevice.__pydantic__.model_rebuild()
+MedicalIntangible.__pydantic__.model_rebuild()
+LifestyleModification.__pydantic__.model_rebuild()
+MedicalProcedure.__pydantic__.model_rebuild()
+DrugCost.__pydantic__.model_rebuild()
+MedicalGuideline.__pydantic__.model_rebuild()
+AnatomicalStructure.__pydantic__.model_rebuild()
+MedicalStudy.__pydantic__.model_rebuild()
+Vehicle.__pydantic__.model_rebuild()
+ProductModel.__pydantic__.model_rebuild()
+ProductCollection.__pydantic__.model_rebuild()
+SomeProducts.__pydantic__.model_rebuild()
+IndividualProduct.__pydantic__.model_rebuild()
+ProductGroup.__pydantic__.model_rebuild()
+Enumeration.__pydantic__.model_rebuild()
+Quantity.__pydantic__.model_rebuild()
+Seat.__pydantic__.model_rebuild()
+ComputerLanguage.__pydantic__.model_rebuild()
+ProductReturnPolicy.__pydantic__.model_rebuild()
+StatisticalPopulation.__pydantic__.model_rebuild()
+SpeakableSpecification.__pydantic__.model_rebuild()
+BroadcastChannel.__pydantic__.model_rebuild()
+BedDetails.__pydantic__.model_rebuild()
+Role.__pydantic__.model_rebuild()
+MerchantReturnPolicySeasonalOverride.__pydantic__.model_rebuild()
+ItemList.__pydantic__.model_rebuild()
+DataFeedItem.__pydantic__.model_rebuild()
+MediaSubscription.__pydantic__.model_rebuild()
+BroadcastFrequencySpecification.__pydantic__.model_rebuild()
+DigitalDocumentPermission.__pydantic__.model_rebuild()
+MemberProgramTier.__pydantic__.model_rebuild()
+HealthPlanNetwork.__pydantic__.model_rebuild()
+Reservation.__pydantic__.model_rebuild()
+JobPosting.__pydantic__.model_rebuild()
+OccupationalExperienceRequirements.__pydantic__.model_rebuild()
+ServiceChannel.__pydantic__.model_rebuild()
+Trip.__pydantic__.model_rebuild()
+ListItem.__pydantic__.model_rebuild()
+Grant.__pydantic__.model_rebuild()
+Permit.__pydantic__.model_rebuild()
+EnergyConsumptionDetails.__pydantic__.model_rebuild()
+Offer.__pydantic__.model_rebuild()
+StructuredValue.__pydantic__.model_rebuild()
+ConstraintNode.__pydantic__.model_rebuild()
+Occupation.__pydantic__.model_rebuild()
+Ticket.__pydantic__.model_rebuild()
+Order.__pydantic__.model_rebuild()
+OrderItem.__pydantic__.model_rebuild()
+ActionAccessSpecification.__pydantic__.model_rebuild()
+ProgramMembership.__pydantic__.model_rebuild()
+HealthInsurancePlan.__pydantic__.model_rebuild()
+Demand.__pydantic__.model_rebuild()
+MenuItem.__pydantic__.model_rebuild()
+MemberProgram.__pydantic__.model_rebuild()
+Rating.__pydantic__.model_rebuild()
+GeospatialGeometry.__pydantic__.model_rebuild()
+PropertyValueSpecification.__pydantic__.model_rebuild()
+Service.__pydantic__.model_rebuild()
+EntryPoint.__pydantic__.model_rebuild()
+Property.__pydantic__.model_rebuild()
+HealthPlanCostSharingSpecification.__pydantic__.model_rebuild()
+Audience.__pydantic__.model_rebuild()
+DefinedTerm.__pydantic__.model_rebuild()
+AlignmentObject.__pydantic__.model_rebuild()
+VirtualLocation.__pydantic__.model_rebuild()
+Invoice.__pydantic__.model_rebuild()
+HealthPlanFormulary.__pydantic__.model_rebuild()
+FloorPlan.__pydantic__.model_rebuild()
+MerchantReturnPolicy.__pydantic__.model_rebuild()
+EducationalOccupationalProgram.__pydantic__.model_rebuild()
+Schedule.__pydantic__.model_rebuild()
+Series.__pydantic__.model_rebuild()
+Language.__pydantic__.model_rebuild()
+Brand.__pydantic__.model_rebuild()
+PaymentMethod.__pydantic__.model_rebuild()
+GameServer.__pydantic__.model_rebuild()
+ParcelDelivery.__pydantic__.model_rebuild()
+_Class.__pydantic__.model_rebuild()
+SearchRescueOrganization.__pydantic__.model_rebuild()
+Consortium.__pydantic__.model_rebuild()
+NewsMediaOrganization.__pydantic__.model_rebuild()
+PerformingGroup.__pydantic__.model_rebuild()
+Airline.__pydantic__.model_rebuild()
+PoliticalParty.__pydantic__.model_rebuild()
+SportsOrganization.__pydantic__.model_rebuild()
+GovernmentOrganization.__pydantic__.model_rebuild()
+FundingScheme.__pydantic__.model_rebuild()
+OnlineBusiness.__pydantic__.model_rebuild()
+Project.__pydantic__.model_rebuild()
+ResearchOrganization.__pydantic__.model_rebuild()
+Corporation.__pydantic__.model_rebuild()
+LibrarySystem.__pydantic__.model_rebuild()
+NGO.__pydantic__.model_rebuild()
+MedicalOrganization.__pydantic__.model_rebuild()
+WorkersUnion.__pydantic__.model_rebuild()
+TradeAction.__pydantic__.model_rebuild()
+CreateAction.__pydantic__.model_rebuild()
+FindAction.__pydantic__.model_rebuild()
+SearchAction.__pydantic__.model_rebuild()
+SeekToAction.__pydantic__.model_rebuild()
+InteractAction.__pydantic__.model_rebuild()
+SolveMathAction.__pydantic__.model_rebuild()
+TransferAction.__pydantic__.model_rebuild()
+ConsumeAction.__pydantic__.model_rebuild()
+ControlAction.__pydantic__.model_rebuild()
+AchieveAction.__pydantic__.model_rebuild()
+AssessAction.__pydantic__.model_rebuild()
+UpdateAction.__pydantic__.model_rebuild()
+PlayAction.__pydantic__.model_rebuild()
+MoveAction.__pydantic__.model_rebuild()
+OrganizeAction.__pydantic__.model_rebuild()
+Landform.__pydantic__.model_rebuild()
+CivicStructure.__pydantic__.model_rebuild()
+LocalBusiness.__pydantic__.model_rebuild()
+TouristDestination.__pydantic__.model_rebuild()
+AdministrativeArea.__pydantic__.model_rebuild()
+Accommodation.__pydantic__.model_rebuild()
+Residence.__pydantic__.model_rebuild()
+TouristAttraction.__pydantic__.model_rebuild()
+LandmarksOrHistoricalBuildings.__pydantic__.model_rebuild()
+WebPageElement.__pydantic__.model_rebuild()
+TVSeries.__pydantic__.model_rebuild()
+Book.__pydantic__.model_rebuild()
+MediaObject.__pydantic__.model_rebuild()
+Chapter.__pydantic__.model_rebuild()
+Statement.__pydantic__.model_rebuild()
+Article.__pydantic__.model_rebuild()
+MusicPlaylist.__pydantic__.model_rebuild()
+WebContent.__pydantic__.model_rebuild()
+Episode.__pydantic__.model_rebuild()
+Comment.__pydantic__.model_rebuild()
+Certification.__pydantic__.model_rebuild()
+Guide.__pydantic__.model_rebuild()
+DefinedTermSet.__pydantic__.model_rebuild()
+Game.__pydantic__.model_rebuild()
+Review.__pydantic__.model_rebuild()
+MusicComposition.__pydantic__.model_rebuild()
+WebSite.__pydantic__.model_rebuild()
+DigitalDocument.__pydantic__.model_rebuild()
+EducationalOccupationalCredential.__pydantic__.model_rebuild()
+Dataset.__pydantic__.model_rebuild()
+Painting.__pydantic__.model_rebuild()
+VisualArtwork.__pydantic__.model_rebuild()
+HowTo.__pydantic__.model_rebuild()
+PublicationVolume.__pydantic__.model_rebuild()
+Clip.__pydantic__.model_rebuild()
+HyperToc.__pydantic__.model_rebuild()
+CreativeWorkSeason.__pydantic__.model_rebuild()
+SoftwareApplication.__pydantic__.model_rebuild()
+MusicRecording.__pydantic__.model_rebuild()
+Claim.__pydantic__.model_rebuild()
+Season.__pydantic__.model_rebuild()
+Play.__pydantic__.model_rebuild()
+Collection.__pydantic__.model_rebuild()
+DataCatalog.__pydantic__.model_rebuild()
+ComicStory.__pydantic__.model_rebuild()
+SpecialAnnouncement.__pydantic__.model_rebuild()
+Thesis.__pydantic__.model_rebuild()
+Menu.__pydantic__.model_rebuild()
+PublicationIssue.__pydantic__.model_rebuild()
+WebPage.__pydantic__.model_rebuild()
+Drawing.__pydantic__.model_rebuild()
+Sculpture.__pydantic__.model_rebuild()
+SoftwareSourceCode.__pydantic__.model_rebuild()
+Course.__pydantic__.model_rebuild()
+MediaReviewItem.__pydantic__.model_rebuild()
+Atlas.__pydantic__.model_rebuild()
+Quotation.__pydantic__.model_rebuild()
+Map.__pydantic__.model_rebuild()
+Diet.__pydantic__.model_rebuild()
+Photograph.__pydantic__.model_rebuild()
+Legislation.__pydantic__.model_rebuild()
+Blog.__pydantic__.model_rebuild()
+CreativeWorkSeries.__pydantic__.model_rebuild()
+MenuSection.__pydantic__.model_rebuild()
+ArchiveComponent.__pydantic__.model_rebuild()
+Code.__pydantic__.model_rebuild()
+ShortStory.__pydantic__.model_rebuild()
+LearningResource.__pydantic__.model_rebuild()
+Message.__pydantic__.model_rebuild()
+TVSeason.__pydantic__.model_rebuild()
+Poster.__pydantic__.model_rebuild()
+SheetMusic.__pydantic__.model_rebuild()
+Movie.__pydantic__.model_rebuild()
+Conversation.__pydantic__.model_rebuild()
+MathSolver.__pydantic__.model_rebuild()
+Manuscript.__pydantic__.model_rebuild()
+HyperTocEntry.__pydantic__.model_rebuild()
+ChemicalSubstance.__pydantic__.model_rebuild()
+Gene.__pydantic__.model_rebuild()
+Protein.__pydantic__.model_rebuild()
+MolecularEntity.__pydantic__.model_rebuild()
+Patient.__pydantic__.model_rebuild()
+OnDemandEvent.__pydantic__.model_rebuild()
+BroadcastEvent.__pydantic__.model_rebuild()
+UserComments.__pydantic__.model_rebuild()
+UserCheckins.__pydantic__.model_rebuild()
+UserPlusOnes.__pydantic__.model_rebuild()
+UserPageVisits.__pydantic__.model_rebuild()
+UserBlocks.__pydantic__.model_rebuild()
+UserLikes.__pydantic__.model_rebuild()
+UserPlays.__pydantic__.model_rebuild()
+UserDownloads.__pydantic__.model_rebuild()
+UserTweets.__pydantic__.model_rebuild()
+Drug.__pydantic__.model_rebuild()
+DietarySupplement.__pydantic__.model_rebuild()
+InfectiousDisease.__pydantic__.model_rebuild()
+MedicalSignOrSymptom.__pydantic__.model_rebuild()
+MedicalRiskScore.__pydantic__.model_rebuild()
+MedicalRiskCalculator.__pydantic__.model_rebuild()
+TreatmentIndication.__pydantic__.model_rebuild()
+ApprovedIndication.__pydantic__.model_rebuild()
+PreventionIndication.__pydantic__.model_rebuild()
+MedicalTestPanel.__pydantic__.model_rebuild()
+PathologyTest.__pydantic__.model_rebuild()
+BloodTest.__pydantic__.model_rebuild()
+ImagingTest.__pydantic__.model_rebuild()
+DrugStrength.__pydantic__.model_rebuild()
+DoseSchedule.__pydantic__.model_rebuild()
+DrugLegalStatus.__pydantic__.model_rebuild()
+MedicalConditionStage.__pydantic__.model_rebuild()
+DDxElement.__pydantic__.model_rebuild()
+PhysicalActivity.__pydantic__.model_rebuild()
+DiagnosticProcedure.__pydantic__.model_rebuild()
+TherapeuticProcedure.__pydantic__.model_rebuild()
+SurgicalProcedure.__pydantic__.model_rebuild()
+MedicalGuidelineContraindication.__pydantic__.model_rebuild()
+MedicalGuidelineRecommendation.__pydantic__.model_rebuild()
+BrainStructure.__pydantic__.model_rebuild()
+Ligament.__pydantic__.model_rebuild()
+Vessel.__pydantic__.model_rebuild()
+Nerve.__pydantic__.model_rebuild()
+Bone.__pydantic__.model_rebuild()
+Joint.__pydantic__.model_rebuild()
+Muscle.__pydantic__.model_rebuild()
+MedicalObservationalStudy.__pydantic__.model_rebuild()
+MedicalTrial.__pydantic__.model_rebuild()
+BusOrCoach.__pydantic__.model_rebuild()
+Motorcycle.__pydantic__.model_rebuild()
+Car.__pydantic__.model_rebuild()
+MotorizedBicycle.__pydantic__.model_rebuild()
+Specialty.__pydantic__.model_rebuild()
+PhysicalActivityCategory.__pydantic__.model_rebuild()
+ReturnMethodEnumeration.__pydantic__.model_rebuild()
+MerchantReturnEnumeration.__pydantic__.model_rebuild()
+CertificationStatusEnumeration.__pydantic__.model_rebuild()
+BusinessEntityType.__pydantic__.model_rebuild()
+ProductReturnEnumeration.__pydantic__.model_rebuild()
+CarUsageType.__pydantic__.model_rebuild()
+PriceComponentTypeEnumeration.__pydantic__.model_rebuild()
+MapCategoryType.__pydantic__.model_rebuild()
+SizeGroupEnumeration.__pydantic__.model_rebuild()
+TierBenefitEnumeration.__pydantic__.model_rebuild()
+MusicReleaseFormatType.__pydantic__.model_rebuild()
+SizeSystemEnumeration.__pydantic__.model_rebuild()
+EnergyEfficiencyEnumeration.__pydantic__.model_rebuild()
+DigitalPlatformEnumeration.__pydantic__.model_rebuild()
+RsvpResponseType.__pydantic__.model_rebuild()
+ContactPointOption.__pydantic__.model_rebuild()
+DigitalDocumentPermissionType.__pydantic__.model_rebuild()
+MeasurementTypeEnumeration.__pydantic__.model_rebuild()
+RestrictedDiet.__pydantic__.model_rebuild()
+BoardingPolicyType.__pydantic__.model_rebuild()
+BusinessFunction.__pydantic__.model_rebuild()
+EventAttendanceModeEnumeration.__pydantic__.model_rebuild()
+GameAvailabilityEnumeration.__pydantic__.model_rebuild()
+MusicAlbumProductionType.__pydantic__.model_rebuild()
+ReturnLabelSourceEnumeration.__pydantic__.model_rebuild()
+MeasurementMethodEnum.__pydantic__.model_rebuild()
+BookFormatType.__pydantic__.model_rebuild()
+NonprofitType.__pydantic__.model_rebuild()
+QualitativeValue.__pydantic__.model_rebuild()
+GovernmentBenefitsType.__pydantic__.model_rebuild()
+MediaManipulationRatingEnumeration.__pydantic__.model_rebuild()
+StatusEnumeration.__pydantic__.model_rebuild()
+WarrantyScope.__pydantic__.model_rebuild()
+GamePlayMode.__pydantic__.model_rebuild()
+PaymentMethodType.__pydantic__.model_rebuild()
+AdultOrientedEnumeration.__pydantic__.model_rebuild()
+ItemAvailability.__pydantic__.model_rebuild()
+MediaEnumeration.__pydantic__.model_rebuild()
+DayOfWeek.__pydantic__.model_rebuild()
+PriceTypeEnumeration.__pydantic__.model_rebuild()
+OfferItemCondition.__pydantic__.model_rebuild()
+ReturnFeesEnumeration.__pydantic__.model_rebuild()
+MedicalEnumeration.__pydantic__.model_rebuild()
+GenderType.__pydantic__.model_rebuild()
+RefundTypeEnumeration.__pydantic__.model_rebuild()
+DeliveryMethod.__pydantic__.model_rebuild()
+ItemListOrderType.__pydantic__.model_rebuild()
+HealthAspectEnumeration.__pydantic__.model_rebuild()
+MusicAlbumReleaseType.__pydantic__.model_rebuild()
+LegalValueLevel.__pydantic__.model_rebuild()
+Distance.__pydantic__.model_rebuild()
+Mass.__pydantic__.model_rebuild()
+Energy.__pydantic__.model_rebuild()
+Duration.__pydantic__.model_rebuild()
+RadioChannel.__pydantic__.model_rebuild()
+TelevisionChannel.__pydantic__.model_rebuild()
+OrganizationRole.__pydantic__.model_rebuild()
+LinkRole.__pydantic__.model_rebuild()
+PerformanceRole.__pydantic__.model_rebuild()
+OfferCatalog.__pydantic__.model_rebuild()
+BreadcrumbList.__pydantic__.model_rebuild()
+LodgingReservation.__pydantic__.model_rebuild()
+EventReservation.__pydantic__.model_rebuild()
+TrainReservation.__pydantic__.model_rebuild()
+ReservationPackage.__pydantic__.model_rebuild()
+FlightReservation.__pydantic__.model_rebuild()
+RentalCarReservation.__pydantic__.model_rebuild()
+TaxiReservation.__pydantic__.model_rebuild()
+BusReservation.__pydantic__.model_rebuild()
+FoodEstablishmentReservation.__pydantic__.model_rebuild()
+BoatReservation.__pydantic__.model_rebuild()
+BoatTrip.__pydantic__.model_rebuild()
+BusTrip.__pydantic__.model_rebuild()
+Flight.__pydantic__.model_rebuild()
+TrainTrip.__pydantic__.model_rebuild()
+TouristTrip.__pydantic__.model_rebuild()
+HowToTip.__pydantic__.model_rebuild()
+HowToDirection.__pydantic__.model_rebuild()
+HowToSection.__pydantic__.model_rebuild()
+HowToStep.__pydantic__.model_rebuild()
+HowToItem.__pydantic__.model_rebuild()
+MonetaryGrant.__pydantic__.model_rebuild()
+GovernmentPermit.__pydantic__.model_rebuild()
+OfferForPurchase.__pydantic__.model_rebuild()
+AggregateOffer.__pydantic__.model_rebuild()
+OfferForLease.__pydantic__.model_rebuild()
+MonetaryAmount.__pydantic__.model_rebuild()
+DeliveryTimeSettings.__pydantic__.model_rebuild()
+InteractionCounter.__pydantic__.model_rebuild()
+PostalCodeRangeSpecification.__pydantic__.model_rebuild()
+DefinedRegion.__pydantic__.model_rebuild()
+PropertyValue.__pydantic__.model_rebuild()
+NutritionInformation.__pydantic__.model_rebuild()
+QuantitativeValueDistribution.__pydantic__.model_rebuild()
+CDCPMDRecord.__pydantic__.model_rebuild()
+PriceSpecification.__pydantic__.model_rebuild()
+OpeningHoursSpecification.__pydantic__.model_rebuild()
+DatedMoneySpecification.__pydantic__.model_rebuild()
+OfferShippingDetails.__pydantic__.model_rebuild()
+TypeAndQuantityNode.__pydantic__.model_rebuild()
+ShippingRateSettings.__pydantic__.model_rebuild()
+RepaymentSpecification.__pydantic__.model_rebuild()
+GeoShape.__pydantic__.model_rebuild()
+ShippingDeliveryTime.__pydantic__.model_rebuild()
+ContactPoint.__pydantic__.model_rebuild()
+WarrantyPromise.__pydantic__.model_rebuild()
+EngineSpecification.__pydantic__.model_rebuild()
+OwnershipInfo.__pydantic__.model_rebuild()
+GeoCoordinates.__pydantic__.model_rebuild()
+QuantitativeValue.__pydantic__.model_rebuild()
+ExchangeRateSpecification.__pydantic__.model_rebuild()
+StatisticalVariable.__pydantic__.model_rebuild()
+AggregateRating.__pydantic__.model_rebuild()
+EndorsementRating.__pydantic__.model_rebuild()
+BroadcastService.__pydantic__.model_rebuild()
+WebAPI.__pydantic__.model_rebuild()
+GovernmentService.__pydantic__.model_rebuild()
+Taxi.__pydantic__.model_rebuild()
+FinancialProduct.__pydantic__.model_rebuild()
+TaxiService.__pydantic__.model_rebuild()
+FoodService.__pydantic__.model_rebuild()
+CableOrSatelliteService.__pydantic__.model_rebuild()
+Researcher.__pydantic__.model_rebuild()
+EducationalAudience.__pydantic__.model_rebuild()
+BusinessAudience.__pydantic__.model_rebuild()
+PeopleAudience.__pydantic__.model_rebuild()
+CategoryCode.__pydantic__.model_rebuild()
+WorkBasedProgram.__pydantic__.model_rebuild()
+MusicGroup.__pydantic__.model_rebuild()
+TheaterGroup.__pydantic__.model_rebuild()
+DanceGroup.__pydantic__.model_rebuild()
+SportsTeam.__pydantic__.model_rebuild()
+OnlineStore.__pydantic__.model_rebuild()
+FundingAgency.__pydantic__.model_rebuild()
+ResearchProject.__pydantic__.model_rebuild()
+Physician.__pydantic__.model_rebuild()
+VeterinaryCare.__pydantic__.model_rebuild()
+DiagnosticLab.__pydantic__.model_rebuild()
+Dentist.__pydantic__.model_rebuild()
+OrderAction.__pydantic__.model_rebuild()
+PreOrderAction.__pydantic__.model_rebuild()
+BuyAction.__pydantic__.model_rebuild()
+PayAction.__pydantic__.model_rebuild()
+QuoteAction.__pydantic__.model_rebuild()
+TipAction.__pydantic__.model_rebuild()
+RentAction.__pydantic__.model_rebuild()
+SellAction.__pydantic__.model_rebuild()
+CookAction.__pydantic__.model_rebuild()
+PhotographAction.__pydantic__.model_rebuild()
+DrawAction.__pydantic__.model_rebuild()
+FilmAction.__pydantic__.model_rebuild()
+PaintAction.__pydantic__.model_rebuild()
+WriteAction.__pydantic__.model_rebuild()
+CheckAction.__pydantic__.model_rebuild()
+TrackAction.__pydantic__.model_rebuild()
+DiscoverAction.__pydantic__.model_rebuild()
+LeaveAction.__pydantic__.model_rebuild()
+MarryAction.__pydantic__.model_rebuild()
+CommunicateAction.__pydantic__.model_rebuild()
+UnRegisterAction.__pydantic__.model_rebuild()
+RegisterAction.__pydantic__.model_rebuild()
+JoinAction.__pydantic__.model_rebuild()
+FollowAction.__pydantic__.model_rebuild()
+SubscribeAction.__pydantic__.model_rebuild()
+BefriendAction.__pydantic__.model_rebuild()
+DownloadAction.__pydantic__.model_rebuild()
+SendAction.__pydantic__.model_rebuild()
+DonateAction.__pydantic__.model_rebuild()
+GiveAction.__pydantic__.model_rebuild()
+LendAction.__pydantic__.model_rebuild()
+BorrowAction.__pydantic__.model_rebuild()
+ReturnAction.__pydantic__.model_rebuild()
+MoneyTransfer.__pydantic__.model_rebuild()
+TakeAction.__pydantic__.model_rebuild()
+ReceiveAction.__pydantic__.model_rebuild()
+WatchAction.__pydantic__.model_rebuild()
+InstallAction.__pydantic__.model_rebuild()
+ViewAction.__pydantic__.model_rebuild()
+PlayGameAction.__pydantic__.model_rebuild()
+ListenAction.__pydantic__.model_rebuild()
+UseAction.__pydantic__.model_rebuild()
+EatAction.__pydantic__.model_rebuild()
+ReadAction.__pydantic__.model_rebuild()
+DrinkAction.__pydantic__.model_rebuild()
+SuspendAction.__pydantic__.model_rebuild()
+ActivateAction.__pydantic__.model_rebuild()
+DeactivateAction.__pydantic__.model_rebuild()
+ResumeAction.__pydantic__.model_rebuild()
+TieAction.__pydantic__.model_rebuild()
+LoseAction.__pydantic__.model_rebuild()
+WinAction.__pydantic__.model_rebuild()
+ReviewAction.__pydantic__.model_rebuild()
+ChooseAction.__pydantic__.model_rebuild()
+ReactAction.__pydantic__.model_rebuild()
+IgnoreAction.__pydantic__.model_rebuild()
+DeleteAction.__pydantic__.model_rebuild()
+ReplaceAction.__pydantic__.model_rebuild()
+AddAction.__pydantic__.model_rebuild()
+ExerciseAction.__pydantic__.model_rebuild()
+PerformAction.__pydantic__.model_rebuild()
+ArriveAction.__pydantic__.model_rebuild()
+DepartAction.__pydantic__.model_rebuild()
+TravelAction.__pydantic__.model_rebuild()
+ApplyAction.__pydantic__.model_rebuild()
+BookmarkAction.__pydantic__.model_rebuild()
+AllocateAction.__pydantic__.model_rebuild()
+PlanAction.__pydantic__.model_rebuild()
+Continent.__pydantic__.model_rebuild()
+BodyOfWater.__pydantic__.model_rebuild()
+Volcano.__pydantic__.model_rebuild()
+Mountain.__pydantic__.model_rebuild()
+EducationalOrganization.__pydantic__.model_rebuild()
+StadiumOrArena.__pydantic__.model_rebuild()
+ParkingFacility.__pydantic__.model_rebuild()
+Hospital.__pydantic__.model_rebuild()
+Aquarium.__pydantic__.model_rebuild()
+PlaceOfWorship.__pydantic__.model_rebuild()
+MovieTheater.__pydantic__.model_rebuild()
+Crematorium.__pydantic__.model_rebuild()
+Zoo.__pydantic__.model_rebuild()
+TrainStation.__pydantic__.model_rebuild()
+GovernmentBuilding.__pydantic__.model_rebuild()
+Cemetery.__pydantic__.model_rebuild()
+RVPark.__pydantic__.model_rebuild()
+EventVenue.__pydantic__.model_rebuild()
+Beach.__pydantic__.model_rebuild()
+Museum.__pydantic__.model_rebuild()
+TaxiStand.__pydantic__.model_rebuild()
+BoatTerminal.__pydantic__.model_rebuild()
+PerformingArtsTheater.__pydantic__.model_rebuild()
+Airport.__pydantic__.model_rebuild()
+BusStation.__pydantic__.model_rebuild()
+PublicToilet.__pydantic__.model_rebuild()
+Park.__pydantic__.model_rebuild()
+SubwayStation.__pydantic__.model_rebuild()
+Bridge.__pydantic__.model_rebuild()
+BusStop.__pydantic__.model_rebuild()
+FireStation.__pydantic__.model_rebuild()
+Playground.__pydantic__.model_rebuild()
+MusicVenue.__pydantic__.model_rebuild()
+MedicalBusiness.__pydantic__.model_rebuild()
+HomeAndConstructionBusiness.__pydantic__.model_rebuild()
+EmploymentAgency.__pydantic__.model_rebuild()
+ChildCare.__pydantic__.model_rebuild()
+RealEstateAgent.__pydantic__.model_rebuild()
+DryCleaningOrLaundry.__pydantic__.model_rebuild()
+SportsActivityLocation.__pydantic__.model_rebuild()
+TouristInformationCenter.__pydantic__.model_rebuild()
+HealthAndBeautyBusiness.__pydantic__.model_rebuild()
+InternetCafe.__pydantic__.model_rebuild()
+AnimalShelter.__pydantic__.model_rebuild()
+ArchiveOrganization.__pydantic__.model_rebuild()
+ShoppingCenter.__pydantic__.model_rebuild()
+AutomotiveBusiness.__pydantic__.model_rebuild()
+SelfStorage.__pydantic__.model_rebuild()
+TravelAgency.__pydantic__.model_rebuild()
+LodgingBusiness.__pydantic__.model_rebuild()
+ProfessionalService.__pydantic__.model_rebuild()
+Library.__pydantic__.model_rebuild()
+EntertainmentBusiness.__pydantic__.model_rebuild()
+FoodEstablishment.__pydantic__.model_rebuild()
+RecyclingCenter.__pydantic__.model_rebuild()
+LegalService.__pydantic__.model_rebuild()
+TelevisionStation.__pydantic__.model_rebuild()
+Store.__pydantic__.model_rebuild()
+EmergencyService.__pydantic__.model_rebuild()
+FinancialService.__pydantic__.model_rebuild()
+GovernmentOffice.__pydantic__.model_rebuild()
+RadioStation.__pydantic__.model_rebuild()
+Country.__pydantic__.model_rebuild()
+State.__pydantic__.model_rebuild()
+SchoolDistrict.__pydantic__.model_rebuild()
+City.__pydantic__.model_rebuild()
+House.__pydantic__.model_rebuild()
+Room.__pydantic__.model_rebuild()
+Apartment.__pydantic__.model_rebuild()
+CampingPitch.__pydantic__.model_rebuild()
+Suite.__pydantic__.model_rebuild()
+GatedResidenceCommunity.__pydantic__.model_rebuild()
+ApartmentComplex.__pydantic__.model_rebuild()
+SiteNavigationElement.__pydantic__.model_rebuild()
+WPFooter.__pydantic__.model_rebuild()
+Table.__pydantic__.model_rebuild()
+WPHeader.__pydantic__.model_rebuild()
+WPSideBar.__pydantic__.model_rebuild()
+WPAdBlock.__pydantic__.model_rebuild()
+DataDownload.__pydantic__.model_rebuild()
+VideoObject.__pydantic__.model_rebuild()
+TextObject.__pydantic__.model_rebuild()
+AmpStory.__pydantic__.model_rebuild()
+MusicVideoObject.__pydantic__.model_rebuild()
+AudioObject.__pydantic__.model_rebuild()
+ImageObject.__pydantic__.model_rebuild()
+_3DModel.__pydantic__.model_rebuild()
+ScholarlyArticle.__pydantic__.model_rebuild()
+TechArticle.__pydantic__.model_rebuild()
+SocialMediaPosting.__pydantic__.model_rebuild()
+SatiricalArticle.__pydantic__.model_rebuild()
+NewsArticle.__pydantic__.model_rebuild()
+Report.__pydantic__.model_rebuild()
+AdvertiserContentArticle.__pydantic__.model_rebuild()
+MusicAlbum.__pydantic__.model_rebuild()
+MusicRelease.__pydantic__.model_rebuild()
+HealthTopicContent.__pydantic__.model_rebuild()
+TVEpisode.__pydantic__.model_rebuild()
+RadioEpisode.__pydantic__.model_rebuild()
+PodcastEpisode.__pydantic__.model_rebuild()
+Question.__pydantic__.model_rebuild()
+Answer.__pydantic__.model_rebuild()
+CorrectionComment.__pydantic__.model_rebuild()
+CategoryCodeSet.__pydantic__.model_rebuild()
+VideoGame.__pydantic__.model_rebuild()
+Recommendation.__pydantic__.model_rebuild()
+EmployerReview.__pydantic__.model_rebuild()
+MediaReview.__pydantic__.model_rebuild()
+ClaimReview.__pydantic__.model_rebuild()
+CriticReview.__pydantic__.model_rebuild()
+UserReview.__pydantic__.model_rebuild()
+TextDigitalDocument.__pydantic__.model_rebuild()
+NoteDigitalDocument.__pydantic__.model_rebuild()
+SpreadsheetDigitalDocument.__pydantic__.model_rebuild()
+PresentationDigitalDocument.__pydantic__.model_rebuild()
+DataFeed.__pydantic__.model_rebuild()
+CoverArt.__pydantic__.model_rebuild()
+Recipe.__pydantic__.model_rebuild()
+RadioClip.__pydantic__.model_rebuild()
+TVClip.__pydantic__.model_rebuild()
+VideoGameClip.__pydantic__.model_rebuild()
+MovieClip.__pydantic__.model_rebuild()
+PodcastSeason.__pydantic__.model_rebuild()
+RadioSeason.__pydantic__.model_rebuild()
+WebApplication.__pydantic__.model_rebuild()
+MobileApplication.__pydantic__.model_rebuild()
+ComicCoverArt.__pydantic__.model_rebuild()
+ComicIssue.__pydantic__.model_rebuild()
+FAQPage.__pydantic__.model_rebuild()
+RealEstateListing.__pydantic__.model_rebuild()
+AboutPage.__pydantic__.model_rebuild()
+CollectionPage.__pydantic__.model_rebuild()
+MedicalWebPage.__pydantic__.model_rebuild()
+ProfilePage.__pydantic__.model_rebuild()
+SearchResultsPage.__pydantic__.model_rebuild()
+ItemPage.__pydantic__.model_rebuild()
+QAPage.__pydantic__.model_rebuild()
+CheckoutPage.__pydantic__.model_rebuild()
+ContactPage.__pydantic__.model_rebuild()
+LegislationObject.__pydantic__.model_rebuild()
+Periodical.__pydantic__.model_rebuild()
+BookSeries.__pydantic__.model_rebuild()
+MovieSeries.__pydantic__.model_rebuild()
+RadioSeries.__pydantic__.model_rebuild()
+VideoGameSeries.__pydantic__.model_rebuild()
+PodcastSeries.__pydantic__.model_rebuild()
+Quiz.__pydantic__.model_rebuild()
+Syllabus.__pydantic__.model_rebuild()
+EmailMessage.__pydantic__.model_rebuild()
+MedicalSymptom.__pydantic__.model_rebuild()
+MedicalSign.__pydantic__.model_rebuild()
+ReportedDoseSchedule.__pydantic__.model_rebuild()
+MaximumDoseSchedule.__pydantic__.model_rebuild()
+RecommendedDoseSchedule.__pydantic__.model_rebuild()
+ExercisePlan.__pydantic__.model_rebuild()
+PsychologicalTreatment.__pydantic__.model_rebuild()
+MedicalTherapy.__pydantic__.model_rebuild()
+LymphaticVessel.__pydantic__.model_rebuild()
+Vein.__pydantic__.model_rebuild()
+Artery.__pydantic__.model_rebuild()
+WearableSizeGroupEnumeration.__pydantic__.model_rebuild()
+WearableSizeSystemEnumeration.__pydantic__.model_rebuild()
+EnergyStarEnergyEfficiencyEnumeration.__pydantic__.model_rebuild()
+EUEnergyEfficiencyEnumeration.__pydantic__.model_rebuild()
+BodyMeasurementTypeEnumeration.__pydantic__.model_rebuild()
+WearableMeasurementTypeEnumeration.__pydantic__.model_rebuild()
+NLNonprofitType.__pydantic__.model_rebuild()
+UKNonprofitType.__pydantic__.model_rebuild()
+USNonprofitType.__pydantic__.model_rebuild()
+SizeSpecification.__pydantic__.model_rebuild()
+SteeringPositionValue.__pydantic__.model_rebuild()
+DriveWheelConfigurationValue.__pydantic__.model_rebuild()
+BedType.__pydantic__.model_rebuild()
+LegalForceStatus.__pydantic__.model_rebuild()
+OrderStatus.__pydantic__.model_rebuild()
+ActionStatusType.__pydantic__.model_rebuild()
+GameServerStatus.__pydantic__.model_rebuild()
+ReservationStatusType.__pydantic__.model_rebuild()
+EventStatusType.__pydantic__.model_rebuild()
+PaymentStatusType.__pydantic__.model_rebuild()
+IPTCDigitalSourceEnumeration.__pydantic__.model_rebuild()
+MedicineSystem.__pydantic__.model_rebuild()
+PhysicalExam.__pydantic__.model_rebuild()
+MedicalProcedureType.__pydantic__.model_rebuild()
+MedicalSpecialty.__pydantic__.model_rebuild()
+MedicalTrialDesign.__pydantic__.model_rebuild()
+MedicalAudienceType.__pydantic__.model_rebuild()
+DrugPregnancyCategory.__pydantic__.model_rebuild()
+InfectiousAgentClass.__pydantic__.model_rebuild()
+DrugCostCategory.__pydantic__.model_rebuild()
+MedicalDevicePurpose.__pydantic__.model_rebuild()
+DrugPrescriptionStatus.__pydantic__.model_rebuild()
+MedicalObservationalStudyDesign.__pydantic__.model_rebuild()
+MedicalStudyStatus.__pydantic__.model_rebuild()
+MedicalEvidenceLevel.__pydantic__.model_rebuild()
+MedicalImagingTechnique.__pydantic__.model_rebuild()
+FMRadioChannel.__pydantic__.model_rebuild()
+AMRadioChannel.__pydantic__.model_rebuild()
+EmployeeRole.__pydantic__.model_rebuild()
+HowToSupply.__pydantic__.model_rebuild()
+HowToTool.__pydantic__.model_rebuild()
+LocationFeatureSpecification.__pydantic__.model_rebuild()
+MonetaryAmountDistribution.__pydantic__.model_rebuild()
+CompoundPriceSpecification.__pydantic__.model_rebuild()
+DeliveryChargeSpecification.__pydantic__.model_rebuild()
+UnitPriceSpecification.__pydantic__.model_rebuild()
+PaymentChargeSpecification.__pydantic__.model_rebuild()
+GeoCircle.__pydantic__.model_rebuild()
+PostalAddress.__pydantic__.model_rebuild()
+Observation.__pydantic__.model_rebuild()
+EmployerAggregateRating.__pydantic__.model_rebuild()
+RadioBroadcastService.__pydantic__.model_rebuild()
+PaymentService.__pydantic__.model_rebuild()
+LoanOrCredit.__pydantic__.model_rebuild()
+InvestmentOrDeposit.__pydantic__.model_rebuild()
+CurrencyConversionService.__pydantic__.model_rebuild()
+PaymentCard.__pydantic__.model_rebuild()
+BankAccount.__pydantic__.model_rebuild()
+MedicalAudience.__pydantic__.model_rebuild()
+ParentAudience.__pydantic__.model_rebuild()
+MedicalCode.__pydantic__.model_rebuild()
+PhysiciansOffice.__pydantic__.model_rebuild()
+IndividualPhysician.__pydantic__.model_rebuild()
+AskAction.__pydantic__.model_rebuild()
+InviteAction.__pydantic__.model_rebuild()
+ShareAction.__pydantic__.model_rebuild()
+ReplyAction.__pydantic__.model_rebuild()
+CheckInAction.__pydantic__.model_rebuild()
+CommentAction.__pydantic__.model_rebuild()
+InformAction.__pydantic__.model_rebuild()
+CheckOutAction.__pydantic__.model_rebuild()
+WearAction.__pydantic__.model_rebuild()
+VoteAction.__pydantic__.model_rebuild()
+WantAction.__pydantic__.model_rebuild()
+DisagreeAction.__pydantic__.model_rebuild()
+LikeAction.__pydantic__.model_rebuild()
+EndorseAction.__pydantic__.model_rebuild()
+AgreeAction.__pydantic__.model_rebuild()
+DislikeAction.__pydantic__.model_rebuild()
+InsertAction.__pydantic__.model_rebuild()
+RejectAction.__pydantic__.model_rebuild()
+AuthorizeAction.__pydantic__.model_rebuild()
+AcceptAction.__pydantic__.model_rebuild()
+AssignAction.__pydantic__.model_rebuild()
+CancelAction.__pydantic__.model_rebuild()
+ScheduleAction.__pydantic__.model_rebuild()
+ReserveAction.__pydantic__.model_rebuild()
+SeaBodyOfWater.__pydantic__.model_rebuild()
+Waterfall.__pydantic__.model_rebuild()
+OceanBodyOfWater.__pydantic__.model_rebuild()
+Canal.__pydantic__.model_rebuild()
+Pond.__pydantic__.model_rebuild()
+Reservoir.__pydantic__.model_rebuild()
+LakeBodyOfWater.__pydantic__.model_rebuild()
+RiverBodyOfWater.__pydantic__.model_rebuild()
+Preschool.__pydantic__.model_rebuild()
+MiddleSchool.__pydantic__.model_rebuild()
+HighSchool.__pydantic__.model_rebuild()
+CollegeOrUniversity.__pydantic__.model_rebuild()
+ElementarySchool.__pydantic__.model_rebuild()
+School.__pydantic__.model_rebuild()
+Synagogue.__pydantic__.model_rebuild()
+Church.__pydantic__.model_rebuild()
+Mosque.__pydantic__.model_rebuild()
+HinduTemple.__pydantic__.model_rebuild()
+BuddhistTemple.__pydantic__.model_rebuild()
+CityHall.__pydantic__.model_rebuild()
+Embassy.__pydantic__.model_rebuild()
+LegislativeBuilding.__pydantic__.model_rebuild()
+Courthouse.__pydantic__.model_rebuild()
+DefenceEstablishment.__pydantic__.model_rebuild()
+MedicalClinic.__pydantic__.model_rebuild()
+Pharmacy.__pydantic__.model_rebuild()
+Optician.__pydantic__.model_rebuild()
+GeneralContractor.__pydantic__.model_rebuild()
+RoofingContractor.__pydantic__.model_rebuild()
+Plumber.__pydantic__.model_rebuild()
+Locksmith.__pydantic__.model_rebuild()
+HVACBusiness.__pydantic__.model_rebuild()
+HousePainter.__pydantic__.model_rebuild()
+MovingCompany.__pydantic__.model_rebuild()
+Electrician.__pydantic__.model_rebuild()
+ExerciseGym.__pydantic__.model_rebuild()
+SportsClub.__pydantic__.model_rebuild()
+BowlingAlley.__pydantic__.model_rebuild()
+TennisComplex.__pydantic__.model_rebuild()
+GolfCourse.__pydantic__.model_rebuild()
+PublicSwimmingPool.__pydantic__.model_rebuild()
+SkiResort.__pydantic__.model_rebuild()
+BeautySalon.__pydantic__.model_rebuild()
+TattooParlor.__pydantic__.model_rebuild()
+NailSalon.__pydantic__.model_rebuild()
+HealthClub.__pydantic__.model_rebuild()
+DaySpa.__pydantic__.model_rebuild()
+HairSalon.__pydantic__.model_rebuild()
+AutoWash.__pydantic__.model_rebuild()
+AutoRental.__pydantic__.model_rebuild()
+GasStation.__pydantic__.model_rebuild()
+MotorcycleRepair.__pydantic__.model_rebuild()
+MotorcycleDealer.__pydantic__.model_rebuild()
+AutoDealer.__pydantic__.model_rebuild()
+AutoRepair.__pydantic__.model_rebuild()
+AutoBodyShop.__pydantic__.model_rebuild()
+Resort.__pydantic__.model_rebuild()
+Campground.__pydantic__.model_rebuild()
+BedAndBreakfast.__pydantic__.model_rebuild()
+Hotel.__pydantic__.model_rebuild()
+VacationRental.__pydantic__.model_rebuild()
+Hostel.__pydantic__.model_rebuild()
+Motel.__pydantic__.model_rebuild()
+Casino.__pydantic__.model_rebuild()
+AmusementPark.__pydantic__.model_rebuild()
+ArtGallery.__pydantic__.model_rebuild()
+AdultEntertainment.__pydantic__.model_rebuild()
+ComedyClub.__pydantic__.model_rebuild()
+NightClub.__pydantic__.model_rebuild()
+CafeOrCoffeeShop.__pydantic__.model_rebuild()
+IceCreamShop.__pydantic__.model_rebuild()
+BarOrPub.__pydantic__.model_rebuild()
+Winery.__pydantic__.model_rebuild()
+Distillery.__pydantic__.model_rebuild()
+Brewery.__pydantic__.model_rebuild()
+Bakery.__pydantic__.model_rebuild()
+Restaurant.__pydantic__.model_rebuild()
+FastFoodRestaurant.__pydantic__.model_rebuild()
+Attorney.__pydantic__.model_rebuild()
+Notary.__pydantic__.model_rebuild()
+WholesaleStore.__pydantic__.model_rebuild()
+ShoeStore.__pydantic__.model_rebuild()
+ClothingStore.__pydantic__.model_rebuild()
+MensClothingStore.__pydantic__.model_rebuild()
+HobbyShop.__pydantic__.model_rebuild()
+Florist.__pydantic__.model_rebuild()
+BikeStore.__pydantic__.model_rebuild()
+ConvenienceStore.__pydantic__.model_rebuild()
+GardenStore.__pydantic__.model_rebuild()
+JewelryStore.__pydantic__.model_rebuild()
+HomeGoodsStore.__pydantic__.model_rebuild()
+LiquorStore.__pydantic__.model_rebuild()
+GroceryStore.__pydantic__.model_rebuild()
+PetStore.__pydantic__.model_rebuild()
+TireShop.__pydantic__.model_rebuild()
+SportingGoodsStore.__pydantic__.model_rebuild()
+MovieRentalStore.__pydantic__.model_rebuild()
+BookStore.__pydantic__.model_rebuild()
+ComputerStore.__pydantic__.model_rebuild()
+DepartmentStore.__pydantic__.model_rebuild()
+ToyStore.__pydantic__.model_rebuild()
+MusicStore.__pydantic__.model_rebuild()
+AutoPartsStore.__pydantic__.model_rebuild()
+OfficeEquipmentStore.__pydantic__.model_rebuild()
+FurnitureStore.__pydantic__.model_rebuild()
+MobilePhoneStore.__pydantic__.model_rebuild()
+OutletStore.__pydantic__.model_rebuild()
+HardwareStore.__pydantic__.model_rebuild()
+ElectronicsStore.__pydantic__.model_rebuild()
+PawnShop.__pydantic__.model_rebuild()
+PoliceStation.__pydantic__.model_rebuild()
+AutomatedTeller.__pydantic__.model_rebuild()
+AccountingService.__pydantic__.model_rebuild()
+InsuranceAgency.__pydantic__.model_rebuild()
+BankOrCreditUnion.__pydantic__.model_rebuild()
+PostOffice.__pydantic__.model_rebuild()
+SingleFamilyResidence.__pydantic__.model_rebuild()
+MeetingRoom.__pydantic__.model_rebuild()
+HotelRoom.__pydantic__.model_rebuild()
+VideoObjectSnapshot.__pydantic__.model_rebuild()
+AudioObjectSnapshot.__pydantic__.model_rebuild()
+Audiobook.__pydantic__.model_rebuild()
+Barcode.__pydantic__.model_rebuild()
+ImageObjectSnapshot.__pydantic__.model_rebuild()
+MedicalScholarlyArticle.__pydantic__.model_rebuild()
+APIReference.__pydantic__.model_rebuild()
+BlogPosting.__pydantic__.model_rebuild()
+DiscussionForumPosting.__pydantic__.model_rebuild()
+OpinionNewsArticle.__pydantic__.model_rebuild()
+AnalysisNewsArticle.__pydantic__.model_rebuild()
+ReviewNewsArticle.__pydantic__.model_rebuild()
+ReportageNewsArticle.__pydantic__.model_rebuild()
+BackgroundNewsArticle.__pydantic__.model_rebuild()
+AskPublicNewsArticle.__pydantic__.model_rebuild()
+CompleteDataFeed.__pydantic__.model_rebuild()
+MediaGallery.__pydantic__.model_rebuild()
+Newspaper.__pydantic__.model_rebuild()
+ComicSeries.__pydantic__.model_rebuild()
+VitalSign.__pydantic__.model_rebuild()
+PalliativeProcedure.__pydantic__.model_rebuild()
+RadiationTherapy.__pydantic__.model_rebuild()
+OccupationalTherapy.__pydantic__.model_rebuild()
+PhysicalTherapy.__pydantic__.model_rebuild()
+MortgageLoan.__pydantic__.model_rebuild()
+CreditCard.__pydantic__.model_rebuild()
+InvestmentFund.__pydantic__.model_rebuild()
+BrokerageAccount.__pydantic__.model_rebuild()
+DepositAccount.__pydantic__.model_rebuild()
+ConfirmAction.__pydantic__.model_rebuild()
+RsvpAction.__pydantic__.model_rebuild()
+AppendAction.__pydantic__.model_rebuild()
+PrependAction.__pydantic__.model_rebuild()
+CatholicChurch.__pydantic__.model_rebuild()
+CovidTestingFacility.__pydantic__.model_rebuild()
+LiveBlogPosting.__pydantic__.model_rebuild()
+ImageGallery.__pydantic__.model_rebuild()
+VideoGallery.__pydantic__.model_rebuild()

@@ -76,12 +76,6 @@ def camel_to_snake(name):
 def generate_models(graph: Graph):
     os.makedirs("schema_models", exist_ok=True)
 
-    # Write init file
-    with open("schema_models/__init__.py", "w") as f:
-        f.write("from typing import Union, List, Optional\n")
-        f.write("from datetime import date, datetime, time\n")
-        f.write("from pydantic import field_validator, ConfigDict, Field, HttpUrl\n\n")
-
     classes: Dict[str, Dict] = {}
 
     # First pass: collect class info
@@ -102,12 +96,31 @@ def generate_models(graph: Graph):
         del classes[class_name]
 
     ts = TopologicalSorter()
+    ts_sorted = []
     for class_name, class_info in classes.items():
         parent = class_info["parent"]
         ts.add(class_name, parent)
     for order, class_name in enumerate(ts.static_order()):
         if class_name is not None:
             classes[class_name]["order"] = order
+            ts_sorted.append(class_name)
+
+    # Write init file
+    with open("schema_models/__init__.py", "w") as f:
+        f.write("from typing import Union, List, Optional\n")
+        f.write("from datetime import date, datetime, time\n")
+        f.write("from pydantic import field_validator, ConfigDict, Field, HttpUrl\n\n")
+
+        for class_name in ts_sorted:
+            if class_name is not None:
+                class_filename = camel_to_snake(class_name)
+                f.write(f"from schema_models.{class_filename} import {class_name}\n")
+
+        f.write("\n\n")
+
+        for class_name in ts_sorted:
+            if class_name is not None:
+                f.write(f"{class_name}.model_rebuild()\n")
 
     # Second pass: collect properties
     for class_name, class_info in classes.items():
