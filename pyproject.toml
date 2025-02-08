@@ -9,6 +9,7 @@ description = "Schema.org schemas as pydantic models"
 
 [tool.poetry.dependencies]
 python = "^3.9"
+fquery = "^0.4"
 
 [tool.poetry.group.dev-dependencies.dependencies]
 pytest = "^7.1.2"
