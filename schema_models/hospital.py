@@ -1,6 +1,6 @@
 from typing import List, Optional, Union
 
-from schema_models.c_d_c_p_m_d_record import CDCPMDRecord
+from schema_models.cdcpmd_record import CDCPMDRecord
 from schema_models.civic_structure import CivicStructure
 from schema_models.dataset import Dataset
 from schema_models.medical_procedure import MedicalProcedure

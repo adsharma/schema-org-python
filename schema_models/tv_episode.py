@@ -5,7 +5,7 @@ from pydantic import HttpUrl
 from schema_models.country import Country
 from schema_models.episode import Episode
 from schema_models.language import Language
-from schema_models.t_v_series import TVSeries
+from schema_models.tv_series import TVSeries
 
 
 class TVEpisode(Episode):

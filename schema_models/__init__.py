@@ -1,7 +1,5 @@
 from schema_models._3_d_model import _3DModel
 from schema_models.__class import _Class
-from schema_models.a_m_radio_channel import AMRadioChannel
-from schema_models.a_p_i_reference import APIReference
 from schema_models.about_page import AboutPage
 from schema_models.accept_action import AcceptAction
 from schema_models.accommodation import Accommodation
@@ -23,6 +21,7 @@ from schema_models.airline import Airline
 from schema_models.airport import Airport
 from schema_models.alignment_object import AlignmentObject
 from schema_models.allocate_action import AllocateAction
+from schema_models.am_radio_channel import AMRadioChannel
 from schema_models.amp_story import AmpStory
 from schema_models.amusement_park import AmusementPark
 from schema_models.analysis_news_article import AnalysisNewsArticle
@@ -32,6 +31,7 @@ from schema_models.animal_shelter import AnimalShelter
 from schema_models.answer import Answer
 from schema_models.apartment import Apartment
 from schema_models.apartment_complex import ApartmentComplex
+from schema_models.api_reference import APIReference
 from schema_models.append_action import AppendAction
 from schema_models.apply_action import ApplyAction
 from schema_models.approved_indication import ApprovedIndication
@@ -117,7 +117,6 @@ from schema_models.business_entity_type import BusinessEntityType
 from schema_models.business_event import BusinessEvent
 from schema_models.business_function import BusinessFunction
 from schema_models.buy_action import BuyAction
-from schema_models.c_d_c_p_m_d_record import CDCPMDRecord
 from schema_models.cable_or_satellite_service import CableOrSatelliteService
 from schema_models.cafe_or_coffee_shop import CafeOrCoffeeShop
 from schema_models.campground import Campground
@@ -130,6 +129,7 @@ from schema_models.casino import Casino
 from schema_models.category_code import CategoryCode
 from schema_models.category_code_set import CategoryCodeSet
 from schema_models.catholic_church import CatholicChurch
+from schema_models.cdcpmd_record import CDCPMDRecord
 from schema_models.cemetery import Cemetery
 from schema_models.certification import Certification
 from schema_models.certification_status_enumeration import (
@@ -255,9 +255,6 @@ from schema_models.drug_prescription_status import DrugPrescriptionStatus
 from schema_models.drug_strength import DrugStrength
 from schema_models.dry_cleaning_or_laundry import DryCleaningOrLaundry
 from schema_models.duration import Duration
-from schema_models.e_u_energy_efficiency_enumeration import (
-    EUEnergyEfficiencyEnumeration,
-)
 from schema_models.eat_action import EatAction
 from schema_models.education_event import EducationEvent
 from schema_models.educational_audience import EducationalAudience
@@ -291,6 +288,7 @@ from schema_models.entertainment_business import EntertainmentBusiness
 from schema_models.entry_point import EntryPoint
 from schema_models.enumeration import Enumeration
 from schema_models.episode import Episode
+from schema_models.eu_energy_efficiency_enumeration import EUEnergyEfficiencyEnumeration
 from schema_models.event import Event
 from schema_models.event_attendance_mode_enumeration import (
     EventAttendanceModeEnumeration,
@@ -304,8 +302,7 @@ from schema_models.exercise_action import ExerciseAction
 from schema_models.exercise_gym import ExerciseGym
 from schema_models.exercise_plan import ExercisePlan
 from schema_models.exhibition_event import ExhibitionEvent
-from schema_models.f_a_q_page import FAQPage
-from schema_models.f_m_radio_channel import FMRadioChannel
+from schema_models.faq_page import FAQPage
 from schema_models.fast_food_restaurant import FastFoodRestaurant
 from schema_models.festival import Festival
 from schema_models.film_action import FilmAction
@@ -317,6 +314,7 @@ from schema_models.flight import Flight
 from schema_models.flight_reservation import FlightReservation
 from schema_models.floor_plan import FloorPlan
 from schema_models.florist import Florist
+from schema_models.fm_radio_channel import FMRadioChannel
 from schema_models.follow_action import FollowAction
 from schema_models.food_establishment import FoodEstablishment
 from schema_models.food_establishment_reservation import FoodEstablishmentReservation
@@ -351,7 +349,6 @@ from schema_models.government_service import GovernmentService
 from schema_models.grant import Grant
 from schema_models.grocery_store import GroceryStore
 from schema_models.guide import Guide
-from schema_models.h_v_a_c_business import HVACBusiness
 from schema_models.hackathon import Hackathon
 from schema_models.hair_salon import HairSalon
 from schema_models.hardware_store import HardwareStore
@@ -384,11 +381,9 @@ from schema_models.how_to_step import HowToStep
 from schema_models.how_to_supply import HowToSupply
 from schema_models.how_to_tip import HowToTip
 from schema_models.how_to_tool import HowToTool
+from schema_models.hvac_business import HVACBusiness
 from schema_models.hyper_toc import HyperToc
 from schema_models.hyper_toc_entry import HyperTocEntry
-from schema_models.i_p_t_c_digital_source_enumeration import (
-    IPTCDigitalSourceEnumeration,
-)
 from schema_models.ice_cream_shop import IceCreamShop
 from schema_models.ignore_action import IgnoreAction
 from schema_models.image_gallery import ImageGallery
@@ -411,6 +406,7 @@ from schema_models.investment_fund import InvestmentFund
 from schema_models.investment_or_deposit import InvestmentOrDeposit
 from schema_models.invite_action import InviteAction
 from schema_models.invoice import Invoice
+from schema_models.iptc_digital_source_enumeration import IPTCDigitalSourceEnumeration
 from schema_models.item_availability import ItemAvailability
 from schema_models.item_list import ItemList
 from schema_models.item_list_order_type import ItemListOrderType
@@ -571,7 +567,6 @@ from schema_models.music_release_format_type import MusicReleaseFormatType
 from schema_models.music_store import MusicStore
 from schema_models.music_venue import MusicVenue
 from schema_models.music_video_object import MusicVideoObject
-from schema_models.n_l_nonprofit_type import NLNonprofitType
 from schema_models.nail_salon import NailSalon
 from schema_models.nerve import Nerve
 from schema_models.news_article import NewsArticle
@@ -579,6 +574,7 @@ from schema_models.news_media_organization import NewsMediaOrganization
 from schema_models.newspaper import Newspaper
 from schema_models.ngo import NGO
 from schema_models.night_club import NightClub
+from schema_models.nl_nonprofit_type import NLNonprofitType
 from schema_models.nonprofit_type import NonprofitType
 from schema_models.notary import Notary
 from schema_models.note_digital_document import NoteDigitalDocument
@@ -694,7 +690,7 @@ from schema_models.public_toilet import PublicToilet
 from schema_models.publication_event import PublicationEvent
 from schema_models.publication_issue import PublicationIssue
 from schema_models.publication_volume import PublicationVolume
-from schema_models.q_a_page import QAPage
+from schema_models.qa_page import QAPage
 from schema_models.qualitative_value import QualitativeValue
 from schema_models.quantitative_value import QuantitativeValue
 from schema_models.quantitative_value_distribution import QuantitativeValueDistribution
@@ -703,7 +699,6 @@ from schema_models.question import Question
 from schema_models.quiz import Quiz
 from schema_models.quotation import Quotation
 from schema_models.quote_action import QuoteAction
-from schema_models.r_v_park import RVPark
 from schema_models.radiation_therapy import RadiationTherapy
 from schema_models.radio_broadcast_service import RadioBroadcastService
 from schema_models.radio_channel import RadioChannel
@@ -759,6 +754,7 @@ from schema_models.roofing_contractor import RoofingContractor
 from schema_models.room import Room
 from schema_models.rsvp_action import RsvpAction
 from schema_models.rsvp_response_type import RsvpResponseType
+from schema_models.rv_park import RVPark
 from schema_models.sale_event import SaleEvent
 from schema_models.satirical_article import SatiricalArticle
 from schema_models.schedule import Schedule
@@ -829,10 +825,6 @@ from schema_models.surgical_procedure import SurgicalProcedure
 from schema_models.suspend_action import SuspendAction
 from schema_models.syllabus import Syllabus
 from schema_models.synagogue import Synagogue
-from schema_models.t_v_clip import TVClip
-from schema_models.t_v_episode import TVEpisode
-from schema_models.t_v_season import TVSeason
-from schema_models.t_v_series import TVSeries
 from schema_models.table import Table
 from schema_models.take_action import TakeAction
 from schema_models.tattoo_parlor import TattooParlor
@@ -872,12 +864,16 @@ from schema_models.travel_action import TravelAction
 from schema_models.travel_agency import TravelAgency
 from schema_models.treatment_indication import TreatmentIndication
 from schema_models.trip import Trip
+from schema_models.tv_clip import TVClip
+from schema_models.tv_episode import TVEpisode
+from schema_models.tv_season import TVSeason
+from schema_models.tv_series import TVSeries
 from schema_models.type_and_quantity_node import TypeAndQuantityNode
-from schema_models.u_k_nonprofit_type import UKNonprofitType
-from schema_models.u_s_nonprofit_type import USNonprofitType
+from schema_models.uk_nonprofit_type import UKNonprofitType
 from schema_models.un_register_action import UnRegisterAction
 from schema_models.unit_price_specification import UnitPriceSpecification
 from schema_models.update_action import UpdateAction
+from schema_models.us_nonprofit_type import USNonprofitType
 from schema_models.use_action import UseAction
 from schema_models.user_blocks import UserBlocks
 from schema_models.user_checkins import UserCheckins
@@ -908,10 +904,6 @@ from schema_models.visual_artwork import VisualArtwork
 from schema_models.vital_sign import VitalSign
 from schema_models.volcano import Volcano
 from schema_models.vote_action import VoteAction
-from schema_models.w_p_ad_block import WPAdBlock
-from schema_models.w_p_footer import WPFooter
-from schema_models.w_p_header import WPHeader
-from schema_models.w_p_side_bar import WPSideBar
 from schema_models.want_action import WantAction
 from schema_models.warranty_promise import WarrantyPromise
 from schema_models.warranty_scope import WarrantyScope
@@ -923,7 +915,7 @@ from schema_models.wearable_measurement_type_enumeration import (
 )
 from schema_models.wearable_size_group_enumeration import WearableSizeGroupEnumeration
 from schema_models.wearable_size_system_enumeration import WearableSizeSystemEnumeration
-from schema_models.web_a_p_i import WebAPI
+from schema_models.web_api import WebAPI
 from schema_models.web_application import WebApplication
 from schema_models.web_content import WebContent
 from schema_models.web_page import WebPage
@@ -934,6 +926,10 @@ from schema_models.win_action import WinAction
 from schema_models.winery import Winery
 from schema_models.work_based_program import WorkBasedProgram
 from schema_models.workers_union import WorkersUnion
+from schema_models.wp_ad_block import WPAdBlock
+from schema_models.wp_footer import WPFooter
+from schema_models.wp_header import WPHeader
+from schema_models.wp_side_bar import WPSideBar
 from schema_models.write_action import WriteAction
 from schema_models.zoo import Zoo
 

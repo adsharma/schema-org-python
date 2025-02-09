@@ -3,7 +3,7 @@ from typing import List, Optional, Union
 from pydantic import HttpUrl
 
 from schema_models.creative_work import CreativeWork
-from schema_models.t_v_series import TVSeries
+from schema_models.tv_series import TVSeries
 
 
 class TVSeason(CreativeWork):

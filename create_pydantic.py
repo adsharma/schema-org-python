@@ -1,3 +1,6 @@
+#!/usr/bin/env python3
+
+import argparse
 import os
 import re
 from graphlib import TopologicalSorter
@@ -50,30 +53,12 @@ def get_parent_class(graph: Graph, class_uri):
 
 
 def camel_to_snake(name):
-    """
-    Convert camelCase to snake_case.
-
-    Args:
-        name (str): The camelCase string.
-
-    Returns:
-        str: The snake_case string.
-    """
-    snake_case = ""
-    for i, char in enumerate(name):
-        # if its an acronym such as URL, keep it as is and return lower case
-        if i == 0 and name.isupper():
-            return name.lower()
-        if char.isupper():
-            # If it's the first character, convert to lower case
-            if i == 0:
-                snake_case += char.lower()
-            # Otherwise, add an underscore before the character
-            else:
-                snake_case += "_" + char.lower()
-        else:
-            snake_case += char
-    return snake_case
+    # Insert underscores before capital letters and lowercase the string
+    s1 = re.sub("(.)([A-Z][a-z]+)", r"\1_\2", name)
+    # Insert underscores before capital letters followed by lowercase letters
+    s2 = re.sub("([a-z0-9])([A-Z])", r"\1_\2", s1)
+    # Convert the entire string to lowercase
+    return s2.lower()
 
 
 def generate_models(graph: Graph):
@@ -217,8 +202,26 @@ def generate_models(graph: Graph):
 
 
 def main():
-    print("Fetching Schema.org definitions...")
-    content = fetch_schema()
+    # print("Fetching Schema.org definitions...")
+    # content = fetch_schema()
+
+    # Create an ArgumentParser object
+    parser = argparse.ArgumentParser(
+        description="Generate pydantic models from schema.org"
+    )
+
+    # Add arguments
+    parser.add_argument(
+        "-v", "--verbose", action="store_true", help="Enable verbose output"
+    )
+
+    # Parse arguments
+    args, rest = parser.parse_known_args()
+
+    if len(rest) != 1:
+        print("Need exactly one argument")
+
+    content = open(rest[0]).read()
 
     print("Parsing RDF data...")
     graph = parse_schema(content)
