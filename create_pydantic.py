@@ -3,6 +3,7 @@
 import argparse
 import os
 import re
+import subprocess
 from graphlib import TopologicalSorter
 from keyword import kwlist
 from typing import Dict
@@ -201,6 +202,16 @@ def generate_models(graph: Graph):
     return classes
 
 
+def run_autoflake():
+    command = ["autoflake", "--remove-all-unused-imports", "-i", "-r", "."]
+
+    # Run the command
+    result = subprocess.run(command, capture_output=True, text=True)
+    if result.returncode != 0:
+        print(result.stderr)
+        sys.exit(1)
+
+
 def main():
     # print("Fetching Schema.org definitions...")
     # content = fetch_schema()
@@ -228,6 +239,9 @@ def main():
 
     print("Generating Pydantic models...")
     generate_models(graph)
+
+    print("Running autoflake...")
+    run_autoflake()
 
     print("Models generated in schema_models directory")
 
