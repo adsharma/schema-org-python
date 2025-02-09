@@ -1,18 +1,17 @@
 from typing import List, Optional, Union
 
-from schema_models.number import Number
+from pydantic import HttpUrl
+
 from schema_models.quantitative_value import QuantitativeValue
 from schema_models.service import Service
-from schema_models.text import Text
-from schema_models.url import URL
 
 
 class FinancialProduct(Service):
-    feesAndCommissionsSpecification: Optional[Union[Text, List[Text]]] = None
-    feesAndCommissionsSpecification: Optional[Union[URL, List[URL]]] = None
+    feesAndCommissionsSpecification: Optional[Union[str, List[str]]] = None
+    feesAndCommissionsSpecification: Optional[Union[HttpUrl, List[HttpUrl]]] = None
     annualPercentageRate: Optional[
         Union[QuantitativeValue, List[QuantitativeValue]]
     ] = None
-    annualPercentageRate: Optional[Union[Number, List[Number]]] = None
+    annualPercentageRate: Optional[Union[float, List[float]]] = None
     interestRate: Optional[Union[QuantitativeValue, List[QuantitativeValue]]] = None
-    interestRate: Optional[Union[Number, List[Number]]] = None
+    interestRate: Optional[Union[float, List[float]]] = None

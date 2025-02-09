@@ -1,18 +1,17 @@
 from typing import List, Optional, Union
 
 from schema_models.medical_entity import MedicalEntity
-from schema_models.text import Text
 
 
 class MedicalProcedure(MedicalEntity):
-    howPerformed: Optional[Union[Text, List[Text]]] = None
-    preparation: Optional[Union[Text, List[Text]]] = None
+    howPerformed: Optional[Union[str, List[str]]] = None
+    preparation: Optional[Union[str, List[str]]] = None
     preparation: Optional[Union[MedicalEntity, List[MedicalEntity]]] = None
-    bodyLocation: Optional[Union[Text, List[Text]]] = None
+    bodyLocation: Optional[Union[str, List[str]]] = None
     procedureType: Optional[
         Union["MedicalProcedureType", List["MedicalProcedureType"]]
     ] = None
-    followup: Optional[Union[Text, List[Text]]] = None
+    followup: Optional[Union[str, List[str]]] = None
     status: Optional[Union["MedicalStudyStatus", List["MedicalStudyStatus"]]] = None
-    status: Optional[Union[Text, List[Text]]] = None
+    status: Optional[Union[str, List[str]]] = None
     status: Optional[Union["EventStatusType", List["EventStatusType"]]] = None

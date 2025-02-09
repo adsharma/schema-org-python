@@ -1,7 +1,6 @@
 from typing import List, Optional, Union
 
 from schema_models.medical_entity import MedicalEntity
-from schema_models.text import Text
 
 
 class AnatomicalSystem(MedicalEntity):
@@ -12,7 +11,7 @@ class AnatomicalSystem(MedicalEntity):
         Union["AnatomicalStructure", List["AnatomicalStructure"]]
     ] = None
     relatedTherapy: Optional[Union["MedicalTherapy", List["MedicalTherapy"]]] = None
-    associatedPathophysiology: Optional[Union[Text, List[Text]]] = None
+    associatedPathophysiology: Optional[Union[str, List[str]]] = None
     comprisedOf: Optional[Union["AnatomicalStructure", List["AnatomicalStructure"]]] = (
         None
     )

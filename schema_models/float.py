@@ -1,5 +1,6 @@
-from schema_models.number import Number
+from fquery.pydantic import pydantic
 
 
-class Float(Number):
+@pydantic
+class Float:
     pass

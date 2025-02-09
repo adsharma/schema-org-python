@@ -1,12 +1,12 @@
 from typing import List, Optional, Union
 
+from pydantic import HttpUrl
+
 from schema_models.anatomical_structure import AnatomicalStructure
 from schema_models.anatomical_system import AnatomicalSystem
 from schema_models.lifestyle_modification import LifestyleModification
 from schema_models.superficial_anatomy import SuperficialAnatomy
-from schema_models.text import Text
 from schema_models.thing import Thing
-from schema_models.url import URL
 
 
 class PhysicalActivity(LifestyleModification):
@@ -15,9 +15,9 @@ class PhysicalActivity(LifestyleModification):
         Union["PhysicalActivityCategory", List["PhysicalActivityCategory"]]
     ] = None
     category: Optional[Union["CategoryCode", List["CategoryCode"]]] = None
-    category: Optional[Union[Text, List[Text]]] = None
-    category: Optional[Union[URL, List[URL]]] = None
-    epidemiology: Optional[Union[Text, List[Text]]] = None
+    category: Optional[Union[str, List[str]]] = None
+    category: Optional[Union[HttpUrl, List[HttpUrl]]] = None
+    epidemiology: Optional[Union[str, List[str]]] = None
     associatedAnatomy: Optional[
         Union[AnatomicalStructure, List[AnatomicalStructure]]
     ] = None
@@ -25,4 +25,4 @@ class PhysicalActivity(LifestyleModification):
     associatedAnatomy: Optional[Union[SuperficialAnatomy, List[SuperficialAnatomy]]] = (
         None
     )
-    pathophysiology: Optional[Union[Text, List[Text]]] = None
+    pathophysiology: Optional[Union[str, List[str]]] = None

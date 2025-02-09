@@ -7,7 +7,6 @@ from schema_models.place import Place
 from schema_models.play_action import PlayAction
 from schema_models.sports_event import SportsEvent
 from schema_models.sports_team import SportsTeam
-from schema_models.text import Text
 
 
 class ExerciseAction(PlayAction):
@@ -24,5 +23,5 @@ class ExerciseAction(PlayAction):
     exerciseCourse: Optional[Union[Place, List[Place]]] = None
     distance: Optional[Union[Distance, List[Distance]]] = None
     opponent: Optional[Union[Person, List[Person]]] = None
-    exerciseType: Optional[Union[Text, List[Text]]] = None
+    exerciseType: Optional[Union[str, List[str]]] = None
     sportsEvent: Optional[Union[SportsEvent, List[SportsEvent]]] = None

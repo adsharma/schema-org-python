@@ -1,22 +1,18 @@
+from datetime import date, datetime
 from typing import List, Optional, Union
 
-from schema_models.boolean import Boolean
-from schema_models.date import Date
-from schema_models.date_time import DateTime
+from pydantic import HttpUrl
+
 from schema_models.intangible import Intangible
-from schema_models.integer import Integer
 from schema_models.member_program_tier import MemberProgramTier
 from schema_models.merchant_return_policy_seasonal_override import (
     MerchantReturnPolicySeasonalOverride,
 )
-from schema_models.number import Number
-from schema_models.text import Text
-from schema_models.url import URL
 
 
 class MerchantReturnPolicy(Intangible):
     restockingFee: Optional[Union["MonetaryAmount", List["MonetaryAmount"]]] = None
-    restockingFee: Optional[Union[Number, List[Number]]] = None
+    restockingFee: Optional[Union[float, List[float]]] = None
     returnShippingFeesAmount: Optional[
         Union["MonetaryAmount", List["MonetaryAmount"]]
     ] = None
@@ -29,9 +25,9 @@ class MerchantReturnPolicy(Intangible):
     returnMethod: Optional[
         Union["ReturnMethodEnumeration", List["ReturnMethodEnumeration"]]
     ] = None
-    merchantReturnLink: Optional[Union[URL, List[URL]]] = None
+    merchantReturnLink: Optional[Union[HttpUrl, List[HttpUrl]]] = None
     returnPolicyCountry: Optional[Union["Country", List["Country"]]] = None
-    returnPolicyCountry: Optional[Union[Text, List[Text]]] = None
+    returnPolicyCountry: Optional[Union[str, List[str]]] = None
     itemDefectReturnFees: Optional[
         Union["ReturnFeesEnumeration", List["ReturnFeesEnumeration"]]
     ] = None
@@ -60,15 +56,15 @@ class MerchantReturnPolicy(Intangible):
     refundType: Optional[
         Union["RefundTypeEnumeration", List["RefundTypeEnumeration"]]
     ] = None
-    applicableCountry: Optional[Union[Text, List[Text]]] = None
+    applicableCountry: Optional[Union[str, List[str]]] = None
     applicableCountry: Optional[Union["Country", List["Country"]]] = None
     returnFees: Optional[
         Union["ReturnFeesEnumeration", List["ReturnFeesEnumeration"]]
     ] = None
-    merchantReturnDays: Optional[Union[Date, List[Date]]] = None
-    merchantReturnDays: Optional[Union[Integer, List[Integer]]] = None
-    merchantReturnDays: Optional[Union[DateTime, List[DateTime]]] = None
-    inStoreReturnsOffered: Optional[Union[Boolean, List[Boolean]]] = None
+    merchantReturnDays: Optional[Union[date, List[date]]] = None
+    merchantReturnDays: Optional[Union[int, List[int]]] = None
+    merchantReturnDays: Optional[Union[datetime, List[datetime]]] = None
+    inStoreReturnsOffered: Optional[Union[bool, List[bool]]] = None
     itemDefectReturnLabelSource: Optional[
         Union["ReturnLabelSourceEnumeration", List["ReturnLabelSourceEnumeration"]]
     ] = None

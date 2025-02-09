@@ -1,12 +1,11 @@
 from typing import List, Optional, Union
 
 from schema_models.article import Article
-from schema_models.text import Text
 
 
 class NewsArticle(Article):
-    dateline: Optional[Union[Text, List[Text]]] = None
-    printColumn: Optional[Union[Text, List[Text]]] = None
-    printPage: Optional[Union[Text, List[Text]]] = None
-    printEdition: Optional[Union[Text, List[Text]]] = None
-    printSection: Optional[Union[Text, List[Text]]] = None
+    dateline: Optional[Union[str, List[str]]] = None
+    printColumn: Optional[Union[str, List[str]]] = None
+    printPage: Optional[Union[str, List[str]]] = None
+    printEdition: Optional[Union[str, List[str]]] = None
+    printSection: Optional[Union[str, List[str]]] = None

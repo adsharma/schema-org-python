@@ -1,11 +1,8 @@
 from typing import List, Optional, Union
 
-from schema_models.boolean import Boolean
+from pydantic import HttpUrl
+
 from schema_models.intangible import Intangible
-from schema_models.integer import Integer
-from schema_models.number import Number
-from schema_models.text import Text
-from schema_models.url import URL
 
 
 class FloorPlan(Intangible):
@@ -13,24 +10,24 @@ class FloorPlan(Intangible):
     numberOfRooms: Optional[Union["QuantitativeValue", List["QuantitativeValue"]]] = (
         None
     )
-    numberOfRooms: Optional[Union[Number, List[Number]]] = None
-    petsAllowed: Optional[Union[Text, List[Text]]] = None
-    petsAllowed: Optional[Union[Boolean, List[Boolean]]] = None
+    numberOfRooms: Optional[Union[float, List[float]]] = None
+    petsAllowed: Optional[Union[str, List[str]]] = None
+    petsAllowed: Optional[Union[bool, List[bool]]] = None
     amenityFeature: Optional[
         Union["LocationFeatureSpecification", List["LocationFeatureSpecification"]]
     ] = None
     layoutImage: Optional[Union["ImageObject", List["ImageObject"]]] = None
-    layoutImage: Optional[Union[URL, List[URL]]] = None
-    numberOfPartialBathrooms: Optional[Union[Number, List[Number]]] = None
+    layoutImage: Optional[Union[HttpUrl, List[HttpUrl]]] = None
+    numberOfPartialBathrooms: Optional[Union[float, List[float]]] = None
     numberOfAvailableAccommodationUnits: Optional[
         Union["QuantitativeValue", List["QuantitativeValue"]]
     ] = None
-    numberOfBathroomsTotal: Optional[Union[Integer, List[Integer]]] = None
+    numberOfBathroomsTotal: Optional[Union[int, List[int]]] = None
     numberOfAccommodationUnits: Optional[
         Union["QuantitativeValue", List["QuantitativeValue"]]
     ] = None
-    numberOfFullBathrooms: Optional[Union[Number, List[Number]]] = None
-    numberOfBedrooms: Optional[Union[Number, List[Number]]] = None
+    numberOfFullBathrooms: Optional[Union[float, List[float]]] = None
+    numberOfBedrooms: Optional[Union[float, List[float]]] = None
     numberOfBedrooms: Optional[
         Union["QuantitativeValue", List["QuantitativeValue"]]
     ] = None

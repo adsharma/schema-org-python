@@ -4,7 +4,6 @@ from schema_models.creative_work import CreativeWork
 from schema_models.music_composition import MusicComposition
 from schema_models.music_playlist import MusicPlaylist
 from schema_models.person import Person
-from schema_models.text import Text
 
 
 class MusicRecording(CreativeWork):
@@ -13,5 +12,5 @@ class MusicRecording(CreativeWork):
     inPlaylist: Optional[Union[MusicPlaylist, List[MusicPlaylist]]] = None
     duration: Optional[Union["Duration", List["Duration"]]] = None
     recordingOf: Optional[Union[MusicComposition, List[MusicComposition]]] = None
-    isrcCode: Optional[Union[Text, List[Text]]] = None
+    isrcCode: Optional[Union[str, List[str]]] = None
     inAlbum: Optional[Union["MusicAlbum", List["MusicAlbum"]]] = None

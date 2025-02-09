@@ -1,10 +1,8 @@
 from typing import List, Optional, Union
 
 from schema_models.medical_intangible import MedicalIntangible
-from schema_models.number import Number
-from schema_models.text import Text
 
 
 class MedicalConditionStage(MedicalIntangible):
-    stageAsNumber: Optional[Union[Number, List[Number]]] = None
-    subStageSuffix: Optional[Union[Text, List[Text]]] = None
+    stageAsNumber: Optional[Union[float, List[float]]] = None
+    subStageSuffix: Optional[Union[str, List[str]]] = None

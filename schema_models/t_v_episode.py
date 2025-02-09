@@ -1,17 +1,17 @@
 from typing import List, Optional, Union
 
+from pydantic import HttpUrl
+
 from schema_models.country import Country
 from schema_models.episode import Episode
 from schema_models.language import Language
 from schema_models.t_v_series import TVSeries
-from schema_models.text import Text
-from schema_models.url import URL
 
 
 class TVEpisode(Episode):
-    titleEIDR: Optional[Union[Text, List[Text]]] = None
-    titleEIDR: Optional[Union[URL, List[URL]]] = None
+    titleEIDR: Optional[Union[str, List[str]]] = None
+    titleEIDR: Optional[Union[HttpUrl, List[HttpUrl]]] = None
     partOfTVSeries: Optional[Union[TVSeries, List[TVSeries]]] = None
     countryOfOrigin: Optional[Union[Country, List[Country]]] = None
-    subtitleLanguage: Optional[Union[Text, List[Text]]] = None
+    subtitleLanguage: Optional[Union[str, List[str]]] = None
     subtitleLanguage: Optional[Union[Language, List[Language]]] = None

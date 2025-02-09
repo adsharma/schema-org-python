@@ -1,48 +1,45 @@
+from datetime import date, datetime
 from typing import List, Optional, Union
 
-from schema_models.boolean import Boolean
-from schema_models.date import Date
-from schema_models.date_time import DateTime
+from pydantic import HttpUrl
+
 from schema_models.intangible import Intangible
-from schema_models.number import Number
 from schema_models.offer import Offer
 from schema_models.organization import Organization
 from schema_models.person import Person
 from schema_models.product import Product
-from schema_models.text import Text
-from schema_models.url import URL
 
 
 class Order(Intangible):
-    discountCurrency: Optional[Union[Text, List[Text]]] = None
+    discountCurrency: Optional[Union[str, List[str]]] = None
     seller: Optional[Union[Person, List[Person]]] = None
     seller: Optional[Union[Organization, List[Organization]]] = None
     orderedItem: Optional[Union["Service", List["Service"]]] = None
     orderedItem: Optional[Union[Product, List[Product]]] = None
     orderedItem: Optional[Union["OrderItem", List["OrderItem"]]] = None
-    paymentMethodId: Optional[Union[Text, List[Text]]] = None
-    paymentMethod: Optional[Union[Text, List[Text]]] = None
+    paymentMethodId: Optional[Union[str, List[str]]] = None
+    paymentMethod: Optional[Union[str, List[str]]] = None
     paymentMethod: Optional[Union["PaymentMethod", List["PaymentMethod"]]] = None
-    isGift: Optional[Union[Boolean, List[Boolean]]] = None
-    paymentDue: Optional[Union[DateTime, List[DateTime]]] = None
+    isGift: Optional[Union[bool, List[bool]]] = None
+    paymentDue: Optional[Union[datetime, List[datetime]]] = None
     merchant: Optional[Union[Person, List[Person]]] = None
     merchant: Optional[Union[Organization, List[Organization]]] = None
-    orderNumber: Optional[Union[Text, List[Text]]] = None
+    orderNumber: Optional[Union[str, List[str]]] = None
     acceptedOffer: Optional[Union[Offer, List[Offer]]] = None
     partOfInvoice: Optional[Union["Invoice", List["Invoice"]]] = None
-    paymentUrl: Optional[Union[URL, List[URL]]] = None
-    confirmationNumber: Optional[Union[Text, List[Text]]] = None
+    paymentUrl: Optional[Union[HttpUrl, List[HttpUrl]]] = None
+    confirmationNumber: Optional[Union[str, List[str]]] = None
     orderDelivery: Optional[Union["ParcelDelivery", List["ParcelDelivery"]]] = None
-    orderDate: Optional[Union[Date, List[Date]]] = None
-    orderDate: Optional[Union[DateTime, List[DateTime]]] = None
-    discountCode: Optional[Union[Text, List[Text]]] = None
+    orderDate: Optional[Union[date, List[date]]] = None
+    orderDate: Optional[Union[datetime, List[datetime]]] = None
+    discountCode: Optional[Union[str, List[str]]] = None
     billingAddress: Optional[Union["PostalAddress", List["PostalAddress"]]] = None
-    discount: Optional[Union[Text, List[Text]]] = None
-    discount: Optional[Union[Number, List[Number]]] = None
+    discount: Optional[Union[str, List[str]]] = None
+    discount: Optional[Union[float, List[float]]] = None
     customer: Optional[Union[Person, List[Person]]] = None
     customer: Optional[Union[Organization, List[Organization]]] = None
-    paymentDueDate: Optional[Union[Date, List[Date]]] = None
-    paymentDueDate: Optional[Union[DateTime, List[DateTime]]] = None
+    paymentDueDate: Optional[Union[date, List[date]]] = None
+    paymentDueDate: Optional[Union[datetime, List[datetime]]] = None
     orderStatus: Optional[Union["OrderStatus", List["OrderStatus"]]] = None
     broker: Optional[Union[Organization, List[Organization]]] = None
     broker: Optional[Union[Person, List[Person]]] = None

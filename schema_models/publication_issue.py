@@ -1,15 +1,13 @@
 from typing import List, Optional, Union
 
 from schema_models.creative_work import CreativeWork
-from schema_models.integer import Integer
-from schema_models.text import Text
 
 
 class PublicationIssue(CreativeWork):
-    pagination: Optional[Union[Text, List[Text]]] = None
-    pageEnd: Optional[Union[Integer, List[Integer]]] = None
-    pageEnd: Optional[Union[Text, List[Text]]] = None
-    pageStart: Optional[Union[Text, List[Text]]] = None
-    pageStart: Optional[Union[Integer, List[Integer]]] = None
-    issueNumber: Optional[Union[Text, List[Text]]] = None
-    issueNumber: Optional[Union[Integer, List[Integer]]] = None
+    pagination: Optional[Union[str, List[str]]] = None
+    pageEnd: Optional[Union[int, List[int]]] = None
+    pageEnd: Optional[Union[str, List[str]]] = None
+    pageStart: Optional[Union[str, List[str]]] = None
+    pageStart: Optional[Union[int, List[int]]] = None
+    issueNumber: Optional[Union[str, List[str]]] = None
+    issueNumber: Optional[Union[int, List[int]]] = None

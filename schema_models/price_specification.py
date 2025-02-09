@@ -1,35 +1,31 @@
+from datetime import date, datetime
 from typing import List, Optional, Union
 
-from schema_models.boolean import Boolean
-from schema_models.date import Date
-from schema_models.date_time import DateTime
 from schema_models.member_program_tier import MemberProgramTier
-from schema_models.number import Number
 from schema_models.structured_value import StructuredValue
-from schema_models.text import Text
 
 
 class PriceSpecification(StructuredValue):
     eligibleTransactionVolume: Optional[
         Union["PriceSpecification", List["PriceSpecification"]]
     ] = None
-    validFrom: Optional[Union[DateTime, List[DateTime]]] = None
-    validFrom: Optional[Union[Date, List[Date]]] = None
+    validFrom: Optional[Union[datetime, List[datetime]]] = None
+    validFrom: Optional[Union[date, List[date]]] = None
     validForMemberTier: Optional[Union[MemberProgramTier, List[MemberProgramTier]]] = (
         None
     )
-    valueAddedTaxIncluded: Optional[Union[Boolean, List[Boolean]]] = None
-    maxPrice: Optional[Union[Number, List[Number]]] = None
-    validThrough: Optional[Union[DateTime, List[DateTime]]] = None
-    validThrough: Optional[Union[Date, List[Date]]] = None
-    membershipPointsEarned: Optional[Union[Number, List[Number]]] = None
+    valueAddedTaxIncluded: Optional[Union[bool, List[bool]]] = None
+    maxPrice: Optional[Union[float, List[float]]] = None
+    validThrough: Optional[Union[datetime, List[datetime]]] = None
+    validThrough: Optional[Union[date, List[date]]] = None
+    membershipPointsEarned: Optional[Union[float, List[float]]] = None
     membershipPointsEarned: Optional[
         Union["QuantitativeValue", List["QuantitativeValue"]]
     ] = None
-    price: Optional[Union[Text, List[Text]]] = None
-    price: Optional[Union[Number, List[Number]]] = None
+    price: Optional[Union[str, List[str]]] = None
+    price: Optional[Union[float, List[float]]] = None
     eligibleQuantity: Optional[
         Union["QuantitativeValue", List["QuantitativeValue"]]
     ] = None
-    priceCurrency: Optional[Union[Text, List[Text]]] = None
-    minPrice: Optional[Union[Number, List[Number]]] = None
+    priceCurrency: Optional[Union[str, List[str]]] = None
+    minPrice: Optional[Union[float, List[float]]] = None

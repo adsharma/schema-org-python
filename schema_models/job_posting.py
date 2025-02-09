@@ -1,91 +1,87 @@
+from datetime import date, datetime
 from typing import List, Optional, Union
 
-from schema_models.boolean import Boolean
-from schema_models.date import Date
-from schema_models.date_time import DateTime
+from pydantic import HttpUrl
+
 from schema_models.intangible import Intangible
-from schema_models.integer import Integer
-from schema_models.number import Number
 from schema_models.organization import Organization
 from schema_models.person import Person
 from schema_models.place import Place
-from schema_models.text import Text
-from schema_models.url import URL
 
 
 class JobPosting(Intangible):
-    title: Optional[Union[Text, List[Text]]] = None
+    title: Optional[Union[str, List[str]]] = None
     baseSalary: Optional[Union["PriceSpecification", List["PriceSpecification"]]] = None
     baseSalary: Optional[Union["MonetaryAmount", List["MonetaryAmount"]]] = None
-    baseSalary: Optional[Union[Number, List[Number]]] = None
-    specialCommitments: Optional[Union[Text, List[Text]]] = None
+    baseSalary: Optional[Union[float, List[float]]] = None
+    specialCommitments: Optional[Union[str, List[str]]] = None
     applicationContact: Optional[Union["ContactPoint", List["ContactPoint"]]] = None
-    experienceInPlaceOfEducation: Optional[Union[Boolean, List[Boolean]]] = None
-    eligibilityToWorkRequirement: Optional[Union[Text, List[Text]]] = None
-    directApply: Optional[Union[Boolean, List[Boolean]]] = None
-    employmentType: Optional[Union[Text, List[Text]]] = None
+    experienceInPlaceOfEducation: Optional[Union[bool, List[bool]]] = None
+    eligibilityToWorkRequirement: Optional[Union[str, List[str]]] = None
+    directApply: Optional[Union[bool, List[bool]]] = None
+    employmentType: Optional[Union[str, List[str]]] = None
     jobLocation: Optional[Union[Place, List[Place]]] = None
-    salaryCurrency: Optional[Union[Text, List[Text]]] = None
-    employerOverview: Optional[Union[Text, List[Text]]] = None
+    salaryCurrency: Optional[Union[str, List[str]]] = None
+    employerOverview: Optional[Union[str, List[str]]] = None
     relevantOccupation: Optional[Union["Occupation", List["Occupation"]]] = None
-    totalJobOpenings: Optional[Union[Integer, List[Integer]]] = None
+    totalJobOpenings: Optional[Union[int, List[int]]] = None
     experienceRequirements: Optional[
         Union[
             "OccupationalExperienceRequirements",
             List["OccupationalExperienceRequirements"],
         ]
     ] = None
-    experienceRequirements: Optional[Union[Text, List[Text]]] = None
+    experienceRequirements: Optional[Union[str, List[str]]] = None
     employmentUnit: Optional[Union[Organization, List[Organization]]] = None
-    benefits: Optional[Union[Text, List[Text]]] = None
-    jobImmediateStart: Optional[Union[Boolean, List[Boolean]]] = None
-    securityClearanceRequirement: Optional[Union[Text, List[Text]]] = None
-    securityClearanceRequirement: Optional[Union[URL, List[URL]]] = None
+    benefits: Optional[Union[str, List[str]]] = None
+    jobImmediateStart: Optional[Union[bool, List[bool]]] = None
+    securityClearanceRequirement: Optional[Union[str, List[str]]] = None
+    securityClearanceRequirement: Optional[Union[HttpUrl, List[HttpUrl]]] = None
     physicalRequirement: Optional[Union["DefinedTerm", List["DefinedTerm"]]] = None
-    physicalRequirement: Optional[Union[Text, List[Text]]] = None
-    physicalRequirement: Optional[Union[URL, List[URL]]] = None
+    physicalRequirement: Optional[Union[str, List[str]]] = None
+    physicalRequirement: Optional[Union[HttpUrl, List[HttpUrl]]] = None
     hiringOrganization: Optional[Union[Person, List[Person]]] = None
     hiringOrganization: Optional[Union[Organization, List[Organization]]] = None
-    sensoryRequirement: Optional[Union[URL, List[URL]]] = None
+    sensoryRequirement: Optional[Union[HttpUrl, List[HttpUrl]]] = None
     sensoryRequirement: Optional[Union["DefinedTerm", List["DefinedTerm"]]] = None
-    sensoryRequirement: Optional[Union[Text, List[Text]]] = None
+    sensoryRequirement: Optional[Union[str, List[str]]] = None
     industry: Optional[Union["DefinedTerm", List["DefinedTerm"]]] = None
-    industry: Optional[Union[Text, List[Text]]] = None
+    industry: Optional[Union[str, List[str]]] = None
     estimatedSalary: Optional[Union["MonetaryAmount", List["MonetaryAmount"]]] = None
-    estimatedSalary: Optional[Union[Number, List[Number]]] = None
+    estimatedSalary: Optional[Union[float, List[float]]] = None
     estimatedSalary: Optional[
         Union["MonetaryAmountDistribution", List["MonetaryAmountDistribution"]]
     ] = None
-    incentives: Optional[Union[Text, List[Text]]] = None
-    jobBenefits: Optional[Union[Text, List[Text]]] = None
-    educationRequirements: Optional[Union[Text, List[Text]]] = None
+    incentives: Optional[Union[str, List[str]]] = None
+    jobBenefits: Optional[Union[str, List[str]]] = None
+    educationRequirements: Optional[Union[str, List[str]]] = None
     educationRequirements: Optional[
         Union[
             "EducationalOccupationalCredential",
             List["EducationalOccupationalCredential"],
         ]
     ] = None
-    jobStartDate: Optional[Union[Date, List[Date]]] = None
-    jobStartDate: Optional[Union[Text, List[Text]]] = None
-    validThrough: Optional[Union[DateTime, List[DateTime]]] = None
-    validThrough: Optional[Union[Date, List[Date]]] = None
+    jobStartDate: Optional[Union[date, List[date]]] = None
+    jobStartDate: Optional[Union[str, List[str]]] = None
+    validThrough: Optional[Union[datetime, List[datetime]]] = None
+    validThrough: Optional[Union[date, List[date]]] = None
     occupationalCategory: Optional[Union["CategoryCode", List["CategoryCode"]]] = None
-    occupationalCategory: Optional[Union[Text, List[Text]]] = None
+    occupationalCategory: Optional[Union[str, List[str]]] = None
     applicantLocationRequirements: Optional[
         Union["AdministrativeArea", List["AdministrativeArea"]]
     ] = None
-    jobLocationType: Optional[Union[Text, List[Text]]] = None
-    incentiveCompensation: Optional[Union[Text, List[Text]]] = None
-    skills: Optional[Union[Text, List[Text]]] = None
+    jobLocationType: Optional[Union[str, List[str]]] = None
+    incentiveCompensation: Optional[Union[str, List[str]]] = None
+    skills: Optional[Union[str, List[str]]] = None
     skills: Optional[Union["DefinedTerm", List["DefinedTerm"]]] = None
-    qualifications: Optional[Union[Text, List[Text]]] = None
+    qualifications: Optional[Union[str, List[str]]] = None
     qualifications: Optional[
         Union[
             "EducationalOccupationalCredential",
             List["EducationalOccupationalCredential"],
         ]
     ] = None
-    responsibilities: Optional[Union[Text, List[Text]]] = None
-    workHours: Optional[Union[Text, List[Text]]] = None
-    datePosted: Optional[Union[DateTime, List[DateTime]]] = None
-    datePosted: Optional[Union[Date, List[Date]]] = None
+    responsibilities: Optional[Union[str, List[str]]] = None
+    workHours: Optional[Union[str, List[str]]] = None
+    datePosted: Optional[Union[datetime, List[datetime]]] = None
+    datePosted: Optional[Union[date, List[date]]] = None

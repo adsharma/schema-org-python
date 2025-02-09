@@ -1,5 +1,6 @@
-from schema_models.text import Text
+from fquery.pydantic import pydantic
 
 
-class URL(Text):
+@pydantic
+class URL:
     pass

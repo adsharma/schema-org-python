@@ -1,22 +1,19 @@
 from typing import List, Optional, Union
 
-from schema_models.boolean import Boolean
 from schema_models.intangible import Intangible
-from schema_models.number import Number
-from schema_models.text import Text
 from schema_models.thing import Thing
 
 
 class PropertyValueSpecification(Intangible):
     defaultValue: Optional[Union[Thing, List[Thing]]] = None
-    defaultValue: Optional[Union[Text, List[Text]]] = None
-    stepValue: Optional[Union[Number, List[Number]]] = None
-    multipleValues: Optional[Union[Boolean, List[Boolean]]] = None
-    valuePattern: Optional[Union[Text, List[Text]]] = None
-    valueMinLength: Optional[Union[Number, List[Number]]] = None
-    valueRequired: Optional[Union[Boolean, List[Boolean]]] = None
-    maxValue: Optional[Union[Number, List[Number]]] = None
-    valueMaxLength: Optional[Union[Number, List[Number]]] = None
-    readonlyValue: Optional[Union[Boolean, List[Boolean]]] = None
-    valueName: Optional[Union[Text, List[Text]]] = None
-    minValue: Optional[Union[Number, List[Number]]] = None
+    defaultValue: Optional[Union[str, List[str]]] = None
+    stepValue: Optional[Union[float, List[float]]] = None
+    multipleValues: Optional[Union[bool, List[bool]]] = None
+    valuePattern: Optional[Union[str, List[str]]] = None
+    valueMinLength: Optional[Union[float, List[float]]] = None
+    valueRequired: Optional[Union[bool, List[bool]]] = None
+    maxValue: Optional[Union[float, List[float]]] = None
+    valueMaxLength: Optional[Union[float, List[float]]] = None
+    readonlyValue: Optional[Union[bool, List[bool]]] = None
+    valueName: Optional[Union[str, List[str]]] = None
+    minValue: Optional[Union[float, List[float]]] = None

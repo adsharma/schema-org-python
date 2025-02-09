@@ -1,24 +1,23 @@
 from typing import List, Optional, Union
 
+from pydantic import HttpUrl
+
 from schema_models.creative_work import CreativeWork
-from schema_models.integer import Integer
 from schema_models.speakable_specification import SpeakableSpecification
-from schema_models.text import Text
-from schema_models.url import URL
 
 
 class Article(CreativeWork):
-    pageStart: Optional[Union[Text, List[Text]]] = None
-    pageStart: Optional[Union[Integer, List[Integer]]] = None
-    speakable: Optional[Union[URL, List[URL]]] = None
+    pageStart: Optional[Union[str, List[str]]] = None
+    pageStart: Optional[Union[int, List[int]]] = None
+    speakable: Optional[Union[HttpUrl, List[HttpUrl]]] = None
     speakable: Optional[Union[SpeakableSpecification, List[SpeakableSpecification]]] = (
         None
     )
-    articleSection: Optional[Union[Text, List[Text]]] = None
-    pagination: Optional[Union[Text, List[Text]]] = None
-    wordCount: Optional[Union[Integer, List[Integer]]] = None
-    articleBody: Optional[Union[Text, List[Text]]] = None
+    articleSection: Optional[Union[str, List[str]]] = None
+    pagination: Optional[Union[str, List[str]]] = None
+    wordCount: Optional[Union[int, List[int]]] = None
+    articleBody: Optional[Union[str, List[str]]] = None
     backstory: Optional[Union[CreativeWork, List[CreativeWork]]] = None
-    backstory: Optional[Union[Text, List[Text]]] = None
-    pageEnd: Optional[Union[Integer, List[Integer]]] = None
-    pageEnd: Optional[Union[Text, List[Text]]] = None
+    backstory: Optional[Union[str, List[str]]] = None
+    pageEnd: Optional[Union[int, List[int]]] = None
+    pageEnd: Optional[Union[str, List[str]]] = None

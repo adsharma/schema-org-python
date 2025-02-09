@@ -2,9 +2,8 @@ from typing import List, Optional, Union
 
 from schema_models.how_to_item import HowToItem
 from schema_models.monetary_amount import MonetaryAmount
-from schema_models.text import Text
 
 
 class HowToSupply(HowToItem):
     estimatedCost: Optional[Union[MonetaryAmount, List[MonetaryAmount]]] = None
-    estimatedCost: Optional[Union[Text, List[Text]]] = None
+    estimatedCost: Optional[Union[str, List[str]]] = None

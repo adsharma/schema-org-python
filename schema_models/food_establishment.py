@@ -1,22 +1,21 @@
 from typing import List, Optional, Union
 
-from schema_models.boolean import Boolean
+from pydantic import HttpUrl
+
 from schema_models.local_business import LocalBusiness
 from schema_models.menu import Menu
 from schema_models.rating import Rating
-from schema_models.text import Text
-from schema_models.url import URL
 
 
 class FoodEstablishment(LocalBusiness):
     menu: Optional[Union[Menu, List[Menu]]] = None
-    menu: Optional[Union[Text, List[Text]]] = None
-    menu: Optional[Union[URL, List[URL]]] = None
+    menu: Optional[Union[str, List[str]]] = None
+    menu: Optional[Union[HttpUrl, List[HttpUrl]]] = None
     starRating: Optional[Union[Rating, List[Rating]]] = None
-    servesCuisine: Optional[Union[Text, List[Text]]] = None
+    servesCuisine: Optional[Union[str, List[str]]] = None
     hasMenu: Optional[Union[Menu, List[Menu]]] = None
-    hasMenu: Optional[Union[Text, List[Text]]] = None
-    hasMenu: Optional[Union[URL, List[URL]]] = None
-    acceptsReservations: Optional[Union[Text, List[Text]]] = None
-    acceptsReservations: Optional[Union[Boolean, List[Boolean]]] = None
-    acceptsReservations: Optional[Union[URL, List[URL]]] = None
+    hasMenu: Optional[Union[str, List[str]]] = None
+    hasMenu: Optional[Union[HttpUrl, List[HttpUrl]]] = None
+    acceptsReservations: Optional[Union[str, List[str]]] = None
+    acceptsReservations: Optional[Union[bool, List[bool]]] = None
+    acceptsReservations: Optional[Union[HttpUrl, List[HttpUrl]]] = None

@@ -1,27 +1,23 @@
+from datetime import date, datetime, time
 from typing import List, Optional, Union
 
-from schema_models.boolean import Boolean
+from pydantic import HttpUrl
+
 from schema_models.creative_work import CreativeWork
-from schema_models.date import Date
-from schema_models.date_time import DateTime
 from schema_models.event import Event
 from schema_models.intangible import Intangible
 from schema_models.member_program_tier import MemberProgramTier
-from schema_models.number import Number
 from schema_models.organization import Organization
 from schema_models.person import Person
 from schema_models.place import Place
 from schema_models.product import Product
-from schema_models.text import Text
 from schema_models.thing import Thing
-from schema_models.time import Time
 from schema_models.trip import Trip
-from schema_models.url import URL
 
 
 class Offer(Intangible):
-    hasGS1DigitalLink: Optional[Union[URL, List[URL]]] = None
-    areaServed: Optional[Union[Text, List[Text]]] = None
+    hasGS1DigitalLink: Optional[Union[HttpUrl, List[HttpUrl]]] = None
+    areaServed: Optional[Union[str, List[str]]] = None
     areaServed: Optional[Union[Place, List[Place]]] = None
     areaServed: Optional[Union["GeoShape", List["GeoShape"]]] = None
     areaServed: Optional[Union["AdministrativeArea", List["AdministrativeArea"]]] = None
@@ -29,8 +25,8 @@ class Offer(Intangible):
     priceSpecification: Optional[
         Union["PriceSpecification", List["PriceSpecification"]]
     ] = None
-    gtin8: Optional[Union[Text, List[Text]]] = None
-    gtin14: Optional[Union[Text, List[Text]]] = None
+    gtin8: Optional[Union[str, List[str]]] = None
+    gtin14: Optional[Union[str, List[str]]] = None
     hasMerchantReturnPolicy: Optional[
         Union["MerchantReturnPolicy", List["MerchantReturnPolicy"]]
     ] = None
@@ -38,9 +34,9 @@ class Offer(Intangible):
         Union["TypeAndQuantityNode", List["TypeAndQuantityNode"]]
     ] = None
     review: Optional[Union["Review", List["Review"]]] = None
-    checkoutPageURLTemplate: Optional[Union[Text, List[Text]]] = None
+    checkoutPageURLTemplate: Optional[Union[str, List[str]]] = None
     eligibleRegion: Optional[Union["GeoShape", List["GeoShape"]]] = None
-    eligibleRegion: Optional[Union[Text, List[Text]]] = None
+    eligibleRegion: Optional[Union[str, List[str]]] = None
     eligibleRegion: Optional[Union[Place, List[Place]]] = None
     advanceBookingRequirement: Optional[
         Union["QuantitativeValue", List["QuantitativeValue"]]
@@ -69,8 +65,8 @@ class Offer(Intangible):
     eligibleTransactionVolume: Optional[
         Union["PriceSpecification", List["PriceSpecification"]]
     ] = None
-    validFrom: Optional[Union[DateTime, List[DateTime]]] = None
-    validFrom: Optional[Union[Date, List[Date]]] = None
+    validFrom: Optional[Union[datetime, List[datetime]]] = None
+    validFrom: Optional[Union[date, List[date]]] = None
     deliveryLeadTime: Optional[
         Union["QuantitativeValue", List["QuantitativeValue"]]
     ] = None
@@ -87,8 +83,8 @@ class Offer(Intangible):
     hasMeasurement: Optional[Union["QuantitativeValue", List["QuantitativeValue"]]] = (
         None
     )
-    gtin13: Optional[Union[Text, List[Text]]] = None
-    acceptedPaymentMethod: Optional[Union[Text, List[Text]]] = None
+    gtin13: Optional[Union[str, List[str]]] = None
+    acceptedPaymentMethod: Optional[Union[str, List[str]]] = None
     acceptedPaymentMethod: Optional[Union["PaymentMethod", List["PaymentMethod"]]] = (
         None
     )
@@ -97,49 +93,49 @@ class Offer(Intangible):
     seller: Optional[Union[Organization, List[Organization]]] = None
     availability: Optional[Union["ItemAvailability", List["ItemAvailability"]]] = None
     additionalProperty: Optional[Union["PropertyValue", List["PropertyValue"]]] = None
-    mobileUrl: Optional[Union[Text, List[Text]]] = None
-    sku: Optional[Union[Text, List[Text]]] = None
-    gtin: Optional[Union[Text, List[Text]]] = None
-    gtin: Optional[Union[URL, List[URL]]] = None
+    mobileUrl: Optional[Union[str, List[str]]] = None
+    sku: Optional[Union[str, List[str]]] = None
+    gtin: Optional[Union[str, List[str]]] = None
+    gtin: Optional[Union[HttpUrl, List[HttpUrl]]] = None
     inventoryLevel: Optional[Union["QuantitativeValue", List["QuantitativeValue"]]] = (
         None
     )
-    availabilityEnds: Optional[Union[DateTime, List[DateTime]]] = None
-    availabilityEnds: Optional[Union[Time, List[Time]]] = None
-    availabilityEnds: Optional[Union[Date, List[Date]]] = None
-    validThrough: Optional[Union[DateTime, List[DateTime]]] = None
-    validThrough: Optional[Union[Date, List[Date]]] = None
-    asin: Optional[Union[Text, List[Text]]] = None
-    asin: Optional[Union[URL, List[URL]]] = None
+    availabilityEnds: Optional[Union[datetime, List[datetime]]] = None
+    availabilityEnds: Optional[Union[time, List[time]]] = None
+    availabilityEnds: Optional[Union[date, List[date]]] = None
+    validThrough: Optional[Union[datetime, List[datetime]]] = None
+    validThrough: Optional[Union[date, List[date]]] = None
+    asin: Optional[Union[str, List[str]]] = None
+    asin: Optional[Union[HttpUrl, List[HttpUrl]]] = None
     warranty: Optional[Union["WarrantyPromise", List["WarrantyPromise"]]] = None
     ineligibleRegion: Optional[Union[Place, List[Place]]] = None
-    ineligibleRegion: Optional[Union[Text, List[Text]]] = None
+    ineligibleRegion: Optional[Union[str, List[str]]] = None
     ineligibleRegion: Optional[Union["GeoShape", List["GeoShape"]]] = None
-    mpn: Optional[Union[Text, List[Text]]] = None
-    serialNumber: Optional[Union[Text, List[Text]]] = None
+    mpn: Optional[Union[str, List[str]]] = None
+    serialNumber: Optional[Union[str, List[str]]] = None
     offeredBy: Optional[Union[Person, List[Person]]] = None
     offeredBy: Optional[Union[Organization, List[Organization]]] = None
     availableAtOrFrom: Optional[Union[Place, List[Place]]] = None
     eligibleQuantity: Optional[
         Union["QuantitativeValue", List["QuantitativeValue"]]
     ] = None
-    price: Optional[Union[Text, List[Text]]] = None
-    price: Optional[Union[Number, List[Number]]] = None
-    gtin12: Optional[Union[Text, List[Text]]] = None
-    priceCurrency: Optional[Union[Text, List[Text]]] = None
+    price: Optional[Union[str, List[str]]] = None
+    price: Optional[Union[float, List[float]]] = None
+    gtin12: Optional[Union[str, List[str]]] = None
+    priceCurrency: Optional[Union[str, List[str]]] = None
     addOn: Optional[Union["Offer", List["Offer"]]] = None
     businessFunction: Optional[Union["BusinessFunction", List["BusinessFunction"]]] = (
         None
     )
-    availabilityStarts: Optional[Union[Date, List[Date]]] = None
-    availabilityStarts: Optional[Union[Time, List[Time]]] = None
-    availabilityStarts: Optional[Union[DateTime, List[DateTime]]] = None
-    isFamilyFriendly: Optional[Union[Boolean, List[Boolean]]] = None
+    availabilityStarts: Optional[Union[date, List[date]]] = None
+    availabilityStarts: Optional[Union[time, List[time]]] = None
+    availabilityStarts: Optional[Union[datetime, List[datetime]]] = None
+    isFamilyFriendly: Optional[Union[bool, List[bool]]] = None
     category: Optional[Union[Thing, List[Thing]]] = None
     category: Optional[
         Union["PhysicalActivityCategory", List["PhysicalActivityCategory"]]
     ] = None
     category: Optional[Union["CategoryCode", List["CategoryCode"]]] = None
-    category: Optional[Union[Text, List[Text]]] = None
-    category: Optional[Union[URL, List[URL]]] = None
-    priceValidUntil: Optional[Union[Date, List[Date]]] = None
+    category: Optional[Union[str, List[str]]] = None
+    category: Optional[Union[HttpUrl, List[HttpUrl]]] = None
+    priceValidUntil: Optional[Union[date, List[date]]] = None

@@ -1,30 +1,28 @@
+from datetime import date, datetime, time
 from typing import List, Optional, Union
 
+from pydantic import HttpUrl
+
 from schema_models.creative_work import CreativeWork
-from schema_models.date import Date
-from schema_models.date_time import DateTime
 from schema_models.event import Event
 from schema_models.intangible import Intangible
 from schema_models.organization import Organization
 from schema_models.person import Person
 from schema_models.place import Place
 from schema_models.product import Product
-from schema_models.text import Text
-from schema_models.time import Time
 from schema_models.trip import Trip
-from schema_models.url import URL
 
 
 class Demand(Intangible):
-    gtin14: Optional[Union[Text, List[Text]]] = None
-    gtin12: Optional[Union[Text, List[Text]]] = None
+    gtin14: Optional[Union[str, List[str]]] = None
+    gtin12: Optional[Union[str, List[str]]] = None
     businessFunction: Optional[Union["BusinessFunction", List["BusinessFunction"]]] = (
         None
     )
     eligibleRegion: Optional[Union["GeoShape", List["GeoShape"]]] = None
-    eligibleRegion: Optional[Union[Text, List[Text]]] = None
+    eligibleRegion: Optional[Union[str, List[str]]] = None
     eligibleRegion: Optional[Union[Place, List[Place]]] = None
-    areaServed: Optional[Union[Text, List[Text]]] = None
+    areaServed: Optional[Union[str, List[str]]] = None
     areaServed: Optional[Union[Place, List[Place]]] = None
     areaServed: Optional[Union["GeoShape", List["GeoShape"]]] = None
     areaServed: Optional[Union["AdministrativeArea", List["AdministrativeArea"]]] = None
@@ -34,7 +32,7 @@ class Demand(Intangible):
     advanceBookingRequirement: Optional[
         Union["QuantitativeValue", List["QuantitativeValue"]]
     ] = None
-    gtin8: Optional[Union[Text, List[Text]]] = None
+    gtin8: Optional[Union[str, List[str]]] = None
     availableDeliveryMethod: Optional[
         Union["DeliveryMethod", List["DeliveryMethod"]]
     ] = None
@@ -63,39 +61,39 @@ class Demand(Intangible):
     itemOffered: Optional[Union[Event, List[Event]]] = None
     itemOffered: Optional[Union["AggregateOffer", List["AggregateOffer"]]] = None
     availability: Optional[Union["ItemAvailability", List["ItemAvailability"]]] = None
-    validFrom: Optional[Union[DateTime, List[DateTime]]] = None
-    validFrom: Optional[Union[Date, List[Date]]] = None
+    validFrom: Optional[Union[datetime, List[datetime]]] = None
+    validFrom: Optional[Union[date, List[date]]] = None
     itemCondition: Optional[Union["OfferItemCondition", List["OfferItemCondition"]]] = (
         None
     )
     inventoryLevel: Optional[Union["QuantitativeValue", List["QuantitativeValue"]]] = (
         None
     )
-    validThrough: Optional[Union[DateTime, List[DateTime]]] = None
-    validThrough: Optional[Union[Date, List[Date]]] = None
-    gtin13: Optional[Union[Text, List[Text]]] = None
-    acceptedPaymentMethod: Optional[Union[Text, List[Text]]] = None
+    validThrough: Optional[Union[datetime, List[datetime]]] = None
+    validThrough: Optional[Union[date, List[date]]] = None
+    gtin13: Optional[Union[str, List[str]]] = None
+    acceptedPaymentMethod: Optional[Union[str, List[str]]] = None
     acceptedPaymentMethod: Optional[Union["PaymentMethod", List["PaymentMethod"]]] = (
         None
     )
     acceptedPaymentMethod: Optional[Union["LoanOrCredit", List["LoanOrCredit"]]] = None
-    asin: Optional[Union[Text, List[Text]]] = None
-    asin: Optional[Union[URL, List[URL]]] = None
-    serialNumber: Optional[Union[Text, List[Text]]] = None
-    sku: Optional[Union[Text, List[Text]]] = None
-    gtin: Optional[Union[Text, List[Text]]] = None
-    gtin: Optional[Union[URL, List[URL]]] = None
-    availabilityEnds: Optional[Union[DateTime, List[DateTime]]] = None
-    availabilityEnds: Optional[Union[Time, List[Time]]] = None
-    availabilityEnds: Optional[Union[Date, List[Date]]] = None
-    availabilityStarts: Optional[Union[Date, List[Date]]] = None
-    availabilityStarts: Optional[Union[Time, List[Time]]] = None
-    availabilityStarts: Optional[Union[DateTime, List[DateTime]]] = None
+    asin: Optional[Union[str, List[str]]] = None
+    asin: Optional[Union[HttpUrl, List[HttpUrl]]] = None
+    serialNumber: Optional[Union[str, List[str]]] = None
+    sku: Optional[Union[str, List[str]]] = None
+    gtin: Optional[Union[str, List[str]]] = None
+    gtin: Optional[Union[HttpUrl, List[HttpUrl]]] = None
+    availabilityEnds: Optional[Union[datetime, List[datetime]]] = None
+    availabilityEnds: Optional[Union[time, List[time]]] = None
+    availabilityEnds: Optional[Union[date, List[date]]] = None
+    availabilityStarts: Optional[Union[date, List[date]]] = None
+    availabilityStarts: Optional[Union[time, List[time]]] = None
+    availabilityStarts: Optional[Union[datetime, List[datetime]]] = None
     warranty: Optional[Union["WarrantyPromise", List["WarrantyPromise"]]] = None
     ineligibleRegion: Optional[Union[Place, List[Place]]] = None
-    ineligibleRegion: Optional[Union[Text, List[Text]]] = None
+    ineligibleRegion: Optional[Union[str, List[str]]] = None
     ineligibleRegion: Optional[Union["GeoShape", List["GeoShape"]]] = None
-    mpn: Optional[Union[Text, List[Text]]] = None
+    mpn: Optional[Union[str, List[str]]] = None
     availableAtOrFrom: Optional[Union[Place, List[Place]]] = None
     eligibleQuantity: Optional[
         Union["QuantitativeValue", List["QuantitativeValue"]]

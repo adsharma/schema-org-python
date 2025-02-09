@@ -4,7 +4,6 @@ from schema_models.defined_term import DefinedTerm
 from schema_models.enumeration import Enumeration
 from schema_models.measurement_type_enumeration import MeasurementTypeEnumeration
 from schema_models.structured_value import StructuredValue
-from schema_models.text import Text
 
 
 class QualitativeValue(Enumeration):
@@ -13,7 +12,7 @@ class QualitativeValue(Enumeration):
     additionalProperty: Optional[Union["PropertyValue", List["PropertyValue"]]] = None
     nonEqual: Optional[Union["QualitativeValue", List["QualitativeValue"]]] = None
     equal: Optional[Union["QualitativeValue", List["QualitativeValue"]]] = None
-    valueReference: Optional[Union[Text, List[Text]]] = None
+    valueReference: Optional[Union[str, List[str]]] = None
     valueReference: Optional[Union[DefinedTerm, List[DefinedTerm]]] = None
     valueReference: Optional[Union["PropertyValue", List["PropertyValue"]]] = None
     valueReference: Optional[

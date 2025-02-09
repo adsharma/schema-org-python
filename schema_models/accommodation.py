@@ -1,42 +1,39 @@
 from typing import List, Optional, Union
 
+from pydantic import HttpUrl
+
 from schema_models.bed_details import BedDetails
-from schema_models.boolean import Boolean
 from schema_models.floor_plan import FloorPlan
-from schema_models.integer import Integer
-from schema_models.number import Number
 from schema_models.place import Place
-from schema_models.text import Text
-from schema_models.url import URL
 
 
 class Accommodation(Place):
-    numberOfBathroomsTotal: Optional[Union[Integer, List[Integer]]] = None
-    accommodationCategory: Optional[Union[Text, List[Text]]] = None
-    floorLevel: Optional[Union[Text, List[Text]]] = None
+    numberOfBathroomsTotal: Optional[Union[int, List[int]]] = None
+    accommodationCategory: Optional[Union[str, List[str]]] = None
+    floorLevel: Optional[Union[str, List[str]]] = None
     bed: Optional[Union["BedType", List["BedType"]]] = None
     bed: Optional[Union[BedDetails, List[BedDetails]]] = None
-    bed: Optional[Union[Text, List[Text]]] = None
-    numberOfBedrooms: Optional[Union[Number, List[Number]]] = None
+    bed: Optional[Union[str, List[str]]] = None
+    numberOfBedrooms: Optional[Union[float, List[float]]] = None
     numberOfBedrooms: Optional[
         Union["QuantitativeValue", List["QuantitativeValue"]]
     ] = None
     leaseLength: Optional[Union["QuantitativeValue", List["QuantitativeValue"]]] = None
     leaseLength: Optional[Union["Duration", List["Duration"]]] = None
-    numberOfFullBathrooms: Optional[Union[Number, List[Number]]] = None
+    numberOfFullBathrooms: Optional[Union[float, List[float]]] = None
     floorSize: Optional[Union["QuantitativeValue", List["QuantitativeValue"]]] = None
-    yearBuilt: Optional[Union[Number, List[Number]]] = None
+    yearBuilt: Optional[Union[float, List[float]]] = None
     numberOfRooms: Optional[Union["QuantitativeValue", List["QuantitativeValue"]]] = (
         None
     )
-    numberOfRooms: Optional[Union[Number, List[Number]]] = None
-    petsAllowed: Optional[Union[Text, List[Text]]] = None
-    petsAllowed: Optional[Union[Boolean, List[Boolean]]] = None
+    numberOfRooms: Optional[Union[float, List[float]]] = None
+    petsAllowed: Optional[Union[str, List[str]]] = None
+    petsAllowed: Optional[Union[bool, List[bool]]] = None
     accommodationFloorPlan: Optional[Union[FloorPlan, List[FloorPlan]]] = None
     amenityFeature: Optional[
         Union["LocationFeatureSpecification", List["LocationFeatureSpecification"]]
     ] = None
     occupancy: Optional[Union["QuantitativeValue", List["QuantitativeValue"]]] = None
-    permittedUsage: Optional[Union[Text, List[Text]]] = None
-    tourBookingPage: Optional[Union[URL, List[URL]]] = None
-    numberOfPartialBathrooms: Optional[Union[Number, List[Number]]] = None
+    permittedUsage: Optional[Union[str, List[str]]] = None
+    tourBookingPage: Optional[Union[HttpUrl, List[HttpUrl]]] = None
+    numberOfPartialBathrooms: Optional[Union[float, List[float]]] = None

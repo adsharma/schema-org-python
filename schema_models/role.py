@@ -1,18 +1,17 @@
+from datetime import date, datetime
 from typing import List, Optional, Union
 
-from schema_models.date import Date
-from schema_models.date_time import DateTime
+from pydantic import HttpUrl
+
 from schema_models.intangible import Intangible
-from schema_models.text import Text
-from schema_models.url import URL
 
 
 class Role(Intangible):
-    roleName: Optional[Union[Text, List[Text]]] = None
-    roleName: Optional[Union[URL, List[URL]]] = None
-    startDate: Optional[Union[DateTime, List[DateTime]]] = None
-    startDate: Optional[Union[Date, List[Date]]] = None
-    endDate: Optional[Union[Date, List[Date]]] = None
-    endDate: Optional[Union[DateTime, List[DateTime]]] = None
-    namedPosition: Optional[Union[Text, List[Text]]] = None
-    namedPosition: Optional[Union[URL, List[URL]]] = None
+    roleName: Optional[Union[str, List[str]]] = None
+    roleName: Optional[Union[HttpUrl, List[HttpUrl]]] = None
+    startDate: Optional[Union[datetime, List[datetime]]] = None
+    startDate: Optional[Union[date, List[date]]] = None
+    endDate: Optional[Union[date, List[date]]] = None
+    endDate: Optional[Union[datetime, List[datetime]]] = None
+    namedPosition: Optional[Union[str, List[str]]] = None
+    namedPosition: Optional[Union[HttpUrl, List[HttpUrl]]] = None

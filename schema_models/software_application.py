@@ -1,43 +1,43 @@
 from typing import List, Optional, Union
 
+from pydantic import HttpUrl
+
 from schema_models.creative_work import CreativeWork
-from schema_models.text import Text
-from schema_models.url import URL
 
 
 class SoftwareApplication(CreativeWork):
-    countriesSupported: Optional[Union[Text, List[Text]]] = None
-    storageRequirements: Optional[Union[Text, List[Text]]] = None
-    storageRequirements: Optional[Union[URL, List[URL]]] = None
-    installUrl: Optional[Union[URL, List[URL]]] = None
+    countriesSupported: Optional[Union[str, List[str]]] = None
+    storageRequirements: Optional[Union[str, List[str]]] = None
+    storageRequirements: Optional[Union[HttpUrl, List[HttpUrl]]] = None
+    installUrl: Optional[Union[HttpUrl, List[HttpUrl]]] = None
     softwareHelp: Optional[Union[CreativeWork, List[CreativeWork]]] = None
-    applicationSubCategory: Optional[Union[Text, List[Text]]] = None
-    applicationSubCategory: Optional[Union[URL, List[URL]]] = None
-    permissions: Optional[Union[Text, List[Text]]] = None
-    device: Optional[Union[Text, List[Text]]] = None
-    softwareVersion: Optional[Union[Text, List[Text]]] = None
-    releaseNotes: Optional[Union[Text, List[Text]]] = None
-    releaseNotes: Optional[Union[URL, List[URL]]] = None
-    applicationCategory: Optional[Union[Text, List[Text]]] = None
-    applicationCategory: Optional[Union[URL, List[URL]]] = None
-    countriesNotSupported: Optional[Union[Text, List[Text]]] = None
-    applicationSuite: Optional[Union[Text, List[Text]]] = None
-    requirements: Optional[Union[Text, List[Text]]] = None
-    requirements: Optional[Union[URL, List[URL]]] = None
+    applicationSubCategory: Optional[Union[str, List[str]]] = None
+    applicationSubCategory: Optional[Union[HttpUrl, List[HttpUrl]]] = None
+    permissions: Optional[Union[str, List[str]]] = None
+    device: Optional[Union[str, List[str]]] = None
+    softwareVersion: Optional[Union[str, List[str]]] = None
+    releaseNotes: Optional[Union[str, List[str]]] = None
+    releaseNotes: Optional[Union[HttpUrl, List[HttpUrl]]] = None
+    applicationCategory: Optional[Union[str, List[str]]] = None
+    applicationCategory: Optional[Union[HttpUrl, List[HttpUrl]]] = None
+    countriesNotSupported: Optional[Union[str, List[str]]] = None
+    applicationSuite: Optional[Union[str, List[str]]] = None
+    requirements: Optional[Union[str, List[str]]] = None
+    requirements: Optional[Union[HttpUrl, List[HttpUrl]]] = None
     softwareAddOn: Optional[
         Union["SoftwareApplication", List["SoftwareApplication"]]
     ] = None
     supportingData: Optional[Union["DataFeed", List["DataFeed"]]] = None
-    availableOnDevice: Optional[Union[Text, List[Text]]] = None
-    softwareRequirements: Optional[Union[Text, List[Text]]] = None
-    softwareRequirements: Optional[Union[URL, List[URL]]] = None
-    downloadUrl: Optional[Union[URL, List[URL]]] = None
-    operatingSystem: Optional[Union[Text, List[Text]]] = None
-    memoryRequirements: Optional[Union[Text, List[Text]]] = None
-    memoryRequirements: Optional[Union[URL, List[URL]]] = None
-    screenshot: Optional[Union[URL, List[URL]]] = None
+    availableOnDevice: Optional[Union[str, List[str]]] = None
+    softwareRequirements: Optional[Union[str, List[str]]] = None
+    softwareRequirements: Optional[Union[HttpUrl, List[HttpUrl]]] = None
+    downloadUrl: Optional[Union[HttpUrl, List[HttpUrl]]] = None
+    operatingSystem: Optional[Union[str, List[str]]] = None
+    memoryRequirements: Optional[Union[str, List[str]]] = None
+    memoryRequirements: Optional[Union[HttpUrl, List[HttpUrl]]] = None
+    screenshot: Optional[Union[HttpUrl, List[HttpUrl]]] = None
     screenshot: Optional[Union["ImageObject", List["ImageObject"]]] = None
-    fileSize: Optional[Union[Text, List[Text]]] = None
-    featureList: Optional[Union[Text, List[Text]]] = None
-    featureList: Optional[Union[URL, List[URL]]] = None
-    processorRequirements: Optional[Union[Text, List[Text]]] = None
+    fileSize: Optional[Union[str, List[str]]] = None
+    featureList: Optional[Union[str, List[str]]] = None
+    featureList: Optional[Union[HttpUrl, List[HttpUrl]]] = None
+    processorRequirements: Optional[Union[str, List[str]]] = None

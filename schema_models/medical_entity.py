@@ -1,6 +1,5 @@
 from typing import List, Optional, Union
 
-from schema_models.text import Text
 from schema_models.thing import Thing
 
 
@@ -16,6 +15,6 @@ class MedicalEntity(Thing):
     legalStatus: Optional[Union["MedicalEnumeration", List["MedicalEnumeration"]]] = (
         None
     )
-    legalStatus: Optional[Union[Text, List[Text]]] = None
+    legalStatus: Optional[Union[str, List[str]]] = None
     funding: Optional[Union["Grant", List["Grant"]]] = None
     guideline: Optional[Union["MedicalGuideline", List["MedicalGuideline"]]] = None

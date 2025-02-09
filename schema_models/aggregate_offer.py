@@ -1,17 +1,14 @@
 from typing import List, Optional, Union
 
 from schema_models.demand import Demand
-from schema_models.integer import Integer
-from schema_models.number import Number
 from schema_models.offer import Offer
-from schema_models.text import Text
 
 
 class AggregateOffer(Offer):
-    highPrice: Optional[Union[Text, List[Text]]] = None
-    highPrice: Optional[Union[Number, List[Number]]] = None
-    offerCount: Optional[Union[Integer, List[Integer]]] = None
-    lowPrice: Optional[Union[Text, List[Text]]] = None
-    lowPrice: Optional[Union[Number, List[Number]]] = None
+    highPrice: Optional[Union[str, List[str]]] = None
+    highPrice: Optional[Union[float, List[float]]] = None
+    offerCount: Optional[Union[int, List[int]]] = None
+    lowPrice: Optional[Union[str, List[str]]] = None
+    lowPrice: Optional[Union[float, List[float]]] = None
     offers: Optional[Union[Offer, List[Offer]]] = None
     offers: Optional[Union[Demand, List[Demand]]] = None

@@ -1,13 +1,13 @@
 from typing import List, Optional, Union
 
+from pydantic import HttpUrl
+
 from schema_models.creative_work import CreativeWork
 from schema_models.t_v_series import TVSeries
-from schema_models.text import Text
-from schema_models.url import URL
 
 
 class TVSeason(CreativeWork):
-    titleEIDR: Optional[Union[Text, List[Text]]] = None
-    titleEIDR: Optional[Union[URL, List[URL]]] = None
+    titleEIDR: Optional[Union[str, List[str]]] = None
+    titleEIDR: Optional[Union[HttpUrl, List[HttpUrl]]] = None
     partOfTVSeries: Optional[Union[TVSeries, List[TVSeries]]] = None
     countryOfOrigin: Optional[Union["Country", List["Country"]]] = None

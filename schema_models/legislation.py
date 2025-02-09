@@ -1,12 +1,12 @@
+from datetime import date
 from typing import List, Optional, Union
+
+from pydantic import HttpUrl
 
 from schema_models.administrative_area import AdministrativeArea
 from schema_models.creative_work import CreativeWork
-from schema_models.date import Date
 from schema_models.organization import Organization
 from schema_models.person import Person
-from schema_models.text import Text
-from schema_models.url import URL
 
 
 class Legislation(CreativeWork):
@@ -16,20 +16,20 @@ class Legislation(CreativeWork):
     legislationLegalForce: Optional[
         Union["LegalForceStatus", List["LegalForceStatus"]]
     ] = None
-    jurisdiction: Optional[Union[Text, List[Text]]] = None
+    jurisdiction: Optional[Union[str, List[str]]] = None
     jurisdiction: Optional[Union[AdministrativeArea, List[AdministrativeArea]]] = None
-    legislationJurisdiction: Optional[Union[Text, List[Text]]] = None
+    legislationJurisdiction: Optional[Union[str, List[str]]] = None
     legislationJurisdiction: Optional[
         Union[AdministrativeArea, List[AdministrativeArea]]
     ] = None
     legislationConsolidates: Optional[Union["Legislation", List["Legislation"]]] = None
     legislationResponsible: Optional[Union[Person, List[Person]]] = None
     legislationResponsible: Optional[Union[Organization, List[Organization]]] = None
-    legislationDateVersion: Optional[Union[Date, List[Date]]] = None
+    legislationDateVersion: Optional[Union[date, List[date]]] = None
     legislationApplies: Optional[Union["Legislation", List["Legislation"]]] = None
-    legislationDate: Optional[Union[Date, List[Date]]] = None
-    legislationIdentifier: Optional[Union[Text, List[Text]]] = None
-    legislationIdentifier: Optional[Union[URL, List[URL]]] = None
+    legislationDate: Optional[Union[date, List[date]]] = None
+    legislationIdentifier: Optional[Union[str, List[str]]] = None
+    legislationIdentifier: Optional[Union[HttpUrl, List[HttpUrl]]] = None
     legislationType: Optional[Union["CategoryCode", List["CategoryCode"]]] = None
-    legislationType: Optional[Union[Text, List[Text]]] = None
+    legislationType: Optional[Union[str, List[str]]] = None
     legislationChanges: Optional[Union["Legislation", List["Legislation"]]] = None

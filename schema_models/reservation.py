@@ -1,24 +1,22 @@
+from datetime import datetime
 from typing import List, Optional, Union
 
-from schema_models.date_time import DateTime
 from schema_models.intangible import Intangible
-from schema_models.number import Number
 from schema_models.organization import Organization
 from schema_models.person import Person
-from schema_models.text import Text
 from schema_models.thing import Thing
 
 
 class Reservation(Intangible):
-    totalPrice: Optional[Union[Text, List[Text]]] = None
+    totalPrice: Optional[Union[str, List[str]]] = None
     totalPrice: Optional[Union["PriceSpecification", List["PriceSpecification"]]] = None
-    totalPrice: Optional[Union[Number, List[Number]]] = None
+    totalPrice: Optional[Union[float, List[float]]] = None
     underName: Optional[Union[Person, List[Person]]] = None
     underName: Optional[Union[Organization, List[Organization]]] = None
     programMembershipUsed: Optional[
         Union["ProgramMembership", List["ProgramMembership"]]
     ] = None
-    bookingTime: Optional[Union[DateTime, List[DateTime]]] = None
+    bookingTime: Optional[Union[datetime, List[datetime]]] = None
     reservationFor: Optional[Union[Thing, List[Thing]]] = None
     broker: Optional[Union[Organization, List[Organization]]] = None
     broker: Optional[Union[Person, List[Person]]] = None
@@ -26,9 +24,9 @@ class Reservation(Intangible):
     reservationStatus: Optional[
         Union["ReservationStatusType", List["ReservationStatusType"]]
     ] = None
-    reservationId: Optional[Union[Text, List[Text]]] = None
-    modifiedTime: Optional[Union[DateTime, List[DateTime]]] = None
-    priceCurrency: Optional[Union[Text, List[Text]]] = None
+    reservationId: Optional[Union[str, List[str]]] = None
+    modifiedTime: Optional[Union[datetime, List[datetime]]] = None
+    priceCurrency: Optional[Union[str, List[str]]] = None
     provider: Optional[Union[Person, List[Person]]] = None
     provider: Optional[Union[Organization, List[Organization]]] = None
     bookingAgent: Optional[Union[Person, List[Person]]] = None

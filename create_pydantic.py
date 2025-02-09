@@ -18,7 +18,10 @@ BASE_TYPES = {
     SCHEMA.DateTime: "datetime",
     SCHEMA.Time: "time",
     SCHEMA.URL: "HttpUrl",
+    SCHEMA.XPathType: "str",
+    SCHEMA.DataType: "str",
 }
+BASE_TYPES_STR = {str(k) for k in BASE_TYPES.keys()}
 
 
 def fetch_schema():
@@ -80,7 +83,7 @@ def generate_models(graph: Graph):
 
     # First pass: collect class info
     for s, p, o in graph.triples((None, RDF.type, RDFS.Class)):
-        if str(s).startswith(str(SCHEMA)):
+        if str(s).startswith(str(SCHEMA)) and str(s) not in BASE_TYPES_STR:
             class_name = safe_name(str(s).split("/")[-1])
             parent_class = get_parent_class(graph, s)
             classes[class_name] = {"parent": parent_class, "properties": []}
@@ -101,7 +104,7 @@ def generate_models(graph: Graph):
         parent = class_info["parent"]
         ts.add(class_name, parent)
     for order, class_name in enumerate(ts.static_order()):
-        if class_name is not None:
+        if class_name is not None and class_name in classes:
             classes[class_name]["order"] = order
             ts_sorted.append(class_name)
 
@@ -120,7 +123,7 @@ def generate_models(graph: Graph):
 
         for class_name in ts_sorted:
             if class_name is not None:
-                f.write(f"{class_name}.model_rebuild()\n")
+                f.write(f"{class_name}.__pydantic__.model_rebuild()\n")
 
     # Second pass: collect properties
     for class_name, class_info in classes.items():
@@ -131,7 +134,10 @@ def generate_models(graph: Graph):
 
             for _, _, prop_range in graph.triples((s, SCHEMA.rangeIncludes, None)):
                 try:
-                    python_type = safe_name(str(prop_range).split("/")[-1])
+                    if prop_range in BASE_TYPES:
+                        python_type = BASE_TYPES[prop_range]
+                    else:
+                        python_type = safe_name(str(prop_range).split("/")[-1])
                     # if class_name begins with a number, add underscore to the class name
                     if python_type[0].isdigit() or python_type.lower() in kwlist:
                         python_type = f"_{python_type}"
@@ -165,7 +171,7 @@ def generate_models(graph: Graph):
             # Import other classes
             other_classes = {}
             for prop_name, prop_type in class_info["properties"]:
-                if prop_type != class_name:
+                if prop_type != class_name and prop_type not in BASE_TYPES.values():
                     forward_def = classes[prop_type]["order"] > class_info["order"]
                     other_classes[prop_type] = forward_def
 
@@ -179,6 +185,9 @@ def generate_models(graph: Graph):
             if class_info["parent"]:
                 f.write(f"class {class_name}({class_info['parent']}):\n")
             else:
+                if class_name == "Thing":
+                    f.write("from fquery.pydantic import pydantic\n\n")
+                    f.write("@pydantic\n")
                 f.write(f"class {class_name}:\n")
 
             # f.write("    model_config = ConfigDict(arbitrary_types_allowed=True)\n\n")
@@ -196,6 +205,14 @@ def generate_models(graph: Graph):
                     f"    {prop_name}: Optional[Union[{prop_type}, List[{prop_type}]]] = None\n"
                 )
 
+    for s in BASE_TYPES_STR:
+        class_name = safe_name(s.split("/")[-1])
+        filename = f"schema_models/{camel_to_snake(class_name)}.py"
+        with open(filename, "w") as f:
+            f.write("from fquery.pydantic import pydantic\n\n")
+            f.write("@pydantic\n")
+            f.write(f"class {class_name}:\n")
+            f.write("    pass\n")
     return classes
 
 

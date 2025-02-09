@@ -1,27 +1,25 @@
+from datetime import date, datetime
 from typing import List, Optional, Union
 
-from schema_models.date import Date
-from schema_models.date_time import DateTime
+from pydantic import HttpUrl
+
 from schema_models.intangible import Intangible
-from schema_models.number import Number
 from schema_models.organization import Organization
 from schema_models.person import Person
 from schema_models.seat import Seat
-from schema_models.text import Text
-from schema_models.url import URL
 
 
 class Ticket(Intangible):
-    dateIssued: Optional[Union[Date, List[Date]]] = None
-    dateIssued: Optional[Union[DateTime, List[DateTime]]] = None
-    ticketToken: Optional[Union[Text, List[Text]]] = None
-    ticketToken: Optional[Union[URL, List[URL]]] = None
-    priceCurrency: Optional[Union[Text, List[Text]]] = None
+    dateIssued: Optional[Union[date, List[date]]] = None
+    dateIssued: Optional[Union[datetime, List[datetime]]] = None
+    ticketToken: Optional[Union[str, List[str]]] = None
+    ticketToken: Optional[Union[HttpUrl, List[HttpUrl]]] = None
+    priceCurrency: Optional[Union[str, List[str]]] = None
     issuedBy: Optional[Union[Organization, List[Organization]]] = None
     ticketedSeat: Optional[Union[Seat, List[Seat]]] = None
-    ticketNumber: Optional[Union[Text, List[Text]]] = None
-    totalPrice: Optional[Union[Text, List[Text]]] = None
+    ticketNumber: Optional[Union[str, List[str]]] = None
+    totalPrice: Optional[Union[str, List[str]]] = None
     totalPrice: Optional[Union["PriceSpecification", List["PriceSpecification"]]] = None
-    totalPrice: Optional[Union[Number, List[Number]]] = None
+    totalPrice: Optional[Union[float, List[float]]] = None
     underName: Optional[Union[Person, List[Person]]] = None
     underName: Optional[Union[Organization, List[Organization]]] = None

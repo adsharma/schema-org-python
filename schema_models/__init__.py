@@ -1,8 +1,3 @@
-from datetime import date, datetime, time
-from typing import List, Optional, Union
-
-from pydantic import ConfigDict, Field, HttpUrl, field_validator
-
 from schema_models._3_d_model import _3DModel
 from schema_models.__class import _Class
 from schema_models.a_m_radio_channel import AMRadioChannel
@@ -97,7 +92,6 @@ from schema_models.book_format_type import BookFormatType
 from schema_models.book_series import BookSeries
 from schema_models.book_store import BookStore
 from schema_models.bookmark_action import BookmarkAction
-from schema_models.boolean import Boolean
 from schema_models.borrow_action import BorrowAction
 from schema_models.bowling_alley import BowlingAlley
 from schema_models.brain_structure import BrainStructure
@@ -211,10 +205,7 @@ from schema_models.data_catalog import DataCatalog
 from schema_models.data_download import DataDownload
 from schema_models.data_feed import DataFeed
 from schema_models.data_feed_item import DataFeedItem
-from schema_models.data_type import DataType
 from schema_models.dataset import Dataset
-from schema_models.date import Date
-from schema_models.date_time import DateTime
 from schema_models.dated_money_specification import DatedMoneySpecification
 from schema_models.day_of_week import DayOfWeek
 from schema_models.day_spa import DaySpa
@@ -324,7 +315,6 @@ from schema_models.find_action import FindAction
 from schema_models.fire_station import FireStation
 from schema_models.flight import Flight
 from schema_models.flight_reservation import FlightReservation
-from schema_models.float import Float
 from schema_models.floor_plan import FloorPlan
 from schema_models.florist import Florist
 from schema_models.follow_action import FollowAction
@@ -414,7 +404,6 @@ from schema_models.insert_action import InsertAction
 from schema_models.install_action import InstallAction
 from schema_models.insurance_agency import InsuranceAgency
 from schema_models.intangible import Intangible
-from schema_models.integer import Integer
 from schema_models.interact_action import InteractAction
 from schema_models.interaction_counter import InteractionCounter
 from schema_models.internet_cafe import InternetCafe
@@ -593,7 +582,6 @@ from schema_models.night_club import NightClub
 from schema_models.nonprofit_type import NonprofitType
 from schema_models.notary import Notary
 from schema_models.note_digital_document import NoteDigitalDocument
-from schema_models.number import Number
 from schema_models.nutrition_information import NutritionInformation
 from schema_models.observation import Observation
 from schema_models.occupation import Occupation
@@ -857,7 +845,6 @@ from schema_models.tech_article import TechArticle
 from schema_models.television_channel import TelevisionChannel
 from schema_models.television_station import TelevisionStation
 from schema_models.tennis_complex import TennisComplex
-from schema_models.text import Text
 from schema_models.text_digital_document import TextDigitalDocument
 from schema_models.text_object import TextObject
 from schema_models.theater_event import TheaterEvent
@@ -868,7 +855,6 @@ from schema_models.thing import Thing
 from schema_models.ticket import Ticket
 from schema_models.tie_action import TieAction
 from schema_models.tier_benefit_enumeration import TierBenefitEnumeration
-from schema_models.time import Time
 from schema_models.tip_action import TipAction
 from schema_models.tire_shop import TireShop
 from schema_models.tourist_attraction import TouristAttraction
@@ -892,7 +878,6 @@ from schema_models.u_s_nonprofit_type import USNonprofitType
 from schema_models.un_register_action import UnRegisterAction
 from schema_models.unit_price_specification import UnitPriceSpecification
 from schema_models.update_action import UpdateAction
-from schema_models.url import URL
 from schema_models.use_action import UseAction
 from schema_models.user_blocks import UserBlocks
 from schema_models.user_checkins import UserCheckins
@@ -950,10 +935,11 @@ from schema_models.winery import Winery
 from schema_models.work_based_program import WorkBasedProgram
 from schema_models.workers_union import WorkersUnion
 from schema_models.write_action import WriteAction
-from schema_models.x_path_type import XPathType
 from schema_models.zoo import Zoo
 
 Thing.__pydantic__.model_rebuild()
+PronounceableText.__pydantic__.model_rebuild()
+CssSelectorType.__pydantic__.model_rebuild()
 Event.__pydantic__.model_rebuild()
 MedicalEntity.__pydantic__.model_rebuild()
 Product.__pydantic__.model_rebuild()

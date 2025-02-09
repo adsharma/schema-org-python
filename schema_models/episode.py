@@ -1,11 +1,9 @@
 from typing import List, Optional, Union
 
 from schema_models.creative_work import CreativeWork
-from schema_models.integer import Integer
 from schema_models.organization import Organization
 from schema_models.performing_group import PerformingGroup
 from schema_models.person import Person
-from schema_models.text import Text
 
 
 class Episode(CreativeWork):
@@ -18,8 +16,8 @@ class Episode(CreativeWork):
     productionCompany: Optional[Union[Organization, List[Organization]]] = None
     director: Optional[Union[Person, List[Person]]] = None
     actors: Optional[Union[Person, List[Person]]] = None
-    episodeNumber: Optional[Union[Text, List[Text]]] = None
-    episodeNumber: Optional[Union[Integer, List[Integer]]] = None
+    episodeNumber: Optional[Union[str, List[str]]] = None
+    episodeNumber: Optional[Union[int, List[int]]] = None
     actor: Optional[Union[Person, List[Person]]] = None
     actor: Optional[Union[PerformingGroup, List[PerformingGroup]]] = None
     duration: Optional[Union["Duration", List["Duration"]]] = None

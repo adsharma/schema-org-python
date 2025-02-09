@@ -2,12 +2,11 @@ from typing import List, Optional, Union
 
 from schema_models.organization import Organization
 from schema_models.place import Place
-from schema_models.text import Text
 
 
 class LocalBusiness(Place):
-    openingHours: Optional[Union[Text, List[Text]]] = None
+    openingHours: Optional[Union[str, List[str]]] = None
     branchOf: Optional[Union[Organization, List[Organization]]] = None
-    paymentAccepted: Optional[Union[Text, List[Text]]] = None
-    currenciesAccepted: Optional[Union[Text, List[Text]]] = None
-    priceRange: Optional[Union[Text, List[Text]]] = None
+    paymentAccepted: Optional[Union[str, List[str]]] = None
+    currenciesAccepted: Optional[Union[str, List[str]]] = None
+    priceRange: Optional[Union[str, List[str]]] = None

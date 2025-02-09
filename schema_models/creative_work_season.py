@@ -1,31 +1,28 @@
+from datetime import date, datetime
 from typing import List, Optional, Union
 
 from schema_models.creative_work import CreativeWork
-from schema_models.date import Date
-from schema_models.date_time import DateTime
 from schema_models.episode import Episode
-from schema_models.integer import Integer
 from schema_models.organization import Organization
 from schema_models.performing_group import PerformingGroup
 from schema_models.person import Person
-from schema_models.text import Text
 
 
 class CreativeWorkSeason(CreativeWork):
-    endDate: Optional[Union[Date, List[Date]]] = None
-    endDate: Optional[Union[DateTime, List[DateTime]]] = None
+    endDate: Optional[Union[date, List[date]]] = None
+    endDate: Optional[Union[datetime, List[datetime]]] = None
     productionCompany: Optional[Union[Organization, List[Organization]]] = None
     actor: Optional[Union[Person, List[Person]]] = None
     actor: Optional[Union[PerformingGroup, List[PerformingGroup]]] = None
-    seasonNumber: Optional[Union[Integer, List[Integer]]] = None
-    seasonNumber: Optional[Union[Text, List[Text]]] = None
+    seasonNumber: Optional[Union[int, List[int]]] = None
+    seasonNumber: Optional[Union[str, List[str]]] = None
     director: Optional[Union[Person, List[Person]]] = None
     episode: Optional[Union[Episode, List[Episode]]] = None
     partOfSeries: Optional[Union["CreativeWorkSeries", List["CreativeWorkSeries"]]] = (
         None
     )
     episodes: Optional[Union[Episode, List[Episode]]] = None
-    startDate: Optional[Union[DateTime, List[DateTime]]] = None
-    startDate: Optional[Union[Date, List[Date]]] = None
+    startDate: Optional[Union[datetime, List[datetime]]] = None
+    startDate: Optional[Union[date, List[date]]] = None
     trailer: Optional[Union["VideoObject", List["VideoObject"]]] = None
-    numberOfEpisodes: Optional[Union[Integer, List[Integer]]] = None
+    numberOfEpisodes: Optional[Union[int, List[int]]] = None
