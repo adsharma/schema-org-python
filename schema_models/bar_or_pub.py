@@ -2,4 +2,6 @@ from schema_models.food_establishment import FoodEstablishment
 
 
 class BarOrPub(FoodEstablishment):
-    pass
+    """
+    A bar or pub.
+    """

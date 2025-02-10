@@ -2,4 +2,6 @@ from schema_models.radio_channel import RadioChannel
 
 
 class AMRadioChannel(RadioChannel):
-    pass
+    """
+    A radio channel that uses AM.
+    """

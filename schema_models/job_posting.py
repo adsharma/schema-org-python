@@ -10,6 +10,10 @@ from schema_models.place import Place
 
 
 class JobPosting(Intangible):
+    """
+    A listing that describes a job opening in a certain organization.
+    """
+
     title: Optional[Union[str, List[str]]] = None
     baseSalary: Optional[Union["PriceSpecification", List["PriceSpecification"]]] = None
     baseSalary: Optional[Union["MonetaryAmount", List["MonetaryAmount"]]] = None

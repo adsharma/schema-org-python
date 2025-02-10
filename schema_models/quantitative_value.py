@@ -11,6 +11,10 @@ from schema_models.structured_value import StructuredValue
 
 
 class QuantitativeValue(StructuredValue):
+    """
+    A point value or interval for product characteristics and other purposes.
+    """
+
     value: Optional[Union[bool, List[bool]]] = None
     value: Optional[Union[str, List[str]]] = None
     value: Optional[Union[float, List[float]]] = None

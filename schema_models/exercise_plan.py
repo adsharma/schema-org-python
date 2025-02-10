@@ -7,6 +7,10 @@ from schema_models.quantitative_value import QuantitativeValue
 
 
 class ExercisePlan(PhysicalActivity):
+    """
+    A sub property of instrument. The exercise plan used on this action.
+    """
+
     additionalVariable: Optional[Union[str, List[str]]] = None
     exerciseType: Optional[Union[str, List[str]]] = None
     restPeriods: Optional[Union[QuantitativeValue, List[QuantitativeValue]]] = None

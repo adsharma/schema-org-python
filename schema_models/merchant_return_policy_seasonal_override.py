@@ -5,6 +5,10 @@ from schema_models.intangible import Intangible
 
 
 class MerchantReturnPolicySeasonalOverride(Intangible):
+    """
+    A seasonal override of a return policy, for example used for holidays.
+    """
+
     returnFees: Optional[
         Union["ReturnFeesEnumeration", List["ReturnFeesEnumeration"]]
     ] = None

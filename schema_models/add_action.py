@@ -2,4 +2,6 @@ from schema_models.update_action import UpdateAction
 
 
 class AddAction(UpdateAction):
-    pass
+    """
+    The act of editing by adding an object to a collection.
+    """

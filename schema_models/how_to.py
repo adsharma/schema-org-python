@@ -5,6 +5,10 @@ from schema_models.item_list import ItemList
 
 
 class HowTo(CreativeWork):
+    """
+    Instructions that explain how to achieve a result by performing a sequence of steps.
+    """
+
     estimatedCost: Optional[Union["MonetaryAmount", List["MonetaryAmount"]]] = None
     estimatedCost: Optional[Union[str, List[str]]] = None
     supply: Optional[Union[str, List[str]]] = None

@@ -2,4 +2,8 @@ from schema_models.legal_service import LegalService
 
 
 class Attorney(LegalService):
-    pass
+    """
+    Professional service: Attorney.
+
+    This type is deprecated - [[LegalService]] is more inclusive and less ambiguous.
+    """

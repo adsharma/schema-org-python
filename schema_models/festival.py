@@ -2,4 +2,6 @@ from schema_models.event import Event
 
 
 class Festival(Event):
-    pass
+    """
+    Event type: Festival.
+    """

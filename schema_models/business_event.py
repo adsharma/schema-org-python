@@ -2,4 +2,6 @@ from schema_models.event import Event
 
 
 class BusinessEvent(Event):
-    pass
+    """
+    Event type: Business event.
+    """

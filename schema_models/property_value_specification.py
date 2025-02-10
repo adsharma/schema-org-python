@@ -5,6 +5,10 @@ from schema_models.thing import Thing
 
 
 class PropertyValueSpecification(Intangible):
+    """
+    A Property value specification.
+    """
+
     defaultValue: Optional[Union[Thing, List[Thing]]] = None
     defaultValue: Optional[Union[str, List[str]]] = None
     stepValue: Optional[Union[float, List[float]]] = None

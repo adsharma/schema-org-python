@@ -12,6 +12,10 @@ from schema_models.product import Product
 
 
 class ParcelDelivery(Intangible):
+    """
+    The delivery of a parcel either via the postal service or a commercial service.
+    """
+
     expectedArrivalFrom: Optional[Union[date, List[date]]] = None
     expectedArrivalFrom: Optional[Union[datetime, List[datetime]]] = None
     deliveryAddress: Optional[Union["PostalAddress", List["PostalAddress"]]] = None

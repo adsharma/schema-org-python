@@ -6,6 +6,10 @@ from schema_models.person import Person
 
 
 class Rating(Intangible):
+    """
+    A rating is an evaluation on a numeric scale, such as 1 to 5 stars.
+    """
+
     reviewAspect: Optional[Union[str, List[str]]] = None
     worstRating: Optional[Union[float, List[float]]] = None
     worstRating: Optional[Union[str, List[str]]] = None

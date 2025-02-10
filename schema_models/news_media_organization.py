@@ -7,6 +7,10 @@ from schema_models.organization import Organization
 
 
 class NewsMediaOrganization(Organization):
+    """
+    A News/Media organization such as a newspaper or TV station.
+    """
+
     diversityStaffingReport: Optional[Union[HttpUrl, List[HttpUrl]]] = None
     diversityStaffingReport: Optional[Union["Article", List["Article"]]] = None
     ownershipFundingInfo: Optional[Union[CreativeWork, List[CreativeWork]]] = None

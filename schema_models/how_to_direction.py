@@ -8,6 +8,10 @@ from schema_models.media_object import MediaObject
 
 
 class HowToDirection(ListItem):
+    """
+    A direction indicating a single action to do in the instructions for how to achieve a result.
+    """
+
     supply: Optional[Union[str, List[str]]] = None
     supply: Optional[Union["HowToSupply", List["HowToSupply"]]] = None
     tool: Optional[Union["HowToTool", List["HowToTool"]]] = None

@@ -2,4 +2,6 @@ from schema_models.medical_enumeration import MedicalEnumeration
 
 
 class DrugCostCategory(MedicalEnumeration):
-    pass
+    """
+    Enumerated categories of medical drug costs.
+    """

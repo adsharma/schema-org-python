@@ -2,4 +2,6 @@ from schema_models.organization import Organization
 
 
 class Consortium(Organization):
-    pass
+    """
+    A Consortium is a membership [[Organization]] whose members are typically Organizations.
+    """

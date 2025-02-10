@@ -2,4 +2,6 @@ from schema_models.episode import Episode
 
 
 class RadioEpisode(Episode):
-    pass
+    """
+    A radio episode which can be part of a series or season.
+    """

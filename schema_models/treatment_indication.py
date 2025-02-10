@@ -2,4 +2,6 @@ from schema_models.medical_indication import MedicalIndication
 
 
 class TreatmentIndication(MedicalIndication):
-    pass
+    """
+    An indication for treating an underlying condition, symptom, etc.
+    """

@@ -2,4 +2,6 @@ from schema_models.event import Event
 
 
 class DanceEvent(Event):
-    pass
+    """
+    Event type: A social dance.
+    """

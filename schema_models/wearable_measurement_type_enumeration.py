@@ -2,4 +2,6 @@ from schema_models.measurement_type_enumeration import MeasurementTypeEnumeratio
 
 
 class WearableMeasurementTypeEnumeration(MeasurementTypeEnumeration):
-    pass
+    """
+    Enumerates common types of measurement for wearables products.
+    """

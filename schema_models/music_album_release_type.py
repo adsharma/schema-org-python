@@ -2,4 +2,6 @@ from schema_models.enumeration import Enumeration
 
 
 class MusicAlbumReleaseType(Enumeration):
-    pass
+    """
+    The kind of release which this album is: single, EP or album.
+    """

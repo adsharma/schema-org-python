@@ -2,4 +2,6 @@ from schema_models.media_gallery import MediaGallery
 
 
 class ImageGallery(MediaGallery):
-    pass
+    """
+    Web page type: Image gallery page.
+    """

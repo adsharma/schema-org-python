@@ -5,6 +5,10 @@ from schema_models.thing import Thing
 
 
 class ListItem(Intangible):
+    """
+    An list item, e.g. a step in a checklist or how-to description.
+    """
+
     position: Optional[Union[str, List[str]]] = None
     position: Optional[Union[int, List[int]]] = None
     previousItem: Optional[Union["ListItem", List["ListItem"]]] = None

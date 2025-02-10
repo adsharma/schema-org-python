@@ -2,4 +2,6 @@ from schema_models.enumeration import Enumeration
 
 
 class GenderType(Enumeration):
-    pass
+    """
+    An enumeration of genders.
+    """

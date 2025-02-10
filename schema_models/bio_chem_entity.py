@@ -7,6 +7,10 @@ from schema_models.thing import Thing
 
 
 class BioChemEntity(Thing):
+    """
+    Any biological, chemical, or biochemical thing. For example: a protein; a gene; a chemical; a synthetic chemical.
+    """
+
     funding: Optional[Union["Grant", List["Grant"]]] = None
     hasMolecularFunction: Optional[Union[HttpUrl, List[HttpUrl]]] = None
     hasMolecularFunction: Optional[Union["DefinedTerm", List["DefinedTerm"]]] = None

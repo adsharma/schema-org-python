@@ -2,4 +2,6 @@ from schema_models.automotive_business import AutomotiveBusiness
 
 
 class AutoRental(AutomotiveBusiness):
-    pass
+    """
+    A car rental business.
+    """

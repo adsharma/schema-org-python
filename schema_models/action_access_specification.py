@@ -11,6 +11,10 @@ from schema_models.thing import Thing
 
 
 class ActionAccessSpecification(Intangible):
+    """
+    A set of requirements that must be fulfilled in order to perform an Action.
+    """
+
     requiresSubscription: Optional[Union[bool, List[bool]]] = None
     requiresSubscription: Optional[
         Union[MediaSubscription, List[MediaSubscription]]

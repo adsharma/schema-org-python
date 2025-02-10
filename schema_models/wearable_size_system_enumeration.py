@@ -2,4 +2,6 @@ from schema_models.size_system_enumeration import SizeSystemEnumeration
 
 
 class WearableSizeSystemEnumeration(SizeSystemEnumeration):
-    pass
+    """
+    Enumerates common size systems specific for wearable products.
+    """

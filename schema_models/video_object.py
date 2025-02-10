@@ -7,6 +7,10 @@ from schema_models.person import Person
 
 
 class VideoObject(MediaObject):
+    """
+    A video file.
+    """
+
     embeddedTextCaption: Optional[Union[str, List[str]]] = None
     actors: Optional[Union[Person, List[Person]]] = None
     videoFrameSize: Optional[Union[str, List[str]]] = None

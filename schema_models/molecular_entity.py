@@ -5,6 +5,10 @@ from schema_models.defined_term import DefinedTerm
 
 
 class MolecularEntity(BioChemEntity):
+    """
+    Any constitutionally or isotopically distinct atom, molecule, ion, ion pair, radical, radical ion, complex, conformer etc., identifiable as a separately distinguishable entity.
+    """
+
     chemicalRole: Optional[Union[DefinedTerm, List[DefinedTerm]]] = None
     inChIKey: Optional[Union[str, List[str]]] = None
     molecularWeight: Optional[Union[str, List[str]]] = None

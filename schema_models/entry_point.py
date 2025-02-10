@@ -6,6 +6,10 @@ from schema_models.intangible import Intangible
 
 
 class EntryPoint(Intangible):
+    """
+    An entry point, within some Web-based protocol.
+    """
+
     httpMethod: Optional[Union[str, List[str]]] = None
     encodingType: Optional[Union[str, List[str]]] = None
     urlTemplate: Optional[Union[str, List[str]]] = None

@@ -8,6 +8,10 @@ from schema_models.person import Person
 
 
 class Message(CreativeWork):
+    """
+    A single message from a sender to one or more organizations or people.
+    """
+
     bccRecipient: Optional[Union[Person, List[Person]]] = None
     bccRecipient: Optional[Union[Organization, List[Organization]]] = None
     bccRecipient: Optional[Union["ContactPoint", List["ContactPoint"]]] = None

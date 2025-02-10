@@ -9,6 +9,10 @@ from schema_models.rating import Rating
 
 
 class LodgingBusiness(LocalBusiness):
+    """
+    A lodging business, such as a motel, hotel, or inn.
+    """
+
     availableLanguage: Optional[Union[str, List[str]]] = None
     availableLanguage: Optional[Union[Language, List[Language]]] = None
     audience: Optional[Union[Audience, List[Audience]]] = None

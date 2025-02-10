@@ -2,4 +2,6 @@ from schema_models.creative_work import CreativeWork
 
 
 class Photograph(CreativeWork):
-    pass
+    """
+    A photograph.
+    """

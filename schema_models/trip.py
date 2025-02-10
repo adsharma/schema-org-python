@@ -9,6 +9,10 @@ from schema_models.place import Place
 
 
 class Trip(Intangible):
+    """
+    A trip or journey. An itinerary of visits to one or more places.
+    """
+
     itinerary: Optional[Union[ItemList, List[ItemList]]] = None
     itinerary: Optional[Union[Place, List[Place]]] = None
     subTrip: Optional[Union["Trip", List["Trip"]]] = None

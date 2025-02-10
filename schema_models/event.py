@@ -7,6 +7,10 @@ from schema_models.thing import Thing
 
 
 class Event(Thing):
+    """
+    Upcoming or past event associated with this place, organization, or action.
+    """
+
     eventAttendanceMode: Optional[
         Union["EventAttendanceModeEnumeration", List["EventAttendanceModeEnumeration"]]
     ] = None

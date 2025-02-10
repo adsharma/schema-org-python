@@ -2,4 +2,6 @@ from schema_models.medical_indication import MedicalIndication
 
 
 class PreventionIndication(MedicalIndication):
-    pass
+    """
+    An indication for preventing an underlying condition, symptom, etc.
+    """

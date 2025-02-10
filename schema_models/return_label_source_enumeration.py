@@ -2,4 +2,6 @@ from schema_models.enumeration import Enumeration
 
 
 class ReturnLabelSourceEnumeration(Enumeration):
-    pass
+    """
+    Enumerates several types of return labels for product returns.
+    """

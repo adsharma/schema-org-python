@@ -2,4 +2,6 @@ from schema_models.learning_resource import LearningResource
 
 
 class Quiz(LearningResource):
-    pass
+    """
+    Quiz: A test of knowledge, skills and abilities.
+    """

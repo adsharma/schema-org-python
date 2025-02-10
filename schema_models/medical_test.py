@@ -5,6 +5,10 @@ from schema_models.medical_entity import MedicalEntity
 
 
 class MedicalTest(MedicalEntity):
+    """
+    Any medical test, typically performed for diagnostic purposes.
+    """
+
     normalRange: Optional[Union["MedicalEnumeration", List["MedicalEnumeration"]]] = (
         None
     )

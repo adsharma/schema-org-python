@@ -2,4 +2,6 @@ from schema_models.enumeration import Enumeration
 
 
 class ContactPointOption(Enumeration):
-    pass
+    """
+    Enumerated options related to a ContactPoint.
+    """

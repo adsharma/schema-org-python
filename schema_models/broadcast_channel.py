@@ -6,6 +6,10 @@ from schema_models.intangible import Intangible
 
 
 class BroadcastChannel(Intangible):
+    """
+    A unique instance of a BroadcastService on a CableOrSatelliteService lineup.
+    """
+
     providesBroadcastService: Optional[
         Union["BroadcastService", List["BroadcastService"]]
     ] = None

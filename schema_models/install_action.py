@@ -2,4 +2,6 @@ from schema_models.consume_action import ConsumeAction
 
 
 class InstallAction(ConsumeAction):
-    pass
+    """
+    The act of installing an application.
+    """

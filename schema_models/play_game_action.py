@@ -5,6 +5,10 @@ from schema_models.game_availability_enumeration import GameAvailabilityEnumerat
 
 
 class PlayGameAction(ConsumeAction):
+    """
+    The act of playing a video game.
+    """
+
     gameAvailabilityType: Optional[
         Union[GameAvailabilityEnumeration, List[GameAvailabilityEnumeration]]
     ] = None

@@ -9,6 +9,10 @@ from schema_models.transfer_action import TransferAction
 
 
 class DonateAction(TransferAction):
+    """
+    The act of providing goods, services, or money without compensation, often for philanthropic reasons.
+    """
+
     price: Optional[Union[str, List[str]]] = None
     price: Optional[Union[float, List[float]]] = None
     priceCurrency: Optional[Union[str, List[str]]] = None

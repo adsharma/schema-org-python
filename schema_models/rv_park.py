@@ -2,4 +2,6 @@ from schema_models.civic_structure import CivicStructure
 
 
 class RVPark(CivicStructure):
-    pass
+    """
+    A place offering space for "Recreational Vehicles", Caravans, mobile homes and the like.
+    """

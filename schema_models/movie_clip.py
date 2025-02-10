@@ -2,4 +2,6 @@ from schema_models.clip import Clip
 
 
 class MovieClip(Clip):
-    pass
+    """
+    A short segment/part of a movie.
+    """

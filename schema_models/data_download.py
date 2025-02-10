@@ -8,6 +8,10 @@ from schema_models.media_object import MediaObject
 
 
 class DataDownload(MediaObject):
+    """
+    All or part of a [[Dataset]] in downloadable form.
+    """
+
     measurementMethod: Optional[Union[HttpUrl, List[HttpUrl]]] = None
     measurementMethod: Optional[Union[DefinedTerm, List[DefinedTerm]]] = None
     measurementMethod: Optional[

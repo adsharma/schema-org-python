@@ -8,6 +8,10 @@ from schema_models.rating import Rating
 
 
 class FoodEstablishment(LocalBusiness):
+    """
+    A sub property of location. The specific food establishment where the action occurred.
+    """
+
     menu: Optional[Union[Menu, List[Menu]]] = None
     menu: Optional[Union[str, List[str]]] = None
     menu: Optional[Union[HttpUrl, List[HttpUrl]]] = None

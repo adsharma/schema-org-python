@@ -8,6 +8,10 @@ from schema_models.medical_therapy import MedicalTherapy
 
 
 class MedicalClinic(MedicalBusiness):
+    """
+    A facility, often associated with a hospital or medical school, that is devoted to the specific diagnosis and/or healthcare. Previously limited to outpatients but with evolution it may be open to inpatients as well.
+    """
+
     availableService: Optional[Union[MedicalTest, List[MedicalTest]]] = None
     availableService: Optional[Union[MedicalTherapy, List[MedicalTherapy]]] = None
     availableService: Optional[Union[MedicalProcedure, List[MedicalProcedure]]] = None

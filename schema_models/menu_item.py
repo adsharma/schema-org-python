@@ -6,6 +6,10 @@ from schema_models.offer import Offer
 
 
 class MenuItem(Intangible):
+    """
+    A food or drink item listed in a menu or menu section.
+    """
+
     menuAddOn: Optional[Union["MenuSection", List["MenuSection"]]] = None
     menuAddOn: Optional[Union["MenuItem", List["MenuItem"]]] = None
     suitableForDiet: Optional[Union["RestrictedDiet", List["RestrictedDiet"]]] = None

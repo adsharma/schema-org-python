@@ -9,6 +9,10 @@ from schema_models.person import Person
 
 
 class MusicRelease(MusicPlaylist):
+    """
+    A MusicRelease is a specific release of a music album.
+    """
+
     duration: Optional[Union[Duration, List[Duration]]] = None
     releaseOf: Optional[Union[MusicAlbum, List[MusicAlbum]]] = None
     catalogNumber: Optional[Union[str, List[str]]] = None

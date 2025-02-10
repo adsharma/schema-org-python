@@ -2,4 +2,6 @@ from schema_models.store import Store
 
 
 class HardwareStore(Store):
-    pass
+    """
+    A hardware store.
+    """

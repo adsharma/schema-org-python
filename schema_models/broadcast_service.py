@@ -11,6 +11,10 @@ from schema_models.service import Service
 
 
 class BroadcastService(Service):
+    """
+    A delivery service through which content is provided via broadcast over the air or online.
+    """
+
     inLanguage: Optional[Union[Language, List[Language]]] = None
     inLanguage: Optional[Union[str, List[str]]] = None
     broadcaster: Optional[Union[Organization, List[Organization]]] = None

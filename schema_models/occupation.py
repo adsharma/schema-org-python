@@ -7,6 +7,10 @@ from schema_models.occupational_experience_requirements import (
 
 
 class Occupation(Intangible):
+    """
+    A profession, may involve prolonged training and/or a formal qualification.
+    """
+
     experienceRequirements: Optional[
         Union[
             OccupationalExperienceRequirements, List[OccupationalExperienceRequirements]

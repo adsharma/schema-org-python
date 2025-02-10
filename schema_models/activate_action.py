@@ -2,4 +2,6 @@ from schema_models.control_action import ControlAction
 
 
 class ActivateAction(ControlAction):
-    pass
+    """
+    The act of starting or activating a device or application (e.g. starting a timer or turning on a flashlight).
+    """

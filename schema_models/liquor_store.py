@@ -2,4 +2,6 @@ from schema_models.store import Store
 
 
 class LiquorStore(Store):
-    pass
+    """
+    A shop that sells alcoholic drinks such as wine, beer, whisky and other spirits.
+    """

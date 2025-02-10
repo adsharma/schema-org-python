@@ -7,6 +7,10 @@ from schema_models.residence import Residence
 
 
 class ApartmentComplex(Residence):
+    """
+    Residence type: Apartment complex.
+    """
+
     numberOfAvailableAccommodationUnits: Optional[
         Union[QuantitativeValue, List[QuantitativeValue]]
     ] = None

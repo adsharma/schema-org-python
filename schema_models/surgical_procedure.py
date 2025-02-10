@@ -2,4 +2,6 @@ from schema_models.medical_procedure import MedicalProcedure
 
 
 class SurgicalProcedure(MedicalProcedure):
-    pass
+    """
+    A medical procedure involving an incision with instruments; performed for diagnose, or therapeutic purposes.
+    """

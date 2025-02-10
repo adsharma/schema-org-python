@@ -5,6 +5,10 @@ from schema_models.country import Country
 
 
 class PostalAddress(ContactPoint):
+    """
+    The mailing address.
+    """
+
     addressLocality: Optional[Union[str, List[str]]] = None
     addressRegion: Optional[Union[str, List[str]]] = None
     addressCountry: Optional[Union[str, List[str]]] = None

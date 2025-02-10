@@ -7,6 +7,10 @@ from schema_models.intangible import Intangible
 
 
 class HealthInsurancePlan(Intangible):
+    """
+    A US-style health insurance plan, including PPOs, EPOs, and HMOs.
+    """
+
     includesHealthPlanFormulary: Optional[
         Union["HealthPlanFormulary", List["HealthPlanFormulary"]]
     ] = None

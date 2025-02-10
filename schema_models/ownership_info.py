@@ -9,6 +9,10 @@ from schema_models.structured_value import StructuredValue
 
 
 class OwnershipInfo(StructuredValue):
+    """
+    A structured value providing information about when a certain organization or person owned a certain product.
+    """
+
     ownedThrough: Optional[Union[datetime, List[datetime]]] = None
     acquiredFrom: Optional[Union[Person, List[Person]]] = None
     acquiredFrom: Optional[Union[Organization, List[Organization]]] = None

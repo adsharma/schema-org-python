@@ -8,6 +8,10 @@ from schema_models.person import Person
 
 
 class AuthorizeAction(AllocateAction):
+    """
+    The act of granting permission to an object.
+    """
+
     recipient: Optional[Union[Audience, List[Audience]]] = None
     recipient: Optional[Union[ContactPoint, List[ContactPoint]]] = None
     recipient: Optional[Union[Person, List[Person]]] = None

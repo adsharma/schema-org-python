@@ -9,6 +9,10 @@ from schema_models.video_object import VideoObject
 
 
 class MovieSeries(CreativeWorkSeries):
+    """
+    A series of movies. Included movies can be indicated with the hasPart property.
+    """
+
     musicBy: Optional[Union[Person, List[Person]]] = None
     musicBy: Optional[Union[MusicGroup, List[MusicGroup]]] = None
     trailer: Optional[Union[VideoObject, List[VideoObject]]] = None

@@ -9,6 +9,10 @@ from schema_models.person import Person
 
 
 class PodcastSeries(CreativeWorkSeries):
+    """
+    A podcast is an episodic series of digital audio or video files which a user can download and listen to.
+    """
+
     webFeed: Optional[Union[HttpUrl, List[HttpUrl]]] = None
     webFeed: Optional[Union[DataFeed, List[DataFeed]]] = None
     actor: Optional[Union[Person, List[Person]]] = None

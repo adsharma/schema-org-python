@@ -2,4 +2,6 @@ from schema_models.organize_action import OrganizeAction
 
 
 class AllocateAction(OrganizeAction):
-    pass
+    """
+    The act of organizing tasks/objects/events by associating resources to it.
+    """

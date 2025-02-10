@@ -2,4 +2,6 @@ from schema_models.action import Action
 
 
 class OrganizeAction(Action):
-    pass
+    """
+    The act of manipulating/administering/supervising/controlling one or more objects.
+    """

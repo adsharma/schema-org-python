@@ -6,6 +6,10 @@ from schema_models.vessel import Vessel
 
 
 class LymphaticVessel(Vessel):
+    """
+    A type of blood vessel that specifically carries lymph fluid unidirectionally toward the heart.
+    """
+
     regionDrained: Optional[Union[AnatomicalSystem, List[AnatomicalSystem]]] = None
     regionDrained: Optional[Union[AnatomicalStructure, List[AnatomicalStructure]]] = (
         None

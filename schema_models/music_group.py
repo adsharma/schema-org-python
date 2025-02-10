@@ -9,6 +9,10 @@ from schema_models.person import Person
 
 
 class MusicGroup(PerformingGroup):
+    """
+    A musical group, such as a band, an orchestra, or a choir. Can also be a solo musician.
+    """
+
     albums: Optional[Union["MusicAlbum", List["MusicAlbum"]]] = None
     musicGroupMember: Optional[Union[Person, List[Person]]] = None
     track: Optional[Union[ItemList, List[ItemList]]] = None

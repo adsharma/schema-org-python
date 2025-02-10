@@ -8,6 +8,10 @@ from schema_models.defined_term import DefinedTerm
 
 
 class DataCatalog(CreativeWork):
+    """
+    A collection of datasets.
+    """
+
     measurementMethod: Optional[Union[HttpUrl, List[HttpUrl]]] = None
     measurementMethod: Optional[Union[DefinedTerm, List[DefinedTerm]]] = None
     measurementMethod: Optional[

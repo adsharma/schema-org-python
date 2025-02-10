@@ -6,6 +6,10 @@ from schema_models.person import Person
 
 
 class MonetaryGrant(Grant):
+    """
+    A monetary grant.
+    """
+
     amount: Optional[Union["MonetaryAmount", List["MonetaryAmount"]]] = None
     amount: Optional[Union[float, List[float]]] = None
     funder: Optional[Union[Person, List[Person]]] = None

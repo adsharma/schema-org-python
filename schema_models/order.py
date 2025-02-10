@@ -11,6 +11,10 @@ from schema_models.product import Product
 
 
 class Order(Intangible):
+    """
+    An order is a confirmation of a transaction (a receipt), which can contain multiple line items, each represented by an Offer that has been accepted by the customer.
+    """
+
     discountCurrency: Optional[Union[str, List[str]]] = None
     seller: Optional[Union[Person, List[Person]]] = None
     seller: Optional[Union[Organization, List[Organization]]] = None

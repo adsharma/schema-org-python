@@ -2,4 +2,6 @@ from schema_models.physician import Physician
 
 
 class PhysiciansOffice(Physician):
-    pass
+    """
+    A doctor's office or clinic.
+    """

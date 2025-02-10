@@ -6,6 +6,10 @@ from schema_models.organization import Organization
 
 
 class Permit(Intangible):
+    """
+    A permit issued by an organization, e.g. a parking pass.
+    """
+
     issuedThrough: Optional[Union["Service", List["Service"]]] = None
     issuedBy: Optional[Union[Organization, List[Organization]]] = None
     validUntil: Optional[Union[date, List[date]]] = None

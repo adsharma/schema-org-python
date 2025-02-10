@@ -7,6 +7,10 @@ from schema_models.person import Person
 
 
 class Episode(CreativeWork):
+    """
+    A media episode (e.g. TV, radio, video game) which can be part of a series or season.
+    """
+
     musicBy: Optional[Union[Person, List[Person]]] = None
     musicBy: Optional[Union["MusicGroup", List["MusicGroup"]]] = None
     partOfSeason: Optional[Union["CreativeWorkSeason", List["CreativeWorkSeason"]]] = (

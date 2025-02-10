@@ -9,6 +9,10 @@ from schema_models.property import Property
 
 
 class Dataset(CreativeWork):
+    """
+    A dataset contained in this catalog.
+    """
+
     measurementMethod: Optional[Union[HttpUrl, List[HttpUrl]]] = None
     measurementMethod: Optional[Union[DefinedTerm, List[DefinedTerm]]] = None
     measurementMethod: Optional[

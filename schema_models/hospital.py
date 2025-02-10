@@ -8,6 +8,10 @@ from schema_models.medical_test import MedicalTest
 
 
 class Hospital(CivicStructure):
+    """
+    A hospital.
+    """
+
     availableService: Optional[Union[MedicalTest, List[MedicalTest]]] = None
     availableService: Optional[Union["MedicalTherapy", List["MedicalTherapy"]]] = None
     availableService: Optional[Union[MedicalProcedure, List[MedicalProcedure]]] = None

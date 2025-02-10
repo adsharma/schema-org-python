@@ -10,6 +10,10 @@ from schema_models.thing import Thing
 
 
 class CommunicateAction(InteractAction):
+    """
+    The act of conveying information to another person via a communication medium (instrument) such as speech, email, or telephone conversation.
+    """
+
     about: Optional[Union[Thing, List[Thing]]] = None
     inLanguage: Optional[Union[Language, List[Language]]] = None
     inLanguage: Optional[Union[str, List[str]]] = None

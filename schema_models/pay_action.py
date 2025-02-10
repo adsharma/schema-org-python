@@ -8,6 +8,10 @@ from schema_models.trade_action import TradeAction
 
 
 class PayAction(TradeAction):
+    """
+    An agent pays a price to a participant.
+    """
+
     recipient: Optional[Union[Audience, List[Audience]]] = None
     recipient: Optional[Union[ContactPoint, List[ContactPoint]]] = None
     recipient: Optional[Union[Person, List[Person]]] = None

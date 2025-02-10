@@ -2,4 +2,6 @@ from schema_models.event import Event
 
 
 class ChildrensEvent(Event):
-    pass
+    """
+    Event type: Children's event.
+    """

@@ -11,6 +11,10 @@ from schema_models.structured_value import StructuredValue
 
 
 class ContactPoint(StructuredValue):
+    """
+    A contact point for a person or organization.
+    """
+
     email: Optional[Union[str, List[str]]] = None
     telephone: Optional[Union[str, List[str]]] = None
     faxNumber: Optional[Union[str, List[str]]] = None

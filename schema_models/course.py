@@ -14,6 +14,10 @@ from schema_models.structured_value import StructuredValue
 
 
 class Course(CreativeWork):
+    """
+    A sub property of location. The course where this action was taken.
+    """
+
     courseCode: Optional[Union[str, List[str]]] = None
     numberOfCredits: Optional[Union[int, List[int]]] = None
     numberOfCredits: Optional[Union[StructuredValue, List[StructuredValue]]] = None

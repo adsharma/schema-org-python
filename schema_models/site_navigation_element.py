@@ -2,4 +2,6 @@ from schema_models.web_page_element import WebPageElement
 
 
 class SiteNavigationElement(WebPageElement):
-    pass
+    """
+    A navigation element of the page.
+    """

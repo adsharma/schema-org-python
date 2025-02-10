@@ -2,4 +2,6 @@ from schema_models.create_action import CreateAction
 
 
 class PaintAction(CreateAction):
-    pass
+    """
+    The act of producing a painting, typically with paint and canvas as instruments.
+    """

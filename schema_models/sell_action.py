@@ -7,6 +7,10 @@ from schema_models.warranty_promise import WarrantyPromise
 
 
 class SellAction(TradeAction):
+    """
+    The act of taking money from a buyer in exchange for goods or services rendered. An agent sells an object, product, or service to a buyer for a price. Reciprocal of BuyAction.
+    """
+
     warrantyPromise: Optional[Union[WarrantyPromise, List[WarrantyPromise]]] = None
     buyer: Optional[Union[Organization, List[Organization]]] = None
     buyer: Optional[Union[Person, List[Person]]] = None

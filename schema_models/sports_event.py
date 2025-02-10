@@ -7,6 +7,10 @@ from schema_models.person import Person
 
 
 class SportsEvent(Event):
+    """
+    Event type: Sports event.
+    """
+
     homeTeam: Optional[Union[Person, List[Person]]] = None
     homeTeam: Optional[Union["SportsTeam", List["SportsTeam"]]] = None
     competitor: Optional[Union[Person, List[Person]]] = None

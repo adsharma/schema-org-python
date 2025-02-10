@@ -10,6 +10,10 @@ from schema_models.restricted_diet import RestrictedDiet
 
 
 class Recipe(HowTo):
+    """
+    A sub property of instrument. The recipe/instructions used to perform the action.
+    """
+
     recipeYield: Optional[Union[QuantitativeValue, List[QuantitativeValue]]] = None
     recipeYield: Optional[Union[str, List[str]]] = None
     recipeCuisine: Optional[Union[str, List[str]]] = None

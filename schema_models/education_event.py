@@ -6,6 +6,10 @@ from schema_models.event import Event
 
 
 class EducationEvent(Event):
+    """
+    Event type: Education event.
+    """
+
     teaches: Optional[Union[str, List[str]]] = None
     teaches: Optional[Union["DefinedTerm", List["DefinedTerm"]]] = None
     assesses: Optional[Union["DefinedTerm", List["DefinedTerm"]]] = None

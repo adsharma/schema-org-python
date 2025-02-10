@@ -6,6 +6,10 @@ from pydantic import HttpUrl
 
 @pydantic
 class Thing:
+    """
+    The most generic type of item.
+    """
+
     subjectOf: Optional[Union["CreativeWork", List["CreativeWork"]]] = None
     subjectOf: Optional[Union["Event", List["Event"]]] = None
     alternateName: Optional[Union[str, List[str]]] = None

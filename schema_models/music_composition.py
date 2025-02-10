@@ -7,6 +7,10 @@ from schema_models.person import Person
 
 
 class MusicComposition(CreativeWork):
+    """
+    A musical composition.
+    """
+
     recordedAs: Optional[Union["MusicRecording", List["MusicRecording"]]] = None
     musicCompositionForm: Optional[Union[str, List[str]]] = None
     includedComposition: Optional[

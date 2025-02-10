@@ -2,4 +2,6 @@ from schema_models.body_of_water import BodyOfWater
 
 
 class Reservoir(BodyOfWater):
-    pass
+    """
+    A reservoir of water, typically an artificially created lake, like the Lake Kariba reservoir.
+    """

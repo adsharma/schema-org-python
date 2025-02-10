@@ -2,4 +2,6 @@ from schema_models.clip import Clip
 
 
 class RadioClip(Clip):
-    pass
+    """
+    A short radio program or a segment/part of a radio program.
+    """

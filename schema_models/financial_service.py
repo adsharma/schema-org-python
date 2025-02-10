@@ -6,5 +6,9 @@ from schema_models.local_business import LocalBusiness
 
 
 class FinancialService(LocalBusiness):
+    """
+    Financial services business.
+    """
+
     feesAndCommissionsSpecification: Optional[Union[str, List[str]]] = None
     feesAndCommissionsSpecification: Optional[Union[HttpUrl, List[HttpUrl]]] = None

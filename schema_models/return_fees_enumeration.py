@@ -2,4 +2,6 @@ from schema_models.enumeration import Enumeration
 
 
 class ReturnFeesEnumeration(Enumeration):
-    pass
+    """
+    Enumerates several kinds of policies for product return fees.
+    """

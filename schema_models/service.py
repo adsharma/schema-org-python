@@ -14,6 +14,10 @@ from schema_models.thing import Thing
 
 
 class Service(Intangible):
+    """
+    A service provided by an organization, e.g. delivery service, print services, etc.
+    """
+
     serviceType: Optional[
         Union["GovernmentBenefitsType", List["GovernmentBenefitsType"]]
     ] = None

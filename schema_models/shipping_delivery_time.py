@@ -6,6 +6,10 @@ from schema_models.structured_value import StructuredValue
 
 
 class ShippingDeliveryTime(StructuredValue):
+    """
+    ShippingDeliveryTime provides various pieces of information about delivery times for shipping.
+    """
+
     businessDays: Optional[
         Union[OpeningHoursSpecification, List[OpeningHoursSpecification]]
     ] = None

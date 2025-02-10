@@ -2,4 +2,6 @@ from schema_models.event import Event
 
 
 class TheaterEvent(Event):
-    pass
+    """
+    Event type: Theater performance.
+    """

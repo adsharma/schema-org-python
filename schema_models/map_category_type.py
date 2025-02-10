@@ -2,4 +2,6 @@ from schema_models.enumeration import Enumeration
 
 
 class MapCategoryType(Enumeration):
-    pass
+    """
+    An enumeration of several kinds of Map.
+    """

@@ -2,4 +2,6 @@ from schema_models.enumeration import Enumeration
 
 
 class RsvpResponseType(Enumeration):
-    pass
+    """
+    RsvpResponseType is an enumeration type whose instances represent responding to an RSVP request.
+    """

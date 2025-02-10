@@ -6,6 +6,10 @@ from schema_models.structured_value import StructuredValue
 
 
 class NutritionInformation(StructuredValue):
+    """
+    Nutritional information about the recipe.
+    """
+
     carbohydrateContent: Optional[Union[Mass, List[Mass]]] = None
     servingSize: Optional[Union[str, List[str]]] = None
     transFatContent: Optional[Union[Mass, List[Mass]]] = None

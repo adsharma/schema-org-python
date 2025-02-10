@@ -7,6 +7,10 @@ from schema_models.medical_test import MedicalTest
 
 
 class Physician(MedicalOrganization):
+    """
+    An individual physician or a physician's office considered as a [[MedicalOrganization]].
+    """
+
     medicalSpecialty: Optional[Union["MedicalSpecialty", List["MedicalSpecialty"]]] = (
         None
     )

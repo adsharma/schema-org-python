@@ -4,6 +4,10 @@ from schema_models.structured_value import StructuredValue
 
 
 class GeoCoordinates(StructuredValue):
+    """
+    The geographic coordinates of a place or event.
+    """
+
     addressCountry: Optional[Union[str, List[str]]] = None
     addressCountry: Optional[Union["Country", List["Country"]]] = None
     postalCode: Optional[Union[str, List[str]]] = None

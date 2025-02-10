@@ -5,6 +5,10 @@ from schema_models.medical_intangible import MedicalIntangible
 
 
 class DrugStrength(MedicalIntangible):
+    """
+    A specific strength in which a medical drug is available in a specific country.
+    """
+
     strengthUnit: Optional[Union[str, List[str]]] = None
     strengthValue: Optional[Union[float, List[float]]] = None
     maximumIntake: Optional[

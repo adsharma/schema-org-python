@@ -12,6 +12,10 @@ from schema_models.thing import Thing
 
 
 class Person(Thing):
+    """
+    A person (alive, dead, undead, or fictional).
+    """
+
     deathDate: Optional[Union[date, List[date]]] = None
     affiliation: Optional[Union[Organization, List[Organization]]] = None
     awards: Optional[Union[str, List[str]]] = None

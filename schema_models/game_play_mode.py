@@ -2,4 +2,6 @@ from schema_models.enumeration import Enumeration
 
 
 class GamePlayMode(Enumeration):
-    pass
+    """
+    Indicates whether this game is multi-player, co-op or single-player.
+    """

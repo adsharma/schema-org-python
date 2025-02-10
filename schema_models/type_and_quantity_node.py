@@ -9,6 +9,10 @@ from schema_models.structured_value import StructuredValue
 
 
 class TypeAndQuantityNode(StructuredValue):
+    """
+    A structured value indicating the quantity, unit of measurement, and business function of goods included in a bundle offer.
+    """
+
     amountOfThisGood: Optional[Union[float, List[float]]] = None
     typeOfGood: Optional[Union[Product, List[Product]]] = None
     typeOfGood: Optional[Union[Service, List[Service]]] = None

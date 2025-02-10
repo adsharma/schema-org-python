@@ -74,6 +74,17 @@ def generate_models(graph: Graph):
             parent_class = get_parent_class(graph, s)
             classes[class_name] = {"parent": parent_class, "properties": []}
 
+    # Extract comments into a docstring
+    for s, p, o in graph.triples((None, RDFS.comment, None)):
+        if str(s).startswith(str(SCHEMA)) and str(s) not in BASE_TYPES_STR:
+            class_name = safe_name(str(s).split("/")[-1])
+            if class_name in classes:
+                classes[class_name]["docstring"] = (
+                    o.replace("\\n", "\n")
+                    .replace("\\(", "\\\\(")
+                    .replace("\\_", "\\\\_")
+                )
+
     # if class_name begins with a number, add underscore to the class name
     deleted_keys = set()
     for class_name, class_info in classes.items():
@@ -175,6 +186,9 @@ def generate_models(graph: Graph):
                     f.write("from fquery.pydantic import pydantic\n\n")
                     f.write("@pydantic\n")
                 f.write(f"class {class_name}:\n")
+            docstring = class_info.get("docstring", None)
+            if docstring is not None:
+                f.write(f'    """\n{docstring}\n    """\n')
 
             # f.write("    model_config = ConfigDict(arbitrary_types_allowed=True)\n\n")
 
@@ -188,7 +202,8 @@ def generate_models(graph: Graph):
                 if prop_type == class_name or forward_def:
                     prop_type = f'"{prop_type}"'
                 f.write(
-                    f"    {prop_name}: Optional[Union[{prop_type}, List[{prop_type}]]] = None\n"
+                    f"    {prop_name}: Optional[Union[{prop_type}, List[{prop_type}]]]"
+                    " = None\n"
                 )
 
     for s in BASE_TYPES_STR:

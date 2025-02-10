@@ -5,6 +5,10 @@ from schema_models.place import Place
 
 
 class GeospatialGeometry(Intangible):
+    """
+    (Eventually to be defined as) a supertype of GeoShape designed to accommodate definitions from Geo-Spatial best practices.
+    """
+
     geoCrosses: Optional[Union[Place, List[Place]]] = None
     geoCrosses: Optional[Union["GeospatialGeometry", List["GeospatialGeometry"]]] = None
     geoCovers: Optional[Union[Place, List[Place]]] = None

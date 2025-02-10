@@ -10,6 +10,10 @@ from schema_models.person import Person
 
 
 class Movie(CreativeWork):
+    """
+    A movie.
+    """
+
     productionCompany: Optional[Union[Organization, List[Organization]]] = None
     actor: Optional[Union[Person, List[Person]]] = None
     actor: Optional[Union[PerformingGroup, List[PerformingGroup]]] = None

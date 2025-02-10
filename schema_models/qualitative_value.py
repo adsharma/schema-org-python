@@ -7,6 +7,10 @@ from schema_models.structured_value import StructuredValue
 
 
 class QualitativeValue(Enumeration):
+    """
+    A predefined value for a product characteristic, e.g. the power cord plug type 'US' or the garment sizes 'S', 'M', 'L', and 'XL'.
+    """
+
     greaterOrEqual: Optional[Union["QualitativeValue", List["QualitativeValue"]]] = None
     greater: Optional[Union["QualitativeValue", List["QualitativeValue"]]] = None
     additionalProperty: Optional[Union["PropertyValue", List["PropertyValue"]]] = None

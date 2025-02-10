@@ -9,6 +9,10 @@ from schema_models.organization import Organization
 
 
 class EducationalOccupationalCredential(CreativeWork):
+    """
+    An educational or occupational credential. A diploma, academic degree, certification, qualification, badge, etc., that may be awarded to a person or other entity that meets the requirements defined by the credentialer.
+    """
+
     validIn: Optional[Union[AdministrativeArea, List[AdministrativeArea]]] = None
     recognizedBy: Optional[Union[Organization, List[Organization]]] = None
     educationalLevel: Optional[Union[str, List[str]]] = None

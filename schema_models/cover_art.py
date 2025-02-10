@@ -2,4 +2,6 @@ from schema_models.visual_artwork import VisualArtwork
 
 
 class CoverArt(VisualArtwork):
-    pass
+    """
+    The artwork on the outer surface of a CreativeWork.
+    """

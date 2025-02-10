@@ -2,4 +2,6 @@ from schema_models.permit import Permit
 
 
 class GovernmentPermit(Permit):
-    pass
+    """
+    A permit issued by a government agency.
+    """

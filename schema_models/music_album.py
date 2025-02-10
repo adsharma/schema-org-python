@@ -8,6 +8,10 @@ from schema_models.person import Person
 
 
 class MusicAlbum(MusicPlaylist):
+    """
+    A collection of music tracks.
+    """
+
     byArtist: Optional[Union[Person, List[Person]]] = None
     byArtist: Optional[Union[MusicGroup, List[MusicGroup]]] = None
     albumRelease: Optional[Union["MusicRelease", List["MusicRelease"]]] = None

@@ -6,5 +6,9 @@ from schema_models.react_action import ReactAction
 
 
 class EndorseAction(ReactAction):
+    """
+    An agent approves/certifies/likes/supports/sanctions an object.
+    """
+
     endorsee: Optional[Union[Person, List[Person]]] = None
     endorsee: Optional[Union[Organization, List[Organization]]] = None

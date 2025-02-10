@@ -8,6 +8,10 @@ from schema_models.transfer_action import TransferAction
 
 
 class ReturnAction(TransferAction):
+    """
+    The act of returning to the origin that which was previously received (concrete objects) or taken (ownership).
+    """
+
     recipient: Optional[Union[Audience, List[Audience]]] = None
     recipient: Optional[Union[ContactPoint, List[ContactPoint]]] = None
     recipient: Optional[Union[Person, List[Person]]] = None

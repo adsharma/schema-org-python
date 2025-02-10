@@ -8,6 +8,10 @@ from schema_models.price_specification import PriceSpecification
 
 
 class DeliveryChargeSpecification(PriceSpecification):
+    """
+    The price for the delivery of an offer using a particular delivery method.
+    """
+
     eligibleRegion: Optional[Union[GeoShape, List[GeoShape]]] = None
     eligibleRegion: Optional[Union[str, List[str]]] = None
     eligibleRegion: Optional[Union[Place, List[Place]]] = None

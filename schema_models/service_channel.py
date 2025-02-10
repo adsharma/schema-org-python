@@ -7,6 +7,10 @@ from schema_models.place import Place
 
 
 class ServiceChannel(Intangible):
+    """
+    A means for accessing a service, e.g. a government office location, web site, or phone number.
+    """
+
     servicePhone: Optional[Union["ContactPoint", List["ContactPoint"]]] = None
     processingTime: Optional[Union["Duration", List["Duration"]]] = None
     serviceUrl: Optional[Union[HttpUrl, List[HttpUrl]]] = None

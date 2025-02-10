@@ -7,6 +7,10 @@ from schema_models.quantitative_value import QuantitativeValue
 
 
 class PeopleAudience(Audience):
+    """
+    A set of characteristics belonging to people, e.g. who compose an item's target audience.
+    """
+
     suggestedAge: Optional[Union[QuantitativeValue, List[QuantitativeValue]]] = None
     healthCondition: Optional[Union[MedicalCondition, List[MedicalCondition]]] = None
     suggestedGender: Optional[Union[GenderType, List[GenderType]]] = None

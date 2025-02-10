@@ -2,4 +2,6 @@ from schema_models.medical_guideline import MedicalGuideline
 
 
 class MedicalGuidelineContraindication(MedicalGuideline):
-    pass
+    """
+    A guideline contraindication that designates a process as harmful and where quality of the data supporting the contraindication is sound.
+    """

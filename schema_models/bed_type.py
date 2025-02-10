@@ -2,4 +2,6 @@ from schema_models.qualitative_value import QualitativeValue
 
 
 class BedType(QualitativeValue):
-    pass
+    """
+    A type of bed. This is used for indicating the bed or beds available in an accommodation.
+    """

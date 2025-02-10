@@ -7,5 +7,9 @@ from schema_models.service import Service
 
 
 class WebAPI(Service):
+    """
+    An application programming interface accessible over Web/Internet technologies.
+    """
+
     documentation: Optional[Union[CreativeWork, List[CreativeWork]]] = None
     documentation: Optional[Union[HttpUrl, List[HttpUrl]]] = None

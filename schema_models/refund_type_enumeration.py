@@ -2,4 +2,6 @@ from schema_models.enumeration import Enumeration
 
 
 class RefundTypeEnumeration(Enumeration):
-    pass
+    """
+    Enumerates several kinds of product return refund types.
+    """

@@ -2,4 +2,6 @@ from schema_models.home_and_construction_business import HomeAndConstructionBusi
 
 
 class HVACBusiness(HomeAndConstructionBusiness):
-    pass
+    """
+    A business that provides Heating, Ventilation and Air Conditioning services.
+    """

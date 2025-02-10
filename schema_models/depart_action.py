@@ -2,4 +2,6 @@ from schema_models.move_action import MoveAction
 
 
 class DepartAction(MoveAction):
-    pass
+    """
+    The act of  departing from a place. An agent departs from a fromLocation for a destination, optionally with participants.
+    """

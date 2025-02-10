@@ -2,4 +2,6 @@ from schema_models.broadcast_channel import BroadcastChannel
 
 
 class TelevisionChannel(BroadcastChannel):
-    pass
+    """
+    A unique instance of a television BroadcastService on a CableOrSatelliteService lineup.
+    """

@@ -5,6 +5,10 @@ from schema_models.person import Person
 
 
 class Book(CreativeWork):
+    """
+    A book.
+    """
+
     numberOfPages: Optional[Union[int, List[int]]] = None
     illustrator: Optional[Union[Person, List[Person]]] = None
     abridged: Optional[Union[bool, List[bool]]] = None

@@ -5,6 +5,10 @@ from schema_models.structured_value import StructuredValue
 
 
 class RepaymentSpecification(StructuredValue):
+    """
+    A structured value representing repayment.
+    """
+
     loanPaymentAmount: Optional[Union[MonetaryAmount, List[MonetaryAmount]]] = None
     loanPaymentFrequency: Optional[Union[float, List[float]]] = None
     numberOfLoanPayments: Optional[Union[float, List[float]]] = None

@@ -11,6 +11,10 @@ from schema_models.thing import Thing
 
 
 class CreativeWork(Thing):
+    """
+    The most generic kind of creative work, including books, movies, photographs, software programs, etc.
+    """
+
     character: Optional[Union["Person", List["Person"]]] = None
     awards: Optional[Union[str, List[str]]] = None
     temporal: Optional[Union[datetime, List[datetime]]] = None

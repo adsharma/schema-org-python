@@ -2,4 +2,6 @@ from schema_models.event import Event
 
 
 class LiteraryEvent(Event):
-    pass
+    """
+    Event type: Literary event.
+    """

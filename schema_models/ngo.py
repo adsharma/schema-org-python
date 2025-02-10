@@ -2,4 +2,6 @@ from schema_models.organization import Organization
 
 
 class NGO(Organization):
-    pass
+    """
+    Organization: Non-governmental Organization.
+    """

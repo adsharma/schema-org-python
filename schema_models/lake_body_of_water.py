@@ -2,4 +2,6 @@ from schema_models.body_of_water import BodyOfWater
 
 
 class LakeBodyOfWater(BodyOfWater):
-    pass
+    """
+    A lake (for example, Lake Pontrachain).
+    """

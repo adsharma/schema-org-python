@@ -6,6 +6,10 @@ from schema_models.place import Place
 
 
 class CookAction(CreateAction):
+    """
+    The act of producing/preparing food.
+    """
+
     foodEvent: Optional[Union[FoodEvent, List[FoodEvent]]] = None
     recipe: Optional[Union["Recipe", List["Recipe"]]] = None
     foodEstablishment: Optional[Union[Place, List[Place]]] = None

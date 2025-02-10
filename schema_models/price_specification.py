@@ -6,6 +6,10 @@ from schema_models.structured_value import StructuredValue
 
 
 class PriceSpecification(StructuredValue):
+    """
+    A structured value representing a price or price range. Typically, only the subclasses of this type are used for markup. It is recommended to use [[MonetaryAmount]] to describe independent amounts of money such as a salary, credit card limits, etc.
+    """
+
     eligibleTransactionVolume: Optional[
         Union["PriceSpecification", List["PriceSpecification"]]
     ] = None

@@ -2,4 +2,6 @@ from schema_models.action import Action
 
 
 class AssessAction(Action):
-    pass
+    """
+    The act of forming one's opinion, reaction or sentiment.
+    """

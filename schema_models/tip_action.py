@@ -8,6 +8,10 @@ from schema_models.trade_action import TradeAction
 
 
 class TipAction(TradeAction):
+    """
+    The act of giving money voluntarily to a beneficiary in recognition of services rendered.
+    """
+
     recipient: Optional[Union[Audience, List[Audience]]] = None
     recipient: Optional[Union[ContactPoint, List[ContactPoint]]] = None
     recipient: Optional[Union[Person, List[Person]]] = None

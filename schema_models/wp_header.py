@@ -2,4 +2,6 @@ from schema_models.web_page_element import WebPageElement
 
 
 class WPHeader(WebPageElement):
-    pass
+    """
+    The header section of the page.
+    """

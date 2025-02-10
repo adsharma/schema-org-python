@@ -6,6 +6,10 @@ from schema_models.person import Person
 
 
 class ProgramMembership(Intangible):
+    """
+    Used to describe membership in a loyalty programs (e.g. "StarAliance"), traveler clubs (e.g. "AAA"), purchase clubs ("Safeway Club"), etc.
+    """
+
     member: Optional[Union[Person, List[Person]]] = None
     member: Optional[Union[Organization, List[Organization]]] = None
     program: Optional[Union["MemberProgram", List["MemberProgram"]]] = None

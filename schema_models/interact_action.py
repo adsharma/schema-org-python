@@ -2,4 +2,6 @@ from schema_models.action import Action
 
 
 class InteractAction(Action):
-    pass
+    """
+    The act of interacting with another person or organization.
+    """

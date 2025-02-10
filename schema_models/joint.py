@@ -5,6 +5,10 @@ from schema_models.medical_entity import MedicalEntity
 
 
 class Joint(AnatomicalStructure):
+    """
+    The anatomical location at which two or more bones make contact.
+    """
+
     functionalClass: Optional[Union[str, List[str]]] = None
     functionalClass: Optional[Union[MedicalEntity, List[MedicalEntity]]] = None
     biomechnicalClass: Optional[Union[str, List[str]]] = None

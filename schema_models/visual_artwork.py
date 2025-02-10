@@ -7,6 +7,10 @@ from schema_models.person import Person
 
 
 class VisualArtwork(CreativeWork):
+    """
+    A work of art that is primarily visual in character.
+    """
+
     penciler: Optional[Union[Person, List[Person]]] = None
     width: Optional[Union["Distance", List["Distance"]]] = None
     width: Optional[Union["QuantitativeValue", List["QuantitativeValue"]]] = None

@@ -2,4 +2,6 @@ from schema_models.store import Store
 
 
 class TireShop(Store):
-    pass
+    """
+    A tire shop.
+    """

@@ -6,6 +6,10 @@ from schema_models.web_content import WebContent
 
 
 class Answer(Comment):
+    """
+    An answer offered to a question; perhaps correct, perhaps opinionated or wrong.
+    """
+
     answerExplanation: Optional[Union[Comment, List[Comment]]] = None
     answerExplanation: Optional[Union[WebContent, List[WebContent]]] = None
     parentItem: Optional[Union[CreativeWork, List[CreativeWork]]] = None

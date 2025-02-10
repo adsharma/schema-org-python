@@ -6,6 +6,10 @@ from schema_models.item_list import ItemList
 
 
 class Question(Comment):
+    """
+    A sub property of object. A question.
+    """
+
     acceptedAnswer: Optional[Union["Answer", List["Answer"]]] = None
     acceptedAnswer: Optional[Union[ItemList, List[ItemList]]] = None
     parentItem: Optional[Union[CreativeWork, List[CreativeWork]]] = None

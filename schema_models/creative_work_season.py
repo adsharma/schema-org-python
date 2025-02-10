@@ -9,6 +9,10 @@ from schema_models.person import Person
 
 
 class CreativeWorkSeason(CreativeWork):
+    """
+    A media season, e.g. TV, radio, video game etc.
+    """
+
     endDate: Optional[Union[date, List[date]]] = None
     endDate: Optional[Union[datetime, List[datetime]]] = None
     productionCompany: Optional[Union[Organization, List[Organization]]] = None

@@ -2,4 +2,6 @@ from schema_models.government_office import GovernmentOffice
 
 
 class PostOffice(GovernmentOffice):
-    pass
+    """
+    A post office.
+    """

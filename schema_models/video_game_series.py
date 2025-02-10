@@ -18,6 +18,10 @@ from schema_models.video_object import VideoObject
 
 
 class VideoGameSeries(CreativeWorkSeries):
+    """
+    A video game series.
+    """
+
     numberOfSeasons: Optional[Union[int, List[int]]] = None
     gameLocation: Optional[Union[HttpUrl, List[HttpUrl]]] = None
     gameLocation: Optional[Union["PostalAddress", List["PostalAddress"]]] = None

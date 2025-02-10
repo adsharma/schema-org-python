@@ -6,5 +6,9 @@ from schema_models.person import Person
 
 
 class Audiobook(AudioObject):
+    """
+    An audiobook.
+    """
+
     duration: Optional[Union[Duration, List[Duration]]] = None
     readBy: Optional[Union[Person, List[Person]]] = None

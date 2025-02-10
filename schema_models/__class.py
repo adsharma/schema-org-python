@@ -2,4 +2,6 @@ from schema_models.intangible import Intangible
 
 
 class _Class(Intangible):
-    pass
+    """
+    A class, also often called a 'Type'; equivalent to rdfs:Class.
+    """

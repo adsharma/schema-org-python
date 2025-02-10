@@ -8,6 +8,10 @@ from schema_models.size_system_enumeration import SizeSystemEnumeration
 
 
 class SizeSpecification(QualitativeValue):
+    """
+    Size related properties of a product, typically a size code ([[name]]) and optionally a [[sizeSystem]], [[sizeGroup]], and product measurements ([[hasMeasurement]]). In addition, the intended audience can be defined through [[suggestedAge]], [[suggestedGender]], and suggested body measurements ([[suggestedMeasurement]]).
+    """
+
     suggestedAge: Optional[Union[QuantitativeValue, List[QuantitativeValue]]] = None
     suggestedGender: Optional[Union[GenderType, List[GenderType]]] = None
     suggestedGender: Optional[Union[str, List[str]]] = None

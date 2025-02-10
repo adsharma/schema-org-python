@@ -2,4 +2,6 @@ from schema_models.enumeration import Enumeration
 
 
 class TierBenefitEnumeration(Enumeration):
-    pass
+    """
+    An enumeration of possible benefits as part of a loyalty (members) program.
+    """

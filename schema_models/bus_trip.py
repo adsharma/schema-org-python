@@ -4,6 +4,10 @@ from schema_models.trip import Trip
 
 
 class BusTrip(Trip):
+    """
+    A trip on a commercial bus line.
+    """
+
     departureBusStop: Optional[Union["BusStation", List["BusStation"]]] = None
     departureBusStop: Optional[Union["BusStop", List["BusStop"]]] = None
     arrivalBusStop: Optional[Union["BusStop", List["BusStop"]]] = None

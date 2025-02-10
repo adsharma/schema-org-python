@@ -4,6 +4,10 @@ from schema_models.thing import Thing
 
 
 class MedicalEntity(Thing):
+    """
+    The most generic type of entity related to health and the practice of medicine.
+    """
+
     recognizingAuthority: Optional[Union["Organization", List["Organization"]]] = None
     relevantSpecialty: Optional[Union["MedicalSpecialty", List["MedicalSpecialty"]]] = (
         None

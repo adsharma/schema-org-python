@@ -7,6 +7,10 @@ from schema_models.product import Product
 
 
 class Vehicle(Product):
+    """
+    A vehicle is a device that is designed or used to transport people or cargo over land, water, air, or through space.
+    """
+
     numberOfAirbags: Optional[Union[float, List[float]]] = None
     numberOfAirbags: Optional[Union[str, List[str]]] = None
     stupidProperty: Optional[Union["QuantitativeValue", List["QuantitativeValue"]]] = (

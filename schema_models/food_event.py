@@ -2,4 +2,6 @@ from schema_models.event import Event
 
 
 class FoodEvent(Event):
-    pass
+    """
+    Event type: Food event.
+    """

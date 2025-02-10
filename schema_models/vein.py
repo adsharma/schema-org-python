@@ -6,6 +6,10 @@ from schema_models.vessel import Vessel
 
 
 class Vein(Vessel):
+    """
+    A type of blood vessel that specifically carries blood to the heart.
+    """
+
     tributary: Optional[Union[AnatomicalStructure, List[AnatomicalStructure]]] = None
     drainsTo: Optional[Union[Vessel, List[Vessel]]] = None
     regionDrained: Optional[Union[AnatomicalSystem, List[AnatomicalSystem]]] = None

@@ -6,6 +6,10 @@ from schema_models.person import Person
 
 
 class DigitalDocumentPermission(Intangible):
+    """
+    A permission for a particular person or group to access a particular file.
+    """
+
     permissionType: Optional[
         Union["DigitalDocumentPermissionType", List["DigitalDocumentPermissionType"]]
     ] = None

@@ -2,4 +2,6 @@ from schema_models.enumeration import Enumeration
 
 
 class BookFormatType(Enumeration):
-    pass
+    """
+    The publication format of the book.
+    """

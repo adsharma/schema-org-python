@@ -2,4 +2,6 @@ from schema_models.medical_test import MedicalTest
 
 
 class BloodTest(MedicalTest):
-    pass
+    """
+    A medical test performed on a sample of a patient's blood.
+    """

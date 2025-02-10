@@ -6,6 +6,10 @@ from schema_models.creative_work import CreativeWork
 
 
 class SoftwareApplication(CreativeWork):
+    """
+    A software application.
+    """
+
     countriesSupported: Optional[Union[str, List[str]]] = None
     storageRequirements: Optional[Union[str, List[str]]] = None
     storageRequirements: Optional[Union[HttpUrl, List[HttpUrl]]] = None

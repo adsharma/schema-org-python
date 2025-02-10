@@ -2,4 +2,6 @@ from schema_models.enumeration import Enumeration
 
 
 class PaymentMethodType(Enumeration):
-    pass
+    """
+    The type of a payment method.
+    """

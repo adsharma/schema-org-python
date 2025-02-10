@@ -13,6 +13,10 @@ from schema_models.video_object import VideoObject
 
 
 class RadioSeries(CreativeWorkSeries):
+    """
+    CreativeWorkSeries dedicated to radio broadcast and associated online delivery.
+    """
+
     numberOfSeasons: Optional[Union[int, List[int]]] = None
     trailer: Optional[Union[VideoObject, List[VideoObject]]] = None
     numberOfEpisodes: Optional[Union[int, List[int]]] = None

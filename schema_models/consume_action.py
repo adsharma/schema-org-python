@@ -6,6 +6,10 @@ from schema_models.offer import Offer
 
 
 class ConsumeAction(Action):
+    """
+    The act of ingesting information/resources/food.
+    """
+
     expectsAcceptanceOf: Optional[Union[Offer, List[Offer]]] = None
     actionAccessibilityRequirement: Optional[
         Union[ActionAccessSpecification, List[ActionAccessSpecification]]

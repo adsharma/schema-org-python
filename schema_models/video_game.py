@@ -14,6 +14,10 @@ from schema_models.video_object import VideoObject
 
 
 class VideoGame(Game):
+    """
+    A video game is an electronic game that involves human interaction with a user interface to generate visual feedback on a video device.
+    """
+
     gameTip: Optional[Union[CreativeWork, List[CreativeWork]]] = None
     musicBy: Optional[Union[Person, List[Person]]] = None
     musicBy: Optional[Union[MusicGroup, List[MusicGroup]]] = None

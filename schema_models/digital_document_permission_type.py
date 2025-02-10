@@ -2,4 +2,6 @@ from schema_models.enumeration import Enumeration
 
 
 class DigitalDocumentPermissionType(Enumeration):
-    pass
+    """
+    A type of permission which can be granted for accessing a digital document.
+    """

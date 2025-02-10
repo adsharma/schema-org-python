@@ -2,4 +2,6 @@ from schema_models.organization import Organization
 
 
 class ResearchOrganization(Organization):
-    pass
+    """
+    A Research Organization (e.g. scientific institute, research company).
+    """

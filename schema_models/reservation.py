@@ -8,6 +8,12 @@ from schema_models.thing import Thing
 
 
 class Reservation(Intangible):
+    """
+    Describes a reservation for travel, dining or an event. Some reservations require tickets.
+
+    Note: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations. For offers of tickets, restaurant reservations, flights, or rental cars, use [[Offer]].
+    """
+
     totalPrice: Optional[Union[str, List[str]]] = None
     totalPrice: Optional[Union["PriceSpecification", List["PriceSpecification"]]] = None
     totalPrice: Optional[Union[float, List[float]]] = None

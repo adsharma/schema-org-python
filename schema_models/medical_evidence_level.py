@@ -2,4 +2,6 @@ from schema_models.medical_enumeration import MedicalEnumeration
 
 
 class MedicalEvidenceLevel(MedicalEnumeration):
-    pass
+    """
+    Level of evidence for a medical guideline. Enumerated type.
+    """

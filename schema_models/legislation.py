@@ -10,6 +10,10 @@ from schema_models.person import Person
 
 
 class Legislation(CreativeWork):
+    """
+    A legal document such as an act, decree, bill, etc. (enforceable or not) or a component of a legal act (like an article).
+    """
+
     legislationTransposes: Optional[Union["Legislation", List["Legislation"]]] = None
     legislationPassedBy: Optional[Union[Person, List[Person]]] = None
     legislationPassedBy: Optional[Union[Organization, List[Organization]]] = None

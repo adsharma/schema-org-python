@@ -2,4 +2,10 @@ from schema_models.allocate_action import AllocateAction
 
 
 class RejectAction(AllocateAction):
-    pass
+    """
+    The act of rejecting to/adopting an object.
+
+    Related actions:
+
+    * [[AcceptAction]]: The antonym of RejectAction.
+    """

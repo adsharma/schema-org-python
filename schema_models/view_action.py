@@ -2,4 +2,6 @@ from schema_models.consume_action import ConsumeAction
 
 
 class ViewAction(ConsumeAction):
-    pass
+    """
+    The act of consuming static visual content.
+    """

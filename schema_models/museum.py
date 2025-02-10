@@ -2,4 +2,6 @@ from schema_models.civic_structure import CivicStructure
 
 
 class Museum(CivicStructure):
-    pass
+    """
+    A museum.
+    """

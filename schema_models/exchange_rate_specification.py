@@ -5,6 +5,10 @@ from schema_models.structured_value import StructuredValue
 
 
 class ExchangeRateSpecification(StructuredValue):
+    """
+    A structured value representing exchange rate.
+    """
+
     currentExchangeRate: Optional[
         Union["UnitPriceSpecification", List["UnitPriceSpecification"]]
     ] = None

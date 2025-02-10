@@ -9,6 +9,10 @@ from schema_models.tv_series import TVSeries
 
 
 class TVEpisode(Episode):
+    """
+    A TV episode which can be part of a series or season.
+    """
+
     titleEIDR: Optional[Union[str, List[str]]] = None
     titleEIDR: Optional[Union[HttpUrl, List[HttpUrl]]] = None
     partOfTVSeries: Optional[Union[TVSeries, List[TVSeries]]] = None

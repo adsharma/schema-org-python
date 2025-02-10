@@ -5,6 +5,10 @@ from schema_models.vessel import Vessel
 
 
 class Artery(Vessel):
+    """
+    A type of blood vessel that specifically carries blood away from the heart.
+    """
+
     arterialBranch: Optional[Union[AnatomicalStructure, List[AnatomicalStructure]]] = (
         None
     )

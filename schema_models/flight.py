@@ -11,6 +11,10 @@ from schema_models.vehicle import Vehicle
 
 
 class Flight(Trip):
+    """
+    An airline flight.
+    """
+
     webCheckinTime: Optional[Union[datetime, List[datetime]]] = None
     mealService: Optional[Union[str, List[str]]] = None
     arrivalAirport: Optional[Union["Airport", List["Airport"]]] = None

@@ -8,6 +8,10 @@ from schema_models.substance import Substance
 
 
 class Drug(Substance):
+    """
+    Specifying a drug or medicine used in a medication procedure.
+    """
+
     dosageForm: Optional[Union[str, List[str]]] = None
     alcoholWarning: Optional[Union[str, List[str]]] = None
     mechanismOfAction: Optional[Union[str, List[str]]] = None

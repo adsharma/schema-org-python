@@ -6,6 +6,10 @@ from schema_models.medical_entity import MedicalEntity
 
 
 class AnatomicalStructure(MedicalEntity):
+    """
+    Any part of the human body, typically a component of an anatomical system. Organs, tissues, and cells are all anatomical structures.
+    """
+
     partOfSystem: Optional[Union[AnatomicalSystem, List[AnatomicalSystem]]] = None
     relatedCondition: Optional[Union[MedicalCondition, List[MedicalCondition]]] = None
     bodyLocation: Optional[Union[str, List[str]]] = None

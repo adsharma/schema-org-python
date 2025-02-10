@@ -2,4 +2,6 @@ from schema_models.home_and_construction_business import HomeAndConstructionBusi
 
 
 class GeneralContractor(HomeAndConstructionBusiness):
-    pass
+    """
+    A general contractor.
+    """

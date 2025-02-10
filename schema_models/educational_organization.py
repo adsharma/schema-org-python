@@ -5,4 +5,8 @@ from schema_models.person import Person
 
 
 class EducationalOrganization(CivicStructure):
+    """
+    An educational organization.
+    """
+
     alumni: Optional[Union[Person, List[Person]]] = None

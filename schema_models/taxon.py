@@ -6,6 +6,10 @@ from schema_models.thing import Thing
 
 
 class Taxon(Thing):
+    """
+    A set of organisms asserted to represent a natural cohesive biological unit.
+    """
+
     hasDefinedTerm: Optional[Union["DefinedTerm", List["DefinedTerm"]]] = None
     taxonRank: Optional[Union[str, List[str]]] = None
     taxonRank: Optional[Union[HttpUrl, List[HttpUrl]]] = None

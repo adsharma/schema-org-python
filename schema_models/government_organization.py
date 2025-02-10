@@ -2,4 +2,6 @@ from schema_models.organization import Organization
 
 
 class GovernmentOrganization(Organization):
-    pass
+    """
+    A governmental organization or agency.
+    """

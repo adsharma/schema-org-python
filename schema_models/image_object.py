@@ -5,6 +5,10 @@ from schema_models.property_value import PropertyValue
 
 
 class ImageObject(MediaObject):
+    """
+    An image file.
+    """
+
     representativeOfPage: Optional[Union[bool, List[bool]]] = None
     embeddedTextCaption: Optional[Union[str, List[str]]] = None
     exifData: Optional[Union[str, List[str]]] = None

@@ -10,6 +10,10 @@ from schema_models.seat import Seat
 
 
 class Ticket(Intangible):
+    """
+    Used to describe a ticket to an event, a flight, a bus ride, etc.
+    """
+
     dateIssued: Optional[Union[date, List[date]]] = None
     dateIssued: Optional[Union[datetime, List[datetime]]] = None
     ticketToken: Optional[Union[str, List[str]]] = None

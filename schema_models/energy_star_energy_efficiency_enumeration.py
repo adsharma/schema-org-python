@@ -2,4 +2,6 @@ from schema_models.energy_efficiency_enumeration import EnergyEfficiencyEnumerat
 
 
 class EnergyStarEnergyEfficiencyEnumeration(EnergyEfficiencyEnumeration):
-    pass
+    """
+    Used to indicate whether a product is EnergyStar certified.
+    """

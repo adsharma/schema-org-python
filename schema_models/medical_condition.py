@@ -5,6 +5,10 @@ from schema_models.medical_entity import MedicalEntity
 
 
 class MedicalCondition(MedicalEntity):
+    """
+    Any condition of the human body that affects the normal functioning of a person, whether physically or mentally. Includes diseases, injuries, disabilities, disorders, syndromes, etc.
+    """
+
     epidemiology: Optional[Union[str, List[str]]] = None
     stage: Optional[Union["MedicalConditionStage", List["MedicalConditionStage"]]] = (
         None

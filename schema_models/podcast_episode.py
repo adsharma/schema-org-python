@@ -2,4 +2,6 @@ from schema_models.episode import Episode
 
 
 class PodcastEpisode(Episode):
-    pass
+    """
+    A single episode of a podcast series.
+    """

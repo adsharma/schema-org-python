@@ -10,6 +10,10 @@ from schema_models.quantitative_value import QuantitativeValue
 
 
 class UnitPriceSpecification(PriceSpecification):
+    """
+    The price asked for a given offer by the respective organization or person.
+    """
+
     unitCode: Optional[Union[str, List[str]]] = None
     unitCode: Optional[Union[HttpUrl, List[HttpUrl]]] = None
     unitText: Optional[Union[str, List[str]]] = None

@@ -2,4 +2,6 @@ from schema_models.financial_service import FinancialService
 
 
 class BankOrCreditUnion(FinancialService):
-    pass
+    """
+    Bank or credit union.
+    """

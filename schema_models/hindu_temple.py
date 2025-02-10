@@ -2,4 +2,6 @@ from schema_models.place_of_worship import PlaceOfWorship
 
 
 class HinduTemple(PlaceOfWorship):
-    pass
+    """
+    A Hindu temple.
+    """

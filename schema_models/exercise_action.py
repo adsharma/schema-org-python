@@ -10,6 +10,10 @@ from schema_models.sports_team import SportsTeam
 
 
 class ExerciseAction(PlayAction):
+    """
+    The act of participating in exertive activity for the purposes of improving health and fitness.
+    """
+
     course: Optional[Union[Place, List[Place]]] = None
     exerciseRelatedDiet: Optional[Union[Diet, List[Diet]]] = None
     fromLocation: Optional[Union[Place, List[Place]]] = None

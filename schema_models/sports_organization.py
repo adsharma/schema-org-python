@@ -6,5 +6,9 @@ from schema_models.organization import Organization
 
 
 class SportsOrganization(Organization):
+    """
+    Represents the collection of all sports organizations, including sports teams, governing bodies, and sports associations.
+    """
+
     sport: Optional[Union[str, List[str]]] = None
     sport: Optional[Union[HttpUrl, List[HttpUrl]]] = None

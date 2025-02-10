@@ -2,4 +2,6 @@ from schema_models.landform import Landform
 
 
 class Continent(Landform):
-    pass
+    """
+    One of the continents (for example, Europe or Africa).
+    """

@@ -11,6 +11,10 @@ from schema_models.thing import Thing
 
 
 class Invoice(Intangible):
+    """
+    A statement of the money due for goods or services; a bill.
+    """
+
     billingPeriod: Optional[Union["Duration", List["Duration"]]] = None
     paymentMethodId: Optional[Union[str, List[str]]] = None
     referencesOrder: Optional[Union[Order, List[Order]]] = None

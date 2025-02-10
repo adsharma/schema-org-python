@@ -7,6 +7,10 @@ from schema_models.person import Person
 
 
 class Clip(CreativeWork):
+    """
+    A short TV or radio program or a segment/part of a program.
+    """
+
     musicBy: Optional[Union[Person, List[Person]]] = None
     musicBy: Optional[Union["MusicGroup", List["MusicGroup"]]] = None
     partOfSeason: Optional[Union["CreativeWorkSeason", List["CreativeWorkSeason"]]] = (

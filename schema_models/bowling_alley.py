@@ -2,4 +2,6 @@ from schema_models.sports_activity_location import SportsActivityLocation
 
 
 class BowlingAlley(SportsActivityLocation):
-    pass
+    """
+    A bowling alley.
+    """

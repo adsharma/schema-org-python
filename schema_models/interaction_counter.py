@@ -10,6 +10,10 @@ from schema_models.web_site import WebSite
 
 
 class InteractionCounter(StructuredValue):
+    """
+    A summary of how users have interacted with this CreativeWork. In most cases, authors will use a subtype to specify the specific type of interaction.
+    """
+
     userInteractionCount: Optional[Union[int, List[int]]] = None
     endTime: Optional[Union[datetime, List[datetime]]] = None
     endTime: Optional[Union[time, List[time]]] = None

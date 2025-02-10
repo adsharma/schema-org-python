@@ -5,6 +5,10 @@ from schema_models.transfer_action import TransferAction
 
 
 class MoneyTransfer(TransferAction):
+    """
+    The act of transferring money from one place to another place. This may occur electronically or physically.
+    """
+
     beneficiaryBank: Optional[Union[str, List[str]]] = None
     beneficiaryBank: Optional[Union["BankOrCreditUnion", List["BankOrCreditUnion"]]] = (
         None

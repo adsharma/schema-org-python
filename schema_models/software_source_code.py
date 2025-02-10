@@ -8,6 +8,10 @@ from schema_models.software_application import SoftwareApplication
 
 
 class SoftwareSourceCode(CreativeWork):
+    """
+    Computer programming source code. Example: Full (compile ready) solutions, code snippet samples, scripts, templates.
+    """
+
     runtimePlatform: Optional[Union[str, List[str]]] = None
     targetProduct: Optional[Union[SoftwareApplication, List[SoftwareApplication]]] = (
         None

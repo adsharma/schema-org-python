@@ -2,4 +2,6 @@ from schema_models.civic_structure import CivicStructure
 
 
 class TrainStation(CivicStructure):
-    pass
+    """
+    A train station.
+    """

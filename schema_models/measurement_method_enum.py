@@ -2,4 +2,6 @@ from schema_models.enumeration import Enumeration
 
 
 class MeasurementMethodEnum(Enumeration):
-    pass
+    """
+    Enumeration(s) for use with [[measurementMethod]].
+    """

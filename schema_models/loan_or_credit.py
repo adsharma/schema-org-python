@@ -11,6 +11,10 @@ from schema_models.thing import Thing
 
 
 class LoanOrCredit(FinancialProduct):
+    """
+    A financial product for the loaning of an amount of money, or line of credit, under agreed terms and charges.
+    """
+
     loanTerm: Optional[Union[QuantitativeValue, List[QuantitativeValue]]] = None
     requiredCollateral: Optional[Union[Thing, List[Thing]]] = None
     requiredCollateral: Optional[Union[str, List[str]]] = None

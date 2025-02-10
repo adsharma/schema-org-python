@@ -2,4 +2,6 @@ from schema_models.assess_action import AssessAction
 
 
 class ReactAction(AssessAction):
-    pass
+    """
+    The act of responding instinctively and emotionally to an object, expressing a sentiment.
+    """

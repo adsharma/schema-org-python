@@ -6,6 +6,10 @@ from schema_models.list_item import ListItem
 
 
 class HowToSection(ListItem):
+    """
+    A sub-grouping of steps in the instructions for how to achieve a result (e.g. steps for making a pie crust within a pie recipe).
+    """
+
     steps: Optional[Union[ItemList, List[ItemList]]] = None
     steps: Optional[Union[CreativeWork, List[CreativeWork]]] = None
     steps: Optional[Union[str, List[str]]] = None

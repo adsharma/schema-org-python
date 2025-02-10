@@ -9,6 +9,10 @@ from schema_models.thing import Thing
 
 
 class Organization(Thing):
+    """
+    An organization such as a school, NGO, corporation, club, etc.
+    """
+
     hasGS1DigitalLink: Optional[Union[HttpUrl, List[HttpUrl]]] = None
     areaServed: Optional[Union[str, List[str]]] = None
     areaServed: Optional[Union["Place", List["Place"]]] = None

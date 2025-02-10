@@ -9,6 +9,10 @@ from schema_models.person import Person
 
 
 class TVSeries(CreativeWork):
+    """
+    CreativeWorkSeries dedicated to TV broadcast and associated online delivery.
+    """
+
     episodes: Optional[Union["Episode", List["Episode"]]] = None
     containsSeason: Optional[
         Union["CreativeWorkSeason", List["CreativeWorkSeason"]]

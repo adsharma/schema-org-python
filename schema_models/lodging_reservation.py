@@ -6,6 +6,12 @@ from schema_models.reservation import Reservation
 
 
 class LodgingReservation(Reservation):
+    """
+    A reservation for lodging at a hotel, motel, inn, etc.
+
+    Note: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations.
+    """
+
     numChildren: Optional[Union["QuantitativeValue", List["QuantitativeValue"]]] = None
     numChildren: Optional[Union[int, List[int]]] = None
     lodgingUnitDescription: Optional[Union[str, List[str]]] = None

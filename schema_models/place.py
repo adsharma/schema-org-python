@@ -7,6 +7,10 @@ from schema_models.thing import Thing
 
 
 class Place(Thing):
+    """
+    Entities that have a somewhat fixed, physical extension.
+    """
+
     geoCrosses: Optional[Union["Place", List["Place"]]] = None
     geoCrosses: Optional[Union["GeospatialGeometry", List["GeospatialGeometry"]]] = None
     branchCode: Optional[Union[str, List[str]]] = None

@@ -2,4 +2,6 @@ from schema_models.intangible import Intangible
 
 
 class Language(Intangible):
-    pass
+    """
+    A sub property of instrument. The language used on this action.
+    """

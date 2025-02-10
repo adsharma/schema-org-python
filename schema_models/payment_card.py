@@ -5,6 +5,10 @@ from schema_models.monetary_amount import MonetaryAmount
 
 
 class PaymentCard(FinancialProduct):
+    """
+    A payment method using a credit, debit, store or other card to associate the payment with an account.
+    """
+
     cashBack: Optional[Union[bool, List[bool]]] = None
     cashBack: Optional[Union[float, List[float]]] = None
     contactlessPayment: Optional[Union[bool, List[bool]]] = None

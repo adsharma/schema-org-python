@@ -2,4 +2,6 @@ from schema_models.enumeration import Enumeration
 
 
 class PriceComponentTypeEnumeration(Enumeration):
-    pass
+    """
+    Enumerates different price components that together make up the total price for an offered product.
+    """

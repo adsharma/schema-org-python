@@ -5,6 +5,10 @@ from schema_models.structured_value import StructuredValue
 
 
 class QuantitativeValueDistribution(StructuredValue):
+    """
+    A statistical distribution of values.
+    """
+
     duration: Optional[Union[Duration, List[Duration]]] = None
     percentile10: Optional[Union[float, List[float]]] = None
     percentile25: Optional[Union[float, List[float]]] = None
