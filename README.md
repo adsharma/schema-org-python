@@ -21,3 +21,5 @@ One time setup:
 ```
 pre-commit install
 ```
+
+Schemas are provided under the following [license](https://schema.org/docs/terms.html).
