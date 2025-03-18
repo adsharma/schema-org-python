@@ -12,14 +12,14 @@ class FoodEstablishment(LocalBusiness):
     A sub property of location. The specific food establishment where the action occurred.
     """
 
-    menu: Optional[Union[Menu, List[Menu]]] = None
-    menu: Optional[Union[str, List[str]]] = None
-    menu: Optional[Union[HttpUrl, List[HttpUrl]]] = None
+    menu: Optional[Union[Menu, List[Menu], str, List[str], HttpUrl, List[HttpUrl]]] = (
+        None
+    )
     starRating: Optional[Union[Rating, List[Rating]]] = None
     servesCuisine: Optional[Union[str, List[str]]] = None
-    hasMenu: Optional[Union[Menu, List[Menu]]] = None
-    hasMenu: Optional[Union[str, List[str]]] = None
-    hasMenu: Optional[Union[HttpUrl, List[HttpUrl]]] = None
-    acceptsReservations: Optional[Union[str, List[str]]] = None
-    acceptsReservations: Optional[Union[bool, List[bool]]] = None
-    acceptsReservations: Optional[Union[HttpUrl, List[HttpUrl]]] = None
+    hasMenu: Optional[
+        Union[Menu, List[Menu], str, List[str], HttpUrl, List[HttpUrl]]
+    ] = None
+    acceptsReservations: Optional[
+        Union[str, List[str], bool, List[bool], HttpUrl, List[HttpUrl]]
+    ] = None

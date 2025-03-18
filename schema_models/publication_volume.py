@@ -11,9 +11,6 @@ class PublicationVolume(CreativeWork):
     """
 
     pagination: Optional[Union[str, List[str]]] = None
-    volumeNumber: Optional[Union[str, List[str]]] = None
-    volumeNumber: Optional[Union[int, List[int]]] = None
-    pageEnd: Optional[Union[int, List[int]]] = None
-    pageEnd: Optional[Union[str, List[str]]] = None
-    pageStart: Optional[Union[str, List[str]]] = None
-    pageStart: Optional[Union[int, List[int]]] = None
+    volumeNumber: Optional[Union[str, List[str], int, List[int]]] = None
+    pageEnd: Optional[Union[int, List[int], str, List[str]]] = None
+    pageStart: Optional[Union[str, List[str], int, List[int]]] = None

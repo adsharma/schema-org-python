@@ -11,5 +11,6 @@ class GovernmentService(Service):
     """
 
     serviceOperator: Optional[Union[Organization, List[Organization]]] = None
-    jurisdiction: Optional[Union[str, List[str]]] = None
-    jurisdiction: Optional[Union[AdministrativeArea, List[AdministrativeArea]]] = None
+    jurisdiction: Optional[
+        Union[str, List[str], AdministrativeArea, List[AdministrativeArea]]
+    ] = None

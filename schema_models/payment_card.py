@@ -9,11 +9,9 @@ class PaymentCard(FinancialProduct):
     A payment method using a credit, debit, store or other card to associate the payment with an account.
     """
 
-    cashBack: Optional[Union[bool, List[bool]]] = None
-    cashBack: Optional[Union[float, List[float]]] = None
+    cashBack: Optional[Union[bool, List[bool], float, List[float]]] = None
     contactlessPayment: Optional[Union[bool, List[bool]]] = None
     floorLimit: Optional[Union[MonetaryAmount, List[MonetaryAmount]]] = None
     monthlyMinimumRepaymentAmount: Optional[
-        Union[MonetaryAmount, List[MonetaryAmount]]
+        Union[MonetaryAmount, List[MonetaryAmount], float, List[float]]
     ] = None
-    monthlyMinimumRepaymentAmount: Optional[Union[float, List[float]]] = None

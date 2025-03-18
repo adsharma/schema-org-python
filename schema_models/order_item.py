@@ -11,11 +11,17 @@ class OrderItem(Intangible):
 
     orderDelivery: Optional[Union["ParcelDelivery", List["ParcelDelivery"]]] = None
     orderItemStatus: Optional[Union["OrderStatus", List["OrderStatus"]]] = None
-    orderedItem: Optional[Union["Service", List["Service"]]] = None
-    orderedItem: Optional[Union[Product, List[Product]]] = None
-    orderedItem: Optional[Union["OrderItem", List["OrderItem"]]] = None
-    orderQuantity: Optional[Union[float, List[float]]] = None
-    orderQuantity: Optional[Union["QuantitativeValue", List["QuantitativeValue"]]] = (
-        None
-    )
+    orderedItem: Optional[
+        Union[
+            "Service",
+            List["Service"],
+            Product,
+            List[Product],
+            "OrderItem",
+            List["OrderItem"],
+        ]
+    ] = None
+    orderQuantity: Optional[
+        Union[float, List[float], "QuantitativeValue", List["QuantitativeValue"]]
+    ] = None
     orderItemNumber: Optional[Union[str, List[str]]] = None

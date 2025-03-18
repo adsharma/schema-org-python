@@ -19,24 +19,24 @@ class Accommodation(Place):
     numberOfBathroomsTotal: Optional[Union[int, List[int]]] = None
     accommodationCategory: Optional[Union[str, List[str]]] = None
     floorLevel: Optional[Union[str, List[str]]] = None
-    bed: Optional[Union["BedType", List["BedType"]]] = None
-    bed: Optional[Union[BedDetails, List[BedDetails]]] = None
-    bed: Optional[Union[str, List[str]]] = None
-    numberOfBedrooms: Optional[Union[float, List[float]]] = None
-    numberOfBedrooms: Optional[
-        Union["QuantitativeValue", List["QuantitativeValue"]]
+    bed: Optional[
+        Union["BedType", List["BedType"], BedDetails, List[BedDetails], str, List[str]]
     ] = None
-    leaseLength: Optional[Union["QuantitativeValue", List["QuantitativeValue"]]] = None
-    leaseLength: Optional[Union["Duration", List["Duration"]]] = None
+    numberOfBedrooms: Optional[
+        Union[float, List[float], "QuantitativeValue", List["QuantitativeValue"]]
+    ] = None
+    leaseLength: Optional[
+        Union[
+            "QuantitativeValue", List["QuantitativeValue"], "Duration", List["Duration"]
+        ]
+    ] = None
     numberOfFullBathrooms: Optional[Union[float, List[float]]] = None
     floorSize: Optional[Union["QuantitativeValue", List["QuantitativeValue"]]] = None
     yearBuilt: Optional[Union[float, List[float]]] = None
-    numberOfRooms: Optional[Union["QuantitativeValue", List["QuantitativeValue"]]] = (
-        None
-    )
-    numberOfRooms: Optional[Union[float, List[float]]] = None
-    petsAllowed: Optional[Union[str, List[str]]] = None
-    petsAllowed: Optional[Union[bool, List[bool]]] = None
+    numberOfRooms: Optional[
+        Union["QuantitativeValue", List["QuantitativeValue"], float, List[float]]
+    ] = None
+    petsAllowed: Optional[Union[str, List[str], bool, List[bool]]] = None
     accommodationFloorPlan: Optional[Union[FloorPlan, List[FloorPlan]]] = None
     amenityFeature: Optional[
         Union["LocationFeatureSpecification", List["LocationFeatureSpecification"]]

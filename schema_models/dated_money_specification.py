@@ -11,9 +11,8 @@ class DatedMoneySpecification(StructuredValue):
     """
 
     currency: Optional[Union[str, List[str]]] = None
-    startDate: Optional[Union[datetime, List[datetime]]] = None
-    startDate: Optional[Union[date, List[date]]] = None
-    amount: Optional[Union[MonetaryAmount, List[MonetaryAmount]]] = None
-    amount: Optional[Union[float, List[float]]] = None
-    endDate: Optional[Union[date, List[date]]] = None
-    endDate: Optional[Union[datetime, List[datetime]]] = None
+    startDate: Optional[Union[datetime, List[datetime], date, List[date]]] = None
+    amount: Optional[
+        Union[MonetaryAmount, List[MonetaryAmount], float, List[float]]
+    ] = None
+    endDate: Optional[Union[date, List[date], datetime, List[datetime]]] = None

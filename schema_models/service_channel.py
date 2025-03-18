@@ -15,8 +15,9 @@ class ServiceChannel(Intangible):
     processingTime: Optional[Union["Duration", List["Duration"]]] = None
     serviceUrl: Optional[Union[HttpUrl, List[HttpUrl]]] = None
     serviceSmsNumber: Optional[Union["ContactPoint", List["ContactPoint"]]] = None
-    availableLanguage: Optional[Union[str, List[str]]] = None
-    availableLanguage: Optional[Union["Language", List["Language"]]] = None
+    availableLanguage: Optional[Union[str, List[str], "Language", List["Language"]]] = (
+        None
+    )
     serviceLocation: Optional[Union[Place, List[Place]]] = None
     servicePostalAddress: Optional[Union["PostalAddress", List["PostalAddress"]]] = None
     providesService: Optional[Union["Service", List["Service"]]] = None

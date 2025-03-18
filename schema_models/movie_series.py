@@ -13,12 +13,12 @@ class MovieSeries(CreativeWorkSeries):
     A series of movies. Included movies can be indicated with the hasPart property.
     """
 
-    musicBy: Optional[Union[Person, List[Person]]] = None
-    musicBy: Optional[Union[MusicGroup, List[MusicGroup]]] = None
+    musicBy: Optional[Union[Person, List[Person], MusicGroup, List[MusicGroup]]] = None
     trailer: Optional[Union[VideoObject, List[VideoObject]]] = None
     productionCompany: Optional[Union[Organization, List[Organization]]] = None
     director: Optional[Union[Person, List[Person]]] = None
     actors: Optional[Union[Person, List[Person]]] = None
-    actor: Optional[Union[Person, List[Person]]] = None
-    actor: Optional[Union[PerformingGroup, List[PerformingGroup]]] = None
+    actor: Optional[
+        Union[Person, List[Person], PerformingGroup, List[PerformingGroup]]
+    ] = None
     directors: Optional[Union[Person, List[Person]]] = None

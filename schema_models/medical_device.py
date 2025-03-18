@@ -13,8 +13,7 @@ class MedicalDevice(MedicalEntity):
     adverseOutcome: Optional[Union[MedicalEntity, List[MedicalEntity]]] = None
     postOp: Optional[Union[str, List[str]]] = None
     seriousAdverseOutcome: Optional[Union[MedicalEntity, List[MedicalEntity]]] = None
-    contraindication: Optional[Union[str, List[str]]] = None
     contraindication: Optional[
-        Union[MedicalContraindication, List[MedicalContraindication]]
+        Union[str, List[str], MedicalContraindication, List[MedicalContraindication]]
     ] = None
     preOp: Optional[Union[str, List[str]]] = None

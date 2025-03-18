@@ -10,5 +10,6 @@ class SingleFamilyResidence(House):
     """
 
     occupancy: Optional[Union[QuantitativeValue, List[QuantitativeValue]]] = None
-    numberOfRooms: Optional[Union[QuantitativeValue, List[QuantitativeValue]]] = None
-    numberOfRooms: Optional[Union[float, List[float]]] = None
+    numberOfRooms: Optional[
+        Union[QuantitativeValue, List[QuantitativeValue], float, List[float]]
+    ] = None

@@ -9,6 +9,7 @@ class ScreeningEvent(Event):
     """
 
     videoFormat: Optional[Union[str, List[str]]] = None
-    subtitleLanguage: Optional[Union[str, List[str]]] = None
-    subtitleLanguage: Optional[Union["Language", List["Language"]]] = None
+    subtitleLanguage: Optional[Union[str, List[str], "Language", List["Language"]]] = (
+        None
+    )
     workPresented: Optional[Union["Movie", List["Movie"]]] = None

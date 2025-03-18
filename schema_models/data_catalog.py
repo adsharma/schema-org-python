@@ -12,16 +12,28 @@ class DataCatalog(CreativeWork):
     A collection of datasets.
     """
 
-    measurementMethod: Optional[Union[HttpUrl, List[HttpUrl]]] = None
-    measurementMethod: Optional[Union[DefinedTerm, List[DefinedTerm]]] = None
     measurementMethod: Optional[
-        Union["MeasurementMethodEnum", List["MeasurementMethodEnum"]]
+        Union[
+            HttpUrl,
+            List[HttpUrl],
+            DefinedTerm,
+            List[DefinedTerm],
+            "MeasurementMethodEnum",
+            List["MeasurementMethodEnum"],
+            str,
+            List[str],
+        ]
     ] = None
-    measurementMethod: Optional[Union[str, List[str]]] = None
     dataset: Optional[Union[Dataset, List[Dataset]]] = None
-    measurementTechnique: Optional[Union[str, List[str]]] = None
-    measurementTechnique: Optional[Union[HttpUrl, List[HttpUrl]]] = None
-    measurementTechnique: Optional[Union[DefinedTerm, List[DefinedTerm]]] = None
     measurementTechnique: Optional[
-        Union["MeasurementMethodEnum", List["MeasurementMethodEnum"]]
+        Union[
+            str,
+            List[str],
+            HttpUrl,
+            List[HttpUrl],
+            DefinedTerm,
+            List[DefinedTerm],
+            "MeasurementMethodEnum",
+            List["MeasurementMethodEnum"],
+        ]
     ] = None

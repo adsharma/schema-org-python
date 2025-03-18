@@ -15,16 +15,21 @@ class InteractionCounter(StructuredValue):
     """
 
     userInteractionCount: Optional[Union[int, List[int]]] = None
-    endTime: Optional[Union[datetime, List[datetime]]] = None
-    endTime: Optional[Union[time, List[time]]] = None
-    location: Optional[Union[str, List[str]]] = None
-    location: Optional[Union[Place, List[Place]]] = None
-    location: Optional[Union[VirtualLocation, List[VirtualLocation]]] = None
-    location: Optional[Union["PostalAddress", List["PostalAddress"]]] = None
-    startTime: Optional[Union[datetime, List[datetime]]] = None
-    startTime: Optional[Union[time, List[time]]] = None
+    endTime: Optional[Union[datetime, List[datetime], time, List[time]]] = None
+    location: Optional[
+        Union[
+            str,
+            List[str],
+            Place,
+            List[Place],
+            VirtualLocation,
+            List[VirtualLocation],
+            "PostalAddress",
+            List["PostalAddress"],
+        ]
+    ] = None
+    startTime: Optional[Union[datetime, List[datetime], time, List[time]]] = None
     interactionType: Optional[Union[Action, List[Action]]] = None
-    interactionService: Optional[Union[WebSite, List[WebSite]]] = None
     interactionService: Optional[
-        Union[SoftwareApplication, List[SoftwareApplication]]
+        Union[WebSite, List[WebSite], SoftwareApplication, List[SoftwareApplication]]
     ] = None

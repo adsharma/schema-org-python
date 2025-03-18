@@ -14,8 +14,8 @@ class OwnershipInfo(StructuredValue):
     """
 
     ownedThrough: Optional[Union[datetime, List[datetime]]] = None
-    acquiredFrom: Optional[Union[Person, List[Person]]] = None
-    acquiredFrom: Optional[Union[Organization, List[Organization]]] = None
+    acquiredFrom: Optional[
+        Union[Person, List[Person], Organization, List[Organization]]
+    ] = None
     ownedFrom: Optional[Union[datetime, List[datetime]]] = None
-    typeOfGood: Optional[Union[Product, List[Product]]] = None
-    typeOfGood: Optional[Union[Service, List[Service]]] = None
+    typeOfGood: Optional[Union[Product, List[Product], Service, List[Service]]] = None

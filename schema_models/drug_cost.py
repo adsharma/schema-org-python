@@ -14,7 +14,14 @@ class DrugCost(MedicalEntity):
     costOrigin: Optional[Union[str, List[str]]] = None
     costCurrency: Optional[Union[str, List[str]]] = None
     costCategory: Optional[Union["DrugCostCategory", List["DrugCostCategory"]]] = None
-    costPerUnit: Optional[Union[str, List[str]]] = None
-    costPerUnit: Optional[Union[float, List[float]]] = None
-    costPerUnit: Optional[Union["QualitativeValue", List["QualitativeValue"]]] = None
+    costPerUnit: Optional[
+        Union[
+            str,
+            List[str],
+            float,
+            List[float],
+            "QualitativeValue",
+            List["QualitativeValue"],
+        ]
+    ] = None
     drugUnit: Optional[Union[str, List[str]]] = None

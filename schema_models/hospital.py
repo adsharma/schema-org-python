@@ -12,11 +12,19 @@ class Hospital(CivicStructure):
     A hospital.
     """
 
-    availableService: Optional[Union[MedicalTest, List[MedicalTest]]] = None
-    availableService: Optional[Union["MedicalTherapy", List["MedicalTherapy"]]] = None
-    availableService: Optional[Union[MedicalProcedure, List[MedicalProcedure]]] = None
-    healthcareReportingData: Optional[Union[CDCPMDRecord, List[CDCPMDRecord]]] = None
-    healthcareReportingData: Optional[Union[Dataset, List[Dataset]]] = None
+    availableService: Optional[
+        Union[
+            MedicalTest,
+            List[MedicalTest],
+            "MedicalTherapy",
+            List["MedicalTherapy"],
+            MedicalProcedure,
+            List[MedicalProcedure],
+        ]
+    ] = None
+    healthcareReportingData: Optional[
+        Union[CDCPMDRecord, List[CDCPMDRecord], Dataset, List[Dataset]]
+    ] = None
     medicalSpecialty: Optional[Union["MedicalSpecialty", List["MedicalSpecialty"]]] = (
         None
     )

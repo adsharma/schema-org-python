@@ -12,9 +12,13 @@ class SuperficialAnatomy(MedicalEntity):
 
     relatedCondition: Optional[Union[MedicalCondition, List[MedicalCondition]]] = None
     significance: Optional[Union[str, List[str]]] = None
-    relatedAnatomy: Optional[Union[AnatomicalSystem, List[AnatomicalSystem]]] = None
     relatedAnatomy: Optional[
-        Union["AnatomicalStructure", List["AnatomicalStructure"]]
+        Union[
+            AnatomicalSystem,
+            List[AnatomicalSystem],
+            "AnatomicalStructure",
+            List["AnatomicalStructure"],
+        ]
     ] = None
     relatedTherapy: Optional[Union["MedicalTherapy", List["MedicalTherapy"]]] = None
     associatedPathophysiology: Optional[Union[str, List[str]]] = None

@@ -12,7 +12,15 @@ class TipAction(TradeAction):
     The act of giving money voluntarily to a beneficiary in recognition of services rendered.
     """
 
-    recipient: Optional[Union[Audience, List[Audience]]] = None
-    recipient: Optional[Union[ContactPoint, List[ContactPoint]]] = None
-    recipient: Optional[Union[Person, List[Person]]] = None
-    recipient: Optional[Union[Organization, List[Organization]]] = None
+    recipient: Optional[
+        Union[
+            Audience,
+            List[Audience],
+            ContactPoint,
+            List[ContactPoint],
+            Person,
+            List[Person],
+            Organization,
+            List[Organization],
+        ]
+    ] = None

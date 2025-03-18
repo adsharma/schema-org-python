@@ -21,13 +21,18 @@ class Person(Thing):
     awards: Optional[Union[str, List[str]]] = None
     taxID: Optional[Union[str, List[str]]] = None
     alumniOf: Optional[
-        Union["EducationalOrganization", List["EducationalOrganization"]]
+        Union[
+            "EducationalOrganization",
+            List["EducationalOrganization"],
+            Organization,
+            List[Organization],
+        ]
     ] = None
-    alumniOf: Optional[Union[Organization, List[Organization]]] = None
     hasOfferCatalog: Optional[Union["OfferCatalog", List["OfferCatalog"]]] = None
     birthPlace: Optional[Union[Place, List[Place]]] = None
-    workLocation: Optional[Union["ContactPoint", List["ContactPoint"]]] = None
-    workLocation: Optional[Union[Place, List[Place]]] = None
+    workLocation: Optional[
+        Union["ContactPoint", List["ContactPoint"], Place, List[Place]]
+    ] = None
     hasCredential: Optional[
         Union[
             "EducationalOccupationalCredential",
@@ -40,13 +45,11 @@ class Person(Thing):
     additionalName: Optional[Union[str, List[str]]] = None
     birthDate: Optional[Union[date, List[date]]] = None
     seeks: Optional[Union["Demand", List["Demand"]]] = None
-    gender: Optional[Union["GenderType", List["GenderType"]]] = None
-    gender: Optional[Union[str, List[str]]] = None
-    knowsAbout: Optional[Union[HttpUrl, List[HttpUrl]]] = None
-    knowsAbout: Optional[Union[Thing, List[Thing]]] = None
-    knowsAbout: Optional[Union[str, List[str]]] = None
-    jobTitle: Optional[Union["DefinedTerm", List["DefinedTerm"]]] = None
-    jobTitle: Optional[Union[str, List[str]]] = None
+    gender: Optional[Union["GenderType", List["GenderType"], str, List[str]]] = None
+    knowsAbout: Optional[
+        Union[HttpUrl, List[HttpUrl], Thing, List[Thing], str, List[str]]
+    ] = None
+    jobTitle: Optional[Union["DefinedTerm", List["DefinedTerm"], str, List[str]]] = None
     duns: Optional[Union[str, List[str]]] = None
     knows: Optional[Union["Person", List["Person"]]] = None
     givenName: Optional[Union[str, List[str]]] = None
@@ -54,8 +57,9 @@ class Person(Thing):
     award: Optional[Union[str, List[str]]] = None
     callSign: Optional[Union[str, List[str]]] = None
     contactPoint: Optional[Union["ContactPoint", List["ContactPoint"]]] = None
-    publishingPrinciples: Optional[Union[HttpUrl, List[HttpUrl]]] = None
-    publishingPrinciples: Optional[Union[CreativeWork, List[CreativeWork]]] = None
+    publishingPrinciples: Optional[
+        Union[HttpUrl, List[HttpUrl], CreativeWork, List[CreativeWork]]
+    ] = None
     interactionStatistic: Optional[
         Union["InteractionCounter", List["InteractionCounter"]]
     ] = None
@@ -66,50 +70,69 @@ class Person(Thing):
     honorificPrefix: Optional[Union[str, List[str]]] = None
     worksFor: Optional[Union[Organization, List[Organization]]] = None
     children: Optional[Union["Person", List["Person"]]] = None
-    owns: Optional[Union["OwnershipInfo", List["OwnershipInfo"]]] = None
-    owns: Optional[Union[Product, List[Product]]] = None
+    owns: Optional[
+        Union["OwnershipInfo", List["OwnershipInfo"], Product, List[Product]]
+    ] = None
     vatID: Optional[Union[str, List[str]]] = None
     globalLocationNumber: Optional[Union[str, List[str]]] = None
-    skills: Optional[Union[str, List[str]]] = None
-    skills: Optional[Union["DefinedTerm", List["DefinedTerm"]]] = None
+    skills: Optional[Union[str, List[str], "DefinedTerm", List["DefinedTerm"]]] = None
     email: Optional[Union[str, List[str]]] = None
     weight: Optional[Union["QuantitativeValue", List["QuantitativeValue"]]] = None
     deathPlace: Optional[Union[Place, List[Place]]] = None
-    knowsLanguage: Optional[Union[str, List[str]]] = None
-    knowsLanguage: Optional[Union["Language", List["Language"]]] = None
+    knowsLanguage: Optional[Union[str, List[str], "Language", List["Language"]]] = None
     familyName: Optional[Union[str, List[str]]] = None
-    memberOf: Optional[Union["ProgramMembership", List["ProgramMembership"]]] = None
-    memberOf: Optional[Union[Organization, List[Organization]]] = None
-    memberOf: Optional[Union["MemberProgramTier", List["MemberProgramTier"]]] = None
+    memberOf: Optional[
+        Union[
+            "ProgramMembership",
+            List["ProgramMembership"],
+            Organization,
+            List[Organization],
+            "MemberProgramTier",
+            List["MemberProgramTier"],
+        ]
+    ] = None
     sibling: Optional[Union["Person", List["Person"]]] = None
     hasOccupation: Optional[Union["Occupation", List["Occupation"]]] = None
-    brand: Optional[Union[Organization, List[Organization]]] = None
-    brand: Optional[Union["Brand", List["Brand"]]] = None
+    brand: Optional[Union[Organization, List[Organization], "Brand", List["Brand"]]] = (
+        None
+    )
     funding: Optional[Union["Grant", List["Grant"]]] = None
-    address: Optional[Union[str, List[str]]] = None
-    address: Optional[Union["PostalAddress", List["PostalAddress"]]] = None
+    address: Optional[Union[str, List[str], "PostalAddress", List["PostalAddress"]]] = (
+        None
+    )
     siblings: Optional[Union["Person", List["Person"]]] = None
     hasPOS: Optional[Union[Place, List[Place]]] = None
     telephone: Optional[Union[str, List[str]]] = None
-    colleague: Optional[Union["Person", List["Person"]]] = None
-    colleague: Optional[Union[HttpUrl, List[HttpUrl]]] = None
+    colleague: Optional[Union["Person", List["Person"], HttpUrl, List[HttpUrl]]] = None
     faxNumber: Optional[Union[str, List[str]]] = None
     honorificSuffix: Optional[Union[str, List[str]]] = None
     makesOffer: Optional[Union["Offer", List["Offer"]]] = None
     performerIn: Optional[Union[Event, List[Event]]] = None
-    sponsor: Optional[Union["Person", List["Person"]]] = None
-    sponsor: Optional[Union[Organization, List[Organization]]] = None
-    homeLocation: Optional[Union["ContactPoint", List["ContactPoint"]]] = None
-    homeLocation: Optional[Union[Place, List[Place]]] = None
+    sponsor: Optional[
+        Union["Person", List["Person"], Organization, List[Organization]]
+    ] = None
+    homeLocation: Optional[
+        Union["ContactPoint", List["ContactPoint"], Place, List[Place]]
+    ] = None
     agentInteractionStatistic: Optional[
         Union["InteractionCounter", List["InteractionCounter"]]
     ] = None
-    funder: Optional[Union["Person", List["Person"]]] = None
-    funder: Optional[Union[Organization, List[Organization]]] = None
+    funder: Optional[
+        Union["Person", List["Person"], Organization, List[Organization]]
+    ] = None
     parent: Optional[Union["Person", List["Person"]]] = None
-    netWorth: Optional[Union["PriceSpecification", List["PriceSpecification"]]] = None
-    netWorth: Optional[Union["MonetaryAmount", List["MonetaryAmount"]]] = None
+    netWorth: Optional[
+        Union[
+            "PriceSpecification",
+            List["PriceSpecification"],
+            "MonetaryAmount",
+            List["MonetaryAmount"],
+        ]
+    ] = None
     colleagues: Optional[Union["Person", List["Person"]]] = None
     naics: Optional[Union[str, List[str]]] = None
-    height: Optional[Union["Distance", List["Distance"]]] = None
-    height: Optional[Union["QuantitativeValue", List["QuantitativeValue"]]] = None
+    height: Optional[
+        Union[
+            "Distance", List["Distance"], "QuantitativeValue", List["QuantitativeValue"]
+        ]
+    ] = None

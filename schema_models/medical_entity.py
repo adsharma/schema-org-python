@@ -15,10 +15,15 @@ class MedicalEntity(Thing):
     code: Optional[Union["MedicalCode", List["MedicalCode"]]] = None
     study: Optional[Union["MedicalStudy", List["MedicalStudy"]]] = None
     medicineSystem: Optional[Union["MedicineSystem", List["MedicineSystem"]]] = None
-    legalStatus: Optional[Union["DrugLegalStatus", List["DrugLegalStatus"]]] = None
-    legalStatus: Optional[Union["MedicalEnumeration", List["MedicalEnumeration"]]] = (
-        None
-    )
-    legalStatus: Optional[Union[str, List[str]]] = None
+    legalStatus: Optional[
+        Union[
+            "DrugLegalStatus",
+            List["DrugLegalStatus"],
+            "MedicalEnumeration",
+            List["MedicalEnumeration"],
+            str,
+            List[str],
+        ]
+    ] = None
     funding: Optional[Union["Grant", List["Grant"]]] = None
     guideline: Optional[Union["MedicalGuideline", List["MedicalGuideline"]]] = None

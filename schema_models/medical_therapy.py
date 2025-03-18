@@ -11,8 +11,7 @@ class MedicalTherapy(TherapeuticProcedure):
     """
 
     seriousAdverseOutcome: Optional[Union[MedicalEntity, List[MedicalEntity]]] = None
-    contraindication: Optional[Union[str, List[str]]] = None
     contraindication: Optional[
-        Union[MedicalContraindication, List[MedicalContraindication]]
+        Union[str, List[str], MedicalContraindication, List[MedicalContraindication]]
     ] = None
     duplicateTherapy: Optional[Union["MedicalTherapy", List["MedicalTherapy"]]] = None

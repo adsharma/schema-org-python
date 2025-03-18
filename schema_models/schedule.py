@@ -11,23 +11,18 @@ class Schedule(Intangible):
           have start and end dates to indicate when they are active, e.g. to define a limited calendar of events.
     """
 
-    startDate: Optional[Union[datetime, List[datetime]]] = None
-    startDate: Optional[Union[date, List[date]]] = None
-    exceptDate: Optional[Union[datetime, List[datetime]]] = None
-    exceptDate: Optional[Union[date, List[date]]] = None
-    endTime: Optional[Union[datetime, List[datetime]]] = None
-    endTime: Optional[Union[time, List[time]]] = None
-    repeatFrequency: Optional[Union[str, List[str]]] = None
-    repeatFrequency: Optional[Union["Duration", List["Duration"]]] = None
+    startDate: Optional[Union[datetime, List[datetime], date, List[date]]] = None
+    exceptDate: Optional[Union[datetime, List[datetime], date, List[date]]] = None
+    endTime: Optional[Union[datetime, List[datetime], time, List[time]]] = None
+    repeatFrequency: Optional[Union[str, List[str], "Duration", List["Duration"]]] = (
+        None
+    )
     byMonth: Optional[Union[int, List[int]]] = None
     repeatCount: Optional[Union[int, List[int]]] = None
     byMonthWeek: Optional[Union[int, List[int]]] = None
-    endDate: Optional[Union[date, List[date]]] = None
-    endDate: Optional[Union[datetime, List[datetime]]] = None
+    endDate: Optional[Union[date, List[date], datetime, List[datetime]]] = None
     duration: Optional[Union["Duration", List["Duration"]]] = None
-    byDay: Optional[Union[str, List[str]]] = None
-    byDay: Optional[Union["DayOfWeek", List["DayOfWeek"]]] = None
+    byDay: Optional[Union[str, List[str], "DayOfWeek", List["DayOfWeek"]]] = None
     byMonthDay: Optional[Union[int, List[int]]] = None
     scheduleTimezone: Optional[Union[str, List[str]]] = None
-    startTime: Optional[Union[datetime, List[datetime]]] = None
-    startTime: Optional[Union[time, List[time]]] = None
+    startTime: Optional[Union[datetime, List[datetime], time, List[time]]] = None

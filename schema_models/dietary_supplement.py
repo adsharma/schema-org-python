@@ -19,10 +19,15 @@ class DietarySupplement(Substance):
     maximumIntake: Optional[
         Union["MaximumDoseSchedule", List["MaximumDoseSchedule"]]
     ] = None
-    legalStatus: Optional[Union["DrugLegalStatus", List["DrugLegalStatus"]]] = None
-    legalStatus: Optional[Union["MedicalEnumeration", List["MedicalEnumeration"]]] = (
-        None
-    )
-    legalStatus: Optional[Union[str, List[str]]] = None
+    legalStatus: Optional[
+        Union[
+            "DrugLegalStatus",
+            List["DrugLegalStatus"],
+            "MedicalEnumeration",
+            List["MedicalEnumeration"],
+            str,
+            List[str],
+        ]
+    ] = None
     safetyConsideration: Optional[Union[str, List[str]]] = None
     nonProprietaryName: Optional[Union[str, List[str]]] = None

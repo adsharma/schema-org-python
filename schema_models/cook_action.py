@@ -12,7 +12,6 @@ class CookAction(CreateAction):
 
     foodEvent: Optional[Union[FoodEvent, List[FoodEvent]]] = None
     recipe: Optional[Union["Recipe", List["Recipe"]]] = None
-    foodEstablishment: Optional[Union[Place, List[Place]]] = None
     foodEstablishment: Optional[
-        Union["FoodEstablishment", List["FoodEstablishment"]]
+        Union[Place, List[Place], "FoodEstablishment", List["FoodEstablishment"]]
     ] = None

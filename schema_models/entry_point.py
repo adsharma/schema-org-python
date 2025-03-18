@@ -14,10 +14,15 @@ class EntryPoint(Intangible):
     encodingType: Optional[Union[str, List[str]]] = None
     urlTemplate: Optional[Union[str, List[str]]] = None
     actionPlatform: Optional[
-        Union["DigitalPlatformEnumeration", List["DigitalPlatformEnumeration"]]
+        Union[
+            "DigitalPlatformEnumeration",
+            List["DigitalPlatformEnumeration"],
+            str,
+            List[str],
+            HttpUrl,
+            List[HttpUrl],
+        ]
     ] = None
-    actionPlatform: Optional[Union[str, List[str]]] = None
-    actionPlatform: Optional[Union[HttpUrl, List[HttpUrl]]] = None
     application: Optional[Union["SoftwareApplication", List["SoftwareApplication"]]] = (
         None
     )

@@ -10,7 +10,9 @@ class MonetaryGrant(Grant):
     A monetary grant.
     """
 
-    amount: Optional[Union["MonetaryAmount", List["MonetaryAmount"]]] = None
-    amount: Optional[Union[float, List[float]]] = None
-    funder: Optional[Union[Person, List[Person]]] = None
-    funder: Optional[Union[Organization, List[Organization]]] = None
+    amount: Optional[
+        Union["MonetaryAmount", List["MonetaryAmount"], float, List[float]]
+    ] = None
+    funder: Optional[Union[Person, List[Person], Organization, List[Organization]]] = (
+        None
+    )

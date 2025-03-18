@@ -11,7 +11,5 @@ class ImageObject(MediaObject):
 
     representativeOfPage: Optional[Union[bool, List[bool]]] = None
     embeddedTextCaption: Optional[Union[str, List[str]]] = None
-    exifData: Optional[Union[str, List[str]]] = None
-    exifData: Optional[Union[PropertyValue, List[PropertyValue]]] = None
-    caption: Optional[Union[MediaObject, List[MediaObject]]] = None
-    caption: Optional[Union[str, List[str]]] = None
+    exifData: Optional[Union[str, List[str], PropertyValue, List[PropertyValue]]] = None
+    caption: Optional[Union[MediaObject, List[MediaObject], str, List[str]]] = None

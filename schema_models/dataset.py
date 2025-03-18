@@ -13,28 +13,47 @@ class Dataset(CreativeWork):
     A dataset contained in this catalog.
     """
 
-    measurementMethod: Optional[Union[HttpUrl, List[HttpUrl]]] = None
-    measurementMethod: Optional[Union[DefinedTerm, List[DefinedTerm]]] = None
     measurementMethod: Optional[
-        Union["MeasurementMethodEnum", List["MeasurementMethodEnum"]]
+        Union[
+            HttpUrl,
+            List[HttpUrl],
+            DefinedTerm,
+            List[DefinedTerm],
+            "MeasurementMethodEnum",
+            List["MeasurementMethodEnum"],
+            str,
+            List[str],
+        ]
     ] = None
-    measurementMethod: Optional[Union[str, List[str]]] = None
     issn: Optional[Union[str, List[str]]] = None
-    measurementTechnique: Optional[Union[str, List[str]]] = None
-    measurementTechnique: Optional[Union[HttpUrl, List[HttpUrl]]] = None
-    measurementTechnique: Optional[Union[DefinedTerm, List[DefinedTerm]]] = None
     measurementTechnique: Optional[
-        Union["MeasurementMethodEnum", List["MeasurementMethodEnum"]]
+        Union[
+            str,
+            List[str],
+            HttpUrl,
+            List[HttpUrl],
+            DefinedTerm,
+            List[DefinedTerm],
+            "MeasurementMethodEnum",
+            List["MeasurementMethodEnum"],
+        ]
     ] = None
     catalog: Optional[Union["DataCatalog", List["DataCatalog"]]] = None
-    variablesMeasured: Optional[Union[str, List[str]]] = None
-    variablesMeasured: Optional[Union["PropertyValue", List["PropertyValue"]]] = None
-    variableMeasured: Optional[
-        Union["StatisticalVariable", List["StatisticalVariable"]]
+    variablesMeasured: Optional[
+        Union[str, List[str], "PropertyValue", List["PropertyValue"]]
     ] = None
-    variableMeasured: Optional[Union[Property, List[Property]]] = None
-    variableMeasured: Optional[Union[str, List[str]]] = None
-    variableMeasured: Optional[Union["PropertyValue", List["PropertyValue"]]] = None
+    variableMeasured: Optional[
+        Union[
+            "StatisticalVariable",
+            List["StatisticalVariable"],
+            Property,
+            List[Property],
+            str,
+            List[str],
+            "PropertyValue",
+            List["PropertyValue"],
+        ]
+    ] = None
     includedDataCatalog: Optional[Union["DataCatalog", List["DataCatalog"]]] = None
     includedInDataCatalog: Optional[Union["DataCatalog", List["DataCatalog"]]] = None
     datasetTimeInterval: Optional[Union[datetime, List[datetime]]] = None

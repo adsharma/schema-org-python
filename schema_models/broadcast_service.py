@@ -15,8 +15,7 @@ class BroadcastService(Service):
     A delivery service through which content is provided via broadcast over the air or online.
     """
 
-    inLanguage: Optional[Union[Language, List[Language]]] = None
-    inLanguage: Optional[Union[str, List[str]]] = None
+    inLanguage: Optional[Union[Language, List[Language], str, List[str]]] = None
     broadcaster: Optional[Union[Organization, List[Organization]]] = None
     area: Optional[Union[Place, List[Place]]] = None
     hasBroadcastChannel: Optional[Union[BroadcastChannel, List[BroadcastChannel]]] = (
@@ -28,7 +27,11 @@ class BroadcastService(Service):
     parentService: Optional[Union["BroadcastService", List["BroadcastService"]]] = None
     broadcastDisplayName: Optional[Union[str, List[str]]] = None
     broadcastTimezone: Optional[Union[str, List[str]]] = None
-    broadcastFrequency: Optional[Union[str, List[str]]] = None
     broadcastFrequency: Optional[
-        Union[BroadcastFrequencySpecification, List[BroadcastFrequencySpecification]]
+        Union[
+            str,
+            List[str],
+            BroadcastFrequencySpecification,
+            List[BroadcastFrequencySpecification],
+        ]
     ] = None

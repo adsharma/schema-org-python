@@ -12,7 +12,6 @@ class CourseInstance(Event):
     """
 
     instructor: Optional[Union[Person, List[Person]]] = None
-    courseMode: Optional[Union[str, List[str]]] = None
-    courseMode: Optional[Union[HttpUrl, List[HttpUrl]]] = None
+    courseMode: Optional[Union[str, List[str], HttpUrl, List[HttpUrl]]] = None
     courseSchedule: Optional[Union["Schedule", List["Schedule"]]] = None
     courseWorkload: Optional[Union[str, List[str]]] = None

@@ -12,5 +12,6 @@ class CompoundPriceSpecification(PriceSpecification):
     priceComponent: Optional[
         Union["UnitPriceSpecification", List["UnitPriceSpecification"]]
     ] = None
-    priceType: Optional[Union[PriceTypeEnumeration, List[PriceTypeEnumeration]]] = None
-    priceType: Optional[Union[str, List[str]]] = None
+    priceType: Optional[
+        Union[PriceTypeEnumeration, List[PriceTypeEnumeration], str, List[str]]
+    ] = None

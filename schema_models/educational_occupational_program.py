@@ -19,65 +19,71 @@ class EducationalOccupationalProgram(Intangible):
     """
 
     applicationStartDate: Optional[Union[date, List[date]]] = None
-    provider: Optional[Union[Person, List[Person]]] = None
-    provider: Optional[Union[Organization, List[Organization]]] = None
+    provider: Optional[
+        Union[Person, List[Person], Organization, List[Organization]]
+    ] = None
     salaryUponCompletion: Optional[
         Union["MonetaryAmountDistribution", List["MonetaryAmountDistribution"]]
     ] = None
     maximumEnrollment: Optional[Union[int, List[int]]] = None
-    educationalCredentialAwarded: Optional[Union[str, List[str]]] = None
     educationalCredentialAwarded: Optional[
         Union[
+            str,
+            List[str],
             "EducationalOccupationalCredential",
             List["EducationalOccupationalCredential"],
+            HttpUrl,
+            List[HttpUrl],
         ]
     ] = None
-    educationalCredentialAwarded: Optional[Union[HttpUrl, List[HttpUrl]]] = None
-    applicationDeadline: Optional[Union[date, List[date]]] = None
-    applicationDeadline: Optional[Union[str, List[str]]] = None
-    educationalProgramMode: Optional[Union[str, List[str]]] = None
-    educationalProgramMode: Optional[Union[HttpUrl, List[HttpUrl]]] = None
-    hasCourse: Optional[Union["Course", List["Course"]]] = None
-    termsPerYear: Optional[Union[float, List[float]]] = None
-    typicalCreditsPerTerm: Optional[Union[StructuredValue, List[StructuredValue]]] = (
+    applicationDeadline: Optional[Union[date, List[date], str, List[str]]] = None
+    educationalProgramMode: Optional[Union[str, List[str], HttpUrl, List[HttpUrl]]] = (
         None
     )
-    typicalCreditsPerTerm: Optional[Union[int, List[int]]] = None
-    programPrerequisites: Optional[Union[str, List[str]]] = None
+    hasCourse: Optional[Union["Course", List["Course"]]] = None
+    termsPerYear: Optional[Union[float, List[float]]] = None
+    typicalCreditsPerTerm: Optional[
+        Union[StructuredValue, List[StructuredValue], int, List[int]]
+    ] = None
     programPrerequisites: Optional[
         Union[
+            str,
+            List[str],
             "EducationalOccupationalCredential",
             List["EducationalOccupationalCredential"],
+            AlignmentObject,
+            List[AlignmentObject],
+            "Course",
+            List["Course"],
         ]
     ] = None
-    programPrerequisites: Optional[Union[AlignmentObject, List[AlignmentObject]]] = None
-    programPrerequisites: Optional[Union["Course", List["Course"]]] = None
-    startDate: Optional[Union[datetime, List[datetime]]] = None
-    startDate: Optional[Union[date, List[date]]] = None
+    startDate: Optional[Union[datetime, List[datetime], date, List[date]]] = None
     dayOfWeek: Optional[Union["DayOfWeek", List["DayOfWeek"]]] = None
     trainingSalary: Optional[
         Union["MonetaryAmountDistribution", List["MonetaryAmountDistribution"]]
     ] = None
-    numberOfCredits: Optional[Union[int, List[int]]] = None
-    numberOfCredits: Optional[Union[StructuredValue, List[StructuredValue]]] = None
-    programType: Optional[Union[str, List[str]]] = None
-    programType: Optional[Union[DefinedTerm, List[DefinedTerm]]] = None
-    offers: Optional[Union[Offer, List[Offer]]] = None
-    offers: Optional[Union[Demand, List[Demand]]] = None
-    occupationalCategory: Optional[Union["CategoryCode", List["CategoryCode"]]] = None
-    occupationalCategory: Optional[Union[str, List[str]]] = None
-    endDate: Optional[Union[date, List[date]]] = None
-    endDate: Optional[Union[datetime, List[datetime]]] = None
+    numberOfCredits: Optional[
+        Union[int, List[int], StructuredValue, List[StructuredValue]]
+    ] = None
+    programType: Optional[Union[str, List[str], DefinedTerm, List[DefinedTerm]]] = None
+    offers: Optional[Union[Offer, List[Offer], Demand, List[Demand]]] = None
+    occupationalCategory: Optional[
+        Union["CategoryCode", List["CategoryCode"], str, List[str]]
+    ] = None
+    endDate: Optional[Union[date, List[date], datetime, List[datetime]]] = None
     timeToComplete: Optional[Union["Duration", List["Duration"]]] = None
     timeOfDay: Optional[Union[str, List[str]]] = None
-    financialAidEligible: Optional[Union[str, List[str]]] = None
-    financialAidEligible: Optional[Union[DefinedTerm, List[DefinedTerm]]] = None
-    occupationalCredentialAwarded: Optional[Union[str, List[str]]] = None
+    financialAidEligible: Optional[
+        Union[str, List[str], DefinedTerm, List[DefinedTerm]]
+    ] = None
     occupationalCredentialAwarded: Optional[
         Union[
+            str,
+            List[str],
             "EducationalOccupationalCredential",
             List["EducationalOccupationalCredential"],
+            HttpUrl,
+            List[HttpUrl],
         ]
     ] = None
-    occupationalCredentialAwarded: Optional[Union[HttpUrl, List[HttpUrl]]] = None
     termDuration: Optional[Union["Duration", List["Duration"]]] = None

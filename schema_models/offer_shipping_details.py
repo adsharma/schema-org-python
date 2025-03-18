@@ -28,19 +28,22 @@ class OfferShippingDetails(StructuredValue):
     shippingSettingsLink: Optional[Union[HttpUrl, List[HttpUrl]]] = None
     shippingOrigin: Optional[Union[DefinedRegion, List[DefinedRegion]]] = None
     shippingLabel: Optional[Union[str, List[str]]] = None
-    height: Optional[Union[Distance, List[Distance]]] = None
-    height: Optional[Union["QuantitativeValue", List["QuantitativeValue"]]] = None
+    height: Optional[
+        Union[Distance, List[Distance], "QuantitativeValue", List["QuantitativeValue"]]
+    ] = None
     transitTimeLabel: Optional[Union[str, List[str]]] = None
-    width: Optional[Union[Distance, List[Distance]]] = None
-    width: Optional[Union["QuantitativeValue", List["QuantitativeValue"]]] = None
+    width: Optional[
+        Union[Distance, List[Distance], "QuantitativeValue", List["QuantitativeValue"]]
+    ] = None
     deliveryTime: Optional[
         Union["ShippingDeliveryTime", List["ShippingDeliveryTime"]]
     ] = None
     validForMemberTier: Optional[Union[MemberProgramTier, List[MemberProgramTier]]] = (
         None
     )
-    depth: Optional[Union["QuantitativeValue", List["QuantitativeValue"]]] = None
-    depth: Optional[Union[Distance, List[Distance]]] = None
+    depth: Optional[
+        Union["QuantitativeValue", List["QuantitativeValue"], Distance, List[Distance]]
+    ] = None
     doesNotShip: Optional[Union[bool, List[bool]]] = None
     shippingDestination: Optional[Union[DefinedRegion, List[DefinedRegion]]] = None
     shippingRate: Optional[Union[MonetaryAmount, List[MonetaryAmount]]] = None

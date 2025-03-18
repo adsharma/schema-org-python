@@ -13,17 +13,15 @@ class Article(CreativeWork):
     See also [blog post](http://blog.schema.org/2014/09/schemaorg-support-for-bibliographic_2.html).
     """
 
-    pageStart: Optional[Union[str, List[str]]] = None
-    pageStart: Optional[Union[int, List[int]]] = None
-    speakable: Optional[Union[HttpUrl, List[HttpUrl]]] = None
-    speakable: Optional[Union[SpeakableSpecification, List[SpeakableSpecification]]] = (
-        None
-    )
+    pageStart: Optional[Union[str, List[str], int, List[int]]] = None
+    speakable: Optional[
+        Union[
+            HttpUrl, List[HttpUrl], SpeakableSpecification, List[SpeakableSpecification]
+        ]
+    ] = None
     articleSection: Optional[Union[str, List[str]]] = None
     pagination: Optional[Union[str, List[str]]] = None
     wordCount: Optional[Union[int, List[int]]] = None
     articleBody: Optional[Union[str, List[str]]] = None
-    backstory: Optional[Union[CreativeWork, List[CreativeWork]]] = None
-    backstory: Optional[Union[str, List[str]]] = None
-    pageEnd: Optional[Union[int, List[int]]] = None
-    pageEnd: Optional[Union[str, List[str]]] = None
+    backstory: Optional[Union[CreativeWork, List[CreativeWork], str, List[str]]] = None
+    pageEnd: Optional[Union[int, List[int], str, List[str]]] = None

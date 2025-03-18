@@ -11,5 +11,6 @@ class WebAPI(Service):
     An application programming interface accessible over Web/Internet technologies.
     """
 
-    documentation: Optional[Union[CreativeWork, List[CreativeWork]]] = None
-    documentation: Optional[Union[HttpUrl, List[HttpUrl]]] = None
+    documentation: Optional[
+        Union[CreativeWork, List[CreativeWork], HttpUrl, List[HttpUrl]]
+    ] = None

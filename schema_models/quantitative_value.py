@@ -15,25 +15,40 @@ class QuantitativeValue(StructuredValue):
     A point value or interval for product characteristics and other purposes.
     """
 
-    value: Optional[Union[bool, List[bool]]] = None
-    value: Optional[Union[str, List[str]]] = None
-    value: Optional[Union[float, List[float]]] = None
-    value: Optional[Union[StructuredValue, List[StructuredValue]]] = None
-    valueReference: Optional[Union[str, List[str]]] = None
-    valueReference: Optional[Union[DefinedTerm, List[DefinedTerm]]] = None
-    valueReference: Optional[Union[PropertyValue, List[PropertyValue]]] = None
-    valueReference: Optional[
-        Union[MeasurementTypeEnumeration, List[MeasurementTypeEnumeration]]
+    value: Optional[
+        Union[
+            bool,
+            List[bool],
+            str,
+            List[str],
+            float,
+            List[float],
+            StructuredValue,
+            List[StructuredValue],
+        ]
     ] = None
-    valueReference: Optional[Union[StructuredValue, List[StructuredValue]]] = None
-    valueReference: Optional[Union[Enumeration, List[Enumeration]]] = None
-    valueReference: Optional[Union[QualitativeValue, List[QualitativeValue]]] = None
-    valueReference: Optional[Union["QuantitativeValue", List["QuantitativeValue"]]] = (
-        None
-    )
+    valueReference: Optional[
+        Union[
+            str,
+            List[str],
+            DefinedTerm,
+            List[DefinedTerm],
+            PropertyValue,
+            List[PropertyValue],
+            MeasurementTypeEnumeration,
+            List[MeasurementTypeEnumeration],
+            StructuredValue,
+            List[StructuredValue],
+            Enumeration,
+            List[Enumeration],
+            QualitativeValue,
+            List[QualitativeValue],
+            "QuantitativeValue",
+            List["QuantitativeValue"],
+        ]
+    ] = None
     additionalProperty: Optional[Union[PropertyValue, List[PropertyValue]]] = None
-    unitCode: Optional[Union[str, List[str]]] = None
-    unitCode: Optional[Union[HttpUrl, List[HttpUrl]]] = None
+    unitCode: Optional[Union[str, List[str], HttpUrl, List[HttpUrl]]] = None
     maxValue: Optional[Union[float, List[float]]] = None
     minValue: Optional[Union[float, List[float]]] = None
     unitText: Optional[Union[str, List[str]]] = None

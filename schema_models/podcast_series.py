@@ -13,7 +13,7 @@ class PodcastSeries(CreativeWorkSeries):
     A podcast is an episodic series of digital audio or video files which a user can download and listen to.
     """
 
-    webFeed: Optional[Union[HttpUrl, List[HttpUrl]]] = None
-    webFeed: Optional[Union[DataFeed, List[DataFeed]]] = None
-    actor: Optional[Union[Person, List[Person]]] = None
-    actor: Optional[Union[PerformingGroup, List[PerformingGroup]]] = None
+    webFeed: Optional[Union[HttpUrl, List[HttpUrl], DataFeed, List[DataFeed]]] = None
+    actor: Optional[
+        Union[Person, List[Person], PerformingGroup, List[PerformingGroup]]
+    ] = None

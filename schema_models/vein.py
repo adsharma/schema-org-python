@@ -12,7 +12,11 @@ class Vein(Vessel):
 
     tributary: Optional[Union[AnatomicalStructure, List[AnatomicalStructure]]] = None
     drainsTo: Optional[Union[Vessel, List[Vessel]]] = None
-    regionDrained: Optional[Union[AnatomicalSystem, List[AnatomicalSystem]]] = None
-    regionDrained: Optional[Union[AnatomicalStructure, List[AnatomicalStructure]]] = (
-        None
-    )
+    regionDrained: Optional[
+        Union[
+            AnatomicalSystem,
+            List[AnatomicalSystem],
+            AnatomicalStructure,
+            List[AnatomicalStructure],
+        ]
+    ] = None

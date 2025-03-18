@@ -13,8 +13,7 @@ class FlightReservation(Reservation):
 
     boardingGroup: Optional[Union[str, List[str]]] = None
     passengerPriorityStatus: Optional[
-        Union[QualitativeValue, List[QualitativeValue]]
+        Union[QualitativeValue, List[QualitativeValue], str, List[str]]
     ] = None
-    passengerPriorityStatus: Optional[Union[str, List[str]]] = None
     passengerSequenceNumber: Optional[Union[str, List[str]]] = None
     securityScreening: Optional[Union[str, List[str]]] = None

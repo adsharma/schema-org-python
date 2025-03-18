@@ -24,6 +24,13 @@ class MediaReview(Review):
             MediaManipulationRatingEnumeration, List[MediaManipulationRatingEnumeration]
         ]
     ] = None
-    originalMediaLink: Optional[Union[HttpUrl, List[HttpUrl]]] = None
-    originalMediaLink: Optional[Union[WebPage, List[WebPage]]] = None
-    originalMediaLink: Optional[Union[MediaObject, List[MediaObject]]] = None
+    originalMediaLink: Optional[
+        Union[
+            HttpUrl,
+            List[HttpUrl],
+            WebPage,
+            List[WebPage],
+            MediaObject,
+            List[MediaObject],
+        ]
+    ] = None

@@ -11,12 +11,10 @@ class Rating(Intangible):
     """
 
     reviewAspect: Optional[Union[str, List[str]]] = None
-    worstRating: Optional[Union[float, List[float]]] = None
-    worstRating: Optional[Union[str, List[str]]] = None
-    author: Optional[Union[Person, List[Person]]] = None
-    author: Optional[Union[Organization, List[Organization]]] = None
+    worstRating: Optional[Union[float, List[float], str, List[str]]] = None
+    author: Optional[Union[Person, List[Person], Organization, List[Organization]]] = (
+        None
+    )
     ratingExplanation: Optional[Union[str, List[str]]] = None
-    ratingValue: Optional[Union[float, List[float]]] = None
-    ratingValue: Optional[Union[str, List[str]]] = None
-    bestRating: Optional[Union[float, List[float]]] = None
-    bestRating: Optional[Union[str, List[str]]] = None
+    ratingValue: Optional[Union[float, List[float], str, List[str]]] = None
+    bestRating: Optional[Union[float, List[float], str, List[str]]] = None

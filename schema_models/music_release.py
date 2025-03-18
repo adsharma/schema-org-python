@@ -16,8 +16,9 @@ class MusicRelease(MusicPlaylist):
     duration: Optional[Union[Duration, List[Duration]]] = None
     releaseOf: Optional[Union[MusicAlbum, List[MusicAlbum]]] = None
     catalogNumber: Optional[Union[str, List[str]]] = None
-    creditedTo: Optional[Union[Person, List[Person]]] = None
-    creditedTo: Optional[Union[Organization, List[Organization]]] = None
+    creditedTo: Optional[
+        Union[Person, List[Person], Organization, List[Organization]]
+    ] = None
     recordLabel: Optional[Union[Organization, List[Organization]]] = None
     musicReleaseFormat: Optional[
         Union[MusicReleaseFormatType, List[MusicReleaseFormatType]]

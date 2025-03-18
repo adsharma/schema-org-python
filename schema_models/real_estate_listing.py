@@ -13,7 +13,7 @@ class RealEstateListing(WebPage):
 
     """
 
-    datePosted: Optional[Union[datetime, List[datetime]]] = None
-    datePosted: Optional[Union[date, List[date]]] = None
-    leaseLength: Optional[Union[QuantitativeValue, List[QuantitativeValue]]] = None
-    leaseLength: Optional[Union[Duration, List[Duration]]] = None
+    datePosted: Optional[Union[datetime, List[datetime], date, List[date]]] = None
+    leaseLength: Optional[
+        Union[QuantitativeValue, List[QuantitativeValue], Duration, List[Duration]]
+    ] = None

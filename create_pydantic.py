@@ -4,6 +4,8 @@ import argparse
 import os
 import re
 import subprocess
+import sys
+from collections import defaultdict
 from graphlib import TopologicalSorter
 from keyword import kwlist
 from typing import Dict
@@ -196,15 +198,19 @@ def generate_models(graph: Graph):
             if not class_info["properties"]:
                 f.write("    pass\n")
 
+            prop_dict = defaultdict(list)
             for prop_name, prop_type in class_info["properties"]:
                 # if prop_type is self, it should be in double quotes
                 forward_def = other_classes.get(prop_type, False)
                 if prop_type == class_name or forward_def:
                     prop_type = f'"{prop_type}"'
-                f.write(
-                    f"    {prop_name}: Optional[Union[{prop_type}, List[{prop_type}]]]"
-                    " = None\n"
+                prop_dict[prop_name].append(prop_type)
+
+            for prop_name, prop_type_list in prop_dict.items():
+                prop_types = ", ".join(
+                    [f"{prop_type}, List[{prop_type}]" for prop_type in prop_type_list]
                 )
+                f.write(f"    {prop_name}: Optional[Union[{prop_types}]] = None\n")
 
     for s in BASE_TYPES_STR:
         class_name = safe_name(s.split("/")[-1])

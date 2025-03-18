@@ -11,9 +11,6 @@ class PublicationIssue(CreativeWork):
     """
 
     pagination: Optional[Union[str, List[str]]] = None
-    pageEnd: Optional[Union[int, List[int]]] = None
-    pageEnd: Optional[Union[str, List[str]]] = None
-    pageStart: Optional[Union[str, List[str]]] = None
-    pageStart: Optional[Union[int, List[int]]] = None
-    issueNumber: Optional[Union[str, List[str]]] = None
-    issueNumber: Optional[Union[int, List[int]]] = None
+    pageEnd: Optional[Union[int, List[int], str, List[str]]] = None
+    pageStart: Optional[Union[str, List[str], int, List[int]]] = None
+    issueNumber: Optional[Union[str, List[str], int, List[int]]] = None

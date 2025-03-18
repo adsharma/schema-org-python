@@ -13,9 +13,7 @@ class TVEpisode(Episode):
     A TV episode which can be part of a series or season.
     """
 
-    titleEIDR: Optional[Union[str, List[str]]] = None
-    titleEIDR: Optional[Union[HttpUrl, List[HttpUrl]]] = None
+    titleEIDR: Optional[Union[str, List[str], HttpUrl, List[HttpUrl]]] = None
     partOfTVSeries: Optional[Union[TVSeries, List[TVSeries]]] = None
     countryOfOrigin: Optional[Union[Country, List[Country]]] = None
-    subtitleLanguage: Optional[Union[str, List[str]]] = None
-    subtitleLanguage: Optional[Union[Language, List[Language]]] = None
+    subtitleLanguage: Optional[Union[str, List[str], Language, List[Language]]] = None

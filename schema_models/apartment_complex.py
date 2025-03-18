@@ -17,8 +17,8 @@ class ApartmentComplex(Residence):
     numberOfAccommodationUnits: Optional[
         Union[QuantitativeValue, List[QuantitativeValue]]
     ] = None
-    numberOfBedrooms: Optional[Union[float, List[float]]] = None
-    numberOfBedrooms: Optional[Union[QuantitativeValue, List[QuantitativeValue]]] = None
-    petsAllowed: Optional[Union[str, List[str]]] = None
-    petsAllowed: Optional[Union[bool, List[bool]]] = None
+    numberOfBedrooms: Optional[
+        Union[float, List[float], QuantitativeValue, List[QuantitativeValue]]
+    ] = None
+    petsAllowed: Optional[Union[str, List[str], bool, List[bool]]] = None
     tourBookingPage: Optional[Union[HttpUrl, List[HttpUrl]]] = None

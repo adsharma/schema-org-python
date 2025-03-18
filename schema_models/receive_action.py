@@ -17,7 +17,14 @@ class ReceiveAction(TransferAction):
     * [[TakeAction]]: Unlike TakeAction, ReceiveAction does not imply that the ownership has been transferred (e.g. I can receive a package, but it does not mean the package is now mine).
     """
 
-    sender: Optional[Union[Organization, List[Organization]]] = None
-    sender: Optional[Union[Audience, List[Audience]]] = None
-    sender: Optional[Union[Person, List[Person]]] = None
+    sender: Optional[
+        Union[
+            Organization,
+            List[Organization],
+            Audience,
+            List[Audience],
+            Person,
+            List[Person],
+        ]
+    ] = None
     deliveryMethod: Optional[Union[DeliveryMethod, List[DeliveryMethod]]] = None

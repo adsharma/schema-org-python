@@ -13,8 +13,9 @@ class PeopleAudience(Audience):
 
     suggestedAge: Optional[Union[QuantitativeValue, List[QuantitativeValue]]] = None
     healthCondition: Optional[Union[MedicalCondition, List[MedicalCondition]]] = None
-    suggestedGender: Optional[Union[GenderType, List[GenderType]]] = None
-    suggestedGender: Optional[Union[str, List[str]]] = None
+    suggestedGender: Optional[Union[GenderType, List[GenderType], str, List[str]]] = (
+        None
+    )
     suggestedMeasurement: Optional[
         Union[QuantitativeValue, List[QuantitativeValue]]
     ] = None

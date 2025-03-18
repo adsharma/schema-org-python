@@ -11,11 +11,13 @@ class SportsEvent(Event):
     Event type: Sports event.
     """
 
-    homeTeam: Optional[Union[Person, List[Person]]] = None
-    homeTeam: Optional[Union["SportsTeam", List["SportsTeam"]]] = None
-    competitor: Optional[Union[Person, List[Person]]] = None
-    competitor: Optional[Union["SportsTeam", List["SportsTeam"]]] = None
-    awayTeam: Optional[Union[Person, List[Person]]] = None
-    awayTeam: Optional[Union["SportsTeam", List["SportsTeam"]]] = None
-    sport: Optional[Union[str, List[str]]] = None
-    sport: Optional[Union[HttpUrl, List[HttpUrl]]] = None
+    homeTeam: Optional[
+        Union[Person, List[Person], "SportsTeam", List["SportsTeam"]]
+    ] = None
+    competitor: Optional[
+        Union[Person, List[Person], "SportsTeam", List["SportsTeam"]]
+    ] = None
+    awayTeam: Optional[
+        Union[Person, List[Person], "SportsTeam", List["SportsTeam"]]
+    ] = None
+    sport: Optional[Union[str, List[str], HttpUrl, List[HttpUrl]]] = None

@@ -13,17 +13,21 @@ class ExercisePlan(PhysicalActivity):
 
     additionalVariable: Optional[Union[str, List[str]]] = None
     exerciseType: Optional[Union[str, List[str]]] = None
-    restPeriods: Optional[Union[QuantitativeValue, List[QuantitativeValue]]] = None
-    restPeriods: Optional[Union[str, List[str]]] = None
-    repetitions: Optional[Union[QuantitativeValue, List[QuantitativeValue]]] = None
-    repetitions: Optional[Union[float, List[float]]] = None
-    activityDuration: Optional[Union[QuantitativeValue, List[QuantitativeValue]]] = None
-    activityDuration: Optional[Union[Duration, List[Duration]]] = None
-    activityFrequency: Optional[Union[str, List[str]]] = None
-    activityFrequency: Optional[Union[QuantitativeValue, List[QuantitativeValue]]] = (
-        None
-    )
-    workload: Optional[Union[QuantitativeValue, List[QuantitativeValue]]] = None
-    workload: Optional[Union[Energy, List[Energy]]] = None
-    intensity: Optional[Union[QuantitativeValue, List[QuantitativeValue]]] = None
-    intensity: Optional[Union[str, List[str]]] = None
+    restPeriods: Optional[
+        Union[QuantitativeValue, List[QuantitativeValue], str, List[str]]
+    ] = None
+    repetitions: Optional[
+        Union[QuantitativeValue, List[QuantitativeValue], float, List[float]]
+    ] = None
+    activityDuration: Optional[
+        Union[QuantitativeValue, List[QuantitativeValue], Duration, List[Duration]]
+    ] = None
+    activityFrequency: Optional[
+        Union[str, List[str], QuantitativeValue, List[QuantitativeValue]]
+    ] = None
+    workload: Optional[
+        Union[QuantitativeValue, List[QuantitativeValue], Energy, List[Energy]]
+    ] = None
+    intensity: Optional[
+        Union[QuantitativeValue, List[QuantitativeValue], str, List[str]]
+    ] = None

@@ -9,5 +9,6 @@ class MathSolver(CreativeWork):
     A math solver which is capable of solving a subset of mathematical problems.
     """
 
-    mathExpression: Optional[Union[SolveMathAction, List[SolveMathAction]]] = None
-    mathExpression: Optional[Union[str, List[str]]] = None
+    mathExpression: Optional[
+        Union[SolveMathAction, List[SolveMathAction], str, List[str]]
+    ] = None

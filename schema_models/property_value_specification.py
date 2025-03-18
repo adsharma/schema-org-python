@@ -9,8 +9,7 @@ class PropertyValueSpecification(Intangible):
     A Property value specification.
     """
 
-    defaultValue: Optional[Union[Thing, List[Thing]]] = None
-    defaultValue: Optional[Union[str, List[str]]] = None
+    defaultValue: Optional[Union[Thing, List[Thing], str, List[str]]] = None
     stepValue: Optional[Union[float, List[float]]] = None
     multipleValues: Optional[Union[bool, List[bool]]] = None
     valuePattern: Optional[Union[str, List[str]]] = None

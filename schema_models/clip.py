@@ -11,21 +11,24 @@ class Clip(CreativeWork):
     A short TV or radio program or a segment/part of a program.
     """
 
-    musicBy: Optional[Union[Person, List[Person]]] = None
-    musicBy: Optional[Union["MusicGroup", List["MusicGroup"]]] = None
+    musicBy: Optional[Union[Person, List[Person], "MusicGroup", List["MusicGroup"]]] = (
+        None
+    )
     partOfSeason: Optional[Union["CreativeWorkSeason", List["CreativeWorkSeason"]]] = (
         None
     )
-    clipNumber: Optional[Union[str, List[str]]] = None
-    clipNumber: Optional[Union[int, List[int]]] = None
-    actor: Optional[Union[Person, List[Person]]] = None
-    actor: Optional[Union[PerformingGroup, List[PerformingGroup]]] = None
+    clipNumber: Optional[Union[str, List[str], int, List[int]]] = None
+    actor: Optional[
+        Union[Person, List[Person], PerformingGroup, List[PerformingGroup]]
+    ] = None
     director: Optional[Union[Person, List[Person]]] = None
     actors: Optional[Union[Person, List[Person]]] = None
-    endOffset: Optional[Union["HyperTocEntry", List["HyperTocEntry"]]] = None
-    endOffset: Optional[Union[float, List[float]]] = None
-    startOffset: Optional[Union["HyperTocEntry", List["HyperTocEntry"]]] = None
-    startOffset: Optional[Union[float, List[float]]] = None
+    endOffset: Optional[
+        Union["HyperTocEntry", List["HyperTocEntry"], float, List[float]]
+    ] = None
+    startOffset: Optional[
+        Union["HyperTocEntry", List["HyperTocEntry"], float, List[float]]
+    ] = None
     directors: Optional[Union[Person, List[Person]]] = None
     partOfEpisode: Optional[Union[Episode, List[Episode]]] = None
     partOfSeries: Optional[Union["CreativeWorkSeries", List["CreativeWorkSeries"]]] = (

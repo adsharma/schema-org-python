@@ -9,6 +9,9 @@ class ProductModel(Product):
     """
 
     successorOf: Optional[Union["ProductModel", List["ProductModel"]]] = None
-    isVariantOf: Optional[Union["ProductModel", List["ProductModel"]]] = None
-    isVariantOf: Optional[Union["ProductGroup", List["ProductGroup"]]] = None
+    isVariantOf: Optional[
+        Union[
+            "ProductModel", List["ProductModel"], "ProductGroup", List["ProductGroup"]
+        ]
+    ] = None
     predecessorOf: Optional[Union["ProductModel", List["ProductModel"]]] = None

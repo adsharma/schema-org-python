@@ -19,37 +19,63 @@ class PropertyValue(StructuredValue):
     """
 
     unitText: Optional[Union[str, List[str]]] = None
-    unitCode: Optional[Union[str, List[str]]] = None
-    unitCode: Optional[Union[HttpUrl, List[HttpUrl]]] = None
+    unitCode: Optional[Union[str, List[str], HttpUrl, List[HttpUrl]]] = None
     minValue: Optional[Union[float, List[float]]] = None
-    measurementTechnique: Optional[Union[str, List[str]]] = None
-    measurementTechnique: Optional[Union[HttpUrl, List[HttpUrl]]] = None
-    measurementTechnique: Optional[Union[DefinedTerm, List[DefinedTerm]]] = None
     measurementTechnique: Optional[
-        Union[MeasurementMethodEnum, List[MeasurementMethodEnum]]
+        Union[
+            str,
+            List[str],
+            HttpUrl,
+            List[HttpUrl],
+            DefinedTerm,
+            List[DefinedTerm],
+            MeasurementMethodEnum,
+            List[MeasurementMethodEnum],
+        ]
     ] = None
-    propertyID: Optional[Union[str, List[str]]] = None
-    propertyID: Optional[Union[HttpUrl, List[HttpUrl]]] = None
-    measurementMethod: Optional[Union[HttpUrl, List[HttpUrl]]] = None
-    measurementMethod: Optional[Union[DefinedTerm, List[DefinedTerm]]] = None
+    propertyID: Optional[Union[str, List[str], HttpUrl, List[HttpUrl]]] = None
     measurementMethod: Optional[
-        Union[MeasurementMethodEnum, List[MeasurementMethodEnum]]
+        Union[
+            HttpUrl,
+            List[HttpUrl],
+            DefinedTerm,
+            List[DefinedTerm],
+            MeasurementMethodEnum,
+            List[MeasurementMethodEnum],
+            str,
+            List[str],
+        ]
     ] = None
-    measurementMethod: Optional[Union[str, List[str]]] = None
-    value: Optional[Union[bool, List[bool]]] = None
-    value: Optional[Union[str, List[str]]] = None
-    value: Optional[Union[float, List[float]]] = None
-    value: Optional[Union[StructuredValue, List[StructuredValue]]] = None
-    valueReference: Optional[Union[str, List[str]]] = None
-    valueReference: Optional[Union[DefinedTerm, List[DefinedTerm]]] = None
-    valueReference: Optional[Union["PropertyValue", List["PropertyValue"]]] = None
+    value: Optional[
+        Union[
+            bool,
+            List[bool],
+            str,
+            List[str],
+            float,
+            List[float],
+            StructuredValue,
+            List[StructuredValue],
+        ]
+    ] = None
     valueReference: Optional[
-        Union[MeasurementTypeEnumeration, List[MeasurementTypeEnumeration]]
+        Union[
+            str,
+            List[str],
+            DefinedTerm,
+            List[DefinedTerm],
+            "PropertyValue",
+            List["PropertyValue"],
+            MeasurementTypeEnumeration,
+            List[MeasurementTypeEnumeration],
+            StructuredValue,
+            List[StructuredValue],
+            Enumeration,
+            List[Enumeration],
+            QualitativeValue,
+            List[QualitativeValue],
+            "QuantitativeValue",
+            List["QuantitativeValue"],
+        ]
     ] = None
-    valueReference: Optional[Union[StructuredValue, List[StructuredValue]]] = None
-    valueReference: Optional[Union[Enumeration, List[Enumeration]]] = None
-    valueReference: Optional[Union[QualitativeValue, List[QualitativeValue]]] = None
-    valueReference: Optional[Union["QuantitativeValue", List["QuantitativeValue"]]] = (
-        None
-    )
     maxValue: Optional[Union[float, List[float]]] = None

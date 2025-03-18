@@ -14,7 +14,15 @@ class Gene(BioChemEntity):
     hasBioPolymerSequence: Optional[Union[str, List[str]]] = None
     encodesBioChemEntity: Optional[Union[BioChemEntity, List[BioChemEntity]]] = None
     alternativeOf: Optional[Union["Gene", List["Gene"]]] = None
-    expressedIn: Optional[Union[AnatomicalStructure, List[AnatomicalStructure]]] = None
-    expressedIn: Optional[Union[AnatomicalSystem, List[AnatomicalSystem]]] = None
-    expressedIn: Optional[Union[DefinedTerm, List[DefinedTerm]]] = None
-    expressedIn: Optional[Union[BioChemEntity, List[BioChemEntity]]] = None
+    expressedIn: Optional[
+        Union[
+            AnatomicalStructure,
+            List[AnatomicalStructure],
+            AnatomicalSystem,
+            List[AnatomicalSystem],
+            DefinedTerm,
+            List[DefinedTerm],
+            BioChemEntity,
+            List[BioChemEntity],
+        ]
+    ] = None

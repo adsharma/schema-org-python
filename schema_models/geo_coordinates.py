@@ -8,14 +8,11 @@ class GeoCoordinates(StructuredValue):
     The geographic coordinates of a place or event.
     """
 
-    addressCountry: Optional[Union[str, List[str]]] = None
-    addressCountry: Optional[Union["Country", List["Country"]]] = None
+    addressCountry: Optional[Union[str, List[str], "Country", List["Country"]]] = None
     postalCode: Optional[Union[str, List[str]]] = None
-    address: Optional[Union[str, List[str]]] = None
-    address: Optional[Union["PostalAddress", List["PostalAddress"]]] = None
-    elevation: Optional[Union[str, List[str]]] = None
-    elevation: Optional[Union[float, List[float]]] = None
-    longitude: Optional[Union[float, List[float]]] = None
-    longitude: Optional[Union[str, List[str]]] = None
-    latitude: Optional[Union[str, List[str]]] = None
-    latitude: Optional[Union[float, List[float]]] = None
+    address: Optional[Union[str, List[str], "PostalAddress", List["PostalAddress"]]] = (
+        None
+    )
+    elevation: Optional[Union[str, List[str], float, List[float]]] = None
+    longitude: Optional[Union[float, List[float], str, List[str]]] = None
+    latitude: Optional[Union[str, List[str], float, List[float]]] = None

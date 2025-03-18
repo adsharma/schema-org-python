@@ -14,14 +14,17 @@ class Recipe(HowTo):
     A sub property of instrument. The recipe/instructions used to perform the action.
     """
 
-    recipeYield: Optional[Union[QuantitativeValue, List[QuantitativeValue]]] = None
-    recipeYield: Optional[Union[str, List[str]]] = None
+    recipeYield: Optional[
+        Union[QuantitativeValue, List[QuantitativeValue], str, List[str]]
+    ] = None
     recipeCuisine: Optional[Union[str, List[str]]] = None
     recipeCategory: Optional[Union[str, List[str]]] = None
     suitableForDiet: Optional[Union[RestrictedDiet, List[RestrictedDiet]]] = None
-    recipeInstructions: Optional[Union[CreativeWork, List[CreativeWork]]] = None
-    recipeInstructions: Optional[Union[str, List[str]]] = None
-    recipeInstructions: Optional[Union[ItemList, List[ItemList]]] = None
+    recipeInstructions: Optional[
+        Union[
+            CreativeWork, List[CreativeWork], str, List[str], ItemList, List[ItemList]
+        ]
+    ] = None
     cookTime: Optional[Union[Duration, List[Duration]]] = None
     ingredients: Optional[Union[str, List[str]]] = None
     recipeIngredient: Optional[Union[str, List[str]]] = None
