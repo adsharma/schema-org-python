@@ -19,20 +19,32 @@ class StatisticalVariable(ConstraintNode):
         Union["StatisticalVariable", List["StatisticalVariable"]]
     ] = None
     populationType: Optional[Union[_Class, List[_Class]]] = None
-    measurementTechnique: Optional[Union[str, List[str]]] = None
-    measurementTechnique: Optional[Union[HttpUrl, List[HttpUrl]]] = None
-    measurementTechnique: Optional[Union[DefinedTerm, List[DefinedTerm]]] = None
     measurementTechnique: Optional[
-        Union[MeasurementMethodEnum, List[MeasurementMethodEnum]]
+        Union[
+            str,
+            List[str],
+            HttpUrl,
+            List[HttpUrl],
+            DefinedTerm,
+            List[DefinedTerm],
+            MeasurementMethodEnum,
+            List[MeasurementMethodEnum],
+        ]
     ] = None
     measurementQualifier: Optional[Union[Enumeration, List[Enumeration]]] = None
     measuredProperty: Optional[Union[Property, List[Property]]] = None
-    measurementMethod: Optional[Union[HttpUrl, List[HttpUrl]]] = None
-    measurementMethod: Optional[Union[DefinedTerm, List[DefinedTerm]]] = None
     measurementMethod: Optional[
-        Union[MeasurementMethodEnum, List[MeasurementMethodEnum]]
+        Union[
+            HttpUrl,
+            List[HttpUrl],
+            DefinedTerm,
+            List[DefinedTerm],
+            MeasurementMethodEnum,
+            List[MeasurementMethodEnum],
+            str,
+            List[str],
+        ]
     ] = None
-    measurementMethod: Optional[Union[str, List[str]]] = None
-    statType: Optional[Union[Property, List[Property]]] = None
-    statType: Optional[Union[str, List[str]]] = None
-    statType: Optional[Union[HttpUrl, List[HttpUrl]]] = None
+    statType: Optional[
+        Union[Property, List[Property], str, List[str], HttpUrl, List[HttpUrl]]
+    ] = None

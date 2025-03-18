@@ -25,12 +25,13 @@ class RadioSeries(CreativeWorkSeries):
     director: Optional[Union[Person, List[Person]]] = None
     actors: Optional[Union[Person, List[Person]]] = None
     episode: Optional[Union[Episode, List[Episode]]] = None
-    season: Optional[Union[HttpUrl, List[HttpUrl]]] = None
-    season: Optional[Union[CreativeWorkSeason, List[CreativeWorkSeason]]] = None
-    actor: Optional[Union[Person, List[Person]]] = None
-    actor: Optional[Union[PerformingGroup, List[PerformingGroup]]] = None
+    season: Optional[
+        Union[HttpUrl, List[HttpUrl], CreativeWorkSeason, List[CreativeWorkSeason]]
+    ] = None
+    actor: Optional[
+        Union[Person, List[Person], PerformingGroup, List[PerformingGroup]]
+    ] = None
     directors: Optional[Union[Person, List[Person]]] = None
     episodes: Optional[Union[Episode, List[Episode]]] = None
-    musicBy: Optional[Union[Person, List[Person]]] = None
-    musicBy: Optional[Union[MusicGroup, List[MusicGroup]]] = None
+    musicBy: Optional[Union[Person, List[Person], MusicGroup, List[MusicGroup]]] = None
     containsSeason: Optional[Union[CreativeWorkSeason, List[CreativeWorkSeason]]] = None

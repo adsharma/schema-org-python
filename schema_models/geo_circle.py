@@ -14,6 +14,6 @@ class GeoCircle(GeoShape):
     """
 
     geoMidpoint: Optional[Union[GeoCoordinates, List[GeoCoordinates]]] = None
-    geoRadius: Optional[Union[Distance, List[Distance]]] = None
-    geoRadius: Optional[Union[float, List[float]]] = None
-    geoRadius: Optional[Union[str, List[str]]] = None
+    geoRadius: Optional[
+        Union[Distance, List[Distance], float, List[float], str, List[str]]
+    ] = None

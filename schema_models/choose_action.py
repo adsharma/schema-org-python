@@ -9,7 +9,5 @@ class ChooseAction(AssessAction):
     The act of expressing a preference from a set of options or a large or unbounded set of choices/options.
     """
 
-    actionOption: Optional[Union[Thing, List[Thing]]] = None
-    actionOption: Optional[Union[str, List[str]]] = None
-    option: Optional[Union[Thing, List[Thing]]] = None
-    option: Optional[Union[str, List[str]]] = None
+    actionOption: Optional[Union[Thing, List[Thing], str, List[str]]] = None
+    option: Optional[Union[Thing, List[Thing], str, List[str]]] = None

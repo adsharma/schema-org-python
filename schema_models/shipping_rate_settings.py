@@ -13,9 +13,13 @@ class ShippingRateSettings(StructuredValue):
     shippingLabel: Optional[Union[str, List[str]]] = None
     isUnlabelledFallback: Optional[Union[bool, List[bool]]] = None
     freeShippingThreshold: Optional[
-        Union["DeliveryChargeSpecification", List["DeliveryChargeSpecification"]]
+        Union[
+            "DeliveryChargeSpecification",
+            List["DeliveryChargeSpecification"],
+            MonetaryAmount,
+            List[MonetaryAmount],
+        ]
     ] = None
-    freeShippingThreshold: Optional[Union[MonetaryAmount, List[MonetaryAmount]]] = None
     doesNotShip: Optional[Union[bool, List[bool]]] = None
     shippingDestination: Optional[Union[DefinedRegion, List[DefinedRegion]]] = None
     shippingRate: Optional[Union[MonetaryAmount, List[MonetaryAmount]]] = None

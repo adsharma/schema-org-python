@@ -13,29 +13,38 @@ class Occupation(Intangible):
 
     experienceRequirements: Optional[
         Union[
-            OccupationalExperienceRequirements, List[OccupationalExperienceRequirements]
+            OccupationalExperienceRequirements,
+            List[OccupationalExperienceRequirements],
+            str,
+            List[str],
         ]
     ] = None
-    experienceRequirements: Optional[Union[str, List[str]]] = None
-    estimatedSalary: Optional[Union["MonetaryAmount", List["MonetaryAmount"]]] = None
-    estimatedSalary: Optional[Union[float, List[float]]] = None
     estimatedSalary: Optional[
-        Union["MonetaryAmountDistribution", List["MonetaryAmountDistribution"]]
+        Union[
+            "MonetaryAmount",
+            List["MonetaryAmount"],
+            float,
+            List[float],
+            "MonetaryAmountDistribution",
+            List["MonetaryAmountDistribution"],
+        ]
     ] = None
-    educationRequirements: Optional[Union[str, List[str]]] = None
     educationRequirements: Optional[
         Union[
+            str,
+            List[str],
             "EducationalOccupationalCredential",
             List["EducationalOccupationalCredential"],
         ]
     ] = None
-    occupationalCategory: Optional[Union["CategoryCode", List["CategoryCode"]]] = None
-    occupationalCategory: Optional[Union[str, List[str]]] = None
-    skills: Optional[Union[str, List[str]]] = None
-    skills: Optional[Union["DefinedTerm", List["DefinedTerm"]]] = None
-    qualifications: Optional[Union[str, List[str]]] = None
+    occupationalCategory: Optional[
+        Union["CategoryCode", List["CategoryCode"], str, List[str]]
+    ] = None
+    skills: Optional[Union[str, List[str], "DefinedTerm", List["DefinedTerm"]]] = None
     qualifications: Optional[
         Union[
+            str,
+            List[str],
             "EducationalOccupationalCredential",
             List["EducationalOccupationalCredential"],
         ]

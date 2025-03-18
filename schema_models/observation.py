@@ -25,30 +25,47 @@ class Observation(QuantitativeValue):
     """
 
     measurementQualifier: Optional[Union[Enumeration, List[Enumeration]]] = None
-    measurementMethod: Optional[Union[HttpUrl, List[HttpUrl]]] = None
-    measurementMethod: Optional[Union[DefinedTerm, List[DefinedTerm]]] = None
     measurementMethod: Optional[
-        Union[MeasurementMethodEnum, List[MeasurementMethodEnum]]
+        Union[
+            HttpUrl,
+            List[HttpUrl],
+            DefinedTerm,
+            List[DefinedTerm],
+            MeasurementMethodEnum,
+            List[MeasurementMethodEnum],
+            str,
+            List[str],
+        ]
     ] = None
-    measurementMethod: Optional[Union[str, List[str]]] = None
     measuredProperty: Optional[Union[Property, List[Property]]] = None
     observationDate: Optional[Union[datetime, List[datetime]]] = None
-    observationAbout: Optional[Union[Place, List[Place]]] = None
-    observationAbout: Optional[Union[Thing, List[Thing]]] = None
+    observationAbout: Optional[Union[Place, List[Place], Thing, List[Thing]]] = None
     observationPeriod: Optional[Union[str, List[str]]] = None
     measurementDenominator: Optional[
         Union[StatisticalVariable, List[StatisticalVariable]]
     ] = None
-    measurementTechnique: Optional[Union[str, List[str]]] = None
-    measurementTechnique: Optional[Union[HttpUrl, List[HttpUrl]]] = None
-    measurementTechnique: Optional[Union[DefinedTerm, List[DefinedTerm]]] = None
     measurementTechnique: Optional[
-        Union[MeasurementMethodEnum, List[MeasurementMethodEnum]]
+        Union[
+            str,
+            List[str],
+            HttpUrl,
+            List[HttpUrl],
+            DefinedTerm,
+            List[DefinedTerm],
+            MeasurementMethodEnum,
+            List[MeasurementMethodEnum],
+        ]
     ] = None
     marginOfError: Optional[Union[QuantitativeValue, List[QuantitativeValue]]] = None
     variableMeasured: Optional[
-        Union[StatisticalVariable, List[StatisticalVariable]]
+        Union[
+            StatisticalVariable,
+            List[StatisticalVariable],
+            Property,
+            List[Property],
+            str,
+            List[str],
+            PropertyValue,
+            List[PropertyValue],
+        ]
     ] = None
-    variableMeasured: Optional[Union[Property, List[Property]]] = None
-    variableMeasured: Optional[Union[str, List[str]]] = None
-    variableMeasured: Optional[Union[PropertyValue, List[PropertyValue]]] = None

@@ -15,7 +15,8 @@ class Claim(CreativeWork):
 
     """
 
-    claimInterpreter: Optional[Union[Person, List[Person]]] = None
-    claimInterpreter: Optional[Union[Organization, List[Organization]]] = None
+    claimInterpreter: Optional[
+        Union[Person, List[Person], Organization, List[Organization]]
+    ] = None
     appearance: Optional[Union[CreativeWork, List[CreativeWork]]] = None
     firstAppearance: Optional[Union[CreativeWork, List[CreativeWork]]] = None

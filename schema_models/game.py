@@ -18,6 +18,13 @@ class Game(CreativeWork):
     characterAttribute: Optional[Union[Thing, List[Thing]]] = None
     gameItem: Optional[Union[Thing, List[Thing]]] = None
     quest: Optional[Union[Thing, List[Thing]]] = None
-    gameLocation: Optional[Union[HttpUrl, List[HttpUrl]]] = None
-    gameLocation: Optional[Union["PostalAddress", List["PostalAddress"]]] = None
-    gameLocation: Optional[Union[Place, List[Place]]] = None
+    gameLocation: Optional[
+        Union[
+            HttpUrl,
+            List[HttpUrl],
+            "PostalAddress",
+            List["PostalAddress"],
+            Place,
+            List[Place],
+        ]
+    ] = None

@@ -12,5 +12,6 @@ class ConstraintNode(Intangible):
     """
 
     numConstraints: Optional[Union[int, List[int]]] = None
-    constraintProperty: Optional[Union["Property", List["Property"]]] = None
-    constraintProperty: Optional[Union[HttpUrl, List[HttpUrl]]] = None
+    constraintProperty: Optional[
+        Union["Property", List["Property"], HttpUrl, List[HttpUrl]]
+    ] = None

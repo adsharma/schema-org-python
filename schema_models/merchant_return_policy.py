@@ -15,8 +15,9 @@ class MerchantReturnPolicy(Intangible):
     A MerchantReturnPolicy provides information about product return policies associated with an [[Organization]], [[Product]], or [[Offer]].
     """
 
-    restockingFee: Optional[Union["MonetaryAmount", List["MonetaryAmount"]]] = None
-    restockingFee: Optional[Union[float, List[float]]] = None
+    restockingFee: Optional[
+        Union["MonetaryAmount", List["MonetaryAmount"], float, List[float]]
+    ] = None
     returnShippingFeesAmount: Optional[
         Union["MonetaryAmount", List["MonetaryAmount"]]
     ] = None
@@ -30,8 +31,9 @@ class MerchantReturnPolicy(Intangible):
         Union["ReturnMethodEnumeration", List["ReturnMethodEnumeration"]]
     ] = None
     merchantReturnLink: Optional[Union[HttpUrl, List[HttpUrl]]] = None
-    returnPolicyCountry: Optional[Union["Country", List["Country"]]] = None
-    returnPolicyCountry: Optional[Union[str, List[str]]] = None
+    returnPolicyCountry: Optional[Union["Country", List["Country"], str, List[str]]] = (
+        None
+    )
     itemDefectReturnFees: Optional[
         Union["ReturnFeesEnumeration", List["ReturnFeesEnumeration"]]
     ] = None
@@ -60,14 +62,15 @@ class MerchantReturnPolicy(Intangible):
     refundType: Optional[
         Union["RefundTypeEnumeration", List["RefundTypeEnumeration"]]
     ] = None
-    applicableCountry: Optional[Union[str, List[str]]] = None
-    applicableCountry: Optional[Union["Country", List["Country"]]] = None
+    applicableCountry: Optional[Union[str, List[str], "Country", List["Country"]]] = (
+        None
+    )
     returnFees: Optional[
         Union["ReturnFeesEnumeration", List["ReturnFeesEnumeration"]]
     ] = None
-    merchantReturnDays: Optional[Union[date, List[date]]] = None
-    merchantReturnDays: Optional[Union[int, List[int]]] = None
-    merchantReturnDays: Optional[Union[datetime, List[datetime]]] = None
+    merchantReturnDays: Optional[
+        Union[date, List[date], int, List[int], datetime, List[datetime]]
+    ] = None
     inStoreReturnsOffered: Optional[Union[bool, List[bool]]] = None
     itemDefectReturnLabelSource: Optional[
         Union["ReturnLabelSourceEnumeration", List["ReturnLabelSourceEnumeration"]]

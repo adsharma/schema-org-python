@@ -19,19 +19,21 @@ class TVSeries(CreativeWork):
     ] = None
     countryOfOrigin: Optional[Union["Country", List["Country"]]] = None
     numberOfSeasons: Optional[Union[int, List[int]]] = None
-    musicBy: Optional[Union[Person, List[Person]]] = None
-    musicBy: Optional[Union["MusicGroup", List["MusicGroup"]]] = None
+    musicBy: Optional[Union[Person, List[Person], "MusicGroup", List["MusicGroup"]]] = (
+        None
+    )
     trailer: Optional[Union["VideoObject", List["VideoObject"]]] = None
     numberOfEpisodes: Optional[Union[int, List[int]]] = None
     seasons: Optional[Union["CreativeWorkSeason", List["CreativeWorkSeason"]]] = None
     productionCompany: Optional[Union[Organization, List[Organization]]] = None
     actors: Optional[Union[Person, List[Person]]] = None
-    season: Optional[Union[HttpUrl, List[HttpUrl]]] = None
-    season: Optional[Union["CreativeWorkSeason", List["CreativeWorkSeason"]]] = None
-    actor: Optional[Union[Person, List[Person]]] = None
-    actor: Optional[Union[PerformingGroup, List[PerformingGroup]]] = None
-    titleEIDR: Optional[Union[str, List[str]]] = None
-    titleEIDR: Optional[Union[HttpUrl, List[HttpUrl]]] = None
+    season: Optional[
+        Union[HttpUrl, List[HttpUrl], "CreativeWorkSeason", List["CreativeWorkSeason"]]
+    ] = None
+    actor: Optional[
+        Union[Person, List[Person], PerformingGroup, List[PerformingGroup]]
+    ] = None
+    titleEIDR: Optional[Union[str, List[str], HttpUrl, List[HttpUrl]]] = None
     director: Optional[Union[Person, List[Person]]] = None
     directors: Optional[Union[Person, List[Person]]] = None
     episode: Optional[Union["Episode", List["Episode"]]] = None

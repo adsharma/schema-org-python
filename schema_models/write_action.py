@@ -9,6 +9,5 @@ class WriteAction(CreateAction):
     The act of authoring written creative content.
     """
 
-    inLanguage: Optional[Union[Language, List[Language]]] = None
-    inLanguage: Optional[Union[str, List[str]]] = None
+    inLanguage: Optional[Union[Language, List[Language], str, List[str]]] = None
     language: Optional[Union[Language, List[Language]]] = None

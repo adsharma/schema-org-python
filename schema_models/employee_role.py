@@ -10,7 +10,14 @@ class EmployeeRole(OrganizationRole):
     A subclass of OrganizationRole used to describe employee relationships.
     """
 
-    baseSalary: Optional[Union[PriceSpecification, List[PriceSpecification]]] = None
-    baseSalary: Optional[Union[MonetaryAmount, List[MonetaryAmount]]] = None
-    baseSalary: Optional[Union[float, List[float]]] = None
+    baseSalary: Optional[
+        Union[
+            PriceSpecification,
+            List[PriceSpecification],
+            MonetaryAmount,
+            List[MonetaryAmount],
+            float,
+            List[float],
+        ]
+    ] = None
     salaryCurrency: Optional[Union[str, List[str]]] = None

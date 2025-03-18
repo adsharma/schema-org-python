@@ -11,9 +11,6 @@ class DataFeedItem(Intangible):
     """
 
     item: Optional[Union[Thing, List[Thing]]] = None
-    dateDeleted: Optional[Union[datetime, List[datetime]]] = None
-    dateDeleted: Optional[Union[date, List[date]]] = None
-    dateCreated: Optional[Union[datetime, List[datetime]]] = None
-    dateCreated: Optional[Union[date, List[date]]] = None
-    dateModified: Optional[Union[date, List[date]]] = None
-    dateModified: Optional[Union[datetime, List[datetime]]] = None
+    dateDeleted: Optional[Union[datetime, List[datetime], date, List[date]]] = None
+    dateCreated: Optional[Union[datetime, List[datetime], date, List[date]]] = None
+    dateModified: Optional[Union[date, List[date], datetime, List[datetime]]] = None

@@ -15,9 +15,17 @@ class Physician(MedicalOrganization):
         None
     )
     usNPI: Optional[Union[str, List[str]]] = None
-    occupationalCategory: Optional[Union[CategoryCode, List[CategoryCode]]] = None
-    occupationalCategory: Optional[Union[str, List[str]]] = None
+    occupationalCategory: Optional[
+        Union[CategoryCode, List[CategoryCode], str, List[str]]
+    ] = None
     hospitalAffiliation: Optional[Union["Hospital", List["Hospital"]]] = None
-    availableService: Optional[Union[MedicalTest, List[MedicalTest]]] = None
-    availableService: Optional[Union["MedicalTherapy", List["MedicalTherapy"]]] = None
-    availableService: Optional[Union[MedicalProcedure, List[MedicalProcedure]]] = None
+    availableService: Optional[
+        Union[
+            MedicalTest,
+            List[MedicalTest],
+            "MedicalTherapy",
+            List["MedicalTherapy"],
+            MedicalProcedure,
+            List[MedicalProcedure],
+        ]
+    ] = None

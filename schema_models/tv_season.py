@@ -11,7 +11,6 @@ class TVSeason(CreativeWork):
     Season dedicated to TV broadcast and associated online delivery.
     """
 
-    titleEIDR: Optional[Union[str, List[str]]] = None
-    titleEIDR: Optional[Union[HttpUrl, List[HttpUrl]]] = None
+    titleEIDR: Optional[Union[str, List[str], HttpUrl, List[HttpUrl]]] = None
     partOfTVSeries: Optional[Union[TVSeries, List[TVSeries]]] = None
     countryOfOrigin: Optional[Union["Country", List["Country"]]] = None

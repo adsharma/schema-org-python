@@ -9,11 +9,9 @@ class BroadcastFrequencySpecification(Intangible):
     """
 
     broadcastSubChannel: Optional[Union[str, List[str]]] = None
-    broadcastFrequencyValue: Optional[Union[float, List[float]]] = None
     broadcastFrequencyValue: Optional[
-        Union["QuantitativeValue", List["QuantitativeValue"]]
+        Union[float, List[float], "QuantitativeValue", List["QuantitativeValue"]]
     ] = None
     broadcastSignalModulation: Optional[
-        Union["QualitativeValue", List["QualitativeValue"]]
+        Union["QualitativeValue", List["QualitativeValue"], str, List[str]]
     ] = None
-    broadcastSignalModulation: Optional[Union[str, List[str]]] = None

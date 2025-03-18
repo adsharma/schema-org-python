@@ -10,11 +10,11 @@ class MenuItem(Intangible):
     A food or drink item listed in a menu or menu section.
     """
 
-    menuAddOn: Optional[Union["MenuSection", List["MenuSection"]]] = None
-    menuAddOn: Optional[Union["MenuItem", List["MenuItem"]]] = None
+    menuAddOn: Optional[
+        Union["MenuSection", List["MenuSection"], "MenuItem", List["MenuItem"]]
+    ] = None
     suitableForDiet: Optional[Union["RestrictedDiet", List["RestrictedDiet"]]] = None
     nutrition: Optional[Union["NutritionInformation", List["NutritionInformation"]]] = (
         None
     )
-    offers: Optional[Union[Offer, List[Offer]]] = None
-    offers: Optional[Union[Demand, List[Demand]]] = None
+    offers: Optional[Union[Offer, List[Offer], Demand, List[Demand]]] = None

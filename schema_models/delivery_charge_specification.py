@@ -12,16 +12,24 @@ class DeliveryChargeSpecification(PriceSpecification):
     The price for the delivery of an offer using a particular delivery method.
     """
 
-    eligibleRegion: Optional[Union[GeoShape, List[GeoShape]]] = None
-    eligibleRegion: Optional[Union[str, List[str]]] = None
-    eligibleRegion: Optional[Union[Place, List[Place]]] = None
-    areaServed: Optional[Union[str, List[str]]] = None
-    areaServed: Optional[Union[Place, List[Place]]] = None
-    areaServed: Optional[Union[GeoShape, List[GeoShape]]] = None
-    areaServed: Optional[Union[AdministrativeArea, List[AdministrativeArea]]] = None
+    eligibleRegion: Optional[
+        Union[GeoShape, List[GeoShape], str, List[str], Place, List[Place]]
+    ] = None
+    areaServed: Optional[
+        Union[
+            str,
+            List[str],
+            Place,
+            List[Place],
+            GeoShape,
+            List[GeoShape],
+            AdministrativeArea,
+            List[AdministrativeArea],
+        ]
+    ] = None
     appliesToDeliveryMethod: Optional[Union[DeliveryMethod, List[DeliveryMethod]]] = (
         None
     )
-    ineligibleRegion: Optional[Union[Place, List[Place]]] = None
-    ineligibleRegion: Optional[Union[str, List[str]]] = None
-    ineligibleRegion: Optional[Union[GeoShape, List[GeoShape]]] = None
+    ineligibleRegion: Optional[
+        Union[Place, List[Place], str, List[str], GeoShape, List[GeoShape]]
+    ] = None

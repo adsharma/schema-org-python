@@ -13,5 +13,6 @@ class ExchangeRateSpecification(StructuredValue):
         Union["UnitPriceSpecification", List["UnitPriceSpecification"]]
     ] = None
     currency: Optional[Union[str, List[str]]] = None
-    exchangeRateSpread: Optional[Union[MonetaryAmount, List[MonetaryAmount]]] = None
-    exchangeRateSpread: Optional[Union[float, List[float]]] = None
+    exchangeRateSpread: Optional[
+        Union[MonetaryAmount, List[MonetaryAmount], float, List[float]]
+    ] = None

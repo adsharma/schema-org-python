@@ -12,6 +12,12 @@ class Nerve(AnatomicalStructure):
 
     sourcedFrom: Optional[Union[BrainStructure, List[BrainStructure]]] = None
     nerveMotor: Optional[Union["Muscle", List["Muscle"]]] = None
-    sensoryUnit: Optional[Union[AnatomicalStructure, List[AnatomicalStructure]]] = None
-    sensoryUnit: Optional[Union[SuperficialAnatomy, List[SuperficialAnatomy]]] = None
+    sensoryUnit: Optional[
+        Union[
+            AnatomicalStructure,
+            List[AnatomicalStructure],
+            SuperficialAnatomy,
+            List[SuperficialAnatomy],
+        ]
+    ] = None
     branch: Optional[Union[AnatomicalStructure, List[AnatomicalStructure]]] = None

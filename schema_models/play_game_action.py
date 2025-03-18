@@ -10,6 +10,10 @@ class PlayGameAction(ConsumeAction):
     """
 
     gameAvailabilityType: Optional[
-        Union[GameAvailabilityEnumeration, List[GameAvailabilityEnumeration]]
+        Union[
+            GameAvailabilityEnumeration,
+            List[GameAvailabilityEnumeration],
+            str,
+            List[str],
+        ]
     ] = None
-    gameAvailabilityType: Optional[Union[str, List[str]]] = None

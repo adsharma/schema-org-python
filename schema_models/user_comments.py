@@ -15,9 +15,9 @@ class UserComments(UserInteraction):
     """
 
     replyToUrl: Optional[Union[HttpUrl, List[HttpUrl]]] = None
-    commentTime: Optional[Union[datetime, List[datetime]]] = None
-    commentTime: Optional[Union[date, List[date]]] = None
-    creator: Optional[Union[Person, List[Person]]] = None
-    creator: Optional[Union[Organization, List[Organization]]] = None
+    commentTime: Optional[Union[datetime, List[datetime], date, List[date]]] = None
+    creator: Optional[Union[Person, List[Person], Organization, List[Organization]]] = (
+        None
+    )
     commentText: Optional[Union[str, List[str]]] = None
     discusses: Optional[Union[CreativeWork, List[CreativeWork]]] = None

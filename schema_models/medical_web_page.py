@@ -9,7 +9,11 @@ class MedicalWebPage(WebPage):
     """
 
     medicalAudience: Optional[
-        Union["MedicalAudienceType", List["MedicalAudienceType"]]
+        Union[
+            "MedicalAudienceType",
+            List["MedicalAudienceType"],
+            "MedicalAudience",
+            List["MedicalAudience"],
+        ]
     ] = None
-    medicalAudience: Optional[Union["MedicalAudience", List["MedicalAudience"]]] = None
     aspect: Optional[Union[str, List[str]]] = None

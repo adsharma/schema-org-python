@@ -18,19 +18,32 @@ class ContactPoint(StructuredValue):
     email: Optional[Union[str, List[str]]] = None
     telephone: Optional[Union[str, List[str]]] = None
     faxNumber: Optional[Union[str, List[str]]] = None
-    areaServed: Optional[Union[str, List[str]]] = None
-    areaServed: Optional[Union[Place, List[Place]]] = None
-    areaServed: Optional[Union[GeoShape, List[GeoShape]]] = None
-    areaServed: Optional[Union[AdministrativeArea, List[AdministrativeArea]]] = None
-    availableLanguage: Optional[Union[str, List[str]]] = None
-    availableLanguage: Optional[Union[Language, List[Language]]] = None
+    areaServed: Optional[
+        Union[
+            str,
+            List[str],
+            Place,
+            List[Place],
+            GeoShape,
+            List[GeoShape],
+            AdministrativeArea,
+            List[AdministrativeArea],
+        ]
+    ] = None
+    availableLanguage: Optional[Union[str, List[str], Language, List[Language]]] = None
     contactType: Optional[Union[str, List[str]]] = None
     hoursAvailable: Optional[
         Union[OpeningHoursSpecification, List[OpeningHoursSpecification]]
     ] = None
-    productSupported: Optional[Union[Product, List[Product]]] = None
-    productSupported: Optional[Union[str, List[str]]] = None
+    productSupported: Optional[Union[Product, List[Product], str, List[str]]] = None
     contactOption: Optional[Union[ContactPointOption, List[ContactPointOption]]] = None
-    serviceArea: Optional[Union[GeoShape, List[GeoShape]]] = None
-    serviceArea: Optional[Union[AdministrativeArea, List[AdministrativeArea]]] = None
-    serviceArea: Optional[Union[Place, List[Place]]] = None
+    serviceArea: Optional[
+        Union[
+            GeoShape,
+            List[GeoShape],
+            AdministrativeArea,
+            List[AdministrativeArea],
+            Place,
+            List[Place],
+        ]
+    ] = None

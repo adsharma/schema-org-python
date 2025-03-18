@@ -11,5 +11,6 @@ class MusicPlaylist(CreativeWork):
 
     tracks: Optional[Union["MusicRecording", List["MusicRecording"]]] = None
     numTracks: Optional[Union[int, List[int]]] = None
-    track: Optional[Union[ItemList, List[ItemList]]] = None
-    track: Optional[Union["MusicRecording", List["MusicRecording"]]] = None
+    track: Optional[
+        Union[ItemList, List[ItemList], "MusicRecording", List["MusicRecording"]]
+    ] = None

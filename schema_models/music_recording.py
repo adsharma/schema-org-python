@@ -11,8 +11,9 @@ class MusicRecording(CreativeWork):
     A music recording (track), usually a single song.
     """
 
-    byArtist: Optional[Union[Person, List[Person]]] = None
-    byArtist: Optional[Union["MusicGroup", List["MusicGroup"]]] = None
+    byArtist: Optional[
+        Union[Person, List[Person], "MusicGroup", List["MusicGroup"]]
+    ] = None
     inPlaylist: Optional[Union[MusicPlaylist, List[MusicPlaylist]]] = None
     duration: Optional[Union["Duration", List["Duration"]]] = None
     recordingOf: Optional[Union[MusicComposition, List[MusicComposition]]] = None

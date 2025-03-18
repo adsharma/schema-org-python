@@ -19,16 +19,16 @@ class VideoGame(Game):
     """
 
     gameTip: Optional[Union[CreativeWork, List[CreativeWork]]] = None
-    musicBy: Optional[Union[Person, List[Person]]] = None
-    musicBy: Optional[Union[MusicGroup, List[MusicGroup]]] = None
+    musicBy: Optional[Union[Person, List[Person], MusicGroup, List[MusicGroup]]] = None
     gameServer: Optional[Union[GameServer, List[GameServer]]] = None
     trailer: Optional[Union[VideoObject, List[VideoObject]]] = None
-    actor: Optional[Union[Person, List[Person]]] = None
-    actor: Optional[Union[PerformingGroup, List[PerformingGroup]]] = None
+    actor: Optional[
+        Union[Person, List[Person], PerformingGroup, List[PerformingGroup]]
+    ] = None
     cheatCode: Optional[Union[CreativeWork, List[CreativeWork]]] = None
-    gamePlatform: Optional[Union[Thing, List[Thing]]] = None
-    gamePlatform: Optional[Union[str, List[str]]] = None
-    gamePlatform: Optional[Union[HttpUrl, List[HttpUrl]]] = None
+    gamePlatform: Optional[
+        Union[Thing, List[Thing], str, List[str], HttpUrl, List[HttpUrl]]
+    ] = None
     gameEdition: Optional[Union[str, List[str]]] = None
     director: Optional[Union[Person, List[Person]]] = None
     actors: Optional[Union[Person, List[Person]]] = None

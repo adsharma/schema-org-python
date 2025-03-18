@@ -16,17 +16,25 @@ class QualitativeValue(Enumeration):
     additionalProperty: Optional[Union["PropertyValue", List["PropertyValue"]]] = None
     nonEqual: Optional[Union["QualitativeValue", List["QualitativeValue"]]] = None
     equal: Optional[Union["QualitativeValue", List["QualitativeValue"]]] = None
-    valueReference: Optional[Union[str, List[str]]] = None
-    valueReference: Optional[Union[DefinedTerm, List[DefinedTerm]]] = None
-    valueReference: Optional[Union["PropertyValue", List["PropertyValue"]]] = None
     valueReference: Optional[
-        Union[MeasurementTypeEnumeration, List[MeasurementTypeEnumeration]]
+        Union[
+            str,
+            List[str],
+            DefinedTerm,
+            List[DefinedTerm],
+            "PropertyValue",
+            List["PropertyValue"],
+            MeasurementTypeEnumeration,
+            List[MeasurementTypeEnumeration],
+            StructuredValue,
+            List[StructuredValue],
+            Enumeration,
+            List[Enumeration],
+            "QualitativeValue",
+            List["QualitativeValue"],
+            "QuantitativeValue",
+            List["QuantitativeValue"],
+        ]
     ] = None
-    valueReference: Optional[Union[StructuredValue, List[StructuredValue]]] = None
-    valueReference: Optional[Union[Enumeration, List[Enumeration]]] = None
-    valueReference: Optional[Union["QualitativeValue", List["QualitativeValue"]]] = None
-    valueReference: Optional[Union["QuantitativeValue", List["QuantitativeValue"]]] = (
-        None
-    )
     lesser: Optional[Union["QualitativeValue", List["QualitativeValue"]]] = None
     lesserOrEqual: Optional[Union["QualitativeValue", List["QualitativeValue"]]] = None

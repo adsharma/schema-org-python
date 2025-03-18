@@ -11,5 +11,6 @@ class RentAction(TradeAction):
     """
 
     realEstateAgent: Optional[Union["RealEstateAgent", List["RealEstateAgent"]]] = None
-    landlord: Optional[Union[Person, List[Person]]] = None
-    landlord: Optional[Union[Organization, List[Organization]]] = None
+    landlord: Optional[
+        Union[Person, List[Person], Organization, List[Organization]]
+    ] = None

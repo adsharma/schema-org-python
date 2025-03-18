@@ -9,6 +9,5 @@ class AudioObject(MediaObject):
     """
 
     embeddedTextCaption: Optional[Union[str, List[str]]] = None
-    caption: Optional[Union[MediaObject, List[MediaObject]]] = None
-    caption: Optional[Union[str, List[str]]] = None
+    caption: Optional[Union[MediaObject, List[MediaObject], str, List[str]]] = None
     transcript: Optional[Union[str, List[str]]] = None

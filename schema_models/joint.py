@@ -9,7 +9,8 @@ class Joint(AnatomicalStructure):
     The anatomical location at which two or more bones make contact.
     """
 
-    functionalClass: Optional[Union[str, List[str]]] = None
-    functionalClass: Optional[Union[MedicalEntity, List[MedicalEntity]]] = None
+    functionalClass: Optional[
+        Union[str, List[str], MedicalEntity, List[MedicalEntity]]
+    ] = None
     biomechnicalClass: Optional[Union[str, List[str]]] = None
     structuralClass: Optional[Union[str, List[str]]] = None

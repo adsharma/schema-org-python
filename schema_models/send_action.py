@@ -16,8 +16,16 @@ class SendAction(TransferAction):
     * [[GiveAction]]: Unlike GiveAction, SendAction does not imply the transfer of ownership (e.g. I can send you my laptop, but I'm not necessarily giving it to you).
     """
 
-    recipient: Optional[Union[Audience, List[Audience]]] = None
-    recipient: Optional[Union[ContactPoint, List[ContactPoint]]] = None
-    recipient: Optional[Union[Person, List[Person]]] = None
-    recipient: Optional[Union[Organization, List[Organization]]] = None
+    recipient: Optional[
+        Union[
+            Audience,
+            List[Audience],
+            ContactPoint,
+            List[ContactPoint],
+            Person,
+            List[Person],
+            Organization,
+            List[Organization],
+        ]
+    ] = None
     deliveryMethod: Optional[Union[DeliveryMethod, List[DeliveryMethod]]] = None

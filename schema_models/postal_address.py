@@ -11,8 +11,7 @@ class PostalAddress(ContactPoint):
 
     addressLocality: Optional[Union[str, List[str]]] = None
     addressRegion: Optional[Union[str, List[str]]] = None
-    addressCountry: Optional[Union[str, List[str]]] = None
-    addressCountry: Optional[Union[Country, List[Country]]] = None
+    addressCountry: Optional[Union[str, List[str], Country, List[Country]]] = None
     postOfficeBoxNumber: Optional[Union[str, List[str]]] = None
     streetAddress: Optional[Union[str, List[str]]] = None
     postalCode: Optional[Union[str, List[str]]] = None

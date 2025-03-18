@@ -12,7 +12,9 @@ class BuyAction(TradeAction):
     """
 
     warrantyPromise: Optional[Union[WarrantyPromise, List[WarrantyPromise]]] = None
-    seller: Optional[Union[Person, List[Person]]] = None
-    seller: Optional[Union[Organization, List[Organization]]] = None
-    vendor: Optional[Union[Person, List[Person]]] = None
-    vendor: Optional[Union[Organization, List[Organization]]] = None
+    seller: Optional[Union[Person, List[Person], Organization, List[Organization]]] = (
+        None
+    )
+    vendor: Optional[Union[Person, List[Person], Organization, List[Organization]]] = (
+        None
+    )

@@ -9,9 +9,9 @@ class MoneyTransfer(TransferAction):
     The act of transferring money from one place to another place. This may occur electronically or physically.
     """
 
-    beneficiaryBank: Optional[Union[str, List[str]]] = None
-    beneficiaryBank: Optional[Union["BankOrCreditUnion", List["BankOrCreditUnion"]]] = (
-        None
-    )
-    amount: Optional[Union[MonetaryAmount, List[MonetaryAmount]]] = None
-    amount: Optional[Union[float, List[float]]] = None
+    beneficiaryBank: Optional[
+        Union[str, List[str], "BankOrCreditUnion", List["BankOrCreditUnion"]]
+    ] = None
+    amount: Optional[
+        Union[MonetaryAmount, List[MonetaryAmount], float, List[float]]
+    ] = None

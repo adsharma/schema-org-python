@@ -18,5 +18,6 @@ class FollowAction(InteractAction):
     * [[TrackAction]]: Unlike TrackAction, FollowAction refers to the polling of updates of all aspects of animate objects rather than the location of inanimate objects (e.g. you track a package, but you don't follow it).
     """
 
-    followee: Optional[Union[Person, List[Person]]] = None
-    followee: Optional[Union[Organization, List[Organization]]] = None
+    followee: Optional[
+        Union[Person, List[Person], Organization, List[Organization]]
+    ] = None

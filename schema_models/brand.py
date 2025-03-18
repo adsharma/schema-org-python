@@ -12,6 +12,7 @@ class Brand(Intangible):
 
     aggregateRating: Optional[Union["AggregateRating", List["AggregateRating"]]] = None
     review: Optional[Union["Review", List["Review"]]] = None
-    logo: Optional[Union[HttpUrl, List[HttpUrl]]] = None
-    logo: Optional[Union["ImageObject", List["ImageObject"]]] = None
+    logo: Optional[
+        Union[HttpUrl, List[HttpUrl], "ImageObject", List["ImageObject"]]
+    ] = None
     slogan: Optional[Union[str, List[str]]] = None

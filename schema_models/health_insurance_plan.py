@@ -14,8 +14,9 @@ class HealthInsurancePlan(Intangible):
     includesHealthPlanFormulary: Optional[
         Union["HealthPlanFormulary", List["HealthPlanFormulary"]]
     ] = None
-    usesHealthPlanIdStandard: Optional[Union[str, List[str]]] = None
-    usesHealthPlanIdStandard: Optional[Union[HttpUrl, List[HttpUrl]]] = None
+    usesHealthPlanIdStandard: Optional[
+        Union[str, List[str], HttpUrl, List[HttpUrl]]
+    ] = None
     healthPlanDrugOption: Optional[Union[str, List[str]]] = None
     healthPlanMarketingUrl: Optional[Union[HttpUrl, List[HttpUrl]]] = None
     healthPlanDrugTier: Optional[Union[str, List[str]]] = None

@@ -11,12 +11,18 @@ class MonetaryAmount(StructuredValue):
 
     maxValue: Optional[Union[float, List[float]]] = None
     minValue: Optional[Union[float, List[float]]] = None
-    validFrom: Optional[Union[datetime, List[datetime]]] = None
-    validFrom: Optional[Union[date, List[date]]] = None
+    validFrom: Optional[Union[datetime, List[datetime], date, List[date]]] = None
     currency: Optional[Union[str, List[str]]] = None
-    value: Optional[Union[bool, List[bool]]] = None
-    value: Optional[Union[str, List[str]]] = None
-    value: Optional[Union[float, List[float]]] = None
-    value: Optional[Union[StructuredValue, List[StructuredValue]]] = None
-    validThrough: Optional[Union[datetime, List[datetime]]] = None
-    validThrough: Optional[Union[date, List[date]]] = None
+    value: Optional[
+        Union[
+            bool,
+            List[bool],
+            str,
+            List[str],
+            float,
+            List[float],
+            StructuredValue,
+            List[StructuredValue],
+        ]
+    ] = None
+    validThrough: Optional[Union[datetime, List[datetime], date, List[date]]] = None

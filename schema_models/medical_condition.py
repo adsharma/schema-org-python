@@ -16,11 +16,14 @@ class MedicalCondition(MedicalEntity):
     riskFactor: Optional[Union["MedicalRiskFactor", List["MedicalRiskFactor"]]] = None
     possibleComplication: Optional[Union[str, List[str]]] = None
     associatedAnatomy: Optional[
-        Union["AnatomicalStructure", List["AnatomicalStructure"]]
-    ] = None
-    associatedAnatomy: Optional[Union[AnatomicalSystem, List[AnatomicalSystem]]] = None
-    associatedAnatomy: Optional[
-        Union["SuperficialAnatomy", List["SuperficialAnatomy"]]
+        Union[
+            "AnatomicalStructure",
+            List["AnatomicalStructure"],
+            AnatomicalSystem,
+            List[AnatomicalSystem],
+            "SuperficialAnatomy",
+            List["SuperficialAnatomy"],
+        ]
     ] = None
     differentialDiagnosis: Optional[Union["DDxElement", List["DDxElement"]]] = None
     typicalTest: Optional[Union["MedicalTest", List["MedicalTest"]]] = None
@@ -32,9 +35,16 @@ class MedicalCondition(MedicalEntity):
     expectedPrognosis: Optional[Union[str, List[str]]] = None
     possibleTreatment: Optional[Union["MedicalTherapy", List["MedicalTherapy"]]] = None
     naturalProgression: Optional[Union[str, List[str]]] = None
-    status: Optional[Union["MedicalStudyStatus", List["MedicalStudyStatus"]]] = None
-    status: Optional[Union[str, List[str]]] = None
-    status: Optional[Union["EventStatusType", List["EventStatusType"]]] = None
+    status: Optional[
+        Union[
+            "MedicalStudyStatus",
+            List["MedicalStudyStatus"],
+            str,
+            List[str],
+            "EventStatusType",
+            List["EventStatusType"],
+        ]
+    ] = None
     primaryPrevention: Optional[Union["MedicalTherapy", List["MedicalTherapy"]]] = None
     secondaryPrevention: Optional[Union["MedicalTherapy", List["MedicalTherapy"]]] = (
         None

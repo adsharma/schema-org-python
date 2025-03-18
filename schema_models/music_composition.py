@@ -21,8 +21,9 @@ class MusicComposition(CreativeWork):
         None
     )
     musicalKey: Optional[Union[str, List[str]]] = None
-    composer: Optional[Union[Person, List[Person]]] = None
-    composer: Optional[Union[Organization, List[Organization]]] = None
+    composer: Optional[
+        Union[Person, List[Person], Organization, List[Organization]]
+    ] = None
     iswcCode: Optional[Union[str, List[str]]] = None
     lyrics: Optional[Union[CreativeWork, List[CreativeWork]]] = None
     firstPerformance: Optional[Union[Event, List[Event]]] = None

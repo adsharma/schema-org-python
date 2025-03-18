@@ -10,7 +10,9 @@ class Answer(Comment):
     An answer offered to a question; perhaps correct, perhaps opinionated or wrong.
     """
 
-    answerExplanation: Optional[Union[Comment, List[Comment]]] = None
-    answerExplanation: Optional[Union[WebContent, List[WebContent]]] = None
-    parentItem: Optional[Union[CreativeWork, List[CreativeWork]]] = None
-    parentItem: Optional[Union[Comment, List[Comment]]] = None
+    answerExplanation: Optional[
+        Union[Comment, List[Comment], WebContent, List[WebContent]]
+    ] = None
+    parentItem: Optional[
+        Union[CreativeWork, List[CreativeWork], Comment, List[Comment]]
+    ] = None

@@ -12,5 +12,4 @@ class SportsTeam(SportsOrganization):
 
     coach: Optional[Union[Person, List[Person]]] = None
     athlete: Optional[Union[Person, List[Person]]] = None
-    gender: Optional[Union[GenderType, List[GenderType]]] = None
-    gender: Optional[Union[str, List[str]]] = None
+    gender: Optional[Union[GenderType, List[GenderType], str, List[str]]] = None

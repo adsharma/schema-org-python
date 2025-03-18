@@ -13,5 +13,4 @@ class BroadcastEvent(PublicationEvent):
     isLiveBroadcast: Optional[Union[bool, List[bool]]] = None
     broadcastOfEvent: Optional[Union[Event, List[Event]]] = None
     videoFormat: Optional[Union[str, List[str]]] = None
-    subtitleLanguage: Optional[Union[str, List[str]]] = None
-    subtitleLanguage: Optional[Union[Language, List[Language]]] = None
+    subtitleLanguage: Optional[Union[str, List[str], Language, List[Language]]] = None

@@ -10,8 +10,7 @@ class TouristDestination(Place):
       (See examples below.)
     """
 
-    touristType: Optional[Union[str, List[str]]] = None
-    touristType: Optional[Union[Audience, List[Audience]]] = None
+    touristType: Optional[Union[str, List[str], Audience, List[Audience]]] = None
     includesAttraction: Optional[
         Union["TouristAttraction", List["TouristAttraction"]]
     ] = None

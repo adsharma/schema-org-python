@@ -20,7 +20,6 @@ class SoftwareSourceCode(CreativeWork):
     runtime: Optional[Union[str, List[str]]] = None
     codeRepository: Optional[Union[HttpUrl, List[HttpUrl]]] = None
     codeSampleType: Optional[Union[str, List[str]]] = None
-    programmingLanguage: Optional[Union[ComputerLanguage, List[ComputerLanguage]]] = (
-        None
-    )
-    programmingLanguage: Optional[Union[str, List[str]]] = None
+    programmingLanguage: Optional[
+        Union[ComputerLanguage, List[ComputerLanguage], str, List[str]]
+    ] = None

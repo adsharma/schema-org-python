@@ -13,10 +13,12 @@ class BroadcastChannel(Intangible):
     providesBroadcastService: Optional[
         Union["BroadcastService", List["BroadcastService"]]
     ] = None
-    broadcastFrequency: Optional[Union[str, List[str]]] = None
     broadcastFrequency: Optional[
         Union[
-            "BroadcastFrequencySpecification", List["BroadcastFrequencySpecification"]
+            str,
+            List[str],
+            "BroadcastFrequencySpecification",
+            List["BroadcastFrequencySpecification"],
         ]
     ] = None
     broadcastServiceTier: Optional[Union[str, List[str]]] = None
@@ -24,5 +26,4 @@ class BroadcastChannel(Intangible):
         Union["CableOrSatelliteService", List["CableOrSatelliteService"]]
     ] = None
     broadcastChannelId: Optional[Union[str, List[str]]] = None
-    genre: Optional[Union[str, List[str]]] = None
-    genre: Optional[Union[HttpUrl, List[HttpUrl]]] = None
+    genre: Optional[Union[str, List[str], HttpUrl, List[HttpUrl]]] = None

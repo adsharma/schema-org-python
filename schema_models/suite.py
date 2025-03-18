@@ -14,8 +14,9 @@ class Suite(Accommodation):
     """
 
     occupancy: Optional[Union[QuantitativeValue, List[QuantitativeValue]]] = None
-    numberOfRooms: Optional[Union[QuantitativeValue, List[QuantitativeValue]]] = None
-    numberOfRooms: Optional[Union[float, List[float]]] = None
-    bed: Optional[Union["BedType", List["BedType"]]] = None
-    bed: Optional[Union[BedDetails, List[BedDetails]]] = None
-    bed: Optional[Union[str, List[str]]] = None
+    numberOfRooms: Optional[
+        Union[QuantitativeValue, List[QuantitativeValue], float, List[float]]
+    ] = None
+    bed: Optional[
+        Union["BedType", List["BedType"], BedDetails, List[BedDetails], str, List[str]]
+    ] = None

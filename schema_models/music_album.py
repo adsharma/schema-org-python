@@ -12,8 +12,7 @@ class MusicAlbum(MusicPlaylist):
     A collection of music tracks.
     """
 
-    byArtist: Optional[Union[Person, List[Person]]] = None
-    byArtist: Optional[Union[MusicGroup, List[MusicGroup]]] = None
+    byArtist: Optional[Union[Person, List[Person], MusicGroup, List[MusicGroup]]] = None
     albumRelease: Optional[Union["MusicRelease", List["MusicRelease"]]] = None
     albumProductionType: Optional[
         Union[MusicAlbumProductionType, List[MusicAlbumProductionType]]

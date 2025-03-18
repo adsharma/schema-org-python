@@ -9,5 +9,4 @@ class BedDetails(Intangible):
     """
 
     numberOfBeds: Optional[Union[float, List[float]]] = None
-    typeOfBed: Optional[Union["BedType", List["BedType"]]] = None
-    typeOfBed: Optional[Union[str, List[str]]] = None
+    typeOfBed: Optional[Union["BedType", List["BedType"], str, List[str]]] = None

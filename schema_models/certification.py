@@ -20,21 +20,19 @@ class Certification(CreativeWork):
         None
     )
     certificationRating: Optional[Union[Rating, List[Rating]]] = None
-    expires: Optional[Union[date, List[date]]] = None
-    expires: Optional[Union[datetime, List[datetime]]] = None
+    expires: Optional[Union[date, List[date], datetime, List[datetime]]] = None
     about: Optional[Union[Thing, List[Thing]]] = None
-    datePublished: Optional[Union[date, List[date]]] = None
-    datePublished: Optional[Union[datetime, List[datetime]]] = None
+    datePublished: Optional[Union[date, List[date], datetime, List[datetime]]] = None
     validIn: Optional[Union[AdministrativeArea, List[AdministrativeArea]]] = None
     issuedBy: Optional[Union[Organization, List[Organization]]] = None
-    certificationIdentification: Optional[Union[str, List[str]]] = None
-    certificationIdentification: Optional[Union[DefinedTerm, List[DefinedTerm]]] = None
-    auditDate: Optional[Union[datetime, List[datetime]]] = None
-    auditDate: Optional[Union[date, List[date]]] = None
+    certificationIdentification: Optional[
+        Union[str, List[str], DefinedTerm, List[DefinedTerm]]
+    ] = None
+    auditDate: Optional[Union[datetime, List[datetime], date, List[date]]] = None
     certificationStatus: Optional[
         Union["CertificationStatusEnumeration", List["CertificationStatusEnumeration"]]
     ] = None
-    logo: Optional[Union[HttpUrl, List[HttpUrl]]] = None
-    logo: Optional[Union["ImageObject", List["ImageObject"]]] = None
-    validFrom: Optional[Union[datetime, List[datetime]]] = None
-    validFrom: Optional[Union[date, List[date]]] = None
+    logo: Optional[
+        Union[HttpUrl, List[HttpUrl], "ImageObject", List["ImageObject"]]
+    ] = None
+    validFrom: Optional[Union[datetime, List[datetime], date, List[date]]] = None

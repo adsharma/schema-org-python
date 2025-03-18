@@ -16,16 +16,15 @@ class LoanOrCredit(FinancialProduct):
     """
 
     loanTerm: Optional[Union[QuantitativeValue, List[QuantitativeValue]]] = None
-    requiredCollateral: Optional[Union[Thing, List[Thing]]] = None
-    requiredCollateral: Optional[Union[str, List[str]]] = None
-    loanType: Optional[Union[str, List[str]]] = None
-    loanType: Optional[Union[HttpUrl, List[HttpUrl]]] = None
+    requiredCollateral: Optional[Union[Thing, List[Thing], str, List[str]]] = None
+    loanType: Optional[Union[str, List[str], HttpUrl, List[HttpUrl]]] = None
     recourseLoan: Optional[Union[bool, List[bool]]] = None
     loanRepaymentForm: Optional[
         Union[RepaymentSpecification, List[RepaymentSpecification]]
     ] = None
     gracePeriod: Optional[Union[Duration, List[Duration]]] = None
     currency: Optional[Union[str, List[str]]] = None
-    amount: Optional[Union[MonetaryAmount, List[MonetaryAmount]]] = None
-    amount: Optional[Union[float, List[float]]] = None
+    amount: Optional[
+        Union[MonetaryAmount, List[MonetaryAmount], float, List[float]]
+    ] = None
     renegotiableLoan: Optional[Union[bool, List[bool]]] = None

@@ -22,11 +22,14 @@ class WebPage(CreativeWork):
     significantLink: Optional[Union[HttpUrl, List[HttpUrl]]] = None
     specialty: Optional[Union["Specialty", List["Specialty"]]] = None
     relatedLink: Optional[Union[HttpUrl, List[HttpUrl]]] = None
-    speakable: Optional[Union[HttpUrl, List[HttpUrl]]] = None
-    speakable: Optional[Union[SpeakableSpecification, List[SpeakableSpecification]]] = (
-        None
-    )
-    reviewedBy: Optional[Union[Person, List[Person]]] = None
-    reviewedBy: Optional[Union[Organization, List[Organization]]] = None
-    breadcrumb: Optional[Union["BreadcrumbList", List["BreadcrumbList"]]] = None
-    breadcrumb: Optional[Union[str, List[str]]] = None
+    speakable: Optional[
+        Union[
+            HttpUrl, List[HttpUrl], SpeakableSpecification, List[SpeakableSpecification]
+        ]
+    ] = None
+    reviewedBy: Optional[
+        Union[Person, List[Person], Organization, List[Organization]]
+    ] = None
+    breadcrumb: Optional[
+        Union["BreadcrumbList", List["BreadcrumbList"], str, List[str]]
+    ] = None

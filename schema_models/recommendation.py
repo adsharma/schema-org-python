@@ -13,10 +13,17 @@ class Recommendation(Review):
     [[Recommendation]] is a type of [[Review]] that suggests or proposes something as the best option or best course of action. Recommendations may be for products or services, or other concrete things, as in the case of a ranked list or product guide. A [[Guide]] may list multiple recommendations for different categories. For example, in a [[Guide]] about which TVs to buy, the author may have several [[Recommendation]]s.
     """
 
-    category: Optional[Union[Thing, List[Thing]]] = None
     category: Optional[
-        Union[PhysicalActivityCategory, List[PhysicalActivityCategory]]
+        Union[
+            Thing,
+            List[Thing],
+            PhysicalActivityCategory,
+            List[PhysicalActivityCategory],
+            CategoryCode,
+            List[CategoryCode],
+            str,
+            List[str],
+            HttpUrl,
+            List[HttpUrl],
+        ]
     ] = None
-    category: Optional[Union[CategoryCode, List[CategoryCode]]] = None
-    category: Optional[Union[str, List[str]]] = None
-    category: Optional[Union[HttpUrl, List[HttpUrl]]] = None

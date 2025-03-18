@@ -16,7 +16,11 @@ class AnatomicalSystem(MedicalEntity):
     ] = None
     relatedTherapy: Optional[Union["MedicalTherapy", List["MedicalTherapy"]]] = None
     associatedPathophysiology: Optional[Union[str, List[str]]] = None
-    comprisedOf: Optional[Union["AnatomicalStructure", List["AnatomicalStructure"]]] = (
-        None
-    )
-    comprisedOf: Optional[Union["AnatomicalSystem", List["AnatomicalSystem"]]] = None
+    comprisedOf: Optional[
+        Union[
+            "AnatomicalStructure",
+            List["AnatomicalStructure"],
+            "AnatomicalSystem",
+            List["AnatomicalSystem"],
+        ]
+    ] = None

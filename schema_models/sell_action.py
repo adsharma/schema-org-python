@@ -12,5 +12,6 @@ class SellAction(TradeAction):
     """
 
     warrantyPromise: Optional[Union[WarrantyPromise, List[WarrantyPromise]]] = None
-    buyer: Optional[Union[Organization, List[Organization]]] = None
-    buyer: Optional[Union[Person, List[Person]]] = None
+    buyer: Optional[Union[Organization, List[Organization], Person, List[Person]]] = (
+        None
+    )

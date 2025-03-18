@@ -10,5 +10,6 @@ class FinancialService(LocalBusiness):
     Financial services business.
     """
 
-    feesAndCommissionsSpecification: Optional[Union[str, List[str]]] = None
-    feesAndCommissionsSpecification: Optional[Union[HttpUrl, List[HttpUrl]]] = None
+    feesAndCommissionsSpecification: Optional[
+        Union[str, List[str], HttpUrl, List[HttpUrl]]
+    ] = None

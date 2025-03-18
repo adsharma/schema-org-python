@@ -15,13 +15,13 @@ class EducationalOccupationalCredential(CreativeWork):
 
     validIn: Optional[Union[AdministrativeArea, List[AdministrativeArea]]] = None
     recognizedBy: Optional[Union[Organization, List[Organization]]] = None
-    educationalLevel: Optional[Union[str, List[str]]] = None
-    educationalLevel: Optional[Union[HttpUrl, List[HttpUrl]]] = None
-    educationalLevel: Optional[Union[DefinedTerm, List[DefinedTerm]]] = None
+    educationalLevel: Optional[
+        Union[str, List[str], HttpUrl, List[HttpUrl], DefinedTerm, List[DefinedTerm]]
+    ] = None
     validFor: Optional[Union["Duration", List["Duration"]]] = None
-    competencyRequired: Optional[Union[str, List[str]]] = None
-    competencyRequired: Optional[Union[HttpUrl, List[HttpUrl]]] = None
-    competencyRequired: Optional[Union[DefinedTerm, List[DefinedTerm]]] = None
-    credentialCategory: Optional[Union[str, List[str]]] = None
-    credentialCategory: Optional[Union[HttpUrl, List[HttpUrl]]] = None
-    credentialCategory: Optional[Union[DefinedTerm, List[DefinedTerm]]] = None
+    competencyRequired: Optional[
+        Union[str, List[str], HttpUrl, List[HttpUrl], DefinedTerm, List[DefinedTerm]]
+    ] = None
+    credentialCategory: Optional[
+        Union[str, List[str], HttpUrl, List[HttpUrl], DefinedTerm, List[DefinedTerm]]
+    ] = None

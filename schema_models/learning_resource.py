@@ -16,18 +16,18 @@ class LearningResource(CreativeWork):
     [[EducationEvent]] serves a similar purpose for event-like things (e.g. a [[Trip]]). A [[LearningResource]] may be created as a result of an [[EducationEvent]], for example by recording one.
     """
 
-    educationalUse: Optional[Union[str, List[str]]] = None
-    educationalUse: Optional[Union[DefinedTerm, List[DefinedTerm]]] = None
-    assesses: Optional[Union[DefinedTerm, List[DefinedTerm]]] = None
-    assesses: Optional[Union[str, List[str]]] = None
-    educationalLevel: Optional[Union[str, List[str]]] = None
-    educationalLevel: Optional[Union[HttpUrl, List[HttpUrl]]] = None
-    educationalLevel: Optional[Union[DefinedTerm, List[DefinedTerm]]] = None
+    educationalUse: Optional[Union[str, List[str], DefinedTerm, List[DefinedTerm]]] = (
+        None
+    )
+    assesses: Optional[Union[DefinedTerm, List[DefinedTerm], str, List[str]]] = None
+    educationalLevel: Optional[
+        Union[str, List[str], HttpUrl, List[HttpUrl], DefinedTerm, List[DefinedTerm]]
+    ] = None
     educationalAlignment: Optional[Union[AlignmentObject, List[AlignmentObject]]] = None
-    teaches: Optional[Union[str, List[str]]] = None
-    teaches: Optional[Union[DefinedTerm, List[DefinedTerm]]] = None
-    competencyRequired: Optional[Union[str, List[str]]] = None
-    competencyRequired: Optional[Union[HttpUrl, List[HttpUrl]]] = None
-    competencyRequired: Optional[Union[DefinedTerm, List[DefinedTerm]]] = None
-    learningResourceType: Optional[Union[str, List[str]]] = None
-    learningResourceType: Optional[Union[DefinedTerm, List[DefinedTerm]]] = None
+    teaches: Optional[Union[str, List[str], DefinedTerm, List[DefinedTerm]]] = None
+    competencyRequired: Optional[
+        Union[str, List[str], HttpUrl, List[HttpUrl], DefinedTerm, List[DefinedTerm]]
+    ] = None
+    learningResourceType: Optional[
+        Union[str, List[str], DefinedTerm, List[DefinedTerm]]
+    ] = None

@@ -9,13 +9,12 @@ class GeoShape(StructuredValue):
     """
 
     box: Optional[Union[str, List[str]]] = None
-    address: Optional[Union[str, List[str]]] = None
-    address: Optional[Union["PostalAddress", List["PostalAddress"]]] = None
+    address: Optional[Union[str, List[str], "PostalAddress", List["PostalAddress"]]] = (
+        None
+    )
     circle: Optional[Union[str, List[str]]] = None
-    addressCountry: Optional[Union[str, List[str]]] = None
-    addressCountry: Optional[Union["Country", List["Country"]]] = None
+    addressCountry: Optional[Union[str, List[str], "Country", List["Country"]]] = None
     line: Optional[Union[str, List[str]]] = None
     postalCode: Optional[Union[str, List[str]]] = None
-    elevation: Optional[Union[str, List[str]]] = None
-    elevation: Optional[Union[float, List[float]]] = None
+    elevation: Optional[Union[str, List[str], float, List[float]]] = None
     polygon: Optional[Union[str, List[str]]] = None

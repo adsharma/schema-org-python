@@ -13,13 +13,20 @@ class DonateAction(TransferAction):
     The act of providing goods, services, or money without compensation, often for philanthropic reasons.
     """
 
-    price: Optional[Union[str, List[str]]] = None
-    price: Optional[Union[float, List[float]]] = None
+    price: Optional[Union[str, List[str], float, List[float]]] = None
     priceCurrency: Optional[Union[str, List[str]]] = None
     priceSpecification: Optional[
         Union[PriceSpecification, List[PriceSpecification]]
     ] = None
-    recipient: Optional[Union[Audience, List[Audience]]] = None
-    recipient: Optional[Union[ContactPoint, List[ContactPoint]]] = None
-    recipient: Optional[Union[Person, List[Person]]] = None
-    recipient: Optional[Union[Organization, List[Organization]]] = None
+    recipient: Optional[
+        Union[
+            Audience,
+            List[Audience],
+            ContactPoint,
+            List[ContactPoint],
+            Person,
+            List[Person],
+            Organization,
+            List[Organization],
+        ]
+    ] = None

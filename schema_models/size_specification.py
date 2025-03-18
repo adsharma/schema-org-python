@@ -13,15 +13,16 @@ class SizeSpecification(QualitativeValue):
     """
 
     suggestedAge: Optional[Union[QuantitativeValue, List[QuantitativeValue]]] = None
-    suggestedGender: Optional[Union[GenderType, List[GenderType]]] = None
-    suggestedGender: Optional[Union[str, List[str]]] = None
-    sizeGroup: Optional[Union[str, List[str]]] = None
-    sizeGroup: Optional[Union[SizeGroupEnumeration, List[SizeGroupEnumeration]]] = None
+    suggestedGender: Optional[Union[GenderType, List[GenderType], str, List[str]]] = (
+        None
+    )
+    sizeGroup: Optional[
+        Union[str, List[str], SizeGroupEnumeration, List[SizeGroupEnumeration]]
+    ] = None
     suggestedMeasurement: Optional[
         Union[QuantitativeValue, List[QuantitativeValue]]
     ] = None
     hasMeasurement: Optional[Union[QuantitativeValue, List[QuantitativeValue]]] = None
-    sizeSystem: Optional[Union[SizeSystemEnumeration, List[SizeSystemEnumeration]]] = (
-        None
-    )
-    sizeSystem: Optional[Union[str, List[str]]] = None
+    sizeSystem: Optional[
+        Union[SizeSystemEnumeration, List[SizeSystemEnumeration], str, List[str]]
+    ] = None

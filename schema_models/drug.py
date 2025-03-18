@@ -17,9 +17,8 @@ class Drug(Substance):
     mechanismOfAction: Optional[Union[str, List[str]]] = None
     interactingDrug: Optional[Union["Drug", List["Drug"]]] = None
     prescriptionStatus: Optional[
-        Union["DrugPrescriptionStatus", List["DrugPrescriptionStatus"]]
+        Union["DrugPrescriptionStatus", List["DrugPrescriptionStatus"], str, List[str]]
     ] = None
-    prescriptionStatus: Optional[Union[str, List[str]]] = None
     relatedDrug: Optional[Union["Drug", List["Drug"]]] = None
     availableStrength: Optional[Union["DrugStrength", List["DrugStrength"]]] = None
     clincalPharmacology: Optional[Union[str, List[str]]] = None
@@ -28,19 +27,23 @@ class Drug(Substance):
     maximumIntake: Optional[
         Union["MaximumDoseSchedule", List["MaximumDoseSchedule"]]
     ] = None
-    legalStatus: Optional[Union["DrugLegalStatus", List["DrugLegalStatus"]]] = None
-    legalStatus: Optional[Union["MedicalEnumeration", List["MedicalEnumeration"]]] = (
-        None
-    )
-    legalStatus: Optional[Union[str, List[str]]] = None
+    legalStatus: Optional[
+        Union[
+            "DrugLegalStatus",
+            List["DrugLegalStatus"],
+            "MedicalEnumeration",
+            List["MedicalEnumeration"],
+            str,
+            List[str],
+        ]
+    ] = None
     drugUnit: Optional[Union[str, List[str]]] = None
     pregnancyCategory: Optional[
         Union["DrugPregnancyCategory", List["DrugPregnancyCategory"]]
     ] = None
     labelDetails: Optional[Union[HttpUrl, List[HttpUrl]]] = None
     overdosage: Optional[Union[str, List[str]]] = None
-    warning: Optional[Union[str, List[str]]] = None
-    warning: Optional[Union[HttpUrl, List[HttpUrl]]] = None
+    warning: Optional[Union[str, List[str], HttpUrl, List[HttpUrl]]] = None
     proprietaryName: Optional[Union[str, List[str]]] = None
     nonProprietaryName: Optional[Union[str, List[str]]] = None
     activeIngredient: Optional[Union[str, List[str]]] = None

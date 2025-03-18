@@ -12,7 +12,15 @@ class ReturnAction(TransferAction):
     The act of returning to the origin that which was previously received (concrete objects) or taken (ownership).
     """
 
-    recipient: Optional[Union[Audience, List[Audience]]] = None
-    recipient: Optional[Union[ContactPoint, List[ContactPoint]]] = None
-    recipient: Optional[Union[Person, List[Person]]] = None
-    recipient: Optional[Union[Organization, List[Organization]]] = None
+    recipient: Optional[
+        Union[
+            Audience,
+            List[Audience],
+            ContactPoint,
+            List[ContactPoint],
+            Person,
+            List[Person],
+            Organization,
+            List[Organization],
+        ]
+    ] = None

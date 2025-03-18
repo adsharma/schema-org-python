@@ -51,37 +51,60 @@ class SpecialAnnouncement(CreativeWork):
 
     """
 
-    webFeed: Optional[Union[HttpUrl, List[HttpUrl]]] = None
-    webFeed: Optional[Union["DataFeed", List["DataFeed"]]] = None
+    webFeed: Optional[Union[HttpUrl, List[HttpUrl], "DataFeed", List["DataFeed"]]] = (
+        None
+    )
     governmentBenefitsInfo: Optional[
         Union["GovernmentService", List["GovernmentService"]]
     ] = None
-    publicTransportClosuresInfo: Optional[Union[WebContent, List[WebContent]]] = None
-    publicTransportClosuresInfo: Optional[Union[HttpUrl, List[HttpUrl]]] = None
-    category: Optional[Union[Thing, List[Thing]]] = None
-    category: Optional[
-        Union["PhysicalActivityCategory", List["PhysicalActivityCategory"]]
+    publicTransportClosuresInfo: Optional[
+        Union[WebContent, List[WebContent], HttpUrl, List[HttpUrl]]
     ] = None
-    category: Optional[Union["CategoryCode", List["CategoryCode"]]] = None
-    category: Optional[Union[str, List[str]]] = None
-    category: Optional[Union[HttpUrl, List[HttpUrl]]] = None
-    diseasePreventionInfo: Optional[Union[HttpUrl, List[HttpUrl]]] = None
-    diseasePreventionInfo: Optional[Union[WebContent, List[WebContent]]] = None
-    diseaseSpreadStatistics: Optional[Union[WebContent, List[WebContent]]] = None
-    diseaseSpreadStatistics: Optional[Union[Dataset, List[Dataset]]] = None
-    diseaseSpreadStatistics: Optional[Union["Observation", List["Observation"]]] = None
-    diseaseSpreadStatistics: Optional[Union[HttpUrl, List[HttpUrl]]] = None
-    announcementLocation: Optional[Union[CivicStructure, List[CivicStructure]]] = None
-    announcementLocation: Optional[Union[LocalBusiness, List[LocalBusiness]]] = None
-    quarantineGuidelines: Optional[Union[WebContent, List[WebContent]]] = None
-    quarantineGuidelines: Optional[Union[HttpUrl, List[HttpUrl]]] = None
-    newsUpdatesAndGuidelines: Optional[Union[WebContent, List[WebContent]]] = None
-    newsUpdatesAndGuidelines: Optional[Union[HttpUrl, List[HttpUrl]]] = None
-    travelBans: Optional[Union[HttpUrl, List[HttpUrl]]] = None
-    travelBans: Optional[Union[WebContent, List[WebContent]]] = None
-    schoolClosuresInfo: Optional[Union[HttpUrl, List[HttpUrl]]] = None
-    schoolClosuresInfo: Optional[Union[WebContent, List[WebContent]]] = None
-    datePosted: Optional[Union[datetime, List[datetime]]] = None
-    datePosted: Optional[Union[date, List[date]]] = None
-    gettingTestedInfo: Optional[Union[HttpUrl, List[HttpUrl]]] = None
-    gettingTestedInfo: Optional[Union[WebContent, List[WebContent]]] = None
+    category: Optional[
+        Union[
+            Thing,
+            List[Thing],
+            "PhysicalActivityCategory",
+            List["PhysicalActivityCategory"],
+            "CategoryCode",
+            List["CategoryCode"],
+            str,
+            List[str],
+            HttpUrl,
+            List[HttpUrl],
+        ]
+    ] = None
+    diseasePreventionInfo: Optional[
+        Union[HttpUrl, List[HttpUrl], WebContent, List[WebContent]]
+    ] = None
+    diseaseSpreadStatistics: Optional[
+        Union[
+            WebContent,
+            List[WebContent],
+            Dataset,
+            List[Dataset],
+            "Observation",
+            List["Observation"],
+            HttpUrl,
+            List[HttpUrl],
+        ]
+    ] = None
+    announcementLocation: Optional[
+        Union[CivicStructure, List[CivicStructure], LocalBusiness, List[LocalBusiness]]
+    ] = None
+    quarantineGuidelines: Optional[
+        Union[WebContent, List[WebContent], HttpUrl, List[HttpUrl]]
+    ] = None
+    newsUpdatesAndGuidelines: Optional[
+        Union[WebContent, List[WebContent], HttpUrl, List[HttpUrl]]
+    ] = None
+    travelBans: Optional[
+        Union[HttpUrl, List[HttpUrl], WebContent, List[WebContent]]
+    ] = None
+    schoolClosuresInfo: Optional[
+        Union[HttpUrl, List[HttpUrl], WebContent, List[WebContent]]
+    ] = None
+    datePosted: Optional[Union[datetime, List[datetime], date, List[date]]] = None
+    gettingTestedInfo: Optional[
+        Union[HttpUrl, List[HttpUrl], WebContent, List[WebContent]]
+    ] = None

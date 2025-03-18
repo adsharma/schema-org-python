@@ -15,10 +15,17 @@ class CommunicateAction(InteractAction):
     """
 
     about: Optional[Union[Thing, List[Thing]]] = None
-    inLanguage: Optional[Union[Language, List[Language]]] = None
-    inLanguage: Optional[Union[str, List[str]]] = None
-    recipient: Optional[Union[Audience, List[Audience]]] = None
-    recipient: Optional[Union[ContactPoint, List[ContactPoint]]] = None
-    recipient: Optional[Union[Person, List[Person]]] = None
-    recipient: Optional[Union[Organization, List[Organization]]] = None
+    inLanguage: Optional[Union[Language, List[Language], str, List[str]]] = None
+    recipient: Optional[
+        Union[
+            Audience,
+            List[Audience],
+            ContactPoint,
+            List[ContactPoint],
+            Person,
+            List[Person],
+            Organization,
+            List[Organization],
+        ]
+    ] = None
     language: Optional[Union[Language, List[Language]]] = None

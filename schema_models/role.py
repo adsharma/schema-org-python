@@ -13,11 +13,7 @@ class Role(Intangible):
     See also [blog post](http://blog.schema.org/2014/06/introducing-role.html).
     """
 
-    roleName: Optional[Union[str, List[str]]] = None
-    roleName: Optional[Union[HttpUrl, List[HttpUrl]]] = None
-    startDate: Optional[Union[datetime, List[datetime]]] = None
-    startDate: Optional[Union[date, List[date]]] = None
-    endDate: Optional[Union[date, List[date]]] = None
-    endDate: Optional[Union[datetime, List[datetime]]] = None
-    namedPosition: Optional[Union[str, List[str]]] = None
-    namedPosition: Optional[Union[HttpUrl, List[HttpUrl]]] = None
+    roleName: Optional[Union[str, List[str], HttpUrl, List[HttpUrl]]] = None
+    startDate: Optional[Union[datetime, List[datetime], date, List[date]]] = None
+    endDate: Optional[Union[date, List[date], datetime, List[datetime]]] = None
+    namedPosition: Optional[Union[str, List[str], HttpUrl, List[HttpUrl]]] = None

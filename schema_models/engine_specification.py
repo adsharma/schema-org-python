@@ -13,12 +13,26 @@ class EngineSpecification(StructuredValue):
 
     enginePower: Optional[Union["QuantitativeValue", List["QuantitativeValue"]]] = None
     torque: Optional[Union["QuantitativeValue", List["QuantitativeValue"]]] = None
-    engineType: Optional[Union[QualitativeValue, List[QualitativeValue]]] = None
-    engineType: Optional[Union[str, List[str]]] = None
-    engineType: Optional[Union[HttpUrl, List[HttpUrl]]] = None
+    engineType: Optional[
+        Union[
+            QualitativeValue,
+            List[QualitativeValue],
+            str,
+            List[str],
+            HttpUrl,
+            List[HttpUrl],
+        ]
+    ] = None
     engineDisplacement: Optional[
         Union["QuantitativeValue", List["QuantitativeValue"]]
     ] = None
-    fuelType: Optional[Union[HttpUrl, List[HttpUrl]]] = None
-    fuelType: Optional[Union[QualitativeValue, List[QualitativeValue]]] = None
-    fuelType: Optional[Union[str, List[str]]] = None
+    fuelType: Optional[
+        Union[
+            HttpUrl,
+            List[HttpUrl],
+            QualitativeValue,
+            List[QualitativeValue],
+            str,
+            List[str],
+        ]
+    ] = None

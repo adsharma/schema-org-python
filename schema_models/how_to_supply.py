@@ -9,5 +9,6 @@ class HowToSupply(HowToItem):
     A supply consumed when performing the instructions for how to achieve a result.
     """
 
-    estimatedCost: Optional[Union[MonetaryAmount, List[MonetaryAmount]]] = None
-    estimatedCost: Optional[Union[str, List[str]]] = None
+    estimatedCost: Optional[
+        Union[MonetaryAmount, List[MonetaryAmount], str, List[str]]
+    ] = None

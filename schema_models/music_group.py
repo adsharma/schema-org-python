@@ -15,9 +15,9 @@ class MusicGroup(PerformingGroup):
 
     albums: Optional[Union["MusicAlbum", List["MusicAlbum"]]] = None
     musicGroupMember: Optional[Union[Person, List[Person]]] = None
-    track: Optional[Union[ItemList, List[ItemList]]] = None
-    track: Optional[Union[MusicRecording, List[MusicRecording]]] = None
+    track: Optional[
+        Union[ItemList, List[ItemList], MusicRecording, List[MusicRecording]]
+    ] = None
     album: Optional[Union["MusicAlbum", List["MusicAlbum"]]] = None
-    genre: Optional[Union[str, List[str]]] = None
-    genre: Optional[Union[HttpUrl, List[HttpUrl]]] = None
+    genre: Optional[Union[str, List[str], HttpUrl, List[HttpUrl]]] = None
     tracks: Optional[Union[MusicRecording, List[MusicRecording]]] = None

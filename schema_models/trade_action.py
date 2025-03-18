@@ -12,5 +12,4 @@ class TradeAction(Action):
     priceSpecification: Optional[
         Union["PriceSpecification", List["PriceSpecification"]]
     ] = None
-    price: Optional[Union[str, List[str]]] = None
-    price: Optional[Union[float, List[float]]] = None
+    price: Optional[Union[str, List[str], float, List[float]]] = None

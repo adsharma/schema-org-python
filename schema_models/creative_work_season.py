@@ -13,20 +13,18 @@ class CreativeWorkSeason(CreativeWork):
     A media season, e.g. TV, radio, video game etc.
     """
 
-    endDate: Optional[Union[date, List[date]]] = None
-    endDate: Optional[Union[datetime, List[datetime]]] = None
+    endDate: Optional[Union[date, List[date], datetime, List[datetime]]] = None
     productionCompany: Optional[Union[Organization, List[Organization]]] = None
-    actor: Optional[Union[Person, List[Person]]] = None
-    actor: Optional[Union[PerformingGroup, List[PerformingGroup]]] = None
-    seasonNumber: Optional[Union[int, List[int]]] = None
-    seasonNumber: Optional[Union[str, List[str]]] = None
+    actor: Optional[
+        Union[Person, List[Person], PerformingGroup, List[PerformingGroup]]
+    ] = None
+    seasonNumber: Optional[Union[int, List[int], str, List[str]]] = None
     director: Optional[Union[Person, List[Person]]] = None
     episode: Optional[Union[Episode, List[Episode]]] = None
     partOfSeries: Optional[Union["CreativeWorkSeries", List["CreativeWorkSeries"]]] = (
         None
     )
     episodes: Optional[Union[Episode, List[Episode]]] = None
-    startDate: Optional[Union[datetime, List[datetime]]] = None
-    startDate: Optional[Union[date, List[date]]] = None
+    startDate: Optional[Union[datetime, List[datetime], date, List[date]]] = None
     trailer: Optional[Union["VideoObject", List["VideoObject"]]] = None
     numberOfEpisodes: Optional[Union[int, List[int]]] = None

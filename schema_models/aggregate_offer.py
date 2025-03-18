@@ -11,10 +11,7 @@ class AggregateOffer(Offer):
     Note: AggregateOffers are normally expected to associate multiple offers that all share the same defined [[businessFunction]] value, or default to http://purl.org/goodrelations/v1#Sell if businessFunction is not explicitly defined.
     """
 
-    highPrice: Optional[Union[str, List[str]]] = None
-    highPrice: Optional[Union[float, List[float]]] = None
+    highPrice: Optional[Union[str, List[str], float, List[float]]] = None
     offerCount: Optional[Union[int, List[int]]] = None
-    lowPrice: Optional[Union[str, List[str]]] = None
-    lowPrice: Optional[Union[float, List[float]]] = None
-    offers: Optional[Union[Offer, List[Offer]]] = None
-    offers: Optional[Union[Demand, List[Demand]]] = None
+    lowPrice: Optional[Union[str, List[str], float, List[float]]] = None
+    offers: Optional[Union[Offer, List[Offer], Demand, List[Demand]]] = None
