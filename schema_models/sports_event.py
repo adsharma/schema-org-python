@@ -1,3 +1,4 @@
+from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from pydantic import HttpUrl
@@ -6,6 +7,7 @@ from schema_models.event import Event
 from schema_models.person import Person
 
 
+@dataclass
 class SportsEvent(Event):
     """
     Event type: Sports event.

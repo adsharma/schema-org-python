@@ -1,3 +1,4 @@
+from dataclasses import dataclass
 from datetime import date, datetime
 from typing import List, Optional, Union
 
@@ -9,6 +10,7 @@ from schema_models.person import Person
 from schema_models.seat import Seat
 
 
+@dataclass
 class Ticket(Intangible):
     """
     Used to describe a ticket to an event, a flight, a bus ride, etc.

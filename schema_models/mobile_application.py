@@ -1,8 +1,10 @@
+from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from schema_models.software_application import SoftwareApplication
 
 
+@dataclass
 class MobileApplication(SoftwareApplication):
     """
     A software application designed specifically to work well on a mobile device such as a telephone.

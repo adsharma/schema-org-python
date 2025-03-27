@@ -1,3 +1,4 @@
+from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from pydantic import HttpUrl
@@ -6,6 +7,7 @@ from schema_models.creative_work import CreativeWork
 from schema_models.person import Person
 
 
+@dataclass
 class VisualArtwork(CreativeWork):
     """
     A work of art that is primarily visual in character.

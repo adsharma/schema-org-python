@@ -1,3 +1,4 @@
+from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from pydantic import HttpUrl
@@ -10,6 +11,7 @@ from schema_models.qualitative_value import QualitativeValue
 from schema_models.structured_value import StructuredValue
 
 
+@dataclass
 class PropertyValue(StructuredValue):
     """
     A property-value pair, e.g. representing a feature of a product or place. Use the 'name' property for the name of the property. If there is an additional human-readable version of the value, put that into the 'description' property.

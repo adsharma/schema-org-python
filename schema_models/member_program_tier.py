@@ -1,8 +1,10 @@
+from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from schema_models.intangible import Intangible
 
 
+@dataclass
 class MemberProgramTier(Intangible):
     """
     A MemberProgramTier specifies a tier under a loyalty (member) program, for example "gold".

@@ -1,9 +1,11 @@
+from dataclasses import dataclass
 from datetime import date, datetime
 from typing import List, Optional, Union
 
 from schema_models.creative_work import CreativeWork
 
 
+@dataclass
 class CreativeWorkSeries(CreativeWork):
     """
     A CreativeWorkSeries in schema.org is a group of related items, typically but not necessarily of the same kind. CreativeWorkSeries are usually organized into some order, often chronological. Unlike [[ItemList]] which is a general purpose data structure for lists of things, the emphasis with CreativeWorkSeries is on published materials (written e.g. books and periodicals, or media such as TV, radio and games).

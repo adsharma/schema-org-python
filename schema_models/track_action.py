@@ -1,9 +1,11 @@
+from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from schema_models.delivery_method import DeliveryMethod
 from schema_models.find_action import FindAction
 
 
+@dataclass
 class TrackAction(FindAction):
     """
     An agent tracks an object for updates.

@@ -1,9 +1,11 @@
+from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from schema_models.communicate_action import CommunicateAction
 from schema_models.question import Question
 
 
+@dataclass
 class AskAction(CommunicateAction):
     """
     The act of posing a question / favor to someone.

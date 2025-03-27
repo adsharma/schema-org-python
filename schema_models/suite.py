@@ -1,3 +1,4 @@
+from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from schema_models.accommodation import Accommodation
@@ -5,6 +6,7 @@ from schema_models.bed_details import BedDetails
 from schema_models.quantitative_value import QuantitativeValue
 
 
+@dataclass
 class Suite(Accommodation):
     """
     A suite in a hotel or other public accommodation, denotes a class of luxury accommodations, the key feature of which is multiple rooms (source: Wikipedia, the free encyclopedia, see <a href="http://en.wikipedia.org/wiki/Suite_(hotel)">http://en.wikipedia.org/wiki/Suite_(hotel)</a>).

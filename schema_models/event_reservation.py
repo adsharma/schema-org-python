@@ -1,6 +1,9 @@
+from dataclasses import dataclass
+
 from schema_models.reservation import Reservation
 
 
+@dataclass
 class EventReservation(Reservation):
     """
     A reservation for an event like a concert, sporting event, or lecture.

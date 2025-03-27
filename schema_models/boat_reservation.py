@@ -1,6 +1,9 @@
+from dataclasses import dataclass
+
 from schema_models.reservation import Reservation
 
 
+@dataclass
 class BoatReservation(Reservation):
     """
     A reservation for boat travel.

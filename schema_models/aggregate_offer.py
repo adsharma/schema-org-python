@@ -1,9 +1,11 @@
+from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from schema_models.demand import Demand
 from schema_models.offer import Offer
 
 
+@dataclass
 class AggregateOffer(Offer):
     """
     When a single product is associated with multiple offers (for example, the same pair of shoes is offered by different merchants), then AggregateOffer can be used.

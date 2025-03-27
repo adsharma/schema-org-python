@@ -1,3 +1,4 @@
+from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from pydantic import HttpUrl
@@ -6,6 +7,7 @@ from schema_models.intangible import Intangible
 from schema_models.place import Place
 
 
+@dataclass
 class ServiceChannel(Intangible):
     """
     A means for accessing a service, e.g. a government office location, web site, or phone number.

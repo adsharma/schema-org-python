@@ -1,3 +1,4 @@
+from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from schema_models.bed_details import BedDetails
@@ -6,6 +7,7 @@ from schema_models.quantitative_value import QuantitativeValue
 from schema_models.room import Room
 
 
+@dataclass
 class HotelRoom(Room):
     """
     A hotel room is a single room in a hotel.

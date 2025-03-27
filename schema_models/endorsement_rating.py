@@ -1,6 +1,9 @@
+from dataclasses import dataclass
+
 from schema_models.rating import Rating
 
 
+@dataclass
 class EndorsementRating(Rating):
     """
     An EndorsementRating is a rating that expresses some level of endorsement, for example inclusion in a "critic's pick" blog, a

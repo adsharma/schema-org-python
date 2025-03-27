@@ -1,9 +1,11 @@
+from dataclasses import dataclass
 from datetime import date, datetime
 from typing import List, Optional, Union
 
 from schema_models.organize_action import OrganizeAction
 
 
+@dataclass
 class PlanAction(OrganizeAction):
     """
     The act of planning the execution of an event/task/action/reservation/plan to a future date.

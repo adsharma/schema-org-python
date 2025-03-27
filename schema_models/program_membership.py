@@ -1,3 +1,4 @@
+from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from schema_models.intangible import Intangible
@@ -5,6 +6,7 @@ from schema_models.organization import Organization
 from schema_models.person import Person
 
 
+@dataclass
 class ProgramMembership(Intangible):
     """
     Used to describe membership in a loyalty programs (e.g. "StarAliance"), traveler clubs (e.g. "AAA"), purchase clubs ("Safeway Club"), etc.

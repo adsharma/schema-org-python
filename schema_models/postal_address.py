@@ -1,9 +1,11 @@
+from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from schema_models.contact_point import ContactPoint
 from schema_models.country import Country
 
 
+@dataclass
 class PostalAddress(ContactPoint):
     """
     The mailing address.

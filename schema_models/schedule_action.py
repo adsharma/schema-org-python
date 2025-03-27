@@ -1,6 +1,9 @@
+from dataclasses import dataclass
+
 from schema_models.plan_action import PlanAction
 
 
+@dataclass
 class ScheduleAction(PlanAction):
     """
     Scheduling future actions, events, or tasks.

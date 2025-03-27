@@ -1,6 +1,9 @@
+from dataclasses import dataclass
+
 from schema_models.communicate_action import CommunicateAction
 
 
+@dataclass
 class CheckOutAction(CommunicateAction):
     """
     The act of an agent communicating (service provider, social media, etc) their departure of a previously reserved service (e.g. flight check-in) or place (e.g. hotel).

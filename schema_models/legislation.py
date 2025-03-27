@@ -1,3 +1,4 @@
+from dataclasses import dataclass
 from datetime import date
 from typing import List, Optional, Union
 
@@ -9,6 +10,7 @@ from schema_models.organization import Organization
 from schema_models.person import Person
 
 
+@dataclass
 class Legislation(CreativeWork):
     """
     A legal document such as an act, decree, bill, etc. (enforceable or not) or a component of a legal act (like an article).

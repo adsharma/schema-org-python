@@ -1,3 +1,4 @@
+from dataclasses import dataclass
 from datetime import date, datetime, time
 from typing import List, Optional, Union
 
@@ -6,6 +7,7 @@ from pydantic import HttpUrl
 from schema_models.thing import Thing
 
 
+@dataclass
 class Event(Thing):
     """
     Upcoming or past event associated with this place, organization, or action.

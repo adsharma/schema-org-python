@@ -1,6 +1,9 @@
+from dataclasses import dataclass
+
 from schema_models.interact_action import InteractAction
 
 
+@dataclass
 class UnRegisterAction(InteractAction):
     """
     The act of un-registering from a service.

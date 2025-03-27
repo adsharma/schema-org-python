@@ -1,9 +1,11 @@
+from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from schema_models.medical_condition import MedicalCondition
 from schema_models.medical_entity import MedicalEntity
 
 
+@dataclass
 class MedicalTest(MedicalEntity):
     """
     Any medical test, typically performed for diagnostic purposes.

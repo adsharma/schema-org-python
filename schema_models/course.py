@@ -1,3 +1,4 @@
+from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from pydantic import HttpUrl
@@ -13,6 +14,7 @@ from schema_models.language import Language
 from schema_models.structured_value import StructuredValue
 
 
+@dataclass
 class Course(CreativeWork):
     """
     A sub property of location. The course where this action was taken.

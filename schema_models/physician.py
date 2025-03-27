@@ -1,3 +1,4 @@
+from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from schema_models.category_code import CategoryCode
@@ -6,6 +7,7 @@ from schema_models.medical_procedure import MedicalProcedure
 from schema_models.medical_test import MedicalTest
 
 
+@dataclass
 class Physician(MedicalOrganization):
     """
     An individual physician or a physician's office considered as a [[MedicalOrganization]].

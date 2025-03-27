@@ -1,3 +1,4 @@
+from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from schema_models.broadcast_channel import BroadcastChannel
@@ -10,6 +11,7 @@ from schema_models.place import Place
 from schema_models.service import Service
 
 
+@dataclass
 class BroadcastService(Service):
     """
     A delivery service through which content is provided via broadcast over the air or online.

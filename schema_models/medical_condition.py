@@ -1,9 +1,11 @@
+from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from schema_models.anatomical_system import AnatomicalSystem
 from schema_models.medical_entity import MedicalEntity
 
 
+@dataclass
 class MedicalCondition(MedicalEntity):
     """
     Any condition of the human body that affects the normal functioning of a person, whether physically or mentally. Includes diseases, injuries, disabilities, disorders, syndromes, etc.

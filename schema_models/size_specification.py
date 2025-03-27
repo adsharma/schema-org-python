@@ -1,3 +1,4 @@
+from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from schema_models.gender_type import GenderType
@@ -7,6 +8,7 @@ from schema_models.size_group_enumeration import SizeGroupEnumeration
 from schema_models.size_system_enumeration import SizeSystemEnumeration
 
 
+@dataclass
 class SizeSpecification(QualitativeValue):
     """
     Size related properties of a product, typically a size code ([[name]]) and optionally a [[sizeSystem]], [[sizeGroup]], and product measurements ([[hasMeasurement]]). In addition, the intended audience can be defined through [[suggestedAge]], [[suggestedGender]], and suggested body measurements ([[suggestedMeasurement]]).

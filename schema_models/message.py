@@ -1,3 +1,4 @@
+from dataclasses import dataclass
 from datetime import date, datetime
 from typing import List, Optional, Union
 
@@ -7,6 +8,7 @@ from schema_models.organization import Organization
 from schema_models.person import Person
 
 
+@dataclass
 class Message(CreativeWork):
     """
     A single message from a sender to one or more organizations or people.

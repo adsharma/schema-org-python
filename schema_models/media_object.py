@@ -1,3 +1,4 @@
+from dataclasses import dataclass
 from datetime import date, datetime, time
 from typing import List, Optional, Union
 
@@ -9,6 +10,7 @@ from schema_models.organization import Organization
 from schema_models.place import Place
 
 
+@dataclass
 class MediaObject(CreativeWork):
     """
     A media object, such as an image, video, audio, or text object embedded in a web page or a downloadable dataset i.e. DataDownload. Note that a creative work may have many media objects associated with it on the same web page. For example, a page about a single song (MusicRecording) may have a music video (VideoObject), and a high and low bandwidth audio stream (2 AudioObject's).

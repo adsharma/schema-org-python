@@ -1,6 +1,9 @@
+from dataclasses import dataclass
+
 from schema_models.action import Action
 
 
+@dataclass
 class FindAction(Action):
     """
     The act of finding an object.

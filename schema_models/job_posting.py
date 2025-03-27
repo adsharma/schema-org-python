@@ -1,3 +1,4 @@
+from dataclasses import dataclass
 from datetime import date, datetime
 from typing import List, Optional, Union
 
@@ -9,6 +10,7 @@ from schema_models.person import Person
 from schema_models.place import Place
 
 
+@dataclass
 class JobPosting(Intangible):
     """
     A listing that describes a job opening in a certain organization.

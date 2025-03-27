@@ -1,6 +1,9 @@
+from dataclasses import dataclass
+
 from schema_models.interact_action import InteractAction
 
 
+@dataclass
 class BefriendAction(InteractAction):
     """
     The act of forming a personal connection with someone (object) mutually/bidirectionally/symmetrically.

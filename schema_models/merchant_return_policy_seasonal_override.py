@@ -1,9 +1,11 @@
+from dataclasses import dataclass
 from datetime import date, datetime
 from typing import List, Optional, Union
 
 from schema_models.intangible import Intangible
 
 
+@dataclass
 class MerchantReturnPolicySeasonalOverride(Intangible):
     """
     A seasonal override of a return policy, for example used for holidays.

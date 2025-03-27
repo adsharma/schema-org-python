@@ -1,9 +1,11 @@
+from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from schema_models.creative_work import CreativeWork
 from schema_models.css_selector_type import CssSelectorType
 
 
+@dataclass
 class WebPageElement(CreativeWork):
     """
     A web page element, like a table or an image.

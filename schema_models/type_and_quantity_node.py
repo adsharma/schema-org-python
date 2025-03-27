@@ -1,3 +1,4 @@
+from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from pydantic import HttpUrl
@@ -8,6 +9,7 @@ from schema_models.service import Service
 from schema_models.structured_value import StructuredValue
 
 
+@dataclass
 class TypeAndQuantityNode(StructuredValue):
     """
     A structured value indicating the quantity, unit of measurement, and business function of goods included in a bundle offer.

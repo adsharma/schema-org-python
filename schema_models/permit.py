@@ -1,3 +1,4 @@
+from dataclasses import dataclass
 from datetime import date, datetime
 from typing import List, Optional, Union
 
@@ -5,6 +6,7 @@ from schema_models.intangible import Intangible
 from schema_models.organization import Organization
 
 
+@dataclass
 class Permit(Intangible):
     """
     A permit issued by an organization, e.g. a parking pass.

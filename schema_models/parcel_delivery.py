@@ -1,3 +1,4 @@
+from dataclasses import dataclass
 from datetime import date, datetime
 from typing import List, Optional, Union
 
@@ -11,6 +12,7 @@ from schema_models.person import Person
 from schema_models.product import Product
 
 
+@dataclass
 class ParcelDelivery(Intangible):
     """
     The delivery of a parcel either via the postal service or a commercial service.

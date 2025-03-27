@@ -1,9 +1,11 @@
+from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from schema_models.enumeration import Enumeration
 from schema_models.intangible import Intangible
 
 
+@dataclass
 class Property(Intangible):
     """
     A property, used to indicate attributes and relationships of some Thing; equivalent to rdf:Property.

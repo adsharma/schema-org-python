@@ -1,3 +1,4 @@
+from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from pydantic import HttpUrl
@@ -13,6 +14,7 @@ from schema_models.service_channel import ServiceChannel
 from schema_models.thing import Thing
 
 
+@dataclass
 class Service(Intangible):
     """
     A service provided by an organization, e.g. delivery service, print services, etc.

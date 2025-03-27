@@ -1,3 +1,4 @@
+from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from pydantic import HttpUrl
@@ -13,6 +14,7 @@ from schema_models.thing import Thing
 from schema_models.video_object import VideoObject
 
 
+@dataclass
 class VideoGame(Game):
     """
     A video game is an electronic game that involves human interaction with a user interface to generate visual feedback on a video device.

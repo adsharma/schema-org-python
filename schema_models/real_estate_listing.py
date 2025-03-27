@@ -1,3 +1,4 @@
+from dataclasses import dataclass
 from datetime import date, datetime
 from typing import List, Optional, Union
 
@@ -6,6 +7,7 @@ from schema_models.quantitative_value import QuantitativeValue
 from schema_models.web_page import WebPage
 
 
+@dataclass
 class RealEstateListing(WebPage):
     """
     A [[RealEstateListing]] is a listing that describes one or more real-estate [[Offer]]s (whose [[businessFunction]] is typically to lease out, or to sell).

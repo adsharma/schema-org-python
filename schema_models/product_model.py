@@ -1,8 +1,10 @@
+from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from schema_models.product import Product
 
 
+@dataclass
 class ProductModel(Product):
     """
     A datasheet or vendor specification of a product (in the sense of a prototypical description).

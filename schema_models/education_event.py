@@ -1,3 +1,4 @@
+from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from pydantic import HttpUrl
@@ -5,6 +6,7 @@ from pydantic import HttpUrl
 from schema_models.event import Event
 
 
+@dataclass
 class EducationEvent(Event):
     """
     Event type: Education event.

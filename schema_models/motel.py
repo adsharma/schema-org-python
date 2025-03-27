@@ -1,6 +1,9 @@
+from dataclasses import dataclass
+
 from schema_models.lodging_business import LodgingBusiness
 
 
+@dataclass
 class Motel(LodgingBusiness):
     """
     A motel.

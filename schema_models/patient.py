@@ -1,9 +1,11 @@
+from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from schema_models.medical_condition import MedicalCondition
 from schema_models.person import Person
 
 
+@dataclass
 class Patient(Person):
     """
     A patient is any person recipient of health care services.

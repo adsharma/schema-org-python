@@ -1,9 +1,11 @@
+from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from schema_models.qualitative_value import QualitativeValue
 from schema_models.reservation import Reservation
 
 
+@dataclass
 class FlightReservation(Reservation):
     """
     A reservation for air travel.

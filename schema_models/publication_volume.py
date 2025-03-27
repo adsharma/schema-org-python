@@ -1,8 +1,10 @@
+from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from schema_models.creative_work import CreativeWork
 
 
+@dataclass
 class PublicationVolume(CreativeWork):
     """
     A part of a successively published publication such as a periodical or multi-volume work, often numbered. It may represent a time span, such as a year.

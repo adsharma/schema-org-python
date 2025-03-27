@@ -1,6 +1,9 @@
+from dataclasses import dataclass
+
 from schema_models.enumeration import Enumeration
 
 
+@dataclass
 class WarrantyScope(Enumeration):
     """
     A range of services that will be provided to a customer free of charge in case of a defect or malfunction of a product.

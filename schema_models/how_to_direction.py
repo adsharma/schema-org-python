@@ -1,3 +1,4 @@
+from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from pydantic import HttpUrl
@@ -7,6 +8,7 @@ from schema_models.list_item import ListItem
 from schema_models.media_object import MediaObject
 
 
+@dataclass
 class HowToDirection(ListItem):
     """
     A direction indicating a single action to do in the instructions for how to achieve a result.

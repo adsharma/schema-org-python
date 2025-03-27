@@ -1,6 +1,9 @@
+from dataclasses import dataclass
+
 from schema_models.legal_service import LegalService
 
 
+@dataclass
 class Attorney(LegalService):
     """
     Professional service: Attorney.

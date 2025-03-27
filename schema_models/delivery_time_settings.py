@@ -1,8 +1,10 @@
+from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from schema_models.structured_value import StructuredValue
 
 
+@dataclass
 class DeliveryTimeSettings(StructuredValue):
     """
     A DeliveryTimeSettings represents re-usable pieces of shipping information, relating to timing. It is designed for publication on an URL that may be referenced via the [[shippingSettingsLink]] property of an [[OfferShippingDetails]]. Several occurrences can be published, distinguished (and identified/referenced) by their different values for [[transitTimeLabel]].

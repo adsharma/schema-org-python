@@ -1,6 +1,9 @@
+from dataclasses import dataclass
+
 from schema_models.offer import Offer
 
 
+@dataclass
 class OfferForPurchase(Offer):
     """
     An [[OfferForPurchase]] in Schema.org represents an [[Offer]] to sell something, i.e. an [[Offer]] whose

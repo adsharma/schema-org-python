@@ -1,3 +1,4 @@
+from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from schema_models.cdcpmd_record import CDCPMDRecord
@@ -7,6 +8,7 @@ from schema_models.medical_procedure import MedicalProcedure
 from schema_models.medical_test import MedicalTest
 
 
+@dataclass
 class Hospital(CivicStructure):
     """
     A hospital.

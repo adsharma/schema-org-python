@@ -1,9 +1,11 @@
+from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from schema_models.bio_chem_entity import BioChemEntity
 from schema_models.defined_term import DefinedTerm
 
 
+@dataclass
 class MolecularEntity(BioChemEntity):
     """
     Any constitutionally or isotopically distinct atom, molecule, ion, ion pair, radical, radical ion, complex, conformer etc., identifiable as a separately distinguishable entity.

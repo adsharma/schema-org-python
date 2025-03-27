@@ -1,8 +1,10 @@
+from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from schema_models.reservation import Reservation
 
 
+@dataclass
 class ReservationPackage(Reservation):
     """
     A group of multiple reservations with common values for all sub-reservations.

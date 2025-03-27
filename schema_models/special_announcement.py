@@ -1,3 +1,4 @@
+from dataclasses import dataclass
 from datetime import date, datetime
 from typing import List, Optional, Union
 
@@ -11,6 +12,7 @@ from schema_models.thing import Thing
 from schema_models.web_content import WebContent
 
 
+@dataclass
 class SpecialAnnouncement(CreativeWork):
     """
     A SpecialAnnouncement combines a simple date-stamped textual information update

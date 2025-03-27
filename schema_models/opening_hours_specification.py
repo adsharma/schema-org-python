@@ -1,3 +1,4 @@
+from dataclasses import dataclass
 from datetime import date, datetime, time
 from typing import List, Optional, Union
 
@@ -5,6 +6,7 @@ from schema_models.day_of_week import DayOfWeek
 from schema_models.structured_value import StructuredValue
 
 
+@dataclass
 class OpeningHoursSpecification(StructuredValue):
     """
     A structured value providing information about the opening hours of a place or a certain service inside a place.

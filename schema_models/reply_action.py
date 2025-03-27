@@ -1,9 +1,11 @@
+from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from schema_models.comment import Comment
 from schema_models.communicate_action import CommunicateAction
 
 
+@dataclass
 class ReplyAction(CommunicateAction):
     """
     The act of responding to a question/message asked/sent by the object. Related to [[AskAction]].

@@ -1,3 +1,4 @@
+from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from schema_models.intangible import Intangible
@@ -5,6 +6,7 @@ from schema_models.organization import Organization
 from schema_models.person import Person
 
 
+@dataclass
 class Rating(Intangible):
     """
     A rating is an evaluation on a numeric scale, such as 1 to 5 stars.

@@ -1,9 +1,11 @@
+from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from schema_models.floor_plan import FloorPlan
 from schema_models.place import Place
 
 
+@dataclass
 class Residence(Place):
     """
     The place where a person lives.

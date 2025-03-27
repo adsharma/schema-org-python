@@ -1,6 +1,9 @@
+from dataclasses import dataclass
+
 from schema_models.interact_action import InteractAction
 
 
+@dataclass
 class RegisterAction(InteractAction):
     """
     The act of registering to be a user of a service, product or web page.

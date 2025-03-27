@@ -1,6 +1,9 @@
+from dataclasses import dataclass
+
 from schema_models.lodging_business import LodgingBusiness
 
 
+@dataclass
 class Campground(LodgingBusiness):
     """
     A camping site, campsite, or [[Campground]] is a place used for overnight stay in the outdoors, typically containing individual [[CampingPitch]] locations.

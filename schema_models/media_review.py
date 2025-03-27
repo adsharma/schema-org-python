@@ -1,3 +1,4 @@
+from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from pydantic import HttpUrl
@@ -10,6 +11,7 @@ from schema_models.review import Review
 from schema_models.web_page import WebPage
 
 
+@dataclass
 class MediaReview(Review):
     """
     A [[MediaReview]] is a more specialized form of Review dedicated to the evaluation of media content online, typically in the context of fact-checking and misinformation.

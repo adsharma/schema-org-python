@@ -1,3 +1,4 @@
+from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from schema_models.intangible import Intangible
@@ -6,6 +7,7 @@ from schema_models.occupational_experience_requirements import (
 )
 
 
+@dataclass
 class Occupation(Intangible):
     """
     A profession, may involve prolonged training and/or a formal qualification.

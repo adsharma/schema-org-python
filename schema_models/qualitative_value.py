@@ -1,3 +1,4 @@
+from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from schema_models.defined_term import DefinedTerm
@@ -6,6 +7,7 @@ from schema_models.measurement_type_enumeration import MeasurementTypeEnumeratio
 from schema_models.structured_value import StructuredValue
 
 
+@dataclass
 class QualitativeValue(Enumeration):
     """
     A predefined value for a product characteristic, e.g. the power cord plug type 'US' or the garment sizes 'S', 'M', 'L', and 'XL'.

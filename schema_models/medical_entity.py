@@ -1,8 +1,10 @@
+from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from schema_models.thing import Thing
 
 
+@dataclass
 class MedicalEntity(Thing):
     """
     The most generic type of entity related to health and the practice of medicine.

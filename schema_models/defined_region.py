@@ -1,9 +1,11 @@
+from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from schema_models.postal_code_range_specification import PostalCodeRangeSpecification
 from schema_models.structured_value import StructuredValue
 
 
+@dataclass
 class DefinedRegion(StructuredValue):
     """
     A DefinedRegion is a geographic area defined by potentially arbitrary (rather than political, administrative or natural geographical) criteria. Properties are provided for defining a region by reference to sets of postal codes.

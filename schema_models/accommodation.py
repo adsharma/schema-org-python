@@ -1,3 +1,4 @@
+from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from pydantic import HttpUrl
@@ -7,6 +8,7 @@ from schema_models.floor_plan import FloorPlan
 from schema_models.place import Place
 
 
+@dataclass
 class Accommodation(Place):
     """
     An accommodation is a place that can accommodate human beings, e.g. a hotel room, a camping pitch, or a meeting room. Many accommodations are for overnight stays, but this is not a mandatory requirement.

@@ -1,6 +1,9 @@
+from dataclasses import dataclass
+
 from schema_models.lodging_business import LodgingBusiness
 
 
+@dataclass
 class Hostel(LodgingBusiness):
     """
     A hostel - cheap accommodation, often in shared dormitories.

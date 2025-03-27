@@ -1,8 +1,10 @@
+from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from schema_models.event import Event
 
 
+@dataclass
 class ScreeningEvent(Event):
     """
     A screening of a movie or other video.

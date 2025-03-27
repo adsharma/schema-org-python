@@ -1,3 +1,4 @@
+from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from pydantic import HttpUrl
@@ -6,6 +7,7 @@ from schema_models.creative_work import CreativeWork
 from schema_models.speakable_specification import SpeakableSpecification
 
 
+@dataclass
 class Article(CreativeWork):
     """
     An article, such as a news article or piece of investigative report. Newspapers and magazines have articles of many different types and this is intended to cover them all.

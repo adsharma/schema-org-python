@@ -1,3 +1,4 @@
+from dataclasses import dataclass
 from datetime import date
 from typing import List, Optional, Union
 
@@ -8,6 +9,7 @@ from schema_models.product import Product
 from schema_models.thing import Thing
 
 
+@dataclass
 class Organization(Thing):
     """
     An organization such as a school, NGO, corporation, club, etc.

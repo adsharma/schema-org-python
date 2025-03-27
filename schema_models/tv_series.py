@@ -1,3 +1,4 @@
+from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from pydantic import HttpUrl
@@ -8,6 +9,7 @@ from schema_models.performing_group import PerformingGroup
 from schema_models.person import Person
 
 
+@dataclass
 class TVSeries(CreativeWork):
     """
     CreativeWorkSeries dedicated to TV broadcast and associated online delivery.

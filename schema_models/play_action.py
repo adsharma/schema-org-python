@@ -1,3 +1,4 @@
+from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from schema_models.action import Action
@@ -5,6 +6,7 @@ from schema_models.audience import Audience
 from schema_models.event import Event
 
 
+@dataclass
 class PlayAction(Action):
     """
     The act of playing/exercising/training/performing for enjoyment, leisure, recreation, competition or exercise.

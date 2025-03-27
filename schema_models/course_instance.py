@@ -1,3 +1,4 @@
+from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from pydantic import HttpUrl
@@ -6,6 +7,7 @@ from schema_models.event import Event
 from schema_models.person import Person
 
 
+@dataclass
 class CourseInstance(Event):
     """
     An instance of a [[Course]] which is distinct from other instances because it is offered at a different time or location or through different media or modes of study or to a specific section of students.

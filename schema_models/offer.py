@@ -1,3 +1,4 @@
+from dataclasses import dataclass
 from datetime import date, datetime, time
 from typing import List, Optional, Union
 
@@ -15,6 +16,7 @@ from schema_models.thing import Thing
 from schema_models.trip import Trip
 
 
+@dataclass
 class Offer(Intangible):
     """
     An offer to transfer some rights to an item or to provide a service — for example, an offer to sell tickets to an event, to rent the DVD of a movie, to stream a TV show over the internet, to repair a motorcycle, or to loan a book.

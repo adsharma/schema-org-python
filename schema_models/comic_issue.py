@@ -1,9 +1,11 @@
+from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from schema_models.person import Person
 from schema_models.publication_issue import PublicationIssue
 
 
+@dataclass
 class ComicIssue(PublicationIssue):
     """
     Individual comic issues are serially published as

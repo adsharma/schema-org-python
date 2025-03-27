@@ -1,9 +1,11 @@
+from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from schema_models.anatomical_structure import AnatomicalStructure
 from schema_models.vessel import Vessel
 
 
+@dataclass
 class Artery(Vessel):
     """
     A type of blood vessel that specifically carries blood away from the heart.

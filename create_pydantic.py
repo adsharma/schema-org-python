@@ -142,7 +142,7 @@ def generate_models(graph: Graph):
                         python_type = f"_{python_type}"
                     # Ditto for property names
                     if prop_name[0].isdigit() or prop_name.lower() in kwlist:
-                        prop_name = f"_{prop_name}"
+                        prop_name = f"{prop_name}_"
                     class_info["properties"].append((prop_name, python_type))
                 except Exception:
                     pass
@@ -182,6 +182,11 @@ def generate_models(graph: Graph):
 
             # Class definition
             if class_info["parent"]:
+                # Use the @dataclass decorator for subclasses
+                # Using @pydantic decorator results in a deep recursion
+                # and slow startup
+                f.write("from dataclasses import dataclass\n\n")
+                f.write("@dataclass\n")
                 f.write(f"class {class_name}({class_info['parent']}):\n")
             else:
                 if class_name == "Thing":

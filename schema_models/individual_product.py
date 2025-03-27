@@ -1,8 +1,10 @@
+from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from schema_models.product import Product
 
 
+@dataclass
 class IndividualProduct(Product):
     """
     A single, identifiable product instance (e.g. a laptop with a particular serial number).

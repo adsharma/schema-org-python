@@ -1,3 +1,4 @@
+from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from schema_models.creative_work import CreativeWork
@@ -9,6 +10,7 @@ from schema_models.quantitative_value import QuantitativeValue
 from schema_models.restricted_diet import RestrictedDiet
 
 
+@dataclass
 class Recipe(HowTo):
     """
     A sub property of instrument. The recipe/instructions used to perform the action.

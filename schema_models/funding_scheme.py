@@ -1,6 +1,9 @@
+from dataclasses import dataclass
+
 from schema_models.organization import Organization
 
 
+@dataclass
 class FundingScheme(Organization):
     """
     A FundingScheme combines organizational, project and policy aspects of grant-based funding

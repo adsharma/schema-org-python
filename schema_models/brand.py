@@ -1,3 +1,4 @@
+from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from pydantic import HttpUrl
@@ -5,6 +6,7 @@ from pydantic import HttpUrl
 from schema_models.intangible import Intangible
 
 
+@dataclass
 class Brand(Intangible):
     """
     A brand is a name used by an organization or business person for labeling a product, product group, or similar.

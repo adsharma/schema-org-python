@@ -1,3 +1,4 @@
+from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from pydantic import HttpUrl
@@ -12,6 +13,7 @@ from schema_models.person import Person
 from schema_models.video_object import VideoObject
 
 
+@dataclass
 class RadioSeries(CreativeWorkSeries):
     """
     CreativeWorkSeries dedicated to radio broadcast and associated online delivery.

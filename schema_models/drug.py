@@ -1,3 +1,4 @@
+from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from pydantic import HttpUrl
@@ -7,6 +8,7 @@ from schema_models.health_insurance_plan import HealthInsurancePlan
 from schema_models.substance import Substance
 
 
+@dataclass
 class Drug(Substance):
     """
     Specifying a drug or medicine used in a medication procedure.

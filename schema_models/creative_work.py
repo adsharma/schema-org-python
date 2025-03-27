@@ -1,3 +1,4 @@
+from dataclasses import dataclass
 from datetime import date, datetime
 from typing import List, Optional, Union
 
@@ -10,6 +11,7 @@ from schema_models.product import Product
 from schema_models.thing import Thing
 
 
+@dataclass
 class CreativeWork(Thing):
     """
     The most generic kind of creative work, including books, movies, photographs, software programs, etc.

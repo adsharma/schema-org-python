@@ -1,6 +1,9 @@
+from dataclasses import dataclass
+
 from schema_models.medical_clinic import MedicalClinic
 
 
+@dataclass
 class CovidTestingFacility(MedicalClinic):
     """
     A CovidTestingFacility is a [[MedicalClinic]] where testing for the COVID-19 Coronavirus

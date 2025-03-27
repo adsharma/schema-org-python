@@ -1,3 +1,4 @@
+from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from schema_models.organization import Organization
@@ -6,6 +7,7 @@ from schema_models.trade_action import TradeAction
 from schema_models.warranty_promise import WarrantyPromise
 
 
+@dataclass
 class BuyAction(TradeAction):
     """
     The act of giving money to a seller in exchange for goods or services rendered. An agent buys an object, product, or service from a seller for a price. Reciprocal of SellAction.

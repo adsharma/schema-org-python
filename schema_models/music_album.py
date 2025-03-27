@@ -1,3 +1,4 @@
+from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from schema_models.music_album_production_type import MusicAlbumProductionType
@@ -7,6 +8,7 @@ from schema_models.music_playlist import MusicPlaylist
 from schema_models.person import Person
 
 
+@dataclass
 class MusicAlbum(MusicPlaylist):
     """
     A collection of music tracks.

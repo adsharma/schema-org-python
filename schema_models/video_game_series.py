@@ -1,3 +1,4 @@
+from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from pydantic import HttpUrl
@@ -17,6 +18,7 @@ from schema_models.thing import Thing
 from schema_models.video_object import VideoObject
 
 
+@dataclass
 class VideoGameSeries(CreativeWorkSeries):
     """
     A video game series.

@@ -1,6 +1,9 @@
+from dataclasses import dataclass
+
 from schema_models.local_business import LocalBusiness
 
 
+@dataclass
 class LegalService(LocalBusiness):
     """
     A LegalService is a business that provides legally-oriented services, advice and representation, e.g. law firms.

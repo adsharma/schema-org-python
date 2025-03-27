@@ -1,8 +1,10 @@
+from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from schema_models.trip import Trip
 
 
+@dataclass
 class TrainTrip(Trip):
     """
     A trip on a commercial train line.

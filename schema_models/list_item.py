@@ -1,9 +1,11 @@
+from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from schema_models.intangible import Intangible
 from schema_models.thing import Thing
 
 
+@dataclass
 class ListItem(Intangible):
     """
     An list item, e.g. a step in a checklist or how-to description.

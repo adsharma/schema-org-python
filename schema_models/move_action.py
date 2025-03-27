@@ -1,9 +1,11 @@
+from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from schema_models.action import Action
 from schema_models.place import Place
 
 
+@dataclass
 class MoveAction(Action):
     """
     The act of an agent relocating to a place.

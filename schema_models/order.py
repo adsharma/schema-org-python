@@ -1,3 +1,4 @@
+from dataclasses import dataclass
 from datetime import date, datetime
 from typing import List, Optional, Union
 
@@ -10,6 +11,7 @@ from schema_models.person import Person
 from schema_models.product import Product
 
 
+@dataclass
 class Order(Intangible):
     """
     An order is a confirmation of a transaction (a receipt), which can contain multiple line items, each represented by an Offer that has been accepted by the customer.

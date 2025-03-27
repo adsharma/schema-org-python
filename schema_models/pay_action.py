@@ -1,3 +1,4 @@
+from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from schema_models.audience import Audience
@@ -7,6 +8,7 @@ from schema_models.person import Person
 from schema_models.trade_action import TradeAction
 
 
+@dataclass
 class PayAction(TradeAction):
     """
     An agent pays a price to a participant.

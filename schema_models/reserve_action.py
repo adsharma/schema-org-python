@@ -1,6 +1,9 @@
+from dataclasses import dataclass
+
 from schema_models.plan_action import PlanAction
 
 
+@dataclass
 class ReserveAction(PlanAction):
     """
     Reserving a concrete object.

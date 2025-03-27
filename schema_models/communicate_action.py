@@ -1,3 +1,4 @@
+from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from schema_models.audience import Audience
@@ -9,6 +10,7 @@ from schema_models.person import Person
 from schema_models.thing import Thing
 
 
+@dataclass
 class CommunicateAction(InteractAction):
     """
     The act of conveying information to another person via a communication medium (instrument) such as speech, email, or telephone conversation.

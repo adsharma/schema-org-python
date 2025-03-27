@@ -1,3 +1,4 @@
+from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from schema_models.comment import Comment
@@ -5,6 +6,7 @@ from schema_models.inform_action import InformAction
 from schema_models.rsvp_response_type import RsvpResponseType
 
 
+@dataclass
 class RsvpAction(InformAction):
     """
     The act of notifying an event organizer as to whether you expect to attend the event.

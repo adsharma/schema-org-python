@@ -1,3 +1,4 @@
+from dataclasses import dataclass
 from datetime import datetime
 from typing import List, Optional, Union
 
@@ -7,6 +8,7 @@ from schema_models.person import Person
 from schema_models.thing import Thing
 
 
+@dataclass
 class Reservation(Intangible):
     """
     Describes a reservation for travel, dining or an event. Some reservations require tickets.

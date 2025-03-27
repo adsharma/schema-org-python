@@ -1,8 +1,10 @@
+from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from schema_models.scholarly_article import ScholarlyArticle
 
 
+@dataclass
 class MedicalScholarlyArticle(ScholarlyArticle):
     """
     A scholarly article in the medical domain.

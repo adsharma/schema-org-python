@@ -1,3 +1,4 @@
+from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from schema_models.grant import Grant
@@ -5,6 +6,7 @@ from schema_models.organization import Organization
 from schema_models.person import Person
 
 
+@dataclass
 class MonetaryGrant(Grant):
     """
     A monetary grant.

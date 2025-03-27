@@ -1,6 +1,9 @@
+from dataclasses import dataclass
+
 from schema_models.offer import Offer
 
 
+@dataclass
 class OfferForLease(Offer):
     """
     An [[OfferForLease]] in Schema.org represents an [[Offer]] to lease out something, i.e. an [[Offer]] whose

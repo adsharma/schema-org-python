@@ -1,3 +1,4 @@
+from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from schema_models.creative_work_series import CreativeWorkSeries
@@ -8,6 +9,7 @@ from schema_models.person import Person
 from schema_models.video_object import VideoObject
 
 
+@dataclass
 class MovieSeries(CreativeWorkSeries):
     """
     A series of movies. Included movies can be indicated with the hasPart property.
