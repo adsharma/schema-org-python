@@ -1,9 +1,11 @@
+from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from schema_models.create_action import CreateAction
 from schema_models.language import Language
 
 
+@dataclass
 class WriteAction(CreateAction):
     """
     The act of authoring written creative content.

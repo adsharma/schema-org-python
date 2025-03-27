@@ -1,9 +1,11 @@
+from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from schema_models.medical_organization import MedicalOrganization
 from schema_models.physician import Physician
 
 
+@dataclass
 class IndividualPhysician(Physician):
     """
     An individual medical practitioner. For their official address use [[address]], for affiliations to hospitals use [[hospitalAffiliation]].

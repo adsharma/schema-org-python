@@ -1,8 +1,10 @@
+from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from schema_models.intangible import Intangible
 
 
+@dataclass
 class HealthPlanNetwork(Intangible):
     """
     A US-style health insurance plan network.

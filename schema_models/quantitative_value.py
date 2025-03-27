@@ -1,3 +1,4 @@
+from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from pydantic import HttpUrl
@@ -10,6 +11,7 @@ from schema_models.qualitative_value import QualitativeValue
 from schema_models.structured_value import StructuredValue
 
 
+@dataclass
 class QuantitativeValue(StructuredValue):
     """
     A point value or interval for product characteristics and other purposes.

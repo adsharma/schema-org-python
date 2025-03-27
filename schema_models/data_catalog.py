@@ -1,3 +1,4 @@
+from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from pydantic import HttpUrl
@@ -7,6 +8,7 @@ from schema_models.dataset import Dataset
 from schema_models.defined_term import DefinedTerm
 
 
+@dataclass
 class DataCatalog(CreativeWork):
     """
     A collection of datasets.

@@ -1,8 +1,10 @@
+from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from schema_models.product import Product
 
 
+@dataclass
 class SomeProducts(Product):
     """
     A placeholder for multiple similar products of the same kind.

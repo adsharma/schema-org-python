@@ -1,3 +1,4 @@
+from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from pydantic import HttpUrl
@@ -6,6 +7,7 @@ from schema_models.health_plan_network import HealthPlanNetwork
 from schema_models.intangible import Intangible
 
 
+@dataclass
 class HealthInsurancePlan(Intangible):
     """
     A US-style health insurance plan, including PPOs, EPOs, and HMOs.

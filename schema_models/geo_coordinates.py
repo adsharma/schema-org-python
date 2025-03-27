@@ -1,8 +1,10 @@
+from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from schema_models.structured_value import StructuredValue
 
 
+@dataclass
 class GeoCoordinates(StructuredValue):
     """
     The geographic coordinates of a place or event.

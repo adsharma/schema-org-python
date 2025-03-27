@@ -1,8 +1,10 @@
+from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from schema_models.medical_intangible import MedicalIntangible
 
 
+@dataclass
 class MedicalConditionStage(MedicalIntangible):
     """
     A stage of a medical condition, such as 'Stage IIIa'.

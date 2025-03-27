@@ -1,3 +1,4 @@
+from dataclasses import dataclass
 from datetime import date, datetime
 from typing import List, Optional, Union
 
@@ -10,6 +11,7 @@ from schema_models.merchant_return_policy_seasonal_override import (
 )
 
 
+@dataclass
 class MerchantReturnPolicy(Intangible):
     """
     A MerchantReturnPolicy provides information about product return policies associated with an [[Organization]], [[Product]], or [[Offer]].

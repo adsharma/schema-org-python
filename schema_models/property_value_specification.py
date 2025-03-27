@@ -1,9 +1,11 @@
+from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from schema_models.intangible import Intangible
 from schema_models.thing import Thing
 
 
+@dataclass
 class PropertyValueSpecification(Intangible):
     """
     A Property value specification.

@@ -1,9 +1,11 @@
+from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from schema_models.assess_action import AssessAction
 from schema_models.thing import Thing
 
 
+@dataclass
 class ChooseAction(AssessAction):
     """
     The act of expressing a preference from a set of options or a large or unbounded set of choices/options.

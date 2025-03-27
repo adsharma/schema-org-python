@@ -1,9 +1,11 @@
+from dataclasses import dataclass
 from datetime import date, datetime, time
 from typing import List, Optional, Union
 
 from schema_models.intangible import Intangible
 
 
+@dataclass
 class Schedule(Intangible):
     """
     A schedule defines a repeating time period used to describe a regularly occurring [[Event]]. At a minimum a schedule will specify [[repeatFrequency]] which describes the interval between occurrences of the event. Additional information can be provided to specify the schedule more precisely.

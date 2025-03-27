@@ -1,3 +1,4 @@
+from dataclasses import dataclass
 from datetime import date
 from typing import List, Optional, Union
 
@@ -6,6 +7,7 @@ from pydantic import HttpUrl
 from schema_models.product import Product
 
 
+@dataclass
 class Vehicle(Product):
     """
     A vehicle is a device that is designed or used to transport people or cargo over land, water, air, or through space.

@@ -1,3 +1,4 @@
+from dataclasses import dataclass
 from datetime import date, datetime
 from typing import List, Optional, Union
 
@@ -10,6 +11,7 @@ from schema_models.person import Person
 from schema_models.thing import Thing
 
 
+@dataclass
 class Invoice(Intangible):
     """
     A statement of the money due for goods or services; a bill.

@@ -1,8 +1,10 @@
+from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from schema_models.medical_entity import MedicalEntity
 
 
+@dataclass
 class MedicalProcedure(MedicalEntity):
     """
     A process of care used in either a diagnostic, therapeutic, preventive or palliative capacity that relies on invasive (surgical), non-invasive, or other techniques.

@@ -1,9 +1,11 @@
+from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from schema_models.administrative_area import AdministrativeArea
 from schema_models.medical_intangible import MedicalIntangible
 
 
+@dataclass
 class DrugStrength(MedicalIntangible):
     """
     A specific strength in which a medical drug is available in a specific country.

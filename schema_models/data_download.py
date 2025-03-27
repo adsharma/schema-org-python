@@ -1,3 +1,4 @@
+from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from pydantic import HttpUrl
@@ -7,6 +8,7 @@ from schema_models.measurement_method_enum import MeasurementMethodEnum
 from schema_models.media_object import MediaObject
 
 
+@dataclass
 class DataDownload(MediaObject):
     """
     All or part of a [[Dataset]] in downloadable form.

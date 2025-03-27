@@ -1,3 +1,4 @@
+from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from schema_models.distance import Distance
@@ -5,6 +6,7 @@ from schema_models.geo_coordinates import GeoCoordinates
 from schema_models.geo_shape import GeoShape
 
 
+@dataclass
 class GeoCircle(GeoShape):
     """
     A GeoCircle is a GeoShape representing a circular geographic area. As it is a GeoShape

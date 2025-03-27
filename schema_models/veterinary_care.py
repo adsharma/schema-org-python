@@ -1,6 +1,9 @@
+from dataclasses import dataclass
+
 from schema_models.medical_organization import MedicalOrganization
 
 
+@dataclass
 class VeterinaryCare(MedicalOrganization):
     """
     A vet's office.

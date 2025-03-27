@@ -1,3 +1,4 @@
+from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from pydantic import HttpUrl
@@ -8,6 +9,7 @@ from schema_models.language import Language
 from schema_models.tv_series import TVSeries
 
 
+@dataclass
 class TVEpisode(Episode):
     """
     A TV episode which can be part of a series or season.

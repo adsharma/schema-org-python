@@ -1,3 +1,4 @@
+from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from schema_models.diet import Diet
@@ -9,6 +10,7 @@ from schema_models.sports_event import SportsEvent
 from schema_models.sports_team import SportsTeam
 
 
+@dataclass
 class ExerciseAction(PlayAction):
     """
     The act of participating in exertive activity for the purposes of improving health and fitness.

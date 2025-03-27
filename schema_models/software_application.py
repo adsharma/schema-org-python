@@ -1,3 +1,4 @@
+from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from pydantic import HttpUrl
@@ -5,6 +6,7 @@ from pydantic import HttpUrl
 from schema_models.creative_work import CreativeWork
 
 
+@dataclass
 class SoftwareApplication(CreativeWork):
     """
     A software application.

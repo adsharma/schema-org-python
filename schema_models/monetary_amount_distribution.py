@@ -1,8 +1,10 @@
+from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from schema_models.quantitative_value_distribution import QuantitativeValueDistribution
 
 
+@dataclass
 class MonetaryAmountDistribution(QuantitativeValueDistribution):
     """
     A statistical distribution of monetary amounts.

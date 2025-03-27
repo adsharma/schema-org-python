@@ -1,6 +1,9 @@
+from dataclasses import dataclass
+
 from schema_models.transfer_action import TransferAction
 
 
+@dataclass
 class TakeAction(TransferAction):
     """
     The act of gaining ownership of an object from an origin. Reciprocal of GiveAction.

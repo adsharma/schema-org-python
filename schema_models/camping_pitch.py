@@ -1,6 +1,9 @@
+from dataclasses import dataclass
+
 from schema_models.accommodation import Accommodation
 
 
+@dataclass
 class CampingPitch(Accommodation):
     """
     A [[CampingPitch]] is an individual place for overnight stay in the outdoors, typically being part of a larger camping site, or [[Campground]].

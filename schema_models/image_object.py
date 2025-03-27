@@ -1,9 +1,11 @@
+from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from schema_models.media_object import MediaObject
 from schema_models.property_value import PropertyValue
 
 
+@dataclass
 class ImageObject(MediaObject):
     """
     An image file.

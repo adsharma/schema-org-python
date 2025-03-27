@@ -1,3 +1,4 @@
+from dataclasses import dataclass
 from datetime import date
 from typing import List, Optional, Union
 
@@ -11,6 +12,7 @@ from schema_models.product import Product
 from schema_models.thing import Thing
 
 
+@dataclass
 class Person(Thing):
     """
     A person (alive, dead, undead, or fictional).

@@ -1,6 +1,9 @@
+from dataclasses import dataclass
+
 from schema_models.communicate_action import CommunicateAction
 
 
+@dataclass
 class CheckInAction(CommunicateAction):
     """
     The act of an agent communicating (service provider, social media, etc) their arrival by registering/confirming for a previously reserved service (e.g. flight check-in) or at a place (e.g. hotel), possibly resulting in a result (boarding pass, etc).

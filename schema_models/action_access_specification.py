@@ -1,3 +1,4 @@
+from dataclasses import dataclass
 from datetime import date, datetime, time
 from typing import List, Optional, Union
 
@@ -10,6 +11,7 @@ from schema_models.place import Place
 from schema_models.thing import Thing
 
 
+@dataclass
 class ActionAccessSpecification(Intangible):
     """
     A set of requirements that must be fulfilled in order to perform an Action.

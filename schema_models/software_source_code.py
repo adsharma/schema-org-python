@@ -1,3 +1,4 @@
+from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from pydantic import HttpUrl
@@ -7,6 +8,7 @@ from schema_models.creative_work import CreativeWork
 from schema_models.software_application import SoftwareApplication
 
 
+@dataclass
 class SoftwareSourceCode(CreativeWork):
     """
     Computer programming source code. Example: Full (compile ready) solutions, code snippet samples, scripts, templates.

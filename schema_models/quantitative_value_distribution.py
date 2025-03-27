@@ -1,9 +1,11 @@
+from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from schema_models.duration import Duration
 from schema_models.structured_value import StructuredValue
 
 
+@dataclass
 class QuantitativeValueDistribution(StructuredValue):
     """
     A statistical distribution of values.

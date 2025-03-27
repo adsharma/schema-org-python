@@ -1,9 +1,11 @@
+from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from schema_models.communicate_action import CommunicateAction
 from schema_models.event import Event
 
 
+@dataclass
 class InviteAction(CommunicateAction):
     """
     The act of asking someone to attend an event. Reciprocal of RsvpAction.

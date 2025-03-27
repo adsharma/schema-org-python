@@ -1,3 +1,4 @@
+from dataclasses import dataclass
 from datetime import date, datetime
 from typing import List, Optional, Union
 
@@ -8,6 +9,7 @@ from schema_models.performing_group import PerformingGroup
 from schema_models.person import Person
 
 
+@dataclass
 class CreativeWorkSeason(CreativeWork):
     """
     A media season, e.g. TV, radio, video game etc.

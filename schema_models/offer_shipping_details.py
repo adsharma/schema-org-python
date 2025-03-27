@@ -1,3 +1,4 @@
+from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from pydantic import HttpUrl
@@ -9,6 +10,7 @@ from schema_models.monetary_amount import MonetaryAmount
 from schema_models.structured_value import StructuredValue
 
 
+@dataclass
 class OfferShippingDetails(StructuredValue):
     """
     OfferShippingDetails represents information about shipping destinations.

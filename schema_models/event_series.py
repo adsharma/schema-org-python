@@ -1,6 +1,9 @@
+from dataclasses import dataclass
+
 from schema_models.event import Event
 
 
+@dataclass
 class EventSeries(Event):
     """
     A series of [[Event]]s. Included events can relate with the series using the [[superEvent]] property.

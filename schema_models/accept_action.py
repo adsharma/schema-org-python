@@ -1,6 +1,9 @@
+from dataclasses import dataclass
+
 from schema_models.allocate_action import AllocateAction
 
 
+@dataclass
 class AcceptAction(AllocateAction):
     """
     The act of committing to/adopting an object.

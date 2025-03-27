@@ -1,9 +1,11 @@
+from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from schema_models.person import Person
 from schema_models.transfer_action import TransferAction
 
 
+@dataclass
 class LendAction(TransferAction):
     """
     The act of providing an object under an agreement that it will be returned at a later date. Reciprocal of BorrowAction.

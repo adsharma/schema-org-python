@@ -1,3 +1,4 @@
+from dataclasses import dataclass
 from datetime import datetime
 from typing import List, Optional, Union
 
@@ -5,6 +6,7 @@ from schema_models.place import Place
 from schema_models.reservation import Reservation
 
 
+@dataclass
 class RentalCarReservation(Reservation):
     """
     A reservation for a rental car.

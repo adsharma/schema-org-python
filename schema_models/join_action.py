@@ -1,9 +1,11 @@
+from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from schema_models.event import Event
 from schema_models.interact_action import InteractAction
 
 
+@dataclass
 class JoinAction(InteractAction):
     """
     An agent joins an event/group with participants/friends at a location.

@@ -1,6 +1,9 @@
+from dataclasses import dataclass
+
 from schema_models.media_enumeration import MediaEnumeration
 
 
+@dataclass
 class IPTCDigitalSourceEnumeration(MediaEnumeration):
     """
     <a href="https://www.iptc.org/">IPTC</a> "Digital Source" codes for use with the [[digitalSourceType]] property, providing information about the source for a digital media object.

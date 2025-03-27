@@ -1,3 +1,4 @@
+from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from schema_models.audience import Audience
@@ -8,6 +9,7 @@ from schema_models.price_specification import PriceSpecification
 from schema_models.transfer_action import TransferAction
 
 
+@dataclass
 class DonateAction(TransferAction):
     """
     The act of providing goods, services, or money without compensation, often for philanthropic reasons.

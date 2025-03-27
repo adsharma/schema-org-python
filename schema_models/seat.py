@@ -1,8 +1,10 @@
+from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from schema_models.intangible import Intangible
 
 
+@dataclass
 class Seat(Intangible):
     """
     Used to describe a seat, such as a reserved seat in an event reservation.

@@ -1,3 +1,4 @@
+from dataclasses import dataclass
 from datetime import datetime, time
 from typing import List, Optional, Union
 
@@ -9,6 +10,7 @@ from schema_models.virtual_location import VirtualLocation
 from schema_models.web_site import WebSite
 
 
+@dataclass
 class InteractionCounter(StructuredValue):
     """
     A summary of how users have interacted with this CreativeWork. In most cases, authors will use a subtype to specify the specific type of interaction.

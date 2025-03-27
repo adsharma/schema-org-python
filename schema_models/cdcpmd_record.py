@@ -1,9 +1,11 @@
+from dataclasses import dataclass
 from datetime import date, datetime
 from typing import List, Optional, Union
 
 from schema_models.structured_value import StructuredValue
 
 
+@dataclass
 class CDCPMDRecord(StructuredValue):
     """
     A CDCPMDRecord is a data structure representing a record in a CDC tabular data format

@@ -1,3 +1,4 @@
+from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from schema_models.creative_work import CreativeWork
@@ -5,6 +6,7 @@ from schema_models.organization import Organization
 from schema_models.person import Person
 
 
+@dataclass
 class Diet(CreativeWork):
     """
     A strategy of regulating the intake of food to achieve or maintain a specific health-related goal.

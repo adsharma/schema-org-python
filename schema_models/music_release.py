@@ -1,3 +1,4 @@
+from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from schema_models.duration import Duration
@@ -8,6 +9,7 @@ from schema_models.organization import Organization
 from schema_models.person import Person
 
 
+@dataclass
 class MusicRelease(MusicPlaylist):
     """
     A MusicRelease is a specific release of a music album.

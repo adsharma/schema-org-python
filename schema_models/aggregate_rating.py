@@ -1,9 +1,11 @@
+from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from schema_models.rating import Rating
 from schema_models.thing import Thing
 
 
+@dataclass
 class AggregateRating(Rating):
     """
     The average rating based on multiple ratings or reviews.

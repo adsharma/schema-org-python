@@ -1,8 +1,10 @@
+from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from schema_models.action import Action
 
 
+@dataclass
 class SearchAction(Action):
     """
     The act of searching for an object.

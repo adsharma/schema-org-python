@@ -1,9 +1,11 @@
+from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from schema_models.action import Action
 from schema_models.thing import Thing
 
 
+@dataclass
 class UpdateAction(Action):
     """
     The act of managing by changing/editing the state of the object.

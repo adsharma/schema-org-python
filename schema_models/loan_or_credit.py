@@ -1,3 +1,4 @@
+from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from pydantic import HttpUrl
@@ -10,6 +11,7 @@ from schema_models.repayment_specification import RepaymentSpecification
 from schema_models.thing import Thing
 
 
+@dataclass
 class LoanOrCredit(FinancialProduct):
     """
     A financial product for the loaning of an amount of money, or line of credit, under agreed terms and charges.

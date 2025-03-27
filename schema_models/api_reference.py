@@ -1,8 +1,10 @@
+from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from schema_models.tech_article import TechArticle
 
 
+@dataclass
 class APIReference(TechArticle):
     """
     Reference documentation for application programming interfaces (APIs).

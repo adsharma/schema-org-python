@@ -1,3 +1,4 @@
+from dataclasses import dataclass
 from datetime import time
 from typing import List, Optional, Union
 
@@ -5,6 +6,7 @@ from schema_models.opening_hours_specification import OpeningHoursSpecification
 from schema_models.structured_value import StructuredValue
 
 
+@dataclass
 class ShippingDeliveryTime(StructuredValue):
     """
     ShippingDeliveryTime provides various pieces of information about delivery times for shipping.

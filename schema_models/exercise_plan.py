@@ -1,3 +1,4 @@
+from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from schema_models.duration import Duration
@@ -6,6 +7,7 @@ from schema_models.physical_activity import PhysicalActivity
 from schema_models.quantitative_value import QuantitativeValue
 
 
+@dataclass
 class ExercisePlan(PhysicalActivity):
     """
     A sub property of instrument. The exercise plan used on this action.

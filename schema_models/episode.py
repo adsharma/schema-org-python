@@ -1,3 +1,4 @@
+from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from schema_models.creative_work import CreativeWork
@@ -6,6 +7,7 @@ from schema_models.performing_group import PerformingGroup
 from schema_models.person import Person
 
 
+@dataclass
 class Episode(CreativeWork):
     """
     A media episode (e.g. TV, radio, video game) which can be part of a series or season.

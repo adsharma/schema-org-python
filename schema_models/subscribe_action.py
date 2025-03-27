@@ -1,6 +1,9 @@
+from dataclasses import dataclass
+
 from schema_models.interact_action import InteractAction
 
 
+@dataclass
 class SubscribeAction(InteractAction):
     """
     The act of forming a personal connection with someone/something (object) unidirectionally/asymmetrically to get updates pushed to.

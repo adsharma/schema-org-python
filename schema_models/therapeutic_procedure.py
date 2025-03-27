@@ -1,3 +1,4 @@
+from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from schema_models.dose_schedule import DoseSchedule
@@ -6,6 +7,7 @@ from schema_models.medical_entity import MedicalEntity
 from schema_models.medical_procedure import MedicalProcedure
 
 
+@dataclass
 class TherapeuticProcedure(MedicalProcedure):
     """
     A medical procedure intended primarily for therapeutic purposes, aimed at improving a health condition.

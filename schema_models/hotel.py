@@ -1,6 +1,9 @@
+from dataclasses import dataclass
+
 from schema_models.lodging_business import LodgingBusiness
 
 
+@dataclass
 class Hotel(LodgingBusiness):
     """
     A hotel is an establishment that provides lodging paid on a short-term basis (source: Wikipedia, the free encyclopedia, see http://en.wikipedia.org/wiki/Hotel).

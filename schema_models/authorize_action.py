@@ -1,3 +1,4 @@
+from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from schema_models.allocate_action import AllocateAction
@@ -7,6 +8,7 @@ from schema_models.organization import Organization
 from schema_models.person import Person
 
 
+@dataclass
 class AuthorizeAction(AllocateAction):
     """
     The act of granting permission to an object.

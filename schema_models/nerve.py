@@ -1,3 +1,4 @@
+from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from schema_models.anatomical_structure import AnatomicalStructure
@@ -5,6 +6,7 @@ from schema_models.brain_structure import BrainStructure
 from schema_models.superficial_anatomy import SuperficialAnatomy
 
 
+@dataclass
 class Nerve(AnatomicalStructure):
     """
     The underlying innervation associated with the muscle.

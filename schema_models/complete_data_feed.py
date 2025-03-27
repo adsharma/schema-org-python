@@ -1,6 +1,9 @@
+from dataclasses import dataclass
+
 from schema_models.data_feed import DataFeed
 
 
+@dataclass
 class CompleteDataFeed(DataFeed):
     """
     A [[CompleteDataFeed]] is a [[DataFeed]] whose standard representation includes content for every item currently in the feed.

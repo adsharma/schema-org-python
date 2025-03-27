@@ -1,9 +1,11 @@
+from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from schema_models.comment import Comment
 from schema_models.communicate_action import CommunicateAction
 
 
+@dataclass
 class CommentAction(CommunicateAction):
     """
     The act of generating a comment about a subject.

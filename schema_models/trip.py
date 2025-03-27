@@ -1,3 +1,4 @@
+from dataclasses import dataclass
 from datetime import datetime, time
 from typing import List, Optional, Union
 
@@ -8,6 +9,7 @@ from schema_models.person import Person
 from schema_models.place import Place
 
 
+@dataclass
 class Trip(Intangible):
     """
     A trip or journey. An itinerary of visits to one or more places.

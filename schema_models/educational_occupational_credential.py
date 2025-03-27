@@ -1,3 +1,4 @@
+from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from pydantic import HttpUrl
@@ -8,6 +9,7 @@ from schema_models.defined_term import DefinedTerm
 from schema_models.organization import Organization
 
 
+@dataclass
 class EducationalOccupationalCredential(CreativeWork):
     """
     An educational or occupational credential. A diploma, academic degree, certification, qualification, badge, etc., that may be awarded to a person or other entity that meets the requirements defined by the credentialer.

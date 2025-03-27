@@ -1,3 +1,4 @@
+from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from schema_models.bio_chem_entity import BioChemEntity
@@ -10,6 +11,7 @@ from schema_models.person import Person
 from schema_models.product import Product
 
 
+@dataclass
 class Grant(Intangible):
     """
     A grant, typically financial or otherwise quantifiable, of resources. Typically a [[funder]] sponsors some [[MonetaryAmount]] to an [[Organization]] or [[Person]],

@@ -1,6 +1,9 @@
+from dataclasses import dataclass
+
 from schema_models.medical_indication import MedicalIndication
 
 
+@dataclass
 class TreatmentIndication(MedicalIndication):
     """
     An indication for treating an underlying condition, symptom, etc.

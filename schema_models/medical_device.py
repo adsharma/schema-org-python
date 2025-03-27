@@ -1,9 +1,11 @@
+from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from schema_models.medical_contraindication import MedicalContraindication
 from schema_models.medical_entity import MedicalEntity
 
 
+@dataclass
 class MedicalDevice(MedicalEntity):
     """
     Any object used in a medical capacity, such as to diagnose or treat a patient.

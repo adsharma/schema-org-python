@@ -1,3 +1,4 @@
+from dataclasses import dataclass
 from datetime import datetime
 from typing import List, Optional, Union
 
@@ -8,6 +9,7 @@ from schema_models.defined_term import DefinedTerm
 from schema_models.property import Property
 
 
+@dataclass
 class Dataset(CreativeWork):
     """
     A dataset contained in this catalog.

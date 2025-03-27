@@ -1,3 +1,4 @@
+from dataclasses import dataclass
 from datetime import datetime, time
 from typing import List, Optional, Union
 
@@ -5,6 +6,7 @@ from schema_models.qualitative_value import QualitativeValue
 from schema_models.reservation import Reservation
 
 
+@dataclass
 class LodgingReservation(Reservation):
     """
     A reservation for lodging at a hotel, motel, inn, etc.

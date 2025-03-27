@@ -1,6 +1,9 @@
+from dataclasses import dataclass
+
 from schema_models.loan_or_credit import LoanOrCredit
 
 
+@dataclass
 class CreditCard(LoanOrCredit):
     """
     A card payment method of a particular brand or name.  Used to mark up a particular payment method and/or the financial product/service that supplies the card account.

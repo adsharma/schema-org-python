@@ -1,6 +1,9 @@
+from dataclasses import dataclass
+
 from schema_models.project import Project
 
 
+@dataclass
 class FundingAgency(Project):
     """
     A FundingAgency is an organization that implements one or more [[FundingScheme]]s and manages

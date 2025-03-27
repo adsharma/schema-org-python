@@ -1,3 +1,4 @@
+from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from schema_models.creative_work import CreativeWork
@@ -6,6 +7,7 @@ from schema_models.music_playlist import MusicPlaylist
 from schema_models.person import Person
 
 
+@dataclass
 class MusicRecording(CreativeWork):
     """
     A music recording (track), usually a single song.

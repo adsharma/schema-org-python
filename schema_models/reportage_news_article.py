@@ -1,6 +1,9 @@
+from dataclasses import dataclass
+
 from schema_models.news_article import NewsArticle
 
 
+@dataclass
 class ReportageNewsArticle(NewsArticle):
     """
     The [[ReportageNewsArticle]] type is a subtype of [[NewsArticle]] representing

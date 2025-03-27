@@ -1,3 +1,4 @@
+from dataclasses import dataclass
 from datetime import datetime
 from typing import List, Optional, Union
 
@@ -10,6 +11,7 @@ from schema_models.trip import Trip
 from schema_models.vehicle import Vehicle
 
 
+@dataclass
 class Flight(Trip):
     """
     An airline flight.

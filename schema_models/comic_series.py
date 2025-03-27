@@ -1,6 +1,9 @@
+from dataclasses import dataclass
+
 from schema_models.periodical import Periodical
 
 
+@dataclass
 class ComicSeries(Periodical):
     """
     A sequential publication of comic stories under a

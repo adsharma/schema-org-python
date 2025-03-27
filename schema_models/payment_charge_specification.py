@@ -1,3 +1,4 @@
+from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from schema_models.delivery_method import DeliveryMethod
@@ -5,6 +6,7 @@ from schema_models.payment_method import PaymentMethod
 from schema_models.price_specification import PriceSpecification
 
 
+@dataclass
 class PaymentChargeSpecification(PriceSpecification):
     """
     The costs of settling the payment using a particular payment method.

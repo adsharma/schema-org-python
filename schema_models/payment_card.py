@@ -1,9 +1,11 @@
+from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from schema_models.financial_product import FinancialProduct
 from schema_models.monetary_amount import MonetaryAmount
 
 
+@dataclass
 class PaymentCard(FinancialProduct):
     """
     A payment method using a credit, debit, store or other card to associate the payment with an account.

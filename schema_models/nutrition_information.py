@@ -1,3 +1,4 @@
+from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from schema_models.energy import Energy
@@ -5,6 +6,7 @@ from schema_models.mass import Mass
 from schema_models.structured_value import StructuredValue
 
 
+@dataclass
 class NutritionInformation(StructuredValue):
     """
     Nutritional information about the recipe.

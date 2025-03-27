@@ -1,9 +1,11 @@
+from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from schema_models.intangible import Intangible
 from schema_models.product import Product
 
 
+@dataclass
 class OrderItem(Intangible):
     """
     An order item is a line of an order. It includes the quantity and shipping details of a bought offer.

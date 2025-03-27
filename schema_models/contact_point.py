@@ -1,3 +1,4 @@
+from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from schema_models.administrative_area import AdministrativeArea
@@ -10,6 +11,7 @@ from schema_models.product import Product
 from schema_models.structured_value import StructuredValue
 
 
+@dataclass
 class ContactPoint(StructuredValue):
     """
     A contact point for a person or organization.

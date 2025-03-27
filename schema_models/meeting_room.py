@@ -1,6 +1,9 @@
+from dataclasses import dataclass
+
 from schema_models.room import Room
 
 
+@dataclass
 class MeetingRoom(Room):
     """
     A meeting room, conference room, or conference hall is a room provided for singular events such as business conferences and meetings (source: Wikipedia, the free encyclopedia, see <a href="http://en.wikipedia.org/wiki/Conference_hall">http://en.wikipedia.org/wiki/Conference_hall</a>).

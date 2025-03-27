@@ -1,3 +1,4 @@
+from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from pydantic import HttpUrl
@@ -6,6 +7,7 @@ from schema_models.taxon import Taxon
 from schema_models.thing import Thing
 
 
+@dataclass
 class BioChemEntity(Thing):
     """
     Any biological, chemical, or biochemical thing. For example: a protein; a gene; a chemical; a synthetic chemical.

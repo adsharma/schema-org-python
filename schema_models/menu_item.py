@@ -1,3 +1,4 @@
+from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from schema_models.demand import Demand
@@ -5,6 +6,7 @@ from schema_models.intangible import Intangible
 from schema_models.offer import Offer
 
 
+@dataclass
 class MenuItem(Intangible):
     """
     A food or drink item listed in a menu or menu section.
