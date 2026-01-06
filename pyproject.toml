@@ -10,6 +10,9 @@ description = "Schema.org schemas as pydantic models"
 [tool.poetry.dependencies]
 python = "^3.9"
 fquery = "^0.4"
+requests = "^2.32.5"
+rdflib = "^7.5.0"
+autoflake = "^2.3.1"
 
 [tool.poetry.group.dev-dependencies.dependencies]
 pytest = "^7.1.2"
