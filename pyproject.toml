@@ -6,7 +6,22 @@ build-backend = "poetry.core.masonry.api"
 name = "schema-org-python"
 version = "0.1.0"
 description = "Schema.org schemas as pydantic models"
+authors = ["Arun Sharma <arun@sharma-home.net>"]
+license = "MIT"
+readme = "README.md"
+homepage = "https://github.com/adsharma/schema-org-python"
+repository = "https://github.com/adsharma/schema-org-python"
+keywords = ["schema.org", "pydantic", "structured-data", "json-ld", "rdf", "models"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Topic :: Internet :: WWW/HTTP :: Dynamic Content",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
 packages = [{ include = "schema_models" }]
+
+[tool.poetry.urls]
+"Bug Tracker" = "https://github.com/adsharma/schema-org-python/issues"
 
 [tool.poetry.dependencies]
 python = "^3.9"
