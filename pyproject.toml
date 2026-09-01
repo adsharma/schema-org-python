@@ -25,6 +25,7 @@ packages = [{ include = "schema_models" }]
 
 [tool.poetry.dependencies]
 python = "^3.9"
+pydantic = "^2.0"
 fquery = "^0.4"
 requests = "^2.32.5"
 rdflib = "^7.5.0"
