@@ -4,7 +4,7 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poetry]
 name = "schema-org-python"
-version = "0.1.0"
+version = "0.1.1"
 description = "Schema.org schemas as pydantic models"
 authors = ["Arun Sharma <arun@sharma-home.net>"]
 license = "MIT"
