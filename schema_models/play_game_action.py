@@ -2,7 +2,6 @@ from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from schema_models.consume_action import ConsumeAction
-from schema_models.game_availability_enumeration import GameAvailabilityEnumeration
 
 
 @dataclass
@@ -13,8 +12,8 @@ class PlayGameAction(ConsumeAction):
 
     gameAvailabilityType: Optional[
         Union[
-            GameAvailabilityEnumeration,
-            List[GameAvailabilityEnumeration],
+            "GameAvailabilityEnumeration",
+            List["GameAvailabilityEnumeration"],
             str,
             List[str],
         ]

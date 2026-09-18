@@ -2,8 +2,6 @@ from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from schema_models.action import Action
-from schema_models.action_access_specification import ActionAccessSpecification
-from schema_models.offer import Offer
 
 
 @dataclass
@@ -12,7 +10,7 @@ class ConsumeAction(Action):
     The act of ingesting information/resources/food.
     """
 
-    expectsAcceptanceOf: Optional[Union[Offer, List[Offer]]] = None
     actionAccessibilityRequirement: Optional[
-        Union[ActionAccessSpecification, List[ActionAccessSpecification]]
+        Union["ActionAccessSpecification", List["ActionAccessSpecification"]]
     ] = None
+    expectsAcceptanceOf: Optional[Union["Offer", List["Offer"]]] = None

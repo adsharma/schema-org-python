@@ -3,9 +3,7 @@ from typing import List, Optional, Union
 
 from pydantic import HttpUrl
 
-from schema_models.alignment_object import AlignmentObject
 from schema_models.creative_work import CreativeWork
-from schema_models.defined_term import DefinedTerm
 
 
 @dataclass
@@ -18,18 +16,24 @@ class LearningResource(CreativeWork):
     [[EducationEvent]] serves a similar purpose for event-like things (e.g. a [[Trip]]). A [[LearningResource]] may be created as a result of an [[EducationEvent]], for example by recording one.
     """
 
-    educationalUse: Optional[Union[str, List[str], DefinedTerm, List[DefinedTerm]]] = (
-        None
-    )
-    assesses: Optional[Union[DefinedTerm, List[DefinedTerm], str, List[str]]] = None
-    educationalLevel: Optional[
-        Union[str, List[str], HttpUrl, List[HttpUrl], DefinedTerm, List[DefinedTerm]]
-    ] = None
-    educationalAlignment: Optional[Union[AlignmentObject, List[AlignmentObject]]] = None
-    teaches: Optional[Union[str, List[str], DefinedTerm, List[DefinedTerm]]] = None
+    assesses: Optional[Union["DefinedTerm", List["DefinedTerm"], str, List[str]]] = None
     competencyRequired: Optional[
-        Union[str, List[str], HttpUrl, List[HttpUrl], DefinedTerm, List[DefinedTerm]]
+        Union[
+            "DefinedTerm", List["DefinedTerm"], str, List[str], HttpUrl, List[HttpUrl]
+        ]
+    ] = None
+    educationalAlignment: Optional[
+        Union["AlignmentObject", List["AlignmentObject"]]
+    ] = None
+    educationalLevel: Optional[
+        Union[
+            "DefinedTerm", List["DefinedTerm"], str, List[str], HttpUrl, List[HttpUrl]
+        ]
+    ] = None
+    educationalUse: Optional[
+        Union["DefinedTerm", List["DefinedTerm"], str, List[str]]
     ] = None
     learningResourceType: Optional[
-        Union[str, List[str], DefinedTerm, List[DefinedTerm]]
+        Union["DefinedTerm", List["DefinedTerm"], str, List[str]]
     ] = None
+    teaches: Optional[Union["DefinedTerm", List["DefinedTerm"], str, List[str]]] = None

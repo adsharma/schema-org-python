@@ -2,6 +2,7 @@ from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from schema_models.duration import Duration
+from schema_models.quantitative_value import QuantitativeValue
 from schema_models.structured_value import StructuredValue
 
 
@@ -11,9 +12,11 @@ class QuantitativeValueDistribution(StructuredValue):
     A statistical distribution of values.
     """
 
-    duration: Optional[Union[Duration, List[Duration]]] = None
+    duration: Optional[
+        Union[Duration, List[Duration], QuantitativeValue, List[QuantitativeValue]]
+    ] = None
+    median: Optional[Union[float, List[float]]] = None
     percentile10: Optional[Union[float, List[float]]] = None
     percentile25: Optional[Union[float, List[float]]] = None
-    percentile90: Optional[Union[float, List[float]]] = None
     percentile75: Optional[Union[float, List[float]]] = None
-    median: Optional[Union[float, List[float]]] = None
+    percentile90: Optional[Union[float, List[float]]] = None

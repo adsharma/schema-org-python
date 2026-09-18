@@ -12,13 +12,13 @@ class LymphaticVessel(Vessel):
     A type of blood vessel that specifically carries lymph fluid unidirectionally toward the heart.
     """
 
+    originatesFrom: Optional[Union[Vessel, List[Vessel]]] = None
     regionDrained: Optional[
         Union[
-            AnatomicalSystem,
-            List[AnatomicalSystem],
             AnatomicalStructure,
             List[AnatomicalStructure],
+            AnatomicalSystem,
+            List[AnatomicalSystem],
         ]
     ] = None
     runsTo: Optional[Union[Vessel, List[Vessel]]] = None
-    originatesFrom: Optional[Union[Vessel, List[Vessel]]] = None

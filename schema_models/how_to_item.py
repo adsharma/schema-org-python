@@ -12,11 +12,11 @@ class HowToItem(ListItem):
 
     requiredQuantity: Optional[
         Union[
+            float,
+            List[float],
             "QuantitativeValue",
             List["QuantitativeValue"],
             str,
             List[str],
-            float,
-            List[float],
         ]
     ] = None

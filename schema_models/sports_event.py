@@ -10,16 +10,17 @@ from schema_models.person import Person
 @dataclass
 class SportsEvent(Event):
     """
-    Event type: Sports event.
+    A sub property of location. The sports event where this action occurred.
     """
 
-    homeTeam: Optional[
+    awayTeam: Optional[
         Union[Person, List[Person], "SportsTeam", List["SportsTeam"]]
     ] = None
     competitor: Optional[
         Union[Person, List[Person], "SportsTeam", List["SportsTeam"]]
     ] = None
-    awayTeam: Optional[
+    homeTeam: Optional[
         Union[Person, List[Person], "SportsTeam", List["SportsTeam"]]
     ] = None
+    referee: Optional[Union[Person, List[Person]]] = None
     sport: Optional[Union[str, List[str], HttpUrl, List[HttpUrl]]] = None

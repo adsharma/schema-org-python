@@ -1,10 +1,10 @@
 from dataclasses import dataclass
 
-from schema_models.people_audience import PeopleAudience
+from schema_models.audience import Audience
 
 
 @dataclass
-class MedicalAudience(PeopleAudience):
+class MedicalAudience(Audience):
     """
     Medical audience for page.
     """

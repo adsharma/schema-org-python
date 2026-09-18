@@ -8,9 +8,9 @@ from schema_models.thing import Thing
 @dataclass
 class AggregateRating(Rating):
     """
-    The average rating based on multiple ratings or reviews.
+    The overall rating, based on a collection of reviews or ratings, of the item.
     """
 
-    reviewCount: Optional[Union[int, List[int]]] = None
-    ratingCount: Optional[Union[int, List[int]]] = None
     itemReviewed: Optional[Union[Thing, List[Thing]]] = None
+    ratingCount: Optional[Union[int, List[int]]] = None
+    reviewCount: Optional[Union[int, List[int]]] = None

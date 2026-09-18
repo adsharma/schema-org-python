@@ -16,26 +16,26 @@ class UnitPriceSpecification(PriceSpecification):
     The price asked for a given offer by the respective organization or person.
     """
 
-    unitCode: Optional[Union[str, List[str], HttpUrl, List[HttpUrl]]] = None
-    unitText: Optional[Union[str, List[str]]] = None
     billingDuration: Optional[
         Union[
+            Duration,
+            List[Duration],
             float,
             List[float],
             QuantitativeValue,
             List[QuantitativeValue],
-            Duration,
-            List[Duration],
         ]
     ] = None
+    billingIncrement: Optional[Union[float, List[float]]] = None
     billingStart: Optional[Union[float, List[float]]] = None
-    referenceQuantity: Optional[Union[QuantitativeValue, List[QuantitativeValue]]] = (
-        None
-    )
-    priceType: Optional[
-        Union[PriceTypeEnumeration, List[PriceTypeEnumeration], str, List[str]]
-    ] = None
     priceComponentType: Optional[
         Union[PriceComponentTypeEnumeration, List[PriceComponentTypeEnumeration]]
     ] = None
-    billingIncrement: Optional[Union[float, List[float]]] = None
+    priceType: Optional[
+        Union[PriceTypeEnumeration, List[PriceTypeEnumeration], str, List[str]]
+    ] = None
+    referenceQuantity: Optional[Union[QuantitativeValue, List[QuantitativeValue]]] = (
+        None
+    )
+    unitCode: Optional[Union[str, List[str], HttpUrl, List[HttpUrl]]] = None
+    unitText: Optional[Union[str, List[str]]] = None

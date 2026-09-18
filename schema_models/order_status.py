@@ -6,5 +6,5 @@ from schema_models.status_enumeration import StatusEnumeration
 @dataclass
 class OrderStatus(StatusEnumeration):
     """
-    Enumerated status values for Order.
+    The current status of the order.
     """

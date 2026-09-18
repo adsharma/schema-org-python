@@ -16,6 +16,6 @@ class BorrowAction(TransferAction):
     * [[LendAction]]: Reciprocal of BorrowAction.
     """
 
-    lender: Optional[Union[Person, List[Person], Organization, List[Organization]]] = (
+    lender: Optional[Union[Organization, List[Organization], Person, List[Person]]] = (
         None
     )

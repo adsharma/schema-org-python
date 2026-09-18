@@ -13,5 +13,5 @@ class DataFeed(Dataset):
     """
 
     dataFeedElement: Optional[
-        Union[Thing, List[Thing], str, List[str], DataFeedItem, List[DataFeedItem]]
+        Union[DataFeedItem, List[DataFeedItem], str, List[str], Thing, List[Thing]]
     ] = None

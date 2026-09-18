@@ -4,12 +4,9 @@ from typing import List, Optional, Union
 
 from pydantic import HttpUrl
 
-from schema_models.civic_structure import CivicStructure
 from schema_models.creative_work import CreativeWork
 from schema_models.dataset import Dataset
-from schema_models.local_business import LocalBusiness
 from schema_models.thing import Thing
-from schema_models.web_content import WebContent
 
 
 @dataclass
@@ -53,60 +50,65 @@ class SpecialAnnouncement(CreativeWork):
 
     """
 
-    webFeed: Optional[Union[HttpUrl, List[HttpUrl], "DataFeed", List["DataFeed"]]] = (
-        None
-    )
-    governmentBenefitsInfo: Optional[
-        Union["GovernmentService", List["GovernmentService"]]
-    ] = None
-    publicTransportClosuresInfo: Optional[
-        Union[WebContent, List[WebContent], HttpUrl, List[HttpUrl]]
+    announcementLocation: Optional[
+        Union[
+            "CivicStructure",
+            List["CivicStructure"],
+            "LocalBusiness",
+            List["LocalBusiness"],
+        ]
     ] = None
     category: Optional[
         Union[
-            Thing,
-            List[Thing],
-            "PhysicalActivityCategory",
-            List["PhysicalActivityCategory"],
             "CategoryCode",
             List["CategoryCode"],
+            "PhysicalActivityCategory",
+            List["PhysicalActivityCategory"],
             str,
             List[str],
+            Thing,
+            List[Thing],
             HttpUrl,
             List[HttpUrl],
         ]
     ] = None
+    datePosted: Optional[Union[date, List[date], datetime, List[datetime]]] = None
     diseasePreventionInfo: Optional[
-        Union[HttpUrl, List[HttpUrl], WebContent, List[WebContent]]
+        Union[HttpUrl, List[HttpUrl], "WebContent", List["WebContent"]]
     ] = None
     diseaseSpreadStatistics: Optional[
         Union[
-            WebContent,
-            List[WebContent],
             Dataset,
             List[Dataset],
             "Observation",
             List["Observation"],
             HttpUrl,
             List[HttpUrl],
+            "WebContent",
+            List["WebContent"],
         ]
     ] = None
-    announcementLocation: Optional[
-        Union[CivicStructure, List[CivicStructure], LocalBusiness, List[LocalBusiness]]
+    gettingTestedInfo: Optional[
+        Union[HttpUrl, List[HttpUrl], "WebContent", List["WebContent"]]
     ] = None
-    quarantineGuidelines: Optional[
-        Union[WebContent, List[WebContent], HttpUrl, List[HttpUrl]]
+    governmentBenefitsInfo: Optional[
+        Union["GovernmentService", List["GovernmentService"]]
     ] = None
     newsUpdatesAndGuidelines: Optional[
-        Union[WebContent, List[WebContent], HttpUrl, List[HttpUrl]]
+        Union[HttpUrl, List[HttpUrl], "WebContent", List["WebContent"]]
     ] = None
-    travelBans: Optional[
-        Union[HttpUrl, List[HttpUrl], WebContent, List[WebContent]]
+    publicTransportClosuresInfo: Optional[
+        Union[HttpUrl, List[HttpUrl], "WebContent", List["WebContent"]]
+    ] = None
+    quarantineGuidelines: Optional[
+        Union[HttpUrl, List[HttpUrl], "WebContent", List["WebContent"]]
     ] = None
     schoolClosuresInfo: Optional[
-        Union[HttpUrl, List[HttpUrl], WebContent, List[WebContent]]
+        Union[HttpUrl, List[HttpUrl], "WebContent", List["WebContent"]]
     ] = None
-    datePosted: Optional[Union[datetime, List[datetime], date, List[date]]] = None
-    gettingTestedInfo: Optional[
-        Union[HttpUrl, List[HttpUrl], WebContent, List[WebContent]]
+    travelBans: Optional[
+        Union[HttpUrl, List[HttpUrl], "WebContent", List["WebContent"]]
     ] = None
+    webFeed: Optional[Union["DataFeed", List["DataFeed"], HttpUrl, List[HttpUrl]]] = (
+        None
+    )

@@ -2,6 +2,7 @@ from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from schema_models.intangible import Intangible
+from schema_models.member_program import MemberProgram
 
 
 @dataclass
@@ -10,22 +11,22 @@ class MemberProgramTier(Intangible):
     A MemberProgramTier specifies a tier under a loyalty (member) program, for example "gold".
     """
 
-    isTierOf: Optional[Union["MemberProgram", List["MemberProgram"]]] = None
+    hasTierBenefit: Optional[
+        Union["TierBenefitEnumeration", List["TierBenefitEnumeration"]]
+    ] = None
     hasTierRequirement: Optional[
         Union[
             "CreditCard",
             List["CreditCard"],
-            "UnitPriceSpecification",
-            List["UnitPriceSpecification"],
             "MonetaryAmount",
             List["MonetaryAmount"],
             str,
             List[str],
+            "UnitPriceSpecification",
+            List["UnitPriceSpecification"],
         ]
     ] = None
-    hasTierBenefit: Optional[
-        Union["TierBenefitEnumeration", List["TierBenefitEnumeration"]]
-    ] = None
+    isTierOf: Optional[Union[MemberProgram, List[MemberProgram]]] = None
     membershipPointsEarned: Optional[
         Union[float, List[float], "QuantitativeValue", List["QuantitativeValue"]]
     ] = None

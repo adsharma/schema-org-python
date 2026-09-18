@@ -1,10 +1,10 @@
 from dataclasses import dataclass
 
-from schema_models.medical_organization import MedicalOrganization
+from schema_models.local_business import LocalBusiness
 
 
 @dataclass
-class Dentist(MedicalOrganization):
+class Dentist(LocalBusiness):
     """
     A dentist.
     """

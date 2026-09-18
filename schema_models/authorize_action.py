@@ -20,9 +20,9 @@ class AuthorizeAction(AllocateAction):
             List[Audience],
             ContactPoint,
             List[ContactPoint],
-            Person,
-            List[Person],
             Organization,
             List[Organization],
+            Person,
+            List[Person],
         ]
     ] = None

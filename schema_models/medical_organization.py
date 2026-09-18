@@ -10,8 +10,8 @@ class MedicalOrganization(Organization):
     A medical organization (physical or not), such as hospital, institution or clinic.
     """
 
+    healthPlanNetworkId: Optional[Union[str, List[str]]] = None
+    isAcceptingNewPatients: Optional[Union[bool, List[bool]]] = None
     medicalSpecialty: Optional[Union["MedicalSpecialty", List["MedicalSpecialty"]]] = (
         None
     )
-    isAcceptingNewPatients: Optional[Union[bool, List[bool]]] = None
-    healthPlanNetworkId: Optional[Union[str, List[str]]] = None

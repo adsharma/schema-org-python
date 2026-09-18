@@ -2,7 +2,6 @@ from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from schema_models.audience import Audience
-from schema_models.contact_point import ContactPoint
 from schema_models.organization import Organization
 from schema_models.person import Person
 from schema_models.trade_action import TradeAction
@@ -18,11 +17,11 @@ class TipAction(TradeAction):
         Union[
             Audience,
             List[Audience],
-            ContactPoint,
-            List[ContactPoint],
-            Person,
-            List[Person],
+            "ContactPoint",
+            List["ContactPoint"],
             Organization,
             List[Organization],
+            Person,
+            List[Person],
         ]
     ] = None

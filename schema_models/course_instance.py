@@ -13,7 +13,7 @@ class CourseInstance(Event):
     An instance of a [[Course]] which is distinct from other instances because it is offered at a different time or location or through different media or modes of study or to a specific section of students.
     """
 
-    instructor: Optional[Union[Person, List[Person]]] = None
     courseMode: Optional[Union[str, List[str], HttpUrl, List[HttpUrl]]] = None
     courseSchedule: Optional[Union["Schedule", List["Schedule"]]] = None
     courseWorkload: Optional[Union[str, List[str]]] = None
+    instructor: Optional[Union[Person, List[Person]]] = None

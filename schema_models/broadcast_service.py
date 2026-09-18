@@ -17,23 +17,23 @@ class BroadcastService(Service):
     A delivery service through which content is provided via broadcast over the air or online.
     """
 
-    inLanguage: Optional[Union[Language, List[Language], str, List[str]]] = None
-    broadcaster: Optional[Union[Organization, List[Organization]]] = None
     area: Optional[Union[Place, List[Place]]] = None
+    broadcastAffiliateOf: Optional[Union[Organization, List[Organization]]] = None
+    broadcastDisplayName: Optional[Union[str, List[str]]] = None
+    broadcastFrequency: Optional[
+        Union[
+            BroadcastFrequencySpecification,
+            List[BroadcastFrequencySpecification],
+            str,
+            List[str],
+        ]
+    ] = None
+    broadcastTimezone: Optional[Union[str, List[str]]] = None
+    broadcaster: Optional[Union[Organization, List[Organization]]] = None
+    callSign: Optional[Union[str, List[str]]] = None
     hasBroadcastChannel: Optional[Union[BroadcastChannel, List[BroadcastChannel]]] = (
         None
     )
-    callSign: Optional[Union[str, List[str]]] = None
-    videoFormat: Optional[Union[str, List[str]]] = None
-    broadcastAffiliateOf: Optional[Union[Organization, List[Organization]]] = None
+    inLanguage: Optional[Union[Language, List[Language], str, List[str]]] = None
     parentService: Optional[Union["BroadcastService", List["BroadcastService"]]] = None
-    broadcastDisplayName: Optional[Union[str, List[str]]] = None
-    broadcastTimezone: Optional[Union[str, List[str]]] = None
-    broadcastFrequency: Optional[
-        Union[
-            str,
-            List[str],
-            BroadcastFrequencySpecification,
-            List[BroadcastFrequencySpecification],
-        ]
-    ] = None
+    videoFormat: Optional[Union[str, List[str]]] = None

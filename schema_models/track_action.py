@@ -1,7 +1,6 @@
 from dataclasses import dataclass
 from typing import List, Optional, Union
 
-from schema_models.delivery_method import DeliveryMethod
 from schema_models.find_action import FindAction
 
 
@@ -16,4 +15,4 @@ class TrackAction(FindAction):
     * [[SubscribeAction]]: Unlike SubscribeAction, TrackAction refers to  the interest on the location of innanimate objects.
     """
 
-    deliveryMethod: Optional[Union[DeliveryMethod, List[DeliveryMethod]]] = None
+    deliveryMethod: Optional[Union["DeliveryMethod", List["DeliveryMethod"]]] = None

@@ -16,7 +16,7 @@ class TypeAndQuantityNode(StructuredValue):
     """
 
     amountOfThisGood: Optional[Union[float, List[float]]] = None
+    businessFunction: Optional[Union[BusinessFunction, List[BusinessFunction]]] = None
     typeOfGood: Optional[Union[Product, List[Product], Service, List[Service]]] = None
     unitCode: Optional[Union[str, List[str], HttpUrl, List[HttpUrl]]] = None
     unitText: Optional[Union[str, List[str]]] = None
-    businessFunction: Optional[Union[BusinessFunction, List[BusinessFunction]]] = None

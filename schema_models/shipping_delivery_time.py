@@ -2,7 +2,10 @@ from dataclasses import dataclass
 from datetime import time
 from typing import List, Optional, Union
 
+from schema_models.day_of_week import DayOfWeek
 from schema_models.opening_hours_specification import OpeningHoursSpecification
+from schema_models.quantitative_value import QuantitativeValue
+from schema_models.service_period import ServicePeriod
 from schema_models.structured_value import StructuredValue
 
 
@@ -13,8 +16,27 @@ class ShippingDeliveryTime(StructuredValue):
     """
 
     businessDays: Optional[
-        Union[OpeningHoursSpecification, List[OpeningHoursSpecification]]
+        Union[
+            DayOfWeek,
+            List[DayOfWeek],
+            OpeningHoursSpecification,
+            List[OpeningHoursSpecification],
+        ]
     ] = None
-    handlingTime: Optional[Union["QuantitativeValue", List["QuantitativeValue"]]] = None
-    transitTime: Optional[Union["QuantitativeValue", List["QuantitativeValue"]]] = None
     cutoffTime: Optional[Union[time, List[time]]] = None
+    handlingTime: Optional[
+        Union[
+            QuantitativeValue,
+            List[QuantitativeValue],
+            ServicePeriod,
+            List[ServicePeriod],
+        ]
+    ] = None
+    transitTime: Optional[
+        Union[
+            QuantitativeValue,
+            List[QuantitativeValue],
+            ServicePeriod,
+            List[ServicePeriod],
+        ]
+    ] = None

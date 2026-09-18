@@ -3,6 +3,7 @@ from typing import List, Optional, Union
 
 from schema_models.audience import Audience
 from schema_models.place import Place
+from schema_models.tourist_attraction import TouristAttraction
 
 
 @dataclass
@@ -12,7 +13,7 @@ class TouristDestination(Place):
       (See examples below.)
     """
 
-    touristType: Optional[Union[str, List[str], Audience, List[Audience]]] = None
-    includesAttraction: Optional[
-        Union["TouristAttraction", List["TouristAttraction"]]
-    ] = None
+    includesAttraction: Optional[Union[TouristAttraction, List[TouristAttraction]]] = (
+        None
+    )
+    touristType: Optional[Union[Audience, List[Audience], str, List[str]]] = None

@@ -6,9 +6,6 @@ from pydantic import HttpUrl
 
 from schema_models.intangible import Intangible
 from schema_models.member_program_tier import MemberProgramTier
-from schema_models.merchant_return_policy_seasonal_override import (
-    MerchantReturnPolicySeasonalOverride,
-)
 
 
 @dataclass
@@ -17,66 +14,66 @@ class MerchantReturnPolicy(Intangible):
     A MerchantReturnPolicy provides information about product return policies associated with an [[Organization]], [[Product]], or [[Offer]].
     """
 
-    restockingFee: Optional[
-        Union["MonetaryAmount", List["MonetaryAmount"], float, List[float]]
-    ] = None
-    returnShippingFeesAmount: Optional[
-        Union["MonetaryAmount", List["MonetaryAmount"]]
-    ] = None
-    returnPolicySeasonalOverride: Optional[
-        Union[
-            MerchantReturnPolicySeasonalOverride,
-            List[MerchantReturnPolicySeasonalOverride],
-        ]
-    ] = None
-    returnMethod: Optional[
-        Union["ReturnMethodEnumeration", List["ReturnMethodEnumeration"]]
-    ] = None
-    merchantReturnLink: Optional[Union[HttpUrl, List[HttpUrl]]] = None
-    returnPolicyCountry: Optional[Union["Country", List["Country"], str, List[str]]] = (
+    additionalProperty: Optional[Union["PropertyValue", List["PropertyValue"]]] = None
+    applicableCountry: Optional[Union["Country", List["Country"], str, List[str]]] = (
         None
     )
-    itemDefectReturnFees: Optional[
+    customerRemorseReturnFees: Optional[
         Union["ReturnFeesEnumeration", List["ReturnFeesEnumeration"]]
     ] = None
     customerRemorseReturnLabelSource: Optional[
         Union["ReturnLabelSourceEnumeration", List["ReturnLabelSourceEnumeration"]]
     ] = None
-    additionalProperty: Optional[Union["PropertyValue", List["PropertyValue"]]] = None
-    validForMemberTier: Optional[Union[MemberProgramTier, List[MemberProgramTier]]] = (
-        None
-    )
-    returnLabelSource: Optional[
-        Union["ReturnLabelSourceEnumeration", List["ReturnLabelSourceEnumeration"]]
+    customerRemorseReturnShippingFeesAmount: Optional[
+        Union["MonetaryAmount", List["MonetaryAmount"]]
     ] = None
+    inStoreReturnsOffered: Optional[Union[bool, List[bool]]] = None
     itemCondition: Optional[Union["OfferItemCondition", List["OfferItemCondition"]]] = (
         None
     )
-    returnPolicyCategory: Optional[
-        Union["MerchantReturnEnumeration", List["MerchantReturnEnumeration"]]
+    itemDefectReturnFees: Optional[
+        Union["ReturnFeesEnumeration", List["ReturnFeesEnumeration"]]
+    ] = None
+    itemDefectReturnLabelSource: Optional[
+        Union["ReturnLabelSourceEnumeration", List["ReturnLabelSourceEnumeration"]]
     ] = None
     itemDefectReturnShippingFeesAmount: Optional[
         Union["MonetaryAmount", List["MonetaryAmount"]]
     ] = None
-    customerRemorseReturnFees: Optional[
-        Union["ReturnFeesEnumeration", List["ReturnFeesEnumeration"]]
+    merchantReturnDays: Optional[
+        Union[date, List[date], datetime, List[datetime], int, List[int]]
     ] = None
+    merchantReturnLink: Optional[Union[HttpUrl, List[HttpUrl]]] = None
     refundType: Optional[
         Union["RefundTypeEnumeration", List["RefundTypeEnumeration"]]
     ] = None
-    applicableCountry: Optional[Union[str, List[str], "Country", List["Country"]]] = (
-        None
-    )
+    restockingFee: Optional[
+        Union["MonetaryAmount", List["MonetaryAmount"], float, List[float]]
+    ] = None
     returnFees: Optional[
         Union["ReturnFeesEnumeration", List["ReturnFeesEnumeration"]]
     ] = None
-    merchantReturnDays: Optional[
-        Union[date, List[date], int, List[int], datetime, List[datetime]]
-    ] = None
-    inStoreReturnsOffered: Optional[Union[bool, List[bool]]] = None
-    itemDefectReturnLabelSource: Optional[
+    returnLabelSource: Optional[
         Union["ReturnLabelSourceEnumeration", List["ReturnLabelSourceEnumeration"]]
     ] = None
-    customerRemorseReturnShippingFeesAmount: Optional[
+    returnMethod: Optional[
+        Union["ReturnMethodEnumeration", List["ReturnMethodEnumeration"]]
+    ] = None
+    returnPolicyCategory: Optional[
+        Union["MerchantReturnEnumeration", List["MerchantReturnEnumeration"]]
+    ] = None
+    returnPolicyCountry: Optional[Union["Country", List["Country"], str, List[str]]] = (
+        None
+    )
+    returnPolicySeasonalOverride: Optional[
+        Union[
+            "MerchantReturnPolicySeasonalOverride",
+            List["MerchantReturnPolicySeasonalOverride"],
+        ]
+    ] = None
+    returnShippingFeesAmount: Optional[
         Union["MonetaryAmount", List["MonetaryAmount"]]
     ] = None
+    validForMemberTier: Optional[Union[MemberProgramTier, List[MemberProgramTier]]] = (
+        None
+    )

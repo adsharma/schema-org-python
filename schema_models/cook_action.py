@@ -12,8 +12,8 @@ class CookAction(CreateAction):
     The act of producing/preparing food.
     """
 
+    foodEstablishment: Optional[
+        Union["FoodEstablishment", List["FoodEstablishment"], Place, List[Place]]
+    ] = None
     foodEvent: Optional[Union[FoodEvent, List[FoodEvent]]] = None
     recipe: Optional[Union["Recipe", List["Recipe"]]] = None
-    foodEstablishment: Optional[
-        Union[Place, List[Place], "FoodEstablishment", List["FoodEstablishment"]]
-    ] = None

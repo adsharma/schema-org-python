@@ -14,7 +14,7 @@ class RentalCarReservation(Reservation):
     Note: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations.
     """
 
-    pickupTime: Optional[Union[datetime, List[datetime]]] = None
-    dropoffTime: Optional[Union[datetime, List[datetime]]] = None
     dropoffLocation: Optional[Union[Place, List[Place]]] = None
+    dropoffTime: Optional[Union[datetime, List[datetime]]] = None
     pickupLocation: Optional[Union[Place, List[Place]]] = None
+    pickupTime: Optional[Union[datetime, List[datetime]]] = None

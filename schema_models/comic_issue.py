@@ -16,9 +16,9 @@ class ComicIssue(PublicationIssue):
             description of the issue (if any).
     """
 
-    inker: Optional[Union[Person, List[Person]]] = None
-    letterer: Optional[Union[Person, List[Person]]] = None
-    variantCover: Optional[Union[str, List[str]]] = None
-    penciler: Optional[Union[Person, List[Person]]] = None
     artist: Optional[Union[Person, List[Person]]] = None
     colorist: Optional[Union[Person, List[Person]]] = None
+    inker: Optional[Union[Person, List[Person]]] = None
+    letterer: Optional[Union[Person, List[Person]]] = None
+    penciler: Optional[Union[Person, List[Person]]] = None
+    variantCover: Optional[Union[str, List[str]]] = None

@@ -12,7 +12,7 @@ class DataFeedItem(Intangible):
     A single item within a larger data feed.
     """
 
-    item: Optional[Union[Thing, List[Thing]]] = None
-    dateDeleted: Optional[Union[datetime, List[datetime], date, List[date]]] = None
-    dateCreated: Optional[Union[datetime, List[datetime], date, List[date]]] = None
+    dateCreated: Optional[Union[date, List[date], datetime, List[datetime]]] = None
+    dateDeleted: Optional[Union[date, List[date], datetime, List[datetime]]] = None
     dateModified: Optional[Union[date, List[date], datetime, List[datetime]]] = None
+    item: Optional[Union[Thing, List[Thing]]] = None

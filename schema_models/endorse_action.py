@@ -13,5 +13,5 @@ class EndorseAction(ReactAction):
     """
 
     endorsee: Optional[
-        Union[Person, List[Person], Organization, List[Organization]]
+        Union[Organization, List[Organization], Person, List[Person]]
     ] = None

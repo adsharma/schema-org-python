@@ -2,8 +2,9 @@ from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from schema_models.demand import Demand
+from schema_models.diet import Diet
 from schema_models.intangible import Intangible
-from schema_models.offer import Offer
+from schema_models.menu_section import MenuSection
 
 
 @dataclass
@@ -13,10 +14,12 @@ class MenuItem(Intangible):
     """
 
     menuAddOn: Optional[
-        Union["MenuSection", List["MenuSection"], "MenuItem", List["MenuItem"]]
+        Union["MenuItem", List["MenuItem"], MenuSection, List[MenuSection]]
     ] = None
-    suitableForDiet: Optional[Union["RestrictedDiet", List["RestrictedDiet"]]] = None
     nutrition: Optional[Union["NutritionInformation", List["NutritionInformation"]]] = (
         None
     )
-    offers: Optional[Union[Offer, List[Offer], Demand, List[Demand]]] = None
+    offers: Optional[Union[Demand, List[Demand], "Offer", List["Offer"]]] = None
+    suitableForDiet: Optional[
+        Union[Diet, List[Diet], "RestrictedDiet", List["RestrictedDiet"]]
+    ] = None

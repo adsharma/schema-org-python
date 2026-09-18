@@ -17,21 +17,21 @@ class Ticket(Intangible):
     """
 
     dateIssued: Optional[Union[date, List[date], datetime, List[datetime]]] = None
-    ticketToken: Optional[Union[str, List[str], HttpUrl, List[HttpUrl]]] = None
-    priceCurrency: Optional[Union[str, List[str]]] = None
     issuedBy: Optional[Union[Organization, List[Organization]]] = None
-    ticketedSeat: Optional[Union[Seat, List[Seat]]] = None
+    priceCurrency: Optional[Union[str, List[str]]] = None
     ticketNumber: Optional[Union[str, List[str]]] = None
+    ticketToken: Optional[Union[str, List[str], HttpUrl, List[HttpUrl]]] = None
+    ticketedSeat: Optional[Union[Seat, List[Seat]]] = None
     totalPrice: Optional[
         Union[
-            str,
-            List[str],
-            "PriceSpecification",
-            List["PriceSpecification"],
             float,
             List[float],
+            "PriceSpecification",
+            List["PriceSpecification"],
+            str,
+            List[str],
         ]
     ] = None
     underName: Optional[
-        Union[Person, List[Person], Organization, List[Organization]]
+        Union[Organization, List[Organization], Person, List[Person]]
     ] = None

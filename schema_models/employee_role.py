@@ -14,12 +14,12 @@ class EmployeeRole(OrganizationRole):
 
     baseSalary: Optional[
         Union[
-            PriceSpecification,
-            List[PriceSpecification],
             MonetaryAmount,
             List[MonetaryAmount],
             float,
             List[float],
+            PriceSpecification,
+            List[PriceSpecification],
         ]
     ] = None
     salaryCurrency: Optional[Union[str, List[str]]] = None

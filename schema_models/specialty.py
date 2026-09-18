@@ -6,5 +6,5 @@ from schema_models.enumeration import Enumeration
 @dataclass
 class Specialty(Enumeration):
     """
-    Any branch of a field in which people typically develop specific expertise, usually after significant study, time, and effort.
+    One of the domain specialities to which this web page's content applies.
     """

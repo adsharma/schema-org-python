@@ -12,3 +12,4 @@ class Residence(Place):
     """
 
     accommodationFloorPlan: Optional[Union[FloorPlan, List[FloorPlan]]] = None
+    floorLevel: Optional[Union[str, List[str]]] = None

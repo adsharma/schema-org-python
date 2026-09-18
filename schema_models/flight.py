@@ -17,22 +17,22 @@ class Flight(Trip):
     An airline flight.
     """
 
-    webCheckinTime: Optional[Union[datetime, List[datetime]]] = None
-    mealService: Optional[Union[str, List[str]]] = None
+    aircraft: Optional[Union[str, List[str], Vehicle, List[Vehicle]]] = None
     arrivalAirport: Optional[Union["Airport", List["Airport"]]] = None
-    flightNumber: Optional[Union[str, List[str]]] = None
-    flightDistance: Optional[Union[str, List[str], Distance, List[Distance]]] = None
-    departureAirport: Optional[Union["Airport", List["Airport"]]] = None
-    carrier: Optional[Union[Organization, List[Organization]]] = None
-    aircraft: Optional[Union[Vehicle, List[Vehicle], str, List[str]]] = None
-    departureTerminal: Optional[Union[str, List[str]]] = None
+    arrivalGate: Optional[Union[str, List[str]]] = None
     arrivalTerminal: Optional[Union[str, List[str]]] = None
-    seller: Optional[Union[Person, List[Person], Organization, List[Organization]]] = (
+    boardingPolicy: Optional[Union[BoardingPolicyType, List[BoardingPolicyType]]] = None
+    carrier: Optional[Union[Organization, List[Organization]]] = None
+    departureAirport: Optional[Union["Airport", List["Airport"]]] = None
+    departureGate: Optional[Union[str, List[str]]] = None
+    departureTerminal: Optional[Union[str, List[str]]] = None
+    estimatedFlightDuration: Optional[
+        Union[Duration, List[Duration], str, List[str]]
+    ] = None
+    flightDistance: Optional[Union[Distance, List[Distance], str, List[str]]] = None
+    flightNumber: Optional[Union[str, List[str]]] = None
+    mealService: Optional[Union[str, List[str]]] = None
+    seller: Optional[Union[Organization, List[Organization], Person, List[Person]]] = (
         None
     )
-    departureGate: Optional[Union[str, List[str]]] = None
-    arrivalGate: Optional[Union[str, List[str]]] = None
-    estimatedFlightDuration: Optional[
-        Union[str, List[str], Duration, List[Duration]]
-    ] = None
-    boardingPolicy: Optional[Union[BoardingPolicyType, List[BoardingPolicyType]]] = None
+    webCheckinTime: Optional[Union[datetime, List[datetime]]] = None

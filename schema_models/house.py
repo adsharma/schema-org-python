@@ -12,5 +12,5 @@ class House(Accommodation):
     """
 
     numberOfRooms: Optional[
-        Union[QuantitativeValue, List[QuantitativeValue], float, List[float]]
+        Union[float, List[float], QuantitativeValue, List[QuantitativeValue]]
     ] = None

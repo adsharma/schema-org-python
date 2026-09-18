@@ -10,10 +10,10 @@ class HealthPlanCostSharingSpecification(Intangible):
     A description of costs to the patient under a given network or formulary.
     """
 
-    healthPlanCoinsuranceRate: Optional[Union[float, List[float]]] = None
-    healthPlanPharmacyCategory: Optional[Union[str, List[str]]] = None
     healthPlanCoinsuranceOption: Optional[Union[str, List[str]]] = None
-    healthPlanCopayOption: Optional[Union[str, List[str]]] = None
+    healthPlanCoinsuranceRate: Optional[Union[float, List[float]]] = None
     healthPlanCopay: Optional[
         Union["PriceSpecification", List["PriceSpecification"]]
     ] = None
+    healthPlanCopayOption: Optional[Union[str, List[str]]] = None
+    healthPlanPharmacyCategory: Optional[Union[str, List[str]]] = None

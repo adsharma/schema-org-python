@@ -15,9 +15,9 @@ class OwnershipInfo(StructuredValue):
     A structured value providing information about when a certain organization or person owned a certain product.
     """
 
-    ownedThrough: Optional[Union[datetime, List[datetime]]] = None
     acquiredFrom: Optional[
-        Union[Person, List[Person], Organization, List[Organization]]
+        Union[Organization, List[Organization], Person, List[Person]]
     ] = None
     ownedFrom: Optional[Union[datetime, List[datetime]]] = None
+    ownedThrough: Optional[Union[datetime, List[datetime]]] = None
     typeOfGood: Optional[Union[Product, List[Product], Service, List[Service]]] = None

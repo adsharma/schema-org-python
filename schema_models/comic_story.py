@@ -13,8 +13,8 @@ class ComicStory(CreativeWork):
             comics have at least two stories: a cover (ComicCoverArt) and an interior story.
     """
 
+    artist: Optional[Union[Person, List[Person]]] = None
+    colorist: Optional[Union[Person, List[Person]]] = None
     inker: Optional[Union[Person, List[Person]]] = None
     letterer: Optional[Union[Person, List[Person]]] = None
     penciler: Optional[Union[Person, List[Person]]] = None
-    artist: Optional[Union[Person, List[Person]]] = None
-    colorist: Optional[Union[Person, List[Person]]] = None

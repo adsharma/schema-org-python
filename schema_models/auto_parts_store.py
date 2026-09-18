@@ -1,10 +1,10 @@
 from dataclasses import dataclass
 
-from schema_models.store import Store
+from schema_models.automotive_business import AutomotiveBusiness
 
 
 @dataclass
-class AutoPartsStore(Store):
+class AutoPartsStore(AutomotiveBusiness):
     """
     An auto parts store.
     """

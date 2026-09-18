@@ -1,10 +1,10 @@
 from dataclasses import dataclass
 
-from schema_models.sports_activity_location import SportsActivityLocation
+from schema_models.resort import Resort
 
 
 @dataclass
-class SkiResort(SportsActivityLocation):
+class SkiResort(Resort):
     """
     A ski resort.
     """

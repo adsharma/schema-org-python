@@ -14,6 +14,6 @@ class MedicalGuideline(MedicalEntity):
     evidenceLevel: Optional[
         Union["MedicalEvidenceLevel", List["MedicalEvidenceLevel"]]
     ] = None
-    guidelineDate: Optional[Union[date, List[date]]] = None
     evidenceOrigin: Optional[Union[str, List[str]]] = None
+    guidelineDate: Optional[Union[date, List[date]]] = None
     guidelineSubject: Optional[Union[MedicalEntity, List[MedicalEntity]]] = None

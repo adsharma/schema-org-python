@@ -13,8 +13,10 @@ class EngineSpecification(StructuredValue):
     Information about the engine of the vehicle. A vehicle can have multiple engines represented by multiple engine specification entities.
     """
 
+    engineDisplacement: Optional[
+        Union["QuantitativeValue", List["QuantitativeValue"]]
+    ] = None
     enginePower: Optional[Union["QuantitativeValue", List["QuantitativeValue"]]] = None
-    torque: Optional[Union["QuantitativeValue", List["QuantitativeValue"]]] = None
     engineType: Optional[
         Union[
             QualitativeValue,
@@ -25,16 +27,14 @@ class EngineSpecification(StructuredValue):
             List[HttpUrl],
         ]
     ] = None
-    engineDisplacement: Optional[
-        Union["QuantitativeValue", List["QuantitativeValue"]]
-    ] = None
     fuelType: Optional[
         Union[
-            HttpUrl,
-            List[HttpUrl],
             QualitativeValue,
             List[QualitativeValue],
             str,
             List[str],
+            HttpUrl,
+            List[HttpUrl],
         ]
     ] = None
+    torque: Optional[Union["QuantitativeValue", List["QuantitativeValue"]]] = None

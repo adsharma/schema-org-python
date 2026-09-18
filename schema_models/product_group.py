@@ -1,6 +1,7 @@
 from dataclasses import dataclass
 from typing import List, Optional, Union
 
+from schema_models.defined_term import DefinedTerm
 from schema_models.product import Product
 
 
@@ -12,6 +13,15 @@ class ProductGroup(Product):
     While a ProductGroup itself is not directly offered for sale, the various varying products that it represents can be. The ProductGroup serves as a prototype or template, standing in for all of the products who have an [[isVariantOf]] relationship to it. As such, properties (including additional types) can be applied to the ProductGroup to represent characteristics shared by each of the (possibly very many) variants. Properties that reference a ProductGroup are not included in this mechanism; neither are the following specific properties [[variesBy]], [[hasVariant]], [[url]].
     """
 
-    productGroupID: Optional[Union[str, List[str]]] = None
     hasVariant: Optional[Union[Product, List[Product]]] = None
-    variesBy: Optional[Union["DefinedTerm", List["DefinedTerm"], str, List[str]]] = None
+    productGroupID: Optional[Union[str, List[str]]] = None
+    variesBy: Optional[
+        Union[
+            DefinedTerm,
+            List[DefinedTerm],
+            "PropertyValue",
+            List["PropertyValue"],
+            str,
+            List[str],
+        ]
+    ] = None

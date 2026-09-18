@@ -23,27 +23,27 @@ class Grant(Intangible):
 
     """
 
-    sponsor: Optional[Union[Person, List[Person], Organization, List[Organization]]] = (
-        None
-    )
-    funder: Optional[Union[Person, List[Person], Organization, List[Organization]]] = (
-        None
-    )
     fundedItem: Optional[
         Union[
-            Person,
-            List[Person],
-            Organization,
-            List[Organization],
             BioChemEntity,
             List[BioChemEntity],
+            CreativeWork,
+            List[CreativeWork],
             Event,
             List[Event],
             MedicalEntity,
             List[MedicalEntity],
-            CreativeWork,
-            List[CreativeWork],
+            Organization,
+            List[Organization],
+            Person,
+            List[Person],
             Product,
             List[Product],
         ]
     ] = None
+    funder: Optional[Union[Organization, List[Organization], Person, List[Person]]] = (
+        None
+    )
+    sponsor: Optional[Union[Organization, List[Organization], Person, List[Person]]] = (
+        None
+    )

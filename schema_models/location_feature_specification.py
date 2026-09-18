@@ -15,5 +15,5 @@ class LocationFeatureSpecification(PropertyValue):
     hoursAvailable: Optional[
         Union[OpeningHoursSpecification, List[OpeningHoursSpecification]]
     ] = None
-    validFrom: Optional[Union[datetime, List[datetime], date, List[date]]] = None
-    validThrough: Optional[Union[datetime, List[datetime], date, List[date]]] = None
+    validFrom: Optional[Union[date, List[date], datetime, List[datetime]]] = None
+    validThrough: Optional[Union[date, List[date], datetime, List[datetime]]] = None

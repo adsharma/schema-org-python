@@ -12,10 +12,10 @@ class EducationEvent(Event):
     Event type: Education event.
     """
 
-    teaches: Optional[Union[str, List[str], "DefinedTerm", List["DefinedTerm"]]] = None
     assesses: Optional[Union["DefinedTerm", List["DefinedTerm"], str, List[str]]] = None
     educationalLevel: Optional[
         Union[
-            str, List[str], HttpUrl, List[HttpUrl], "DefinedTerm", List["DefinedTerm"]
+            "DefinedTerm", List["DefinedTerm"], str, List[str], HttpUrl, List[HttpUrl]
         ]
     ] = None
+    teaches: Optional[Union["DefinedTerm", List["DefinedTerm"], str, List[str]]] = None

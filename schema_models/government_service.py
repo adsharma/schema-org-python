@@ -12,7 +12,7 @@ class GovernmentService(Service):
     A service provided by a government organization, e.g. food stamps, veterans benefits, etc.
     """
 
-    serviceOperator: Optional[Union[Organization, List[Organization]]] = None
     jurisdiction: Optional[
-        Union[str, List[str], AdministrativeArea, List[AdministrativeArea]]
+        Union[AdministrativeArea, List[AdministrativeArea], str, List[str]]
     ] = None
+    serviceOperator: Optional[Union[Organization, List[Organization]]] = None

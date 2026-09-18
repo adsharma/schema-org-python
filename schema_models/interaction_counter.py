@@ -16,22 +16,22 @@ class InteractionCounter(StructuredValue):
     A summary of how users have interacted with this CreativeWork. In most cases, authors will use a subtype to specify the specific type of interaction.
     """
 
-    userInteractionCount: Optional[Union[int, List[int]]] = None
     endTime: Optional[Union[datetime, List[datetime], time, List[time]]] = None
+    interactionService: Optional[
+        Union[SoftwareApplication, List[SoftwareApplication], WebSite, List[WebSite]]
+    ] = None
+    interactionType: Optional[Union[Action, List[Action]]] = None
     location: Optional[
         Union[
-            str,
-            List[str],
             Place,
             List[Place],
-            VirtualLocation,
-            List[VirtualLocation],
             "PostalAddress",
             List["PostalAddress"],
+            str,
+            List[str],
+            VirtualLocation,
+            List[VirtualLocation],
         ]
     ] = None
     startTime: Optional[Union[datetime, List[datetime], time, List[time]]] = None
-    interactionType: Optional[Union[Action, List[Action]]] = None
-    interactionService: Optional[
-        Union[WebSite, List[WebSite], SoftwareApplication, List[SoftwareApplication]]
-    ] = None
+    userInteractionCount: Optional[Union[int, List[int]]] = None

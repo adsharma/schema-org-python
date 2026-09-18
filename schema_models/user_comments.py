@@ -16,10 +16,10 @@ class UserComments(UserInteraction):
     UserInteraction and its subtypes is an old way of talking about users interacting with pages. It is generally better to use [[Action]]-based vocabulary, alongside types such as [[Comment]].
     """
 
-    replyToUrl: Optional[Union[HttpUrl, List[HttpUrl]]] = None
-    commentTime: Optional[Union[datetime, List[datetime], date, List[date]]] = None
-    creator: Optional[Union[Person, List[Person], Organization, List[Organization]]] = (
+    commentText: Optional[Union[str, List[str]]] = None
+    commentTime: Optional[Union[date, List[date], datetime, List[datetime]]] = None
+    creator: Optional[Union[Organization, List[Organization], Person, List[Person]]] = (
         None
     )
-    commentText: Optional[Union[str, List[str]]] = None
     discusses: Optional[Union[CreativeWork, List[CreativeWork]]] = None
+    replyToUrl: Optional[Union[HttpUrl, List[HttpUrl]]] = None

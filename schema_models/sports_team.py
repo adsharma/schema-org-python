@@ -12,6 +12,6 @@ class SportsTeam(SportsOrganization):
     A sub property of participant. The sports team that participated on this action.
     """
 
-    coach: Optional[Union[Person, List[Person]]] = None
     athlete: Optional[Union[Person, List[Person]]] = None
+    coach: Optional[Union[Person, List[Person]]] = None
     gender: Optional[Union[GenderType, List[GenderType], str, List[str]]] = None

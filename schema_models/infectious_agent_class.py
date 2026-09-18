@@ -6,5 +6,5 @@ from schema_models.medical_enumeration import MedicalEnumeration
 @dataclass
 class InfectiousAgentClass(MedicalEnumeration):
     """
-    Classes of agents or pathogens that transmit infectious diseases. Enumerated type.
+    The class of infectious agent (bacteria, prion, etc.) that causes the disease.
     """

@@ -11,5 +11,5 @@ class Blog(CreativeWork):
     """
 
     blogPost: Optional[Union["BlogPosting", List["BlogPosting"]]] = None
-    issn: Optional[Union[str, List[str]]] = None
     blogPosts: Optional[Union["BlogPosting", List["BlogPosting"]]] = None
+    issn: Optional[Union[str, List[str]]] = None

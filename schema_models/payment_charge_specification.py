@@ -12,7 +12,7 @@ class PaymentChargeSpecification(PriceSpecification):
     The costs of settling the payment using a particular payment method.
     """
 
-    appliesToPaymentMethod: Optional[Union[PaymentMethod, List[PaymentMethod]]] = None
     appliesToDeliveryMethod: Optional[Union[DeliveryMethod, List[DeliveryMethod]]] = (
         None
     )
+    appliesToPaymentMethod: Optional[Union[PaymentMethod, List[PaymentMethod]]] = None

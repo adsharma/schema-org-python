@@ -16,12 +16,12 @@ class Hospital(CivicStructure):
 
     availableService: Optional[
         Union[
+            MedicalProcedure,
+            List[MedicalProcedure],
             MedicalTest,
             List[MedicalTest],
             "MedicalTherapy",
             List["MedicalTherapy"],
-            MedicalProcedure,
-            List[MedicalProcedure],
         ]
     ] = None
     healthcareReportingData: Optional[

@@ -14,17 +14,17 @@ class SizeSpecification(QualitativeValue):
     Size related properties of a product, typically a size code ([[name]]) and optionally a [[sizeSystem]], [[sizeGroup]], and product measurements ([[hasMeasurement]]). In addition, the intended audience can be defined through [[suggestedAge]], [[suggestedGender]], and suggested body measurements ([[suggestedMeasurement]]).
     """
 
+    hasMeasurement: Optional[Union[QuantitativeValue, List[QuantitativeValue]]] = None
+    sizeGroup: Optional[
+        Union[SizeGroupEnumeration, List[SizeGroupEnumeration], str, List[str]]
+    ] = None
+    sizeSystem: Optional[
+        Union[SizeSystemEnumeration, List[SizeSystemEnumeration], str, List[str]]
+    ] = None
     suggestedAge: Optional[Union[QuantitativeValue, List[QuantitativeValue]]] = None
     suggestedGender: Optional[Union[GenderType, List[GenderType], str, List[str]]] = (
         None
     )
-    sizeGroup: Optional[
-        Union[str, List[str], SizeGroupEnumeration, List[SizeGroupEnumeration]]
-    ] = None
     suggestedMeasurement: Optional[
         Union[QuantitativeValue, List[QuantitativeValue]]
-    ] = None
-    hasMeasurement: Optional[Union[QuantitativeValue, List[QuantitativeValue]]] = None
-    sizeSystem: Optional[
-        Union[SizeSystemEnumeration, List[SizeSystemEnumeration], str, List[str]]
     ] = None

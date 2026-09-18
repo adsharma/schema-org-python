@@ -16,5 +16,5 @@ class Answer(Comment):
         Union[Comment, List[Comment], WebContent, List[WebContent]]
     ] = None
     parentItem: Optional[
-        Union[CreativeWork, List[CreativeWork], Comment, List[Comment]]
+        Union[Comment, List[Comment], CreativeWork, List[CreativeWork]]
     ] = None

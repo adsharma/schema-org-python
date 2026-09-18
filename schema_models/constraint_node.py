@@ -13,7 +13,7 @@ class ConstraintNode(Intangible):
         variety of purposes, and their values may sometimes be understood to indicate sets of possible values rather than single, exact and specific values.
     """
 
-    numConstraints: Optional[Union[int, List[int]]] = None
     constraintProperty: Optional[
         Union["Property", List["Property"], HttpUrl, List[HttpUrl]]
     ] = None
+    numConstraints: Optional[Union[int, List[int]]] = None

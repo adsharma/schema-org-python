@@ -2,7 +2,6 @@ from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from schema_models.action import Action
-from schema_models.audience import Audience
 from schema_models.event import Event
 
 
@@ -17,5 +16,5 @@ class PlayAction(Action):
     * [[WatchAction]]: Unlike WatchAction (which is under ConsumeAction), PlayAction refers to showing/displaying for an audience or at an event, rather than consuming visual content.
     """
 
+    audience: Optional[Union["Audience", List["Audience"]]] = None
     event: Optional[Union[Event, List[Event]]] = None
-    audience: Optional[Union[Audience, List[Audience]]] = None

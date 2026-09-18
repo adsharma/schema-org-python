@@ -12,20 +12,24 @@ class BroadcastChannel(Intangible):
     A unique instance of a BroadcastService on a CableOrSatelliteService lineup.
     """
 
-    providesBroadcastService: Optional[
-        Union["BroadcastService", List["BroadcastService"]]
-    ] = None
+    broadcastChannelId: Optional[Union[str, List[str]]] = None
     broadcastFrequency: Optional[
         Union[
-            str,
-            List[str],
             "BroadcastFrequencySpecification",
             List["BroadcastFrequencySpecification"],
+            str,
+            List[str],
         ]
     ] = None
     broadcastServiceTier: Optional[Union[str, List[str]]] = None
+    genre: Optional[
+        Union[
+            "DefinedTerm", List["DefinedTerm"], str, List[str], HttpUrl, List[HttpUrl]
+        ]
+    ] = None
     inBroadcastLineup: Optional[
         Union["CableOrSatelliteService", List["CableOrSatelliteService"]]
     ] = None
-    broadcastChannelId: Optional[Union[str, List[str]]] = None
-    genre: Optional[Union[str, List[str], HttpUrl, List[HttpUrl]]] = None
+    providesBroadcastService: Optional[
+        Union["BroadcastService", List["BroadcastService"]]
+    ] = None

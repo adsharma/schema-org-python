@@ -10,7 +10,7 @@ class MedicalRiskEstimator(MedicalEntity):
     Any rule set or interactive tool for estimating the risk of developing a complication or condition.
     """
 
+    estimatesRiskOf: Optional[Union[MedicalEntity, List[MedicalEntity]]] = None
     includedRiskFactor: Optional[
         Union["MedicalRiskFactor", List["MedicalRiskFactor"]]
     ] = None
-    estimatesRiskOf: Optional[Union[MedicalEntity, List[MedicalEntity]]] = None

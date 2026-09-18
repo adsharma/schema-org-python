@@ -2,13 +2,14 @@ from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from schema_models.creative_work import CreativeWork
-from schema_models.defined_term import DefinedTerm
+from schema_models.thing import Thing
 
 
 @dataclass
 class DefinedTermSet(CreativeWork):
     """
-    A set of defined terms, for example a set of categories or a classification scheme, a glossary, dictionary or enumeration.
+    A set of defined terms, for example a set of categories or a classification scheme, a glossary, dictionary or enumeration. Use the about property to specify what the term set is about.
     """
 
-    hasDefinedTerm: Optional[Union[DefinedTerm, List[DefinedTerm]]] = None
+    about: Optional[Union[Thing, List[Thing]]] = None
+    hasDefinedTerm: Optional[Union["DefinedTerm", List["DefinedTerm"]]] = None

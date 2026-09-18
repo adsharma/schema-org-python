@@ -17,6 +17,6 @@ class HotelRoom(Room):
     """
 
     bed: Optional[
-        Union[BedType, List[BedType], BedDetails, List[BedDetails], str, List[str]]
+        Union[BedDetails, List[BedDetails], BedType, List[BedType], str, List[str]]
     ] = None
     occupancy: Optional[Union[QuantitativeValue, List[QuantitativeValue]]] = None

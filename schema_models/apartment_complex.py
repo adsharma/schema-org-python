@@ -13,14 +13,14 @@ class ApartmentComplex(Residence):
     Residence type: Apartment complex.
     """
 
-    numberOfAvailableAccommodationUnits: Optional[
+    numberOfAccommodationUnits: Optional[
         Union[QuantitativeValue, List[QuantitativeValue]]
     ] = None
-    numberOfAccommodationUnits: Optional[
+    numberOfAvailableAccommodationUnits: Optional[
         Union[QuantitativeValue, List[QuantitativeValue]]
     ] = None
     numberOfBedrooms: Optional[
         Union[float, List[float], QuantitativeValue, List[QuantitativeValue]]
     ] = None
-    petsAllowed: Optional[Union[str, List[str], bool, List[bool]]] = None
+    petsAllowed: Optional[Union[bool, List[bool], str, List[str]]] = None
     tourBookingPage: Optional[Union[HttpUrl, List[HttpUrl]]] = None

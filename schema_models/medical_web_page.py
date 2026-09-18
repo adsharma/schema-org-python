@@ -10,12 +10,12 @@ class MedicalWebPage(WebPage):
     A web page that provides medical information.
     """
 
+    aspect: Optional[Union[str, List[str]]] = None
     medicalAudience: Optional[
         Union[
-            "MedicalAudienceType",
-            List["MedicalAudienceType"],
             "MedicalAudience",
             List["MedicalAudience"],
+            "MedicalAudienceType",
+            List["MedicalAudienceType"],
         ]
     ] = None
-    aspect: Optional[Union[str, List[str]]] = None

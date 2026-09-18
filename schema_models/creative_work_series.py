@@ -16,6 +16,6 @@ class CreativeWorkSeries(CreativeWork):
 
     """
 
-    startDate: Optional[Union[datetime, List[datetime], date, List[date]]] = None
-    issn: Optional[Union[str, List[str]]] = None
     endDate: Optional[Union[date, List[date], datetime, List[datetime]]] = None
+    issn: Optional[Union[str, List[str]]] = None
+    startDate: Optional[Union[date, List[date], datetime, List[datetime]]] = None

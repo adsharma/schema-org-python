@@ -9,12 +9,12 @@ from schema_models.person import Person
 @dataclass
 class Diet(CreativeWork):
     """
-    A strategy of regulating the intake of food to achieve or maintain a specific health-related goal.
+    A sub property of instrument. The diet used in this action.
     """
 
     dietFeatures: Optional[Union[str, List[str]]] = None
     endorsers: Optional[
-        Union[Person, List[Person], Organization, List[Organization]]
+        Union[Organization, List[Organization], Person, List[Person]]
     ] = None
     expertConsiderations: Optional[Union[str, List[str]]] = None
     physiologicalBenefits: Optional[Union[str, List[str]]] = None

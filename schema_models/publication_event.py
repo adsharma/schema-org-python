@@ -12,8 +12,8 @@ class PublicationEvent(Event):
     A PublicationEvent corresponds indifferently to the event of publication for a CreativeWork of any type, e.g. a broadcast event, an on-demand event, a book/journal publication via a variety of delivery media.
     """
 
+    free: Optional[Union[bool, List[bool]]] = None
     publishedBy: Optional[
-        Union[Person, List[Person], Organization, List[Organization]]
+        Union[Organization, List[Organization], Person, List[Person]]
     ] = None
     publishedOn: Optional[Union["BroadcastService", List["BroadcastService"]]] = None
-    free: Optional[Union[bool, List[bool]]] = None

@@ -15,7 +15,7 @@ class TaxiReservation(Reservation):
     """
 
     partySize: Optional[
-        Union["QuantitativeValue", List["QuantitativeValue"], int, List[int]]
+        Union[int, List[int], "QuantitativeValue", List["QuantitativeValue"]]
     ] = None
-    pickupTime: Optional[Union[datetime, List[datetime]]] = None
     pickupLocation: Optional[Union[Place, List[Place]]] = None
+    pickupTime: Optional[Union[datetime, List[datetime]]] = None

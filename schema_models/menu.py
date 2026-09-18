@@ -2,14 +2,13 @@ from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from schema_models.creative_work import CreativeWork
-from schema_models.menu_item import MenuItem
 
 
 @dataclass
 class Menu(CreativeWork):
     """
-    A structured representation of food or drink items available from a FoodEstablishment.
+    Either the actual menu as a structured representation, as text, or a URL of the menu.
     """
 
-    hasMenuItem: Optional[Union[MenuItem, List[MenuItem]]] = None
+    hasMenuItem: Optional[Union["MenuItem", List["MenuItem"]]] = None
     hasMenuSection: Optional[Union["MenuSection", List["MenuSection"]]] = None

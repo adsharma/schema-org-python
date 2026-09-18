@@ -11,9 +11,9 @@ class Book(CreativeWork):
     A book.
     """
 
-    numberOfPages: Optional[Union[int, List[int]]] = None
-    illustrator: Optional[Union[Person, List[Person]]] = None
     abridged: Optional[Union[bool, List[bool]]] = None
     bookEdition: Optional[Union[str, List[str]]] = None
-    isbn: Optional[Union[str, List[str]]] = None
     bookFormat: Optional[Union["BookFormatType", List["BookFormatType"]]] = None
+    illustrator: Optional[Union[Person, List[Person]]] = None
+    isbn: Optional[Union[str, List[str]]] = None
+    numberOfPages: Optional[Union[int, List[int]]] = None

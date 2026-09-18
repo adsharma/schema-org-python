@@ -17,16 +17,16 @@ class LoanOrCredit(FinancialProduct):
     A financial product for the loaning of an amount of money, or line of credit, under agreed terms and charges.
     """
 
-    loanTerm: Optional[Union[QuantitativeValue, List[QuantitativeValue]]] = None
-    requiredCollateral: Optional[Union[Thing, List[Thing], str, List[str]]] = None
-    loanType: Optional[Union[str, List[str], HttpUrl, List[HttpUrl]]] = None
-    recourseLoan: Optional[Union[bool, List[bool]]] = None
-    loanRepaymentForm: Optional[
-        Union[RepaymentSpecification, List[RepaymentSpecification]]
-    ] = None
-    gracePeriod: Optional[Union[Duration, List[Duration]]] = None
-    currency: Optional[Union[str, List[str]]] = None
     amount: Optional[
         Union[MonetaryAmount, List[MonetaryAmount], float, List[float]]
     ] = None
+    currency: Optional[Union[str, List[str]]] = None
+    gracePeriod: Optional[Union[Duration, List[Duration]]] = None
+    loanRepaymentForm: Optional[
+        Union[RepaymentSpecification, List[RepaymentSpecification]]
+    ] = None
+    loanTerm: Optional[Union[QuantitativeValue, List[QuantitativeValue]]] = None
+    loanType: Optional[Union[str, List[str], HttpUrl, List[HttpUrl]]] = None
+    recourseLoan: Optional[Union[bool, List[bool]]] = None
     renegotiableLoan: Optional[Union[bool, List[bool]]] = None
+    requiredCollateral: Optional[Union[str, List[str], Thing, List[Thing]]] = None

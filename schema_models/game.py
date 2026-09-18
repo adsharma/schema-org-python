@@ -11,22 +11,22 @@ from schema_models.thing import Thing
 @dataclass
 class Game(CreativeWork):
     """
-    The Game type represents things which are games. These are typically rule-governed recreational activities, e.g. role-playing games in which players assume the role of characters in a fictional setting.
+    Video game which is played on this server.
     """
 
+    characterAttribute: Optional[Union[Thing, List[Thing]]] = None
+    gameItem: Optional[Union[Thing, List[Thing]]] = None
+    gameLocation: Optional[
+        Union[
+            Place,
+            List[Place],
+            "PostalAddress",
+            List["PostalAddress"],
+            HttpUrl,
+            List[HttpUrl],
+        ]
+    ] = None
     numberOfPlayers: Optional[Union["QuantitativeValue", List["QuantitativeValue"]]] = (
         None
     )
-    characterAttribute: Optional[Union[Thing, List[Thing]]] = None
-    gameItem: Optional[Union[Thing, List[Thing]]] = None
     quest: Optional[Union[Thing, List[Thing]]] = None
-    gameLocation: Optional[
-        Union[
-            HttpUrl,
-            List[HttpUrl],
-            "PostalAddress",
-            List["PostalAddress"],
-            Place,
-            List[Place],
-        ]
-    ] = None

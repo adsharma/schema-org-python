@@ -11,7 +11,7 @@ class DeliveryEvent(Event):
     An event involving the delivery of an item.
     """
 
-    availableThrough: Optional[Union[datetime, List[datetime]]] = None
-    availableFrom: Optional[Union[datetime, List[datetime]]] = None
     accessCode: Optional[Union[str, List[str]]] = None
+    availableFrom: Optional[Union[datetime, List[datetime]]] = None
+    availableThrough: Optional[Union[datetime, List[datetime]]] = None
     hasDeliveryMethod: Optional[Union["DeliveryMethod", List["DeliveryMethod"]]] = None

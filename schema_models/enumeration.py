@@ -12,11 +12,11 @@ class Enumeration(Intangible):
 
     supersededBy: Optional[
         Union[
-            "Property",
-            List["Property"],
             "_Class",
             List["_Class"],
             "Enumeration",
             List["Enumeration"],
+            "Property",
+            List["Property"],
         ]
     ] = None

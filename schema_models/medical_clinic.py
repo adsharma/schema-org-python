@@ -16,12 +16,12 @@ class MedicalClinic(MedicalBusiness):
 
     availableService: Optional[
         Union[
+            MedicalProcedure,
+            List[MedicalProcedure],
             MedicalTest,
             List[MedicalTest],
             MedicalTherapy,
             List[MedicalTherapy],
-            MedicalProcedure,
-            List[MedicalProcedure],
         ]
     ] = None
     medicalSpecialty: Optional[Union[MedicalSpecialty, List[MedicalSpecialty]]] = None

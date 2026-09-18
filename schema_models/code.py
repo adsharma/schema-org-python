@@ -6,5 +6,5 @@ from schema_models.creative_work import CreativeWork
 @dataclass
 class Code(CreativeWork):
     """
-    Computer programming source code. Example: Full (compile ready) solutions, code snippet samples, scripts, templates.
+    A medical code for the entity, taken from a controlled vocabulary or ontology such as ICD-9, DiseasesDB, MeSH, SNOMED-CT, RxNorm, etc.
     """

@@ -5,8 +5,11 @@ from pydantic import HttpUrl
 
 from schema_models.defined_region import DefinedRegion
 from schema_models.distance import Distance
+from schema_models.mass import Mass
 from schema_models.member_program_tier import MemberProgramTier
 from schema_models.monetary_amount import MonetaryAmount
+from schema_models.organization import Organization
+from schema_models.person import Person
 from schema_models.structured_value import StructuredValue
 
 
@@ -27,26 +30,41 @@ class OfferShippingDetails(StructuredValue):
     or Fast and expensive: $15 in 1-2 days.
     """
 
-    shippingSettingsLink: Optional[Union[HttpUrl, List[HttpUrl]]] = None
-    shippingOrigin: Optional[Union[DefinedRegion, List[DefinedRegion]]] = None
-    shippingLabel: Optional[Union[str, List[str]]] = None
-    height: Optional[
-        Union[Distance, List[Distance], "QuantitativeValue", List["QuantitativeValue"]]
-    ] = None
-    transitTimeLabel: Optional[Union[str, List[str]]] = None
-    width: Optional[
-        Union[Distance, List[Distance], "QuantitativeValue", List["QuantitativeValue"]]
-    ] = None
     deliveryTime: Optional[
         Union["ShippingDeliveryTime", List["ShippingDeliveryTime"]]
     ] = None
+    depth: Optional[
+        Union[Distance, List[Distance], "QuantitativeValue", List["QuantitativeValue"]]
+    ] = None
+    doesNotShip: Optional[Union[bool, List[bool]]] = None
+    hasShippingService: Optional[Union["ShippingService", List["ShippingService"]]] = (
+        None
+    )
+    height: Optional[
+        Union[Distance, List[Distance], "QuantitativeValue", List["QuantitativeValue"]]
+    ] = None
+    provider: Optional[
+        Union[Organization, List[Organization], Person, List[Person]]
+    ] = None
+    shippingDestination: Optional[Union[DefinedRegion, List[DefinedRegion]]] = None
+    shippingLabel: Optional[Union[str, List[str]]] = None
+    shippingOrigin: Optional[Union[DefinedRegion, List[DefinedRegion]]] = None
+    shippingRate: Optional[
+        Union[
+            MonetaryAmount,
+            List[MonetaryAmount],
+            "ShippingRateSettings",
+            List["ShippingRateSettings"],
+        ]
+    ] = None
+    shippingSettingsLink: Optional[Union[HttpUrl, List[HttpUrl]]] = None
+    transitTimeLabel: Optional[Union[str, List[str]]] = None
     validForMemberTier: Optional[Union[MemberProgramTier, List[MemberProgramTier]]] = (
         None
     )
-    depth: Optional[
-        Union["QuantitativeValue", List["QuantitativeValue"], Distance, List[Distance]]
+    weight: Optional[
+        Union[Mass, List[Mass], "QuantitativeValue", List["QuantitativeValue"]]
     ] = None
-    doesNotShip: Optional[Union[bool, List[bool]]] = None
-    shippingDestination: Optional[Union[DefinedRegion, List[DefinedRegion]]] = None
-    shippingRate: Optional[Union[MonetaryAmount, List[MonetaryAmount]]] = None
-    weight: Optional[Union["QuantitativeValue", List["QuantitativeValue"]]] = None
+    width: Optional[
+        Union[Distance, List[Distance], "QuantitativeValue", List["QuantitativeValue"]]
+    ] = None

@@ -4,17 +4,18 @@ from typing import List, Optional, Union
 from pydantic import HttpUrl
 
 from schema_models.intangible import Intangible
+from schema_models.review import Review
 
 
 @dataclass
 class Brand(Intangible):
     """
-    A brand is a name used by an organization or business person for labeling a product, product group, or similar.
+    The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
     """
 
     aggregateRating: Optional[Union["AggregateRating", List["AggregateRating"]]] = None
-    review: Optional[Union["Review", List["Review"]]] = None
     logo: Optional[
-        Union[HttpUrl, List[HttpUrl], "ImageObject", List["ImageObject"]]
+        Union["ImageObject", List["ImageObject"], HttpUrl, List[HttpUrl]]
     ] = None
+    review: Optional[Union[Review, List[Review]]] = None
     slogan: Optional[Union[str, List[str]]] = None

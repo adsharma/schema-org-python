@@ -9,25 +9,25 @@ from schema_models.structured_value import StructuredValue
 @dataclass
 class PriceSpecification(StructuredValue):
     """
-    A structured value representing a price or price range. Typically, only the subclasses of this type are used for markup. It is recommended to use [[MonetaryAmount]] to describe independent amounts of money such as a salary, credit card limits, etc.
+    One or more detailed price specifications, indicating the unit price and delivery or payment charges.
     """
 
-    eligibleTransactionVolume: Optional[
-        Union["PriceSpecification", List["PriceSpecification"]]
-    ] = None
-    validFrom: Optional[Union[datetime, List[datetime], date, List[date]]] = None
-    validForMemberTier: Optional[Union[MemberProgramTier, List[MemberProgramTier]]] = (
-        None
-    )
-    valueAddedTaxIncluded: Optional[Union[bool, List[bool]]] = None
-    maxPrice: Optional[Union[float, List[float]]] = None
-    validThrough: Optional[Union[datetime, List[datetime], date, List[date]]] = None
-    membershipPointsEarned: Optional[
-        Union[float, List[float], "QuantitativeValue", List["QuantitativeValue"]]
-    ] = None
-    price: Optional[Union[str, List[str], float, List[float]]] = None
     eligibleQuantity: Optional[
         Union["QuantitativeValue", List["QuantitativeValue"]]
     ] = None
-    priceCurrency: Optional[Union[str, List[str]]] = None
+    eligibleTransactionVolume: Optional[
+        Union["PriceSpecification", List["PriceSpecification"]]
+    ] = None
+    maxPrice: Optional[Union[float, List[float]]] = None
+    membershipPointsEarned: Optional[
+        Union[float, List[float], "QuantitativeValue", List["QuantitativeValue"]]
+    ] = None
     minPrice: Optional[Union[float, List[float]]] = None
+    price: Optional[Union[float, List[float], str, List[str]]] = None
+    priceCurrency: Optional[Union[str, List[str]]] = None
+    validForMemberTier: Optional[Union[MemberProgramTier, List[MemberProgramTier]]] = (
+        None
+    )
+    validFrom: Optional[Union[date, List[date], datetime, List[datetime]]] = None
+    validThrough: Optional[Union[date, List[date], datetime, List[datetime]]] = None
+    valueAddedTaxIncluded: Optional[Union[bool, List[bool]]] = None

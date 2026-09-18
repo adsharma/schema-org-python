@@ -11,14 +11,14 @@ class PropertyValueSpecification(Intangible):
     A Property value specification.
     """
 
-    defaultValue: Optional[Union[Thing, List[Thing], str, List[str]]] = None
-    stepValue: Optional[Union[float, List[float]]] = None
-    multipleValues: Optional[Union[bool, List[bool]]] = None
-    valuePattern: Optional[Union[str, List[str]]] = None
-    valueMinLength: Optional[Union[float, List[float]]] = None
-    valueRequired: Optional[Union[bool, List[bool]]] = None
+    defaultValue: Optional[Union[str, List[str], Thing, List[Thing]]] = None
     maxValue: Optional[Union[float, List[float]]] = None
-    valueMaxLength: Optional[Union[float, List[float]]] = None
-    readonlyValue: Optional[Union[bool, List[bool]]] = None
-    valueName: Optional[Union[str, List[str]]] = None
     minValue: Optional[Union[float, List[float]]] = None
+    multipleValues: Optional[Union[bool, List[bool]]] = None
+    readonlyValue: Optional[Union[bool, List[bool]]] = None
+    stepValue: Optional[Union[float, List[float]]] = None
+    valueMaxLength: Optional[Union[float, List[float]]] = None
+    valueMinLength: Optional[Union[float, List[float]]] = None
+    valueName: Optional[Union[str, List[str]]] = None
+    valuePattern: Optional[Union[str, List[str]]] = None
+    valueRequired: Optional[Union[bool, List[bool]]] = None

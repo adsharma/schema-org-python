@@ -6,5 +6,5 @@ from schema_models.medical_enumeration import MedicalEnumeration
 @dataclass
 class MedicineSystem(MedicalEnumeration):
     """
-    Systems of medical practice.
+    The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
     """

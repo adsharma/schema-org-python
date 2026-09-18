@@ -4,7 +4,6 @@ from typing import List, Optional, Union
 
 from pydantic import HttpUrl
 
-from schema_models.administrative_area import AdministrativeArea
 from schema_models.creative_work import CreativeWork
 from schema_models.organization import Organization
 from schema_models.person import Person
@@ -16,30 +15,41 @@ class Legislation(CreativeWork):
     A legal document such as an act, decree, bill, etc. (enforceable or not) or a component of a legal act (like an article).
     """
 
-    legislationTransposes: Optional[Union["Legislation", List["Legislation"]]] = None
-    legislationPassedBy: Optional[
-        Union[Person, List[Person], Organization, List[Organization]]
+    jurisdiction: Optional[
+        Union["AdministrativeArea", List["AdministrativeArea"], str, List[str]]
+    ] = None
+    legislationAmends: Optional[Union["Legislation", List["Legislation"]]] = None
+    legislationApplies: Optional[Union["Legislation", List["Legislation"]]] = None
+    legislationChanges: Optional[Union["Legislation", List["Legislation"]]] = None
+    legislationCommences: Optional[Union["Legislation", List["Legislation"]]] = None
+    legislationConsolidates: Optional[Union["Legislation", List["Legislation"]]] = None
+    legislationCorrects: Optional[Union["Legislation", List["Legislation"]]] = None
+    legislationCountersignedBy: Optional[
+        Union[Organization, List[Organization], Person, List[Person]]
+    ] = None
+    legislationDate: Optional[Union[date, List[date]]] = None
+    legislationDateOfApplicability: Optional[Union[date, List[date]]] = None
+    legislationDateVersion: Optional[Union[date, List[date]]] = None
+    legislationEnsuresImplementationOf: Optional[
+        Union["Legislation", List["Legislation"]]
+    ] = None
+    legislationIdentifier: Optional[Union[str, List[str], HttpUrl, List[HttpUrl]]] = (
+        None
+    )
+    legislationJurisdiction: Optional[
+        Union["AdministrativeArea", List["AdministrativeArea"], str, List[str]]
     ] = None
     legislationLegalForce: Optional[
         Union["LegalForceStatus", List["LegalForceStatus"]]
     ] = None
-    jurisdiction: Optional[
-        Union[str, List[str], AdministrativeArea, List[AdministrativeArea]]
+    legislationPassedBy: Optional[
+        Union[Organization, List[Organization], Person, List[Person]]
     ] = None
-    legislationJurisdiction: Optional[
-        Union[str, List[str], AdministrativeArea, List[AdministrativeArea]]
-    ] = None
-    legislationConsolidates: Optional[Union["Legislation", List["Legislation"]]] = None
+    legislationRepeals: Optional[Union["Legislation", List["Legislation"]]] = None
     legislationResponsible: Optional[
-        Union[Person, List[Person], Organization, List[Organization]]
+        Union[Organization, List[Organization], Person, List[Person]]
     ] = None
-    legislationDateVersion: Optional[Union[date, List[date]]] = None
-    legislationApplies: Optional[Union["Legislation", List["Legislation"]]] = None
-    legislationDate: Optional[Union[date, List[date]]] = None
-    legislationIdentifier: Optional[Union[str, List[str], HttpUrl, List[HttpUrl]]] = (
-        None
-    )
+    legislationTransposes: Optional[Union["Legislation", List["Legislation"]]] = None
     legislationType: Optional[
         Union["CategoryCode", List["CategoryCode"], str, List[str]]
     ] = None
-    legislationChanges: Optional[Union["Legislation", List["Legislation"]]] = None

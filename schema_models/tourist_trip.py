@@ -12,4 +12,4 @@ class TouristTrip(Trip):
       (See examples below.)
     """
 
-    touristType: Optional[Union[str, List[str], Audience, List[Audience]]] = None
+    touristType: Optional[Union[Audience, List[Audience], str, List[str]]] = None

@@ -15,6 +15,6 @@ class MonetaryGrant(Grant):
     amount: Optional[
         Union["MonetaryAmount", List["MonetaryAmount"], float, List[float]]
     ] = None
-    funder: Optional[Union[Person, List[Person], Organization, List[Organization]]] = (
+    funder: Optional[Union[Organization, List[Organization], Person, List[Person]]] = (
         None
     )

@@ -2,7 +2,6 @@ from dataclasses import dataclass
 from typing import List, Optional, Union
 
 from schema_models.audience import Audience
-from schema_models.contact_point import ContactPoint
 from schema_models.interact_action import InteractAction
 from schema_models.language import Language
 from schema_models.organization import Organization
@@ -18,16 +17,16 @@ class CommunicateAction(InteractAction):
 
     about: Optional[Union[Thing, List[Thing]]] = None
     inLanguage: Optional[Union[Language, List[Language], str, List[str]]] = None
+    language: Optional[Union[Language, List[Language]]] = None
     recipient: Optional[
         Union[
             Audience,
             List[Audience],
-            ContactPoint,
-            List[ContactPoint],
-            Person,
-            List[Person],
+            "ContactPoint",
+            List["ContactPoint"],
             Organization,
             List[Organization],
+            Person,
+            List[Person],
         ]
     ] = None
-    language: Optional[Union[Language, List[Language]]] = None

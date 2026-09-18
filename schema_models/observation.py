@@ -1,22 +1,18 @@
 from dataclasses import dataclass
-from datetime import datetime
+from datetime import date, datetime
 from typing import List, Optional, Union
 
 from pydantic import HttpUrl
 
 from schema_models.defined_term import DefinedTerm
 from schema_models.enumeration import Enumeration
-from schema_models.measurement_method_enum import MeasurementMethodEnum
+from schema_models.intangible import Intangible
 from schema_models.place import Place
-from schema_models.property import Property
-from schema_models.property_value import PropertyValue
-from schema_models.quantitative_value import QuantitativeValue
-from schema_models.statistical_variable import StatisticalVariable
 from schema_models.thing import Thing
 
 
 @dataclass
-class Observation(QuantitativeValue):
+class Observation(Intangible):
     """
     Instances of the class [[Observation]] are used to specify observations about an entity at a particular time. The principal properties of an [[Observation]] are [[observationAbout]], [[measuredProperty]], [[statType]], [[value] and [[observationDate]]  and [[measuredProperty]]. Some but not all Observations represent a [[QuantitativeValue]]. Quantitative observations can be about a [[StatisticalVariable]], which is an abstract specification about which we can make observations that are grounded at a particular location and time.
 
@@ -26,48 +22,50 @@ class Observation(QuantitativeValue):
 
     """
 
-    measurementQualifier: Optional[Union[Enumeration, List[Enumeration]]] = None
+    marginOfError: Optional[Union["QuantitativeValue", List["QuantitativeValue"]]] = (
+        None
+    )
+    measuredProperty: Optional[Union["Property", List["Property"]]] = None
+    measurementDenominator: Optional[
+        Union["StatisticalVariable", List["StatisticalVariable"]]
+    ] = None
     measurementMethod: Optional[
         Union[
-            HttpUrl,
-            List[HttpUrl],
             DefinedTerm,
             List[DefinedTerm],
-            MeasurementMethodEnum,
-            List[MeasurementMethodEnum],
+            "MeasurementMethodEnum",
+            List["MeasurementMethodEnum"],
             str,
             List[str],
+            HttpUrl,
+            List[HttpUrl],
         ]
     ] = None
-    measuredProperty: Optional[Union[Property, List[Property]]] = None
-    observationDate: Optional[Union[datetime, List[datetime]]] = None
-    observationAbout: Optional[Union[Place, List[Place], Thing, List[Thing]]] = None
-    observationPeriod: Optional[Union[str, List[str]]] = None
-    measurementDenominator: Optional[
-        Union[StatisticalVariable, List[StatisticalVariable]]
-    ] = None
+    measurementQualifier: Optional[Union[Enumeration, List[Enumeration]]] = None
     measurementTechnique: Optional[
         Union[
+            DefinedTerm,
+            List[DefinedTerm],
+            "MeasurementMethodEnum",
+            List["MeasurementMethodEnum"],
             str,
             List[str],
             HttpUrl,
             List[HttpUrl],
-            DefinedTerm,
-            List[DefinedTerm],
-            MeasurementMethodEnum,
-            List[MeasurementMethodEnum],
         ]
     ] = None
-    marginOfError: Optional[Union[QuantitativeValue, List[QuantitativeValue]]] = None
+    observationAbout: Optional[Union[Place, List[Place], Thing, List[Thing]]] = None
+    observationDate: Optional[Union[date, List[date], datetime, List[datetime]]] = None
+    observationPeriod: Optional[Union[str, List[str]]] = None
     variableMeasured: Optional[
         Union[
-            StatisticalVariable,
-            List[StatisticalVariable],
-            Property,
-            List[Property],
+            "Property",
+            List["Property"],
+            "PropertyValue",
+            List["PropertyValue"],
+            "StatisticalVariable",
+            List["StatisticalVariable"],
             str,
             List[str],
-            PropertyValue,
-            List[PropertyValue],
         ]
     ] = None

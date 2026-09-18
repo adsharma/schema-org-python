@@ -3,8 +3,6 @@ from typing import List, Optional, Union
 
 from pydantic import HttpUrl
 
-from schema_models.category_code import CategoryCode
-from schema_models.physical_activity_category import PhysicalActivityCategory
 from schema_models.review import Review
 from schema_models.thing import Thing
 
@@ -17,14 +15,14 @@ class Recommendation(Review):
 
     category: Optional[
         Union[
-            Thing,
-            List[Thing],
-            PhysicalActivityCategory,
-            List[PhysicalActivityCategory],
-            CategoryCode,
-            List[CategoryCode],
+            "CategoryCode",
+            List["CategoryCode"],
+            "PhysicalActivityCategory",
+            List["PhysicalActivityCategory"],
             str,
             List[str],
+            Thing,
+            List[Thing],
             HttpUrl,
             List[HttpUrl],
         ]

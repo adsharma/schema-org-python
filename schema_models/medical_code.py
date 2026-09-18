@@ -10,5 +10,5 @@ class MedicalCode(CategoryCode):
     A code for a medical entity.
     """
 
-    codingSystem: Optional[Union[str, List[str]]] = None
     codeValue: Optional[Union[str, List[str]]] = None
+    codingSystem: Optional[Union[str, List[str]]] = None

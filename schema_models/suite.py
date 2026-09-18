@@ -15,10 +15,10 @@ class Suite(Accommodation):
 
     """
 
-    occupancy: Optional[Union[QuantitativeValue, List[QuantitativeValue]]] = None
-    numberOfRooms: Optional[
-        Union[QuantitativeValue, List[QuantitativeValue], float, List[float]]
-    ] = None
     bed: Optional[
-        Union["BedType", List["BedType"], BedDetails, List[BedDetails], str, List[str]]
+        Union[BedDetails, List[BedDetails], "BedType", List["BedType"], str, List[str]]
     ] = None
+    numberOfRooms: Optional[
+        Union[float, List[float], QuantitativeValue, List[QuantitativeValue]]
+    ] = None
+    occupancy: Optional[Union[QuantitativeValue, List[QuantitativeValue]]] = None

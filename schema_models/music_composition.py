@@ -13,19 +13,19 @@ class MusicComposition(CreativeWork):
     A musical composition.
     """
 
-    recordedAs: Optional[Union["MusicRecording", List["MusicRecording"]]] = None
-    musicCompositionForm: Optional[Union[str, List[str]]] = None
+    composer: Optional[
+        Union[Organization, List[Organization], Person, List[Person]]
+    ] = None
+    firstPerformance: Optional[Union[Event, List[Event]]] = None
     includedComposition: Optional[
         Union["MusicComposition", List["MusicComposition"]]
     ] = None
+    iswcCode: Optional[Union[str, List[str]]] = None
     lyricist: Optional[Union[Person, List[Person]]] = None
+    lyrics: Optional[Union[CreativeWork, List[CreativeWork]]] = None
     musicArrangement: Optional[Union["MusicComposition", List["MusicComposition"]]] = (
         None
     )
+    musicCompositionForm: Optional[Union[str, List[str]]] = None
     musicalKey: Optional[Union[str, List[str]]] = None
-    composer: Optional[
-        Union[Person, List[Person], Organization, List[Organization]]
-    ] = None
-    iswcCode: Optional[Union[str, List[str]]] = None
-    lyrics: Optional[Union[CreativeWork, List[CreativeWork]]] = None
-    firstPerformance: Optional[Union[Event, List[Event]]] = None
+    recordedAs: Optional[Union["MusicRecording", List["MusicRecording"]]] = None

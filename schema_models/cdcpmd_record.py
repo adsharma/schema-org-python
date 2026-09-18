@@ -14,20 +14,20 @@ class CDCPMDRecord(StructuredValue):
 
     """
 
-    cvdNumTotBeds: Optional[Union[float, List[float]]] = None
-    datePosted: Optional[Union[datetime, List[datetime], date, List[date]]] = None
-    cvdNumC19HOPats: Optional[Union[float, List[float]]] = None
+    cvdCollectionDate: Optional[Union[datetime, List[datetime], str, List[str]]] = None
     cvdFacilityCounty: Optional[Union[str, List[str]]] = None
+    cvdFacilityId: Optional[Union[str, List[str]]] = None
+    cvdNumBeds: Optional[Union[float, List[float]]] = None
+    cvdNumBedsOcc: Optional[Union[float, List[float]]] = None
+    cvdNumC19Died: Optional[Union[float, List[float]]] = None
+    cvdNumC19HOPats: Optional[Union[float, List[float]]] = None
+    cvdNumC19HospPats: Optional[Union[float, List[float]]] = None
+    cvdNumC19MechVentPats: Optional[Union[float, List[float]]] = None
+    cvdNumC19OFMechVentPats: Optional[Union[float, List[float]]] = None
+    cvdNumC19OverflowPats: Optional[Union[float, List[float]]] = None
+    cvdNumICUBeds: Optional[Union[float, List[float]]] = None
+    cvdNumICUBedsOcc: Optional[Union[float, List[float]]] = None
+    cvdNumTotBeds: Optional[Union[float, List[float]]] = None
     cvdNumVent: Optional[Union[float, List[float]]] = None
     cvdNumVentUse: Optional[Union[float, List[float]]] = None
-    cvdNumBeds: Optional[Union[float, List[float]]] = None
-    cvdNumC19Died: Optional[Union[float, List[float]]] = None
-    cvdNumC19OverflowPats: Optional[Union[float, List[float]]] = None
-    cvdNumICUBedsOcc: Optional[Union[float, List[float]]] = None
-    cvdNumC19HospPats: Optional[Union[float, List[float]]] = None
-    cvdCollectionDate: Optional[Union[datetime, List[datetime], str, List[str]]] = None
-    cvdNumC19MechVentPats: Optional[Union[float, List[float]]] = None
-    cvdNumBedsOcc: Optional[Union[float, List[float]]] = None
-    cvdNumC19OFMechVentPats: Optional[Union[float, List[float]]] = None
-    cvdFacilityId: Optional[Union[str, List[str]]] = None
-    cvdNumICUBeds: Optional[Union[float, List[float]]] = None
+    datePosted: Optional[Union[date, List[date], datetime, List[datetime]]] = None

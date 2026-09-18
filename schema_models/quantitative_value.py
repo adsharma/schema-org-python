@@ -17,40 +17,42 @@ class QuantitativeValue(StructuredValue):
     A point value or interval for product characteristics and other purposes.
     """
 
+    additionalProperty: Optional[Union[PropertyValue, List[PropertyValue]]] = None
+    maxValue: Optional[Union[float, List[float]]] = None
+    minValue: Optional[Union[float, List[float]]] = None
+    unitCode: Optional[Union[str, List[str], HttpUrl, List[HttpUrl]]] = None
+    unitText: Optional[Union[str, List[str]]] = None
     value: Optional[
         Union[
             bool,
             List[bool],
-            str,
-            List[str],
             float,
             List[float],
+            QualitativeValue,
+            List[QualitativeValue],
             StructuredValue,
             List[StructuredValue],
+            str,
+            List[str],
         ]
     ] = None
     valueReference: Optional[
         Union[
-            str,
-            List[str],
             DefinedTerm,
             List[DefinedTerm],
-            PropertyValue,
-            List[PropertyValue],
-            MeasurementTypeEnumeration,
-            List[MeasurementTypeEnumeration],
-            StructuredValue,
-            List[StructuredValue],
             Enumeration,
             List[Enumeration],
+            MeasurementTypeEnumeration,
+            List[MeasurementTypeEnumeration],
+            PropertyValue,
+            List[PropertyValue],
             QualitativeValue,
             List[QualitativeValue],
             "QuantitativeValue",
             List["QuantitativeValue"],
+            StructuredValue,
+            List[StructuredValue],
+            str,
+            List[str],
         ]
     ] = None
-    additionalProperty: Optional[Union[PropertyValue, List[PropertyValue]]] = None
-    unitCode: Optional[Union[str, List[str], HttpUrl, List[HttpUrl]]] = None
-    maxValue: Optional[Union[float, List[float]]] = None
-    minValue: Optional[Union[float, List[float]]] = None
-    unitText: Optional[Union[str, List[str]]] = None

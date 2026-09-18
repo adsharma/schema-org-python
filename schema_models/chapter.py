@@ -11,5 +11,5 @@ class Chapter(CreativeWork):
     """
 
     pageEnd: Optional[Union[int, List[int], str, List[str]]] = None
-    pageStart: Optional[Union[str, List[str], int, List[int]]] = None
+    pageStart: Optional[Union[int, List[int], str, List[str]]] = None
     pagination: Optional[Union[str, List[str]]] = None

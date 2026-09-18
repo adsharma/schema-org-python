@@ -1,10 +1,10 @@
 from dataclasses import dataclass
 
-from schema_models.emergency_service import EmergencyService
+from schema_models.civic_structure import CivicStructure
 
 
 @dataclass
-class PoliceStation(EmergencyService):
+class PoliceStation(CivicStructure):
     """
     A police station.
     """
