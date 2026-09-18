@@ -107,22 +107,48 @@ def generate_models(graph: Graph):
             classes[class_name]["order"] = order
             ts_sorted.append(class_name)
 
-    # Write init file
-    with open("schema_models/__init__.py", "w") as f:
-        f.write("from typing import Union, List, Optional\n")
-        f.write("from datetime import date, datetime, time\n")
-        f.write("from pydantic import field_validator, ConfigDict, Field, HttpUrl\n\n")
-
+    # Write registry: class -> module map used for lazy loading.
+    # schema_models/__init__.py stays tiny (PEP 562); _lazy.py supplies
+    # each validator() call with its static transitive closure, while the
+    # rebuild machinery itself lives in fquery.pydantic.
+    with open("schema_models/_registry.py", "w") as f:
+        f.write('"""Generated class -> module map. Do not edit."""\n')
+        f.write("_MODULE_FOR = {\n")
         for class_name in ts_sorted:
             if class_name is not None:
                 class_filename = camel_to_snake(class_name)
-                f.write(f"from schema_models.{class_filename} import {class_name}\n")
+                f.write(f'    "{class_name}": "{class_filename}",\n')
+        f.write("}\n")
 
-        f.write("\n\n")
+    # Write static transitive reference closures for validator namespaces.
+    # NOTE: properties are collected in the second pass below, so this
+    # runs after model files are generated (see end of generate_models).
+    def _write_namespaces():
+        direct = {}
+        for class_name, class_info in classes.items():
+            deps = set()
+            if class_info["parent"] and class_info["parent"] in classes:
+                deps.add(class_info["parent"])
+            for _, prop_type in class_info["properties"]:
+                if prop_type in classes:
+                    deps.add(prop_type)
+            direct[class_name] = deps
+        with open("schema_models/_namespaces.py", "w") as f:
+            f.write('"""Generated transitive reference closures. Do not edit."""\n')
+            f.write("_NAMESPACES = {\n")
+            for class_name in sorted(direct):
+                seen, stack = set(), list(direct[class_name])
+                while stack:
+                    dep = stack.pop()
+                    if dep in seen:
+                        continue
+                    seen.add(dep)
+                    stack.extend(direct.get(dep, set()) - seen)
+                seen.discard(class_name)
+                f.write(f'    "{class_name}": {tuple(sorted(seen))},\n')
+            f.write("}\n")
 
-        for class_name in ts_sorted:
-            if class_name is not None:
-                f.write(f"{class_name}.__pydantic__.model_rebuild()\n")
+    _write_namespaces_later = _write_namespaces
 
     # Second pass: collect properties
     for class_name, class_info in classes.items():
@@ -225,6 +251,8 @@ def generate_models(graph: Graph):
             f.write("@pydantic\n")
             f.write(f"class {class_name}:\n")
             f.write("    pass\n")
+    # Properties are complete now: emit static validator namespaces.
+    _write_namespaces_later()
     return classes
 
 
