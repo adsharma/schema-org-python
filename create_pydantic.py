@@ -3,13 +3,12 @@
 import argparse
 import os
 import re
-import subprocess
-import sys
 from collections import defaultdict
 from graphlib import TopologicalSorter
 from keyword import kwlist
 from typing import Dict
 
+import black
 import requests
 from rdflib import RDF, RDFS, Graph, Namespace
 
@@ -185,97 +184,113 @@ def generate_models(graph: Graph):
                 except Exception:
                     pass
 
-    # Generate model files
+    # Generate model files. Imports are emitted already isort-clean
+    # (stdlib, third-party, first-party; alphabetical; only what is used)
+    # and each file is formatted in-process with black, so no post-pass
+    # over ~900 files is needed.
+    mode = black.Mode()
     for class_name, class_info in classes.items():
         filename = f"schema_models/{camel_to_snake(class_name)}.py"
-        with open(filename, "w") as f:
-            # Imports
-            f.write("from typing import Union, List, Optional\n")
-            f.write("from datetime import date, datetime, time\n")
-            f.write(
-                "from pydantic import field_validator, ConfigDict, Field, HttpUrl\n"
+
+        # Import other classes
+        other_classes = {}
+        for prop_name, prop_type in class_info["properties"]:
+            if (
+                prop_type != class_name
+                and prop_type != class_info["parent"]
+                and prop_type not in BASE_TYPES.values()
+            ):
+                forward_def = classes[prop_type]["order"] > class_info["order"]
+                other_classes[prop_type] = forward_def
+
+        prop_dict = defaultdict(list)
+        for prop_name, prop_type in class_info["properties"]:
+            # if prop_type is self, it should be in double quotes
+            forward_def = other_classes.get(prop_type, False)
+            if prop_type == class_name or forward_def:
+                prop_type = f'"{prop_type}"'
+            prop_dict[prop_name].append(prop_type)
+
+        used = {t.strip('"') for types in prop_dict.values() for t in types}
+        need_typing = bool(prop_dict)
+        need_http_url = "HttpUrl" in used
+        need_datetime = sorted({t for t in ("date", "datetime", "time") if t in used})
+        is_subclass = bool(class_info["parent"])
+
+        lines = []
+        if is_subclass:
+            lines.append("from dataclasses import dataclass")
+        if need_datetime:
+            lines.append(f"from datetime import {', '.join(need_datetime)}")
+        if need_typing:
+            lines.append("from typing import List, Optional, Union")
+        if lines:
+            lines.append("")
+        if class_name == "Thing":
+            lines.append("from fquery.pydantic import pydantic")
+        if need_http_url:
+            lines.append("from pydantic import HttpUrl")
+        if class_name == "Thing" or need_http_url:
+            lines.append("")
+        first_party = []
+        if class_info["parent"]:
+            parent = camel_to_snake(class_info["parent"])
+            first_party.append(
+                f"from schema_models.{parent} import {class_info['parent']}"
             )
-
-            # Import parent class if exists
-            if class_info["parent"]:
-                parent = camel_to_snake(class_info["parent"])
-                f.write(
-                    f"from schema_models.{parent} import {class_info['parent']}\n\n"
+        for prop_type in sorted(other_classes):
+            if not other_classes[prop_type]:
+                first_party.append(
+                    f"from schema_models.{camel_to_snake(prop_type)} import {prop_type}"
                 )
-            else:
-                f.write("\n")
+        lines.extend(sorted(first_party))
+        if first_party:
+            lines.append("")
+        lines.append("")
 
-            # Import other classes
-            other_classes = {}
-            for prop_name, prop_type in class_info["properties"]:
-                if prop_type != class_name and prop_type not in BASE_TYPES.values():
-                    forward_def = classes[prop_type]["order"] > class_info["order"]
-                    other_classes[prop_type] = forward_def
+        # Class definition
+        if is_subclass:
+            # Use the @dataclass decorator for subclasses
+            # Using @pydantic decorator results in a deep recursion
+            # and slow startup
+            lines.append("@dataclass")
+            lines.append(f"class {class_name}({class_info['parent']}):")
+        else:
+            if class_name == "Thing":
+                lines.append("@pydantic")
+            lines.append(f"class {class_name}:")
+        docstring = class_info.get("docstring", None)
+        if docstring is not None:
+            lines.append(f'    """\n{docstring}\n    """')
 
-            for prop_type, forward_def in other_classes.items():
-                other_snake = camel_to_snake(prop_type)
-                if not forward_def:
-                    f.write(f"from schema_models.{other_snake} import {prop_type}\n")
-            f.write("\n")
+        # Properties
+        if not class_info["properties"] and docstring is None:
+            lines.append("    pass")
 
-            # Class definition
-            if class_info["parent"]:
-                # Use the @dataclass decorator for subclasses
-                # Using @pydantic decorator results in a deep recursion
-                # and slow startup
-                f.write("from dataclasses import dataclass\n\n")
-                f.write("@dataclass\n")
-                f.write(f"class {class_name}({class_info['parent']}):\n")
-            else:
-                if class_name == "Thing":
-                    f.write("from fquery.pydantic import pydantic\n\n")
-                    f.write("@pydantic\n")
-                f.write(f"class {class_name}:\n")
-            docstring = class_info.get("docstring", None)
-            if docstring is not None:
-                f.write(f'    """\n{docstring}\n    """\n')
+        for prop_name, prop_type_list in prop_dict.items():
+            prop_types = ", ".join(
+                [f"{prop_type}, List[{prop_type}]" for prop_type in prop_type_list]
+            )
+            lines.append(f"    {prop_name}: Optional[Union[{prop_types}]] = None")
 
-            # f.write("    model_config = ConfigDict(arbitrary_types_allowed=True)\n\n")
-
-            # Properties
-            if not class_info["properties"]:
-                f.write("    pass\n")
-
-            prop_dict = defaultdict(list)
-            for prop_name, prop_type in class_info["properties"]:
-                # if prop_type is self, it should be in double quotes
-                forward_def = other_classes.get(prop_type, False)
-                if prop_type == class_name or forward_def:
-                    prop_type = f'"{prop_type}"'
-                prop_dict[prop_name].append(prop_type)
-
-            for prop_name, prop_type_list in prop_dict.items():
-                prop_types = ", ".join(
-                    [f"{prop_type}, List[{prop_type}]" for prop_type in prop_type_list]
-                )
-                f.write(f"    {prop_name}: Optional[Union[{prop_types}]] = None\n")
+        src = "\n".join(lines).rstrip("\n") + "\n"
+        with open(filename, "w") as f:
+            f.write(black.format_str(src, mode=mode))
 
     for s in BASE_TYPES_STR:
         class_name = safe_name(s.split("/")[-1])
         filename = f"schema_models/{camel_to_snake(class_name)}.py"
+        src = (
+            "from fquery.pydantic import pydantic\n\n\n"
+            "@pydantic\n"
+            f"class {class_name}:\n"
+            "    pass\n"
+        )
         with open(filename, "w") as f:
-            f.write("from fquery.pydantic import pydantic\n\n")
-            f.write("@pydantic\n")
-            f.write(f"class {class_name}:\n")
-            f.write("    pass\n")
+            f.write(black.format_str(src, mode=mode))
     # Properties are complete now: emit static validator namespaces.
     _write_namespaces_later()
     return classes
-
-
-def run_autoflake():
-    command = ["autoflake", "--remove-all-unused-imports", "-i", "-r", "."]
-
-    # Run the command
-    result = subprocess.run(command, capture_output=True, text=True)
-    if result.returncode != 0:
-        print(result.stderr)
-        sys.exit(1)
 
 
 def main():
@@ -305,9 +320,6 @@ def main():
 
     print("Generating Pydantic models...")
     generate_models(graph)
-
-    print("Running autoflake...")
-    run_autoflake()
 
     print("Models generated in schema_models directory")
 
