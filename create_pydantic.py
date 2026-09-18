@@ -107,10 +107,22 @@ def generate_models(graph: Graph):
             classes[class_name]["order"] = order
             ts_sorted.append(class_name)
 
+    # Write a tiny lazy __init__.py (PEP 562). Importing any name loads
+    # only that module plus its real dependency closure -- never all ~900
+    # modules up front, and no eager model_rebuild() cascade. See _lazy.py.
+    # NOTE: __init__.py is generated; do not hand-edit it.
+    with open("schema_models/__init__.py", "w") as f:
+        f.write(
+            '"""Schema.org models with lazy loading (see schema_models._lazy)."""\n'
+        )
+        f.write("\n")
+        f.write(
+            "from schema_models._lazy import __all__, __getattr__  # noqa: F401,E402\n"
+        )
+
     # Write registry: class -> module map used for lazy loading.
-    # schema_models/__init__.py stays tiny (PEP 562); _lazy.py supplies
-    # each validator() call with its static transitive closure, while the
-    # rebuild machinery itself lives in fquery.pydantic.
+    # _lazy.py supplies each validator() call with its static transitive
+    # closure, while the rebuild machinery itself lives in fquery.pydantic.
     with open("schema_models/_registry.py", "w") as f:
         f.write('"""Generated class -> module map. Do not edit."""\n')
         f.write("_MODULE_FOR = {\n")
