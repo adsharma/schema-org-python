@@ -13,8 +13,8 @@ The inheritance hierarchy of the schema is accurately reflected in the python in
 Usage:
 
 ```
-wget https://schema.org/version/latest/schemaorg-all-https.nt
-./create_pydantic.py schemaorg-all-https.nt
+curl -LO https://schema.org/version/latest/schemaorg-all-https.nt
+uv run create_pydantic.py schemaorg-all-https.nt
 pytest
 ```
 
